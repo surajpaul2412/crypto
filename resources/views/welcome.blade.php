@@ -348,7 +348,7 @@
               </div>
               <div class="col-md-6 col-6" style="height: 7vh;">
                 <a href="{{url('contact_us')}}" class="text-black bold">
-                  <div class="bold font-14 text-black pl-2" style="position: relative;top: 50%;transform: translateY(-50%);">Contact Us</div>
+                  <div class="menu bold font-14 text-black pl-2" style="position: relative;top: 50%;transform: translateY(-50%);">Contact Us</div>
                 </a>
               </div>
               <div class="col-md-6 col-6" align="right">
@@ -597,25 +597,26 @@
                         <h6 class="font-regular text-dark px-4 font-12 top-13p">Book you studio tour & free counselling session</h6>
                         <h6 class="font-bold text-dark px-4 font-14 top-17pp">Time- 10 AM - 5 PM ( Sunday Closed )</h6>
                     </div>
-                    <form class="text-center mx-5 home-form-height-78">
+                    <form class="text-center mx-5 home-form-height-78" method="POST" action="{{route('welcome.store')}}">
+                      @csrf
                         <!-- name -->
                         <div class="md-form mt-0 w-100 home-form-2">
-                            <input type="text" class="form-control">
+                            <input type="text" class="form-control" name="name" required>
                             <label>Name</label>
                         </div>
                         <!-- phone number -->
                         <div class="md-form mt-0 w-100 home-form-17">
-                            <input type="number" class="form-control">
+                            <input type="number" class="form-control" name="phone" required>
                             <label>Phone number</label>
                         </div>
                         <!-- E-mail -->
                         <div class="md-form mt-0 w-100 home-form-34">
-                            <input type="email" class="form-control">
+                            <input type="email" class="form-control" name="email" required>
                             <label>Email ID</label>
                         </div>
                         <!-- message -->
                         <div class="md-form mt-0 w-100 home-form-52">
-                            <textarea class="form-control md-textarea" rows="6"></textarea>
+                            <textarea class="form-control md-textarea" rows="6" name="message"></textarea>
                             <label>Message</label>
                         </div>
                         <div class="w-100 home-form-87">
