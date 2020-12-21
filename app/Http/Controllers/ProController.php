@@ -14,7 +14,7 @@ class ProController extends Controller
      */
     public function index()
     {
-        $pros = Pros::latest()->get();
+        $pros = Pros::all();
         return view('frontend.crypto_celeb', compact('pros'));
     }
 

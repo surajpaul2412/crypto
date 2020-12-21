@@ -43,6 +43,10 @@ Route::group(['as'=>'admin.','prefix'=>'admin','namespace'=>'Admin','middleware'
     Route::resource('engineeringCourseSoftware','EngineeringCourseSoftwareController');
     Route::resource('engineeringCourseHardware','EngineeringCourseHardwareController');
     Route::resource('contact','ContactController');
+    Route::resource('productionCourse','ProductionCourseController');
+    Route::resource('productionCourseQuick','ProductionCourseQuicksController');
+    Route::resource('productionCourseLogic','ProductionCourseLogicController');
+    Route::resource('productionCoursePro','ProductionCourseProController');
 });
 
 Route::group(['as'=>'manager.','prefix'=>'manager','namespace'=>'Manager','middleware'=>['auth','manager']], function(){

@@ -18,6 +18,7 @@ class CreateProsTable extends Migration
             $table->string('name');
             $table->string('brief');
             $table->longText('description');
+            $table->longText('workings')->nullable();
             $table->string('image');
             $table->timestamps();
         });

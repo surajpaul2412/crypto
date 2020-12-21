@@ -4,9 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Downloads;
+use App\ProductionCourseLogic;
 
-class DownloadController extends Controller
+class ProductionCourseLogicController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,8 @@ class DownloadController extends Controller
      */
     public function index()
     {
-        $downloads = Downloads::latest()->get();
-        return view('admin.download.index', compact('downloads'));
+        $productionCourseLogic = ProductionCourseLogic::all();
+        return view('admin.productionCourseLogic.index', compact('productionCourseLogic'));
     }
 
     /**
@@ -26,7 +26,7 @@ class DownloadController extends Controller
      */
     public function create()
     {
-        return view('admin.download.create');
+        return view('admin.productionCourseLogic.create');
     }
 
     /**
@@ -37,18 +37,14 @@ class DownloadController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, [
-            'name'=> 'required|min:3|max:255',
-            'content'=> 'required|min:3',
-            'file'=> 'required|min:3',
+        $request->validate([
+        'content'=> 'required|min:3',
         ]);
-
-        $download = new Downloads();
-        $download->name = $request->name;
-        $download->content = $request->content;
-        $download->file = $request->file;
-        $download->save();
-        return redirect('/admin/download')->with('success', 'Downloas has been added.');
+        $productionCourseLogic = new ProductionCourseLogic([
+        'content' => $request->get('content'),
+        ]);
+        $productionCourseLogic->save();
+        return redirect('/admin/productionCourseLogic')->with('success', 'Logic X Pro has been added');
     }
 
     /**
@@ -70,8 +66,8 @@ class DownloadController extends Controller
      */
     public function edit($id)
     {
-        $download = Downloads::findOrFail($id);
-        return view('admin.download.edit', compact('download'));
+        $productionCourseLogic = ProductionCourseLogic::findOrFail($id);
+        return view('admin.productionCourseLogic.edit', compact('productionCourseLogic'));
     }
 
     /**
@@ -83,14 +79,15 @@ class DownloadController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $form_data = array(
-            'name' => $request->name,
-            'content' => $request->content,
-            'file' => $request->file,
-        );
+        $request->validate([
+            'content'=> 'required|min:3',
+        ]);
 
-        Downloads::whereId($id)->update($form_data);
-        return redirect('/admin/download')->with('success', 'Download has been updated.');
+        $form_data = array(
+            'content' => $request->content
+        );
+        ProductionCourseLogic::whereId($id)->update($form_data);
+        return redirect('/admin/productionCourseLogic')->with('success', 'Course has been updated.');
     }
 
     /**
@@ -101,8 +98,8 @@ class DownloadController extends Controller
      */
     public function destroy($id)
     {
-        $download = Downloads::findOrFail($id);
-        $download->delete();
-        return redirect('/admin/download')->with('success', 'Download has been deleted successfully.');
+        $productionCourseLogic = ProductionCourseLogic::find($id);
+        $productionCourseLogic->delete();
+        return redirect('/admin/productionCourseLogic')->with('success', 'Course has been deleted successfully');
     }
 }

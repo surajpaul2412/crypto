@@ -18,7 +18,7 @@
         <!-- content -->
         @if($downloads->count())
         <div class="row px-3 pb-1" style="margin-bottom: -4px;">
-            @foreach($downloads as $row)
+            @foreach($downloads as $index => $row)
             <div class="col-md-6 my-3">
                 <div class="slider-header p-3 w-100 d-flex">
                     <div class="w-80">
@@ -27,7 +27,7 @@
                     </div>
                     <div class="w-20">
                         <div class="download-square">
-                            <a class="content" href="#" align="center">
+                            <a class="content" align="center" data-toggle="modal" data-target="#myModal{{$index+1}}">
                                 <img src="{{ asset('assets/frontend/img/download.svg') }}"  style="position: relative;top: 50%;transform: translateY(-50%);">    
                             </a>
                         </div>
@@ -42,6 +42,23 @@
 </div>
 @endsection
 
+<!-- modal -->
+@foreach($downloads as $index => $row)
+<div class="modal fade" id="myModal{{$index+1}}" role="dialog" style="z-index: 999999;">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-body">
+                <h6 class="font-regular font-14 text-dark text-justify" style="transform: initial;">
+                    {!!$row->file!!}
+                </h6>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+@endforeach
 
 @section('script')
 @endsection

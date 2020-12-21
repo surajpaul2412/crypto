@@ -48,7 +48,7 @@
               <textarea id="summernote" class="form-control" name="description"></textarea>
           </div>
           
-          <label class="text-dark" for="image">Upload Image:</label>
+          <label class="text-dark" for="image">Upload Image:(168x168px)</label>
           <div class="form-group input-group">
             <label class="text-dark" for="image">Upload Image:</label>
             <input type="file" class="form-control imgInp custom-file-input" name="image" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01"/>
@@ -59,6 +59,12 @@
               </div>
             </div>
           </div>
+
+          <div class="form-group">
+              <label class="text-dark" for="workings">Workings :</label>
+              <textarea id="summernote1" class="form-control" name="workings"></textarea>
+          </div>
+
           <button type="submit" class="btn btn-primary">Add Pro</button>
       </form>
   </div>
@@ -66,6 +72,20 @@
 
 <script>
   $('#summernote').summernote({
+    placeholder: 'Add Description',
+    tabsize: 2,
+    height: 150,
+    toolbar: [
+      ['style', ['style']],
+      ['font', ['bold', 'underline', 'clear']],
+      ['color', ['color']],
+      ['para', ['ul', 'ol', 'paragraph']],
+      ['table', ['table']],
+      ['insert', ['link', 'picture', 'video']],
+      ['view', ['fullscreen', 'codeview', 'help']]
+    ]
+  });
+  $('#summernote1').summernote({
     placeholder: 'Add Description',
     tabsize: 2,
     height: 150,

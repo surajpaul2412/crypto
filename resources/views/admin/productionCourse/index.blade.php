@@ -24,17 +24,17 @@
     background: transparent;
   }
 </style>
-@if($engineeringCourse->count())
+@if($productionCourse->count())
 <div class="table-responsive px-3 pb-5">
  <table class="table table-striped">
     <thead>
         <tr>
-          <th>Sound Engineering Diploma Course</th>
+          <th>Music Production Course</th>
         </tr>
     </thead>
     <tbody>
         <tr>
-          @foreach($engineeringCourse as $row)
+          @foreach($productionCourse as $row)
             <td>{!! $row->content !!}</td>
           @endforeach
         </tr>
@@ -43,8 +43,8 @@
 </div>
 
 <div align="right" style="position: fixed;bottom: 30px;right: 30px;">
-  <a href="{{ route('admin.engineeringCourse.edit',$row->id)}}">
-    <button class="btn px-5 pt-3" style="background: #1d1b27;color:#fff;">Edit Automatic Advisory Section 
+  <a href="{{ route('admin.productionCourse.edit',$row->id)}}">
+    <button class="btn px-5 pt-3" style="background: #1d1b27;color:#fff;">Edit Music Production Course 
       <img class="pl-3" src="{{ asset('assets/backend/images/right-arrow.png') }}">
     </button>
   </a>

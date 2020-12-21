@@ -15,7 +15,7 @@ class ProController extends Controller
      */
     public function index()
     {
-        $pros = Pros::latest()->get();
+        $pros = Pros::all();
         return view('admin.pros.index', compact('pros'));
     }
 
@@ -42,6 +42,7 @@ class ProController extends Controller
             'name'=> 'required|min:3|max:255',
             'brief'=> 'required|min:3',
             'description'=> 'required|min:3',
+            'workings'=> 'nullable',
         ]);
 
         $image_name = $request->image;
@@ -55,6 +56,7 @@ class ProController extends Controller
         $pro->name = $request->name;
         $pro->brief = $request->brief;
         $pro->description = $request->description;
+        $pro->workings = $request->workings;
         $pro->image = $image_name;
         $pro->save();
         return redirect('/admin/pros')->with('success', 'Pros has been added.');
@@ -100,6 +102,7 @@ class ProController extends Controller
                 'name'=> 'required|min:3|max:255',
                 'brief'=> 'required|min:3',
                 'description'=> 'required|min:3',
+                'workings'=> 'nullable',
             ]);
             $image_name = rand() . '.' . $image->getClientOriginalExtension();
             $image->move(public_path('images/pros'), $image_name);
@@ -108,6 +111,7 @@ class ProController extends Controller
                 'name'=> 'required|min:3|max:255',
                 'brief'=> 'required|min:3',
                 'description'=> 'required|min:3',
+                'workings'=> 'nullable',
             ]);
         }
 
@@ -115,6 +119,7 @@ class ProController extends Controller
             'name' => $request->name,
             'brief' => $request->brief,
             'description' => $request->description,
+            'workings' => $request->workings,
             'image' => $image_name
         );
 

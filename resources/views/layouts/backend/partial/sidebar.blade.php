@@ -137,6 +137,23 @@
                         </li>
                     </ul>
                 </li>
+                <li class="{{ Request::is('admin/productionCourse*') ? 'active' : '' }}">
+                    <a href="{{ route('admin.productionCourse.index') }}" class="menu-toggle">
+                        <i class="material-icons">star</i>
+                        <span>Music Production Course</span>
+                    </a>
+                    <ul class="ml-menu">
+                        <li>
+                            <a href="{{ route('admin.productionCourseQuick.index') }}">Quick Course ?</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('admin.productionCourseLogic.index') }}">Logic Pro X</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('admin.productionCoursePro.index') }}">Pro Ableton Live</a>
+                        </li>
+                    </ul>
+                </li>
                 <li class="{{ Request::is('admin/contact') ? 'active' : '' }}">
                     <a href="{{ route('admin.contact.index') }}">
                         <i class="material-icons">emoji_food_beverage</i>

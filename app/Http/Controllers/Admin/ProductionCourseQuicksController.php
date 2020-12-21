@@ -4,9 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Downloads;
+use App\ProductionCourseQuick;
 
-class DownloadController extends Controller
+class ProductionCourseQuicksController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,8 @@ class DownloadController extends Controller
      */
     public function index()
     {
-        $downloads = Downloads::latest()->get();
-        return view('admin.download.index', compact('downloads'));
+        $productionCourseQuick = ProductionCourseQuick::all();
+        return view('admin.productionCourseQuick.index', compact('productionCourseQuick'));
     }
 
     /**
@@ -26,7 +26,7 @@ class DownloadController extends Controller
      */
     public function create()
     {
-        return view('admin.download.create');
+        return view('admin.productionCourseQuick.create');
     }
 
     /**
@@ -37,18 +37,14 @@ class DownloadController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, [
-            'name'=> 'required|min:3|max:255',
-            'content'=> 'required|min:3',
-            'file'=> 'required|min:3',
+        $request->validate([
+        'content'=> 'required|min:3',
         ]);
-
-        $download = new Downloads();
-        $download->name = $request->name;
-        $download->content = $request->content;
-        $download->file = $request->file;
-        $download->save();
-        return redirect('/admin/download')->with('success', 'Downloas has been added.');
+        $productionCourseQuick = new ProductionCourseQuick([
+        'content' => $request->get('content'),
+        ]);
+        $productionCourseQuick->save();
+        return redirect('/admin/productionCourseQuick')->with('success', 'Music Production course has been added');
     }
 
     /**
@@ -70,8 +66,8 @@ class DownloadController extends Controller
      */
     public function edit($id)
     {
-        $download = Downloads::findOrFail($id);
-        return view('admin.download.edit', compact('download'));
+        $productionCourseQuick = ProductionCourseQuick::findOrFail($id);
+        return view('admin.productionCourseQuick.edit', compact('productionCourseQuick'));
     }
 
     /**
@@ -83,14 +79,15 @@ class DownloadController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $form_data = array(
-            'name' => $request->name,
-            'content' => $request->content,
-            'file' => $request->file,
-        );
+        $request->validate([
+            'content'=> 'required|min:3',
+        ]);
 
-        Downloads::whereId($id)->update($form_data);
-        return redirect('/admin/download')->with('success', 'Download has been updated.');
+        $form_data = array(
+            'content' => $request->content
+        );
+        ProductionCourseQuick::whereId($id)->update($form_data);
+        return redirect('/admin/productionCourseQuick')->with('success', 'Course has been updated.');
     }
 
     /**
@@ -101,8 +98,8 @@ class DownloadController extends Controller
      */
     public function destroy($id)
     {
-        $download = Downloads::findOrFail($id);
-        $download->delete();
-        return redirect('/admin/download')->with('success', 'Download has been deleted successfully.');
+        $productionCourseQuick = ProductionCourseQuick::find($id);
+        $productionCourseQuick->delete();
+        return redirect('/admin/productionCourseQuick')->with('success', 'Course has been deleted successfully');
     }
 }

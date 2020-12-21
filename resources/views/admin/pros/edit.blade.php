@@ -30,18 +30,18 @@
         @method('PATCH')
         @csrf
         <div class="form-group">
-		  <label class="text-dark" for="name">Name :</label>
-		  <input type="text" class="form-control" name="name" value="{{ $pro->name }}"/>
-		</div>
-		<div class="form-group">
-		  <label class="text-dark" for="brief">Brief :</label>
-		  <input type="text" class="form-control" name="brief" value="{{ $pro->brief }}"/>
-		</div>
-		<div class="form-group">
+    		  <label class="text-dark" for="name">Name :</label>
+    		  <input type="text" class="form-control" name="name" value="{{ $pro->name }}"/>
+    		</div>
+    		<div class="form-group">
+    		  <label class="text-dark" for="brief">Brief :</label>
+    		  <input type="text" class="form-control" name="brief" value="{{ $pro->brief }}"/>
+    		</div>
+    		<div class="form-group">
           <label class="text-dark" for="description">Description :</label>
           <textarea id="summernote" class="form-control" name="description">{{ $pro->description }}</textarea>
       	</div>
-        <label class="text-dark" for="image">Upload Image:</label>
+        <label class="text-dark" for="image">Upload Image:(168x168px)</label>
         <div class="form-group input-group">
           <label class="text-dark" for="image">Upload Image:</label>
           <input type="file" class="form-control imgInp custom-file-input" name="image" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01"/>
@@ -54,6 +54,11 @@
           <input type="hidden" name="hidden_image" value="{{ $pro->image }}">
         </div>
 
+        <div class="form-group">
+          <label class="text-dark" for="workings">Workings :</label>
+          <textarea id="summernote1" class="form-control" name="workings">{{ $pro->workings }}</textarea>
+        </div>
+
         <button type="submit" class="btn btn-primary">Update Content</button>
       </form>
   </div>
@@ -62,6 +67,20 @@
 <script>
   $('#summernote').summernote({
     placeholder: 'Edit Description',
+    tabsize: 2,
+    height: 150,
+    toolbar: [
+      ['style', ['style']],
+      ['font', ['bold', 'underline', 'clear']],
+      ['color', ['color']],
+      ['para', ['ul', 'ol', 'paragraph']],
+      ['table', ['table']],
+      ['insert', ['link', 'picture', 'video']],
+      ['view', ['fullscreen', 'codeview', 'help']]
+    ]
+  });
+  $('#summernote1').summernote({
+    placeholder: 'Add Description',
     tabsize: 2,
     height: 150,
     toolbar: [

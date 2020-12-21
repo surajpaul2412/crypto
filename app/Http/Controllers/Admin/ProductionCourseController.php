@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Downloads;
+use App\ProductionCourse;
 
-class DownloadController extends Controller
+class ProductionCourseController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +15,8 @@ class DownloadController extends Controller
      */
     public function index()
     {
-        $downloads = Downloads::all();
-        return view('frontend.download', compact('downloads'));
+        $productionCourse = ProductionCourse::all();
+        return view('admin.productionCourse.index', compact('productionCourse'));
     }
 
     /**
@@ -58,7 +59,8 @@ class DownloadController extends Controller
      */
     public function edit($id)
     {
-        //
+        $productionCourse = ProductionCourse::findOrFail($id);
+        return view('admin.productionCourse.edit', compact('productionCourse'));
     }
 
     /**
@@ -70,7 +72,15 @@ class DownloadController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'content'=> 'required|min:3',
+        ]);
+
+        $form_data = array(
+            'content' => $request->content
+        );
+        ProductionCourse::whereId($id)->update($form_data);
+        return redirect('/admin/productionCourse')->with('success', 'Production Course has been updated.');
     }
 
     /**

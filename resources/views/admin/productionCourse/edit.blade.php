@@ -14,7 +14,7 @@
 </style>
 <div class="card uper">
   <div class="card-header">
-    <h3 class="heading">Edit download</h3>
+    <h3 class="heading">Edit Music Production Courses Content</h3>
   </div>
   <div class="card-body">
     @if ($errors->any())
@@ -26,20 +26,12 @@
         </ul>
       </div><br/>
     @endif
-      <form method="post" action="{{ route('admin.download.update', $download->id) }}" enctype="multipart/form-data">
+      <form method="post" action="{{ route('admin.productionCourse.update', $productionCourse->id) }}" enctype="multipart/form-data">
         @method('PATCH')
         @csrf
         <div class="form-group">
-    		  <label class="text-dark" for="name">Name :</label>
-    		  <input type="text" class="form-control" name="name" value="{{ $download->name }}"/>
-    		</div>
-    		<div class="form-group">
           <label class="text-dark" for="content">Content :</label>
-          <textarea id="summernote" class="form-control" name="content">{{ $download->content }}</textarea>
-      	</div>
-        <div class="form-group">
-          <label class="text-dark" for="file">Video Link :</label>
-          <textarea id="summernote1" class="form-control" name="file">{{ $download->file }}</textarea>
+          <textarea id="summernote" class="form-control" name="content" value="{{ $productionCourse->content }}">{{ $productionCourse->content }}</textarea>
         </div>
 
         <button type="submit" class="btn btn-primary">Update Content</button>
@@ -49,21 +41,7 @@
 
 <script>
   $('#summernote').summernote({
-    placeholder: 'Edit Content',
-    tabsize: 2,
-    height: 150,
-    toolbar: [
-      ['style', ['style']],
-      ['font', ['bold', 'underline', 'clear']],
-      ['color', ['color']],
-      ['para', ['ul', 'ol', 'paragraph']],
-      ['table', ['table']],
-      ['insert', ['link', 'picture', 'video']],
-      ['view', ['fullscreen', 'codeview', 'help']]
-    ]
-  });
-  $('#summernote1').summernote({
-    placeholder: 'Edit Content',
+    placeholder: 'Edit content',
     tabsize: 2,
     height: 150,
     toolbar: [

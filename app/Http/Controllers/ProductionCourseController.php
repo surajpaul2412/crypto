@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Downloads;
 
-class DownloadController extends Controller
+class ProductionCourseController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +13,7 @@ class DownloadController extends Controller
      */
     public function index()
     {
-        $downloads = Downloads::all();
-        return view('frontend.download', compact('downloads'));
+        //
     }
 
     /**
