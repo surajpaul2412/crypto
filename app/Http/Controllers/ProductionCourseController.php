@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\ProductionCourse;
+use App\ProductionCourseLogic;
+use App\ProductionCoursePro;
+use App\ProductionCourseQuick;
 
 class ProductionCourseController extends Controller
 {
@@ -13,7 +17,11 @@ class ProductionCourseController extends Controller
      */
     public function index()
     {
-        //
+        $productionCourse = ProductionCourse::all();
+        $quick = ProductionCourseQuick::all();
+        $logic = ProductionCourseLogic::all();
+        $pro = ProductionCoursePro::all();
+        return view('frontend.logic', compact('productionCourse','quick','logic','pro'));
     }
 
     /**

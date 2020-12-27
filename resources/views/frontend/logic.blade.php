@@ -41,11 +41,11 @@
         <div class="row px-3">
             <div class="col-md-6 my-2">
                 <div class="" align="left">
-                    <div class="font-regular pb-3 font-13 text-black">
-                        This is for beginners wanting to build a solid foundation. The course is about understanding the digital audio and using it for the purpose of producing any genre of music no matter its EDM/ Pop/ Blues/ Rock/ Jazz/ Classical or any other kind of music production.<br><br><span class="bold">Access to -</span> Audio Lab Professional Software and Hardware equipment to mature your music making skills.<br><br><span class="bold">Requirements -</span> Willingness to explore the exciting world of digital audio.
-                    </div>
-                    <h6 class="font-bold text-green font-14">Course Fee : ₹ 60,000 + GST </h6>
-                    <h5 class="font-regular text-black font-14">Thrice A Week <span class="px-2">|</span> 2 months duration</h5>
+                    @if($productionCourse->count())
+                    @foreach($productionCourse as $row)
+                        {!! $row->content !!}
+                    @endforeach
+                    @endif
                     <div class="mobile-center">
                         <a href="{{url('register')}}">
                             <div class="font-regular mb-2 mt-4 page-12-btn">
@@ -59,10 +59,11 @@
                 <div class="slider-header bg-theme p-4" align="left">
                     <h4 class="font-black text-black font-18">Quick Info</h4>
                     <ul class="font-regular text-black font-15 pl-0 quick-info">
-                        <li>Advance Logic Pro X & Ableton Live Course</li>
-                        <li>Revision session before examination</li>
-                        <li>Inquisitiveness in student required</li>
-                        <li>Regular Assignments, Support & Exam based Certification</li>
+                        @if($quick->count())
+                        @foreach($quick as $row)
+                            <li>{!!$row->content!!}</li>
+                        @endforeach
+                        @endif
                     </ul>
                 </div>
             </div>
@@ -79,11 +80,11 @@
         <div class="row">
             <div class="col-md-12 mx-2">
                 <ul class="font-regular text-grey2 font-13 ul-logic">
-                    <li>We will start with the detailed overview of music production process and develop a logical terrain of how one should approach his knowledge and skill building systematically from start to finish.</li>
-                    <li>Setting up your music production space by understanding the fundamentals of digital audio concepts such as “Sampling Rate”, “Bit Depth”, “Buffer Size”, Analog to Digital and Digital to analogue Conversion. Understanding how audio interface cater all these needs of music production process and working with digital audio.</li>
-                    <li>Introduction to Digital Audio Workstation and its role in music production process. Understanding its interfaces, setting it up for recording, handling basic tasks like using key commands for easier workflow, what are loops and different types, manipulating and arranging audio and midi apple loops, basics of music arrangement, audio processing, Mixing, balancing and finally exporting your music. Basically getting and idea and starting making music from the first day itself!</li>
-                    <li>Signal Chain : Understanding how audio signal travels in a studio and learning to optimise before capturing it. Learning to recognise and choose the best equipment for your workflow.</li>
-                    <li>Understanding what is mono and stereo signal and learning various microphone techniques to capture the sounds of musical instruments like drums, bass, guitar, violin, saxophone.</li>
+                    @if($logic->count())
+                    @foreach($logic as $row)
+                    <li>{!! $row->content !!}</li>
+                    @endforeach
+                    @endif
                 </ul>
             </div>
         </div>
@@ -99,9 +100,13 @@
         <div class="row">
             <div class="col-md-12 mx-2">
                 <ul class="font-regular text-grey2 font-13 ul-logic">
-                    <li><strong class="uppercase font-bold text-grey2 font-14 lh-2">INTRODUCTION</strong><br> The first class of this course is designed to give the student a customary idea of the DAW. We go over the bare basics of how to get Live up and running and also configure it to work with audio. Students are given in-depth knowledge of using Live’s Browser to accomplish certain functions like importing samples, loops etc. Then the focus shifts to the other panels of Live that will become absolutely imperative in the endeavour of music making. We take a look at a lot of aspects of Live’s Arrangement View where the students will do the most amount of work. Basic Navigation-based information and understanding of the various tools on display are also provided along with getting the students familiar with keyboard shortcuts for working for a much quicker workflow.</li>
-                    <li><strong class="uppercase font-bold text-grey2 font-14 lh-2">RECORDING AUDIO</strong><br> The second class of the course starts of with the working of imported and recorded audio in Ableton Live. Important concepts integral to the music making process that are on a more technical level is discussed and explained to the students. In terms of recorded audio, we stress on the understanding of analog to digital conversion and vice-versa of sound pressure waves emitted from an arbitrary source. We go over practical examples of recording both in mono and stereo formats and also the use of multitrack recording in Ableton. This class also deals with saving projects in Ableton and Ableton’s intricate project filing system along with a myriad of variables one needs to be aware of while exporting the recorded audio from Ableton 10.</li>
-                    <li><strong class="uppercase font-bold text-grey2 font-14 lh-2">SUMMARY OF THE WHOLE COURSE AND REVISION OF PREVIOUS CLASSES.</strong></li>
+                    @if($pro->count())
+                    @foreach($pro as $row)
+                        <li>
+                        <?php $str = "$row->content"; echo htmlspecialchars_decode($str);?>
+                        </li>
+                    @endforeach
+                    @endif
                 </ul>
             </div>
         </div>

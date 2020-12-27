@@ -28,6 +28,7 @@ Route::resource('/newsroom', 'NewsController');
 Route::resource('/engineering-course', 'EngineeringCourseController');
 Route::resource('/contact_us', 'ContactController');
 Route::resource('/gallery', 'GalleryController');
+Route::resource('/music-production-course', 'ProductionCourseController');
 
 Route::group(['as'=>'admin.','prefix'=>'admin','namespace'=>'Admin','middleware'=>['auth','admin']], function(){
     Route::get('dashboard','DashboardController@index')->name('dashboard');
@@ -92,8 +93,4 @@ Route::get('/academy_courses', function () {
 });
 Route::get('/faq', function () {
     return view('frontend.7');
-});
-// 4
-Route::get('/music-production-course', function () {
-    return view('frontend.logic');
 });
