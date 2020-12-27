@@ -160,6 +160,29 @@
                         <span>Contact</span>
                     </a>
                 </li>
+                <li class="{{ Request::is('admin/studioEquipmentHardware*') ? 'active' : '' }}">
+                    <a href="{{ route('admin.studioEquipmentHardware.index') }}" class="menu-toggle">
+                        <i class="material-icons">star</i>
+                        <span>Studio Equipment Hardware</span>
+                    </a>
+                    <ul class="ml-menu">
+                        <li>
+                            <a href="{{ route('admin.studioEquipmentSoftware.index') }}">Studio Equipment Software</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('admin.studioEquipmentHardwareImage.index') }}">Hardware Images</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('admin.studioEquipmentSoftwareImage.index') }}">Software Images</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="{{ Request::is('admin/gallery') ? 'active' : '' }}">
+                    <a href="{{ route('admin.gallery.index') }}">
+                        <i class="material-icons">emoji_food_beverage</i>
+                        <span>Gallery</span>
+                    </a>
+                </li>
                 <li>
                     <a href="{{ route('logout') }}"
                         onclick="event.preventDefault();

@@ -27,6 +27,7 @@ Route::resource('/download', 'DownloadController');
 Route::resource('/newsroom', 'NewsController');
 Route::resource('/engineering-course', 'EngineeringCourseController');
 Route::resource('/contact_us', 'ContactController');
+Route::resource('/gallery', 'GalleryController');
 
 Route::group(['as'=>'admin.','prefix'=>'admin','namespace'=>'Admin','middleware'=>['auth','admin']], function(){
     Route::get('dashboard','DashboardController@index')->name('dashboard');
@@ -47,6 +48,11 @@ Route::group(['as'=>'admin.','prefix'=>'admin','namespace'=>'Admin','middleware'
     Route::resource('productionCourseQuick','ProductionCourseQuicksController');
     Route::resource('productionCourseLogic','ProductionCourseLogicController');
     Route::resource('productionCoursePro','ProductionCourseProController');
+    Route::resource('gallery','GalleryController');
+    Route::resource('studioEquipmentHardwareImage','StudioEquipmentHardwareImageController');
+    Route::resource('studioEquipmentSoftwareImage','StudioEquipmentSoftwareImageController');
+    Route::resource('studioEquipmentHardware','StudioEquipmentHardwareController');
+    Route::resource('studioEquipmentSoftware','StudioEquipmentSoftwareController');
 });
 
 Route::group(['as'=>'manager.','prefix'=>'manager','namespace'=>'Manager','middleware'=>['auth','manager']], function(){
@@ -65,10 +71,6 @@ Route::group(['as'=>'student.','prefix'=>'student','namespace'=>'Student','middl
 // try
 Route::get('/student_work', function () {
     return view('frontend.15');
-});
-// 14
-Route::get('/gallery', function () {
-    return view('frontend.14');
 });
 // 13
 Route::get('/faculty', function () {
