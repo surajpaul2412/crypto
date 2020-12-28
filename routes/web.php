@@ -54,6 +54,8 @@ Route::group(['as'=>'admin.','prefix'=>'admin','namespace'=>'Admin','middleware'
     Route::resource('studioEquipmentSoftwareImage','StudioEquipmentSoftwareImageController');
     Route::resource('studioEquipmentHardware','StudioEquipmentHardwareController');
     Route::resource('studioEquipmentSoftware','StudioEquipmentSoftwareController');
+    Route::resource('academyCourse','AcademyCourseController');
+    Route::resource('academyCourseProduction','AcademyCourseProductionController');
 });
 
 Route::group(['as'=>'manager.','prefix'=>'manager','namespace'=>'Manager','middleware'=>['auth','manager']], function(){
@@ -88,9 +90,12 @@ Route::get('/register', function () {
 Route::get('/exam_schedule', function () {
     return view('frontend.exam');
 });
-Route::get('/academy_courses', function () {
-    return view('frontend.course');
-});
+
 Route::get('/faq', function () {
     return view('frontend.7');
+});
+
+
+Route::get('/academy_courses', function () {
+    return view('frontend.course');
 });

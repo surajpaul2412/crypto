@@ -154,6 +154,17 @@
                         </li>
                     </ul>
                 </li>
+                <li class="{{ Request::is('admin/academyCourse*') ? 'active' : '' }}">
+                    <a href="{{ route('admin.academyCourse.index') }}" class="menu-toggle">
+                        <i class="material-icons">star</i>
+                        <span>Academy Courses</span>
+                    </a>
+                    <ul class="ml-menu">
+                        <li>
+                            <a href="{{ route('admin.academyCourseProduction.index') }}">Academy Courses Production</a>
+                        </li>
+                    </ul>
+                </li>
                 <li class="{{ Request::is('admin/contact') ? 'active' : '' }}">
                     <a href="{{ route('admin.contact.index') }}">
                         <i class="material-icons">emoji_food_beverage</i>
