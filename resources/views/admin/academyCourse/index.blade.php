@@ -29,27 +29,47 @@
  <table class="table table-striped">
     <thead>
         <tr>
-          <th>Music Production Course</th>
+          <th>S. no</th>
+          <th>Heading</th>
+          <th>Content</th>
+          <th>Url</th>
+          <th>Edit</th>
+          <th>Delete</th>
         </tr>
     </thead>
     <tbody>
-        <tr>
-          @foreach($academyCourse as $row)
-            <td>{!! $row->content !!}</td>
-          @endforeach
-        </tr>
+      @foreach($academyCourse as $index => $row)
+      <tr>
+        <th>{{$index+1}}.</th>
+        <td class="bold">{{$row->heading}}</td>
+        <td>{{ \Illuminate\Support\Str::limit($row->content, 50, $end='...') }}</td>
+        <td>{{$row->url}}</td>
+        <td>
+          <a href="{{ route('admin.academyCourse.edit',$row->id)}}">
+            <i class="material-icons">edit</i>
+          </a>
+        </td>
+        <td>
+          <form action="{{ route('admin.academyCourse.destroy', $row->id)}}" method="post">
+            @csrf
+            @method('DELETE')
+            <button class="" type="submit"><i class="material-icons">delete</i></button>
+          </form>
+        </td>
+      </tr>
+      @endforeach
     </tbody>
   </table>
 </div>
+@else
+<h3 class="bold text-dark" align="center">Enter some academy Course</h3>
+@endif
 
 <div align="right" style="position: fixed;bottom: 30px;right: 30px;">
-  <a href="{{ route('admin.academyCourse.edit',$row->id)}}">
-    <button class="btn px-5 pt-3" style="background: #1d1b27;color:#fff;">Edit Music Production Course 
+  <a href="{{ route('admin.academyCourse.create')}}">
+    <button class="btn px-5 pt-3" style="background: #1d1b27;color:#fff;">Add new academy Course 
       <img class="pl-3" src="{{ asset('assets/backend/images/right-arrow.png') }}">
     </button>
   </a>
 </div>
-@else
-<h3 class="bold text-dark" align="center">No Content exist please add some.</h3>
-@endif
 @endsection

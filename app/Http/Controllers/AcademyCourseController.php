@@ -1,12 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\AcademyCourseProduction;
+use App\AcademyCourse;
 
-class AcademyCourseProductionController extends Controller
+class AcademyCourseController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +14,8 @@ class AcademyCourseProductionController extends Controller
      */
     public function index()
     {
-        $academyCourseProduction = AcademyCourseProduction::all();
-        return view('admin.academyCourseProduction.index', compact('academyCourseProduction'));
+        $academyCourse = AcademyCourse::all();
+        return view('frontend.course', compact('academyCourse'));
     }
 
     /**
@@ -59,8 +58,7 @@ class AcademyCourseProductionController extends Controller
      */
     public function edit($id)
     {
-        $AcademyCourseProduction = AcademyCourseProduction::findOrFail($id);
-        return view('admin.AcademyCourseProduction.edit', compact('AcademyCourseProduction'));
+        //
     }
 
     /**
@@ -72,15 +70,7 @@ class AcademyCourseProductionController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $request->validate([
-            'content'=> 'required|min:3',
-        ]);
-
-        $form_data = array(
-            'content' => $request->content
-        );
-        AcademyCourseProduction::whereId($id)->update($form_data);
-        return redirect('/admin/AcademyCourseProduction')->with('success', 'Course has been updated.');
+        //
     }
 
     /**

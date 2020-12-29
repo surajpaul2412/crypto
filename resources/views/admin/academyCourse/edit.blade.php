@@ -14,7 +14,7 @@
 </style>
 <div class="card uper">
   <div class="card-header">
-    <h3 class="heading">Edit Music Production Courses Content</h3>
+    <h3 class="heading">Edit Academy Course</h3>
   </div>
   <div class="card-body">
     @if ($errors->any())
@@ -30,8 +30,29 @@
         @method('PATCH')
         @csrf
         <div class="form-group">
+          <label class="text-dark" for="heading">Heading :</label>
+          <input type="text" class="form-control" name="heading" value="{{ $academyCourse->heading }}"/>
+        </div>
+        <div class="form-group">
           <label class="text-dark" for="content">Content :</label>
-          <textarea id="summernote" class="form-control" name="content" value="{{ $academyCourse->content }}">{{ $academyCourse->content }}</textarea>
+          <textarea id="summernote" class="form-control" name="content">{{ $academyCourse->content }}</textarea>
+        </div>
+        <label class="text-dark" for="image">Upload Icon:</label>
+        <div class="form-group input-group">
+          <label class="text-dark" for="image">Upload Image:</label>
+          <input type="file" class="form-control imgInp custom-file-input" name="image" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01"/>
+          <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+          <div class="row">
+            <div class="col-md-3" id="img_contain">
+              <img id="previewImage" align='middle' src="{{ URL('/') }}/images/academyCourse/{{ $academyCourse->image }}" width="100px"  class="pt-3"/>
+            </div>
+          </div>
+          <input type="hidden" name="hidden_image" value="{{ $academyCourse->image }}">
+        </div>
+
+        <div class="form-group">
+          <label class="text-dark" for="url">Url :</label>
+          <input type="text" class="form-control" name="url" value="{{ $academyCourse->url }}"/>
         </div>
 
         <button type="submit" class="btn btn-primary">Update Content</button>
@@ -41,7 +62,7 @@
 
 <script>
   $('#summernote').summernote({
-    placeholder: 'Edit content',
+    placeholder: 'Edit Description',
     tabsize: 2,
     height: 150,
     toolbar: [

@@ -29,6 +29,7 @@ Route::resource('/engineering-course', 'EngineeringCourseController');
 Route::resource('/contact_us', 'ContactController');
 Route::resource('/gallery', 'GalleryController');
 Route::resource('/music-production-course', 'ProductionCourseController');
+Route::resource('/academy_courses', 'AcademyCourseController');
 
 Route::group(['as'=>'admin.','prefix'=>'admin','namespace'=>'Admin','middleware'=>['auth','admin']], function(){
     Route::get('dashboard','DashboardController@index')->name('dashboard');
@@ -55,7 +56,6 @@ Route::group(['as'=>'admin.','prefix'=>'admin','namespace'=>'Admin','middleware'
     Route::resource('studioEquipmentHardware','StudioEquipmentHardwareController');
     Route::resource('studioEquipmentSoftware','StudioEquipmentSoftwareController');
     Route::resource('academyCourse','AcademyCourseController');
-    Route::resource('academyCourseProduction','AcademyCourseProductionController');
 });
 
 Route::group(['as'=>'manager.','prefix'=>'manager','namespace'=>'Manager','middleware'=>['auth','manager']], function(){
@@ -93,9 +93,4 @@ Route::get('/exam_schedule', function () {
 
 Route::get('/faq', function () {
     return view('frontend.7');
-});
-
-
-Route::get('/academy_courses', function () {
-    return view('frontend.course');
 });

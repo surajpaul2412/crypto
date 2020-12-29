@@ -15,7 +15,10 @@ class CreateAcademyCoursesTable extends Migration
     {
         Schema::create('academy_courses', function (Blueprint $table) {
             $table->id();
-            $table->string('content');
+            $table->string('image');
+            $table->string('heading');
+            $table->longText('content');
+            $table->string('url');
             $table->timestamps();
         });
     }

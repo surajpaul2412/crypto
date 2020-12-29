@@ -26,7 +26,7 @@ class AcademyCourseController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.academyCourse.create');
     }
 
     /**
@@ -37,7 +37,27 @@ class AcademyCourseController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'image'=> 'required',
+            'heading'=> 'required|min:3|max:255',
+            'content'=> 'required|min:3',
+            'url'=> 'nullable',
+        ]);
+
+        $image_name = $request->image;
+        $image = $request->file('image');
+        if($image != ''){
+            $image_name = rand() . '.' . $image->getClientOriginalExtension();
+            $image->move(public_path('images/academyCourse'), $image_name);
+        }
+
+        $academyCourse = new AcademyCourse();
+        $academyCourse->heading = $request->heading;
+        $academyCourse->content = $request->content;
+        $academyCourse->image = $image_name;
+        $academyCourse->url = $request->url;
+        $academyCourse->save();
+        return redirect('/admin/academyCourse')->with('success', 'Course has been added.');
     }
 
     /**
@@ -72,13 +92,32 @@ class AcademyCourseController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $request->validate([
-            'content'=> 'required|min:3',
-        ]);
+        $image_name = $request->hidden_image;
+        $image = $request->file('image');
+        if($image != ''){
+            $request->validate([
+                'image'=> 'required',
+                'heading'=> 'required|min:3|max:255',
+                'content'=> 'required|min:3',
+                'url'=> 'nullable',
+            ]);
+            $image_name = rand() . '.' . $image->getClientOriginalExtension();
+            $image->move(public_path('images/academyCourse'), $image_name);
+        } else{
+            $request->validate([
+                'heading'=> 'required|min:3|max:255',
+                'content'=> 'required|min:3',
+                'url'=> 'nullable',
+            ]);
+        }
 
         $form_data = array(
-            'content' => $request->content
+            'heading' => $request->heading,
+            'content' => $request->content,
+            'url' => $request->url,
+            'image' => $image_name
         );
+
         AcademyCourse::whereId($id)->update($form_data);
         return redirect('/admin/academyCourse')->with('success', 'Course has been updated.');
     }
@@ -91,6 +130,8 @@ class AcademyCourseController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $academyCourse = AcademyCourse::findOrFail($id);
+        $academyCourse->delete();
+        return redirect('/admin/academyCourse')->with('success', 'Course has been deleted successfully.');
     }
 }
