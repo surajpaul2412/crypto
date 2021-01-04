@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Vacancy;
 
 class VacancyController extends Controller
 {
@@ -13,7 +14,8 @@ class VacancyController extends Controller
      */
     public function index()
     {
-        //
+        $jobs = Vacancy::latest()->get();
+        return view('frontend.jobs', compact('jobs'));
     }
 
     /**

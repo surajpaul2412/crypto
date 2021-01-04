@@ -45,7 +45,7 @@
 
 <script>
   $('#summernote').summernote({
-    placeholder: 'Edit content',
+    placeholder: 'Add content',
     tabsize: 2,
     height: 150,
     toolbar: [

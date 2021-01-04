@@ -37,6 +37,31 @@
         text-align: center;
         padding: 5px 0px;
     }
+    .bg-theme2{
+      background-color: #9ccd63;
+    }
+    .marquee {
+      height: 25px;
+      width: 100vw;
+      overflow: hidden;
+      position: relative;
+    }
+    .marquee div {
+      display: block;
+      width: 5000%;
+      height: 30px;
+      position: absolute;
+      overflow: hidden;
+      animation: marquee 5s linear infinite;
+    }
+    .marquee span {
+      float: left;
+      width: 50%;
+    }
+    @keyframes marquee {
+      0% { left: 0; }
+      100% { left: -100%; }
+    }
   </style>
   @yield('css')
 </head>
@@ -68,6 +93,16 @@
               <div class="col-md-6 col-6 mt-3 py-1" align="center">
                 <div class="try">
                 <a href="tel:9910092983" class="text-dark bold">+91-9910092983</a>
+                </div>
+              </div>
+              <div class="marquee bg-theme2 text-white mt-2">
+                <div>
+                  <span class="font-regular">
+                    New Batch Commencing April , 2020. | Remaining Seats: 8 | 
+                    New Batch Commencing April , 2020. | Remaining Seats: 8 | 
+                    New Batch Commencing April , 2020. | Remaining Seats: 8 | 
+                    New Batch Commencing April , 2020. | Remaining Seats: 8 | 
+                  </span>
                 </div>
               </div>
           </div>

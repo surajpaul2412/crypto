@@ -81,7 +81,11 @@
                     <ul class="font-regular text-grey2 font-14 pl-0 pr-3 pt-2 quick-info">
                         @if($engineeringCourseSoftware->count())
                         @foreach($engineeringCourseSoftware as $row)
-                            <li>{!! $row->content !!}</li>
+                            <li>
+                                <?php
+                                    echo htmlspecialchars_decode($row->content);
+                                ?>
+                            </li>
                         @endforeach
                         @endif
                     </ul>
@@ -95,7 +99,11 @@
                     <ul class="font-regular text-grey2 font-14 pl-0 pr-3 pt-2 quick-info">
                         @if($engineeringCourseHardware->count())
                         @foreach($engineeringCourseHardware as $row)
-                            <li>{!! $row->content !!}</li>
+                            <li>
+                                <?php
+                                    echo htmlspecialchars_decode($row->content);
+                                ?>
+                            </li>
                         @endforeach
                         @endif
                     </ul>

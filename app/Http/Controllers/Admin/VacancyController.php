@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Vacancy;
 
 class VacancyController extends Controller
 {
@@ -14,7 +15,8 @@ class VacancyController extends Controller
      */
     public function index()
     {
-        //
+        $vacancy = Vacancy::latest()->get();
+        return view('admin.vacancy.index', compact('vacancy'));
     }
 
     /**
@@ -24,7 +26,7 @@ class VacancyController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.vacancy.create');
     }
 
     /**
@@ -35,7 +37,16 @@ class VacancyController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'title'=> 'required|min:3|max:255',
+            'description'=> 'required|string|min:3'
+        ]);
+
+        $vacancy = new Vacancy();
+        $vacancy->title = $request->title;
+        $vacancy->description = $request->description;
+        $vacancy->save();
+        return redirect('/admin/vacancy')->with('success', 'New vacancy has been added.');
     }
 
     /**
@@ -57,7 +68,8 @@ class VacancyController extends Controller
      */
     public function edit($id)
     {
-        //
+        $vacancy = Vacancy::findOrFail($id);
+        return view('admin.vacancy.edit', compact('vacancy'));
     }
 
     /**
@@ -69,7 +81,17 @@ class VacancyController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'title'=> 'required|min:3|max:255',
+            'description'=> 'required|string|min:3'
+        ]);
+
+        $form_data = array(
+            'title' => $request->title,
+            'description' => $request->description
+        );
+        Vacancy::whereId($id)->update($form_data);
+        return redirect('/admin/vacancy')->with('success', 'Vacancy has been updated.');
     }
 
     /**
@@ -80,6 +102,8 @@ class VacancyController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $vacancy = Vacancy::findOrFail($id);
+        $vacancy->delete();
+        return redirect('/admin/vacancy')->with('success', 'Vacancy has been deleted successfully.');
     }
 }

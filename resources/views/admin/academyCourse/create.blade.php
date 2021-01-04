@@ -31,7 +31,7 @@
         </ul>
       </div><br/>
     @endif
-      <form method="post" action="{{ route('admin.academyCourse.store') }}">
+      <form method="post" action="{{ route('admin.academyCourse.store') }}" enctype="multipart/form-data">
           @csrf
           <div class="form-group">
               <label class="text-dark" for="heading">Heading :</label>

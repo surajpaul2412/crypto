@@ -106,7 +106,7 @@
         }
         .marquee div {
           display: block;
-          width: 200%;
+          width: 5000%;
           height: 30px;
           position: absolute;
           overflow: hidden;
@@ -271,8 +271,12 @@
               </div>
               <div class="marquee bg-theme1 text-white mt-2">
                 <div>
-                  <span class="font-regular">New Batch Commencing April , 2020.</span>
-                  <span class="font-regular">Remaining Seats: 8</span>
+                  <span class="font-regular">
+                    New Batch Commencing April , 2020. | Remaining Seats: 8 | 
+                    New Batch Commencing April , 2020. | Remaining Seats: 8 | 
+                    New Batch Commencing April , 2020. | Remaining Seats: 8 | 
+                    New Batch Commencing April , 2020. | Remaining Seats: 8 | 
+                  </span>
                 </div>
               </div>
           </div>

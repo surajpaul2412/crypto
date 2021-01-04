@@ -53,6 +53,18 @@
                         <span>Students</span>
                     </a>
                 </li>
+                <li class="{{ Request::is('admin/team') ? 'active' : '' }}">
+                    <a href="{{ route('admin.team.index') }}">
+                        <i class="material-icons">people_alt</i>
+                        <span>Artist Team</span>
+                    </a>
+                </li>
+                <li class="{{ Request::is('admin/teamProduction') ? 'active' : '' }}">
+                    <a href="{{ route('admin.teamProduction.index') }}">
+                        <i class="material-icons">people_alt</i>
+                        <span>Team Production</span>
+                    </a>
+                </li>
                 <li class="{{ Request::is('admin/menu*') ? 'active' : '' }}">
                     <a href="{{ route('admin.menu.index') }}" class="menu-toggle">
                         <i class="material-icons">dashboard</i>
@@ -160,12 +172,6 @@
                         <span>Academy Courses</span>
                     </a>
                 </li>
-                <li class="{{ Request::is('admin/contact') ? 'active' : '' }}">
-                    <a href="{{ route('admin.contact.index') }}">
-                        <i class="material-icons">emoji_food_beverage</i>
-                        <span>Contact</span>
-                    </a>
-                </li>
                 <li class="{{ Request::is('admin/studioEquipmentHardware*') ? 'active' : '' }}">
                     <a href="{{ route('admin.studioEquipmentHardware.index') }}" class="menu-toggle">
                         <i class="material-icons">star</i>
@@ -187,6 +193,38 @@
                     <a href="{{ route('admin.gallery.index') }}">
                         <i class="material-icons">emoji_food_beverage</i>
                         <span>Gallery</span>
+                    </a>
+                </li>
+                <li class="{{ Request::is('admin/faq*') ? 'active' : '' }}">
+                    <a href="{{ route('admin.faq.index') }}" class="menu-toggle">
+                        <i class="material-icons">support_agent</i>
+                        <span>FAQ</span>
+                    </a>
+                    <ul class="ml-menu">
+                        <li>
+                            <a href="{{ route('admin.faqCareer.index') }}">FAQ Career</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('admin.faqCourse.index') }}">FAQ Course</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('admin.faqGeneral.index') }}">FAQ General</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('admin.faqHostel.index') }}">FAQ Hostel</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="{{ Request::is('admin/vacancy') ? 'active' : '' }}">
+                    <a href="{{ route('admin.vacancy.index') }}">
+                        <i class="material-icons">how_to_reg</i>
+                        <span>Vacancy</span>
+                    </a>
+                </li>
+                <li class="{{ Request::is('admin/contact') ? 'active' : '' }}">
+                    <a href="{{ route('admin.contact.index') }}">
+                        <i class="material-icons">emoji_food_beverage</i>
+                        <span>Contact</span>
                     </a>
                 </li>
                 <li>

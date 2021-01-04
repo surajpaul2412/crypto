@@ -20,24 +20,28 @@ class UsersTableSeeder extends Seeder
     			'role_id' => '1',
 	        	'name' => 'Admin',
 	        	'email' => 'admin@crypto.in',
+	        	'phone' => '1234567890',
 	        	'password' => bcrypt('test1234'),
 	        ]);
 	        DB::table('users')->insert([
     			'role_id' => '2',
 	        	'name' => 'Manager',
 	        	'email' => 'manager@crypto.in',
+	        	'phone' => '1234567891',
 	        	'password' => bcrypt('test1234'),
 	        ]);
 	        DB::table('users')->insert([
     			'role_id' => '3',
 	        	'name' => 'Faculty',
 	        	'email' => 'faculty@crypto.in',
+	        	'phone' => '1234567892',
 	        	'password' => bcrypt('test1234'),
 	        ]);
 	        DB::table('users')->insert([
     			'role_id' => '4',
 	        	'name' => 'Student',
 	        	'email' => 'student@crypto.in',
+	        	'phone' => '1234567893',
 	        	'password' => bcrypt('test1234'),
 	        ]);
     	}

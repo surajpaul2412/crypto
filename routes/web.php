@@ -30,6 +30,9 @@ Route::resource('/contact_us', 'ContactController');
 Route::resource('/gallery', 'GalleryController');
 Route::resource('/music-production-course', 'ProductionCourseController');
 Route::resource('/academy_courses', 'AcademyCourseController');
+Route::resource('/jobs', 'VacancyController');
+Route::resource('/faq', 'FaqController');
+Route::resource('/faculty', 'TeamController');
 
 Route::group(['as'=>'admin.','prefix'=>'admin','namespace'=>'Admin','middleware'=>['auth','admin']], function(){
     Route::get('dashboard','DashboardController@index')->name('dashboard');
@@ -56,6 +59,14 @@ Route::group(['as'=>'admin.','prefix'=>'admin','namespace'=>'Admin','middleware'
     Route::resource('studioEquipmentHardware','StudioEquipmentHardwareController');
     Route::resource('studioEquipmentSoftware','StudioEquipmentSoftwareController');
     Route::resource('academyCourse','AcademyCourseController');
+    Route::resource('vacancy','VacancyController');
+    Route::resource('faq','FaqController');
+    Route::resource('faqCareer','FaqCareerController');
+    Route::resource('faqCourse','FaqCourseController');
+    Route::resource('faqGeneral','FaqGeneralController');
+    Route::resource('faqHostel','FaqHostelController');
+    Route::resource('team','TeamController');
+    Route::resource('teamProduction','TeamProductionController');
 });
 
 Route::group(['as'=>'manager.','prefix'=>'manager','namespace'=>'Manager','middleware'=>['auth','manager']], function(){
@@ -75,10 +86,6 @@ Route::group(['as'=>'student.','prefix'=>'student','namespace'=>'Student','middl
 Route::get('/student_work', function () {
     return view('frontend.15');
 });
-// 13
-Route::get('/faculty', function () {
-    return view('frontend.faculty');
-});
 // 12
 Route::get('/about_us', function () {
     return view('frontend.12');
@@ -89,8 +96,4 @@ Route::get('/register', function () {
 });
 Route::get('/exam_schedule', function () {
     return view('frontend.exam');
-});
-
-Route::get('/faq', function () {
-    return view('frontend.7');
 });
