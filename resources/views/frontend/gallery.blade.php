@@ -29,6 +29,14 @@
     .hw-flex a div{
         padding: 6px 0px;
     }
+    a{
+        outline: none;
+    }
+    @media only screen and (max-width: 750px){
+        .hw-flex a{
+            padding: 0px 0px !important;
+        }
+    }
 </style>
 @endsection
 

@@ -25,7 +25,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('/crypto_celeb', 'ProController');
 Route::resource('/download', 'DownloadController');
 Route::resource('/newsroom', 'NewsController');
-Route::resource('/engineering-course', 'EngineeringCourseController');
+Route::resource('/engineering-course', 'EngineeringCourseController');//left
 Route::resource('/contact_us', 'ContactController');
 Route::resource('/gallery', 'GalleryController');
 Route::resource('/music-production-course', 'ProductionCourseController');

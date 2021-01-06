@@ -102,6 +102,10 @@
                     New Batch Commencing April , 2020. | Remaining Seats: 8 | 
                     New Batch Commencing April , 2020. | Remaining Seats: 8 | 
                     New Batch Commencing April , 2020. | Remaining Seats: 8 | 
+                    New Batch Commencing April , 2020. | Remaining Seats: 8 | 
+                    New Batch Commencing April , 2020. | Remaining Seats: 8 | 
+                    New Batch Commencing April , 2020. | Remaining Seats: 8 | 
+                    New Batch Commencing April , 2020. | Remaining Seats: 8 | 
                   </span>
                 </div>
               </div>
@@ -120,8 +124,8 @@
               <div class="col-md-12 border-bottom">
                 <a class="text-black bold pl-2" href="{{url('about_us')}}">About Us</a>
                 <div class="menu pb-1" style="display: table;">
-                    <span><a href="{{url('')}}">Mission & Vision Statements</a></span>
-                    <span><a href="{{url('')}}">Success Stories</a></span>
+                    <span><a href="{{url('about_us')}}">Mission & Vision Statements</a></span>
+                    <span><a href="{{url('about_us')}}">Success Stories</a></span>
                     <span><a href="{{url('student_work')}}">Student Work</a></span>
                     <span><a href="{{url('gallery')}}">Studio Equipment & Gallery</a></span>
                 </div>
@@ -167,10 +171,10 @@
                 <a class="text-black bold pl-2" href="{{url('register')}}">Admission Procedure</a>
               </div>
               <div class="col-md-12 border-bottom" style="padding-top: 3px;padding-bottom: 2px;">
-                <a class="text-black bold pl-2" href="#">Jobs</a>
+                <a class="text-black bold pl-2" href="{{url('jobs')}}">Jobs</a>
               </div>
               <div class="col-md-12 border-bottom" style="padding-top: 3px;padding-bottom: 2px;">
-                <a class="text-black bold pl-2" href="#">Resources</a>
+                <a class="text-black bold pl-2">Resources</a>
                 <div class="menu pb-1" style="display: table;">
                     <span><a href="{{url('download')}}">Downloads</a></span>
                     <span><a href="{{url('newsroom')}}">News & Articles</a></span>
@@ -238,8 +242,8 @@
                   <div style="position: relative;top: 50%;transform: translateY(-50%);">
                       <a class="font-14 text-black pl-2 font-bold" href="{{url('about_us')}}">About Us</a>
                       <div class="menu" style="display: table;">
-                        <span><a href="{{url('')}}">Mission & Vision Statements</a></span>
-                        <span><a href="{{url('')}}">Success Stories</a></span>
+                        <span><a href="{{url('about_us')}}">Mission & Vision Statements</a></span>
+                        <span><a href="{{url('about_us')}}">Success Stories</a></span>
                         <span><a href="{{url('student_work')}}">Student Work</a></span>
                         <span><a href="{{url('gallery')}}">Studio Equipment & Gallery</a></span>
                       </div>

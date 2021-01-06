@@ -203,7 +203,7 @@
                                 <nav class="navbar navbar-expand-lg shadow-none px-0 py-0">
                                     <ul class="navbar-nav main-nav2 mb-1 height-4 w-100">
                                         <li class="nav-item nav2 border-right-line child-one" style="width:15%">
-                                            <a class="nav-link font-medium text-grey2 font-13 pt-2" href="{{url('engineering-course')}}">courses</a>
+                                            <a class="nav-link font-medium text-grey2 font-13 pt-2" href="{{url('academy_courses')}}">courses</a>
                                         </li>
                                         <li class="nav-item nav2 border-right-line" style="width:16%">
                                             <a class="nav-link font-medium text-grey2 font-13 pt-2" href="{{url('about_us')}}">about us</a>
@@ -218,7 +218,7 @@
                                             <a class="nav-link font-medium text-grey2 font-13 pt-2" href="{{url('contact_us')}}">Contact</a>
                                         </li>
                                         <li class="nav-item nav2 child-last" style="width:17%;">
-                                            <a class="nav-link font-medium text-grey2 font-13 pt-2" href="#">apply job</a>
+                                            <a class="nav-link font-medium text-grey2 font-13 pt-2" href="{{url('jobs')}}">apply job</a>
                                         </li>
                                     </ul>
                                 </nav>
@@ -276,6 +276,10 @@
                     New Batch Commencing April , 2020. | Remaining Seats: 8 | 
                     New Batch Commencing April , 2020. | Remaining Seats: 8 | 
                     New Batch Commencing April , 2020. | Remaining Seats: 8 | 
+                    New Batch Commencing April , 2020. | Remaining Seats: 8 | 
+                    New Batch Commencing April , 2020. | Remaining Seats: 8 | 
+                    New Batch Commencing April , 2020. | Remaining Seats: 8 | 
+                    New Batch Commencing April , 2020. | Remaining Seats: 8 | 
                   </span>
                 </div>
               </div>
@@ -294,8 +298,8 @@
               <div class="col-md-12 border-bottom">
                 <a class="text-black bold pl-2" href="{{url('about_us')}}">About Us</a>
                 <div class="menu pb-1" style="display: table;">
-                    <span><a href="{{url('')}}">Mission & Vision Statements</a></span>
-                    <span><a href="{{url('')}}">Success Stories</a></span>
+                    <span><a href="{{url('about_us')}}">Mission & Vision Statements</a></span>
+                    <span><a href="{{url('about_us')}}">Success Stories</a></span>
                     <span><a href="{{url('student_work')}}">Student Work</a></span>
                     <span><a href="{{url('gallery')}}">Studio Equipment & Gallery</a></span>
                 </div>
@@ -341,10 +345,10 @@
                 <a class="text-black bold pl-2" href="{{url('register')}}">Admission Procedure</a>
               </div>
               <div class="col-md-12 border-bottom" style="padding-top: 3px;padding-bottom: 2px;">
-                <a class="text-black bold pl-2" href="#">Jobs</a>
+                <a class="text-black bold pl-2" href="{{url('jobs')}}">Jobs</a>
               </div>
               <div class="col-md-12 border-bottom" style="padding-top: 3px;padding-bottom: 2px;">
-                <a class="text-black bold pl-2" href="#">Resources</a>
+                <a class="text-black bold pl-2">Resources</a>
                 <div class="menu pb-1" style="display: table;">
                     <span><a href="{{url('download')}}">Downloads</a></span>
                     <span><a href="{{url('newsroom')}}">News & Articles</a></span>
@@ -390,7 +394,7 @@
                         <div class="col-md-6 col-12 pt-3 p-relative">
                             <div class="font-medium font-18 text-black">Crypto Cipher is Known Worldwide for Their Work</div>
                             <p class="pt-2 p-absolute text-dark top-35-perc font-12 font-400">Before you zero down on one of our Crypto Cipher Courses, please check out what Crypto cipher has done to attract countless OSCAR/GRAMMY/BAFTA award winning guys.</p>
-                            <a href="" class="text-dark bold p-absolute top-78-perc">
+                            <a href="{{url('about_us')}}" class="text-dark bold p-absolute top-78-perc">
                                 <div class="font-regular mt-3 page-1-btn">
                                     View Performance
                                 </div>
@@ -399,7 +403,7 @@
                         <div class="col-md-6 col-12 pt-3 p-relative">
                             <div class="font-medium font-18 text-black">Crypto Cipher Never Forgets to Promote Indian Culture Worldwide</div>
                             <p class="pt-2 p-absolute text-dark top-35-perc font-12 font-400">Check out the artist Videos done by Crypto Cipher inside Ancient Monument Qutab Minar. All the audio recordings are done outdoor live- Promoting Indian Musical Art Worldwide.</p>
-                            <a href="" class="text-dark bold p-absolute top-78-perc">
+                            <a href="{{url('about_us')}}" class="text-dark bold p-absolute top-78-perc">
                                 <div class="font-regular mt-3 page-1-btn">
                                     Visit Online Store
                                 </div>
@@ -409,7 +413,7 @@
                 </div>
                 <div class="row mx-0 mt-3 height-8-1 media-mt-4 mobile-d-none">
                     <div class="col-md-3 col-6 border-white">
-                        <a href="{{url('music-production-course')}}">
+                        <a href="{{url('academy_courses')}}">
                         <div class="d-flex">
                             <div class="v-center-left w-40 pt-1">
                                 <img src="{{ asset('assets/frontend/img/rupee.svg') }}" width="45%">
@@ -433,7 +437,7 @@
                         </a>
                     </div>
                     <div class="col-md-3 col-6 border-white">
-                        <a href="{{url('about_us')}}">
+                        <a href="{{url('gallery')}}">
                         <div class="d-flex">
                             <div class="v-center-left w-40 pt-0">
                                 <img src="{{ asset('assets/frontend/img/Outline.svg') }}" width="27%">
@@ -461,7 +465,7 @@
                   <div class="row">
                     <div class="col-6 p-2">
                       <div class="try">
-                        <a href="{{url('music-production-course')}}" class="text-dark bold">
+                        <a href="{{url('academy_courses')}}" class="text-dark bold">
                             <span class="font-bold">Course<br>Modules</span>
                         </a>
                       </div>
@@ -475,7 +479,7 @@
                     </div>
                     <div class="col-6 p-2">
                       <div class="try">
-                        <a href="{{url('about_us')}}" class="text-dark bold">
+                        <a href="{{url('gallery')}}" class="text-dark bold">
                             <span class="font-bold">Virtual Tour<br>Our Studio</span>
                         </a>
                       </div>
@@ -495,61 +499,15 @@
                 <div class="slider-header p-0">
                     <div class="px-4 scroll-hide height-58 overflow-y-scroll" align="center">
                       <div class="ul mt-4">
+                        @foreach($pros as $pro)
                         <div class="li">
-                          <img class="d-block mx-auto shadow-round" src="{{ asset('assets/frontend/img/about/ar-rehman.svg') }}" width="55%">
+                          <img class="d-block mx-auto shadow-round" src="{{asset('images/pros/')}}/{{$pro->image}}" width="55%">
                           <p class="pt-3 font-11 text-dark font-regular">
-                              hello, BAFTA, GOLDEN GLOBES, SLUMDOG MILLIONAIRE, 76 wins and 68 Academy Awards Nomination
+                              {!! \Illuminate\Support\Str::limit($pro->brief, 90, $end='...') !!}
                           </p>
-                          <h6 class="font-bold text-dark font-14 op-8">A.R.Rahman</h6>
+                          <h6 class="font-bold text-dark font-14 op-8">{{$pro->name}}</h6>
                         </div>
-
-                        <div class="li">
-                          <img class="d-block mx-auto shadow-round" src="{{ asset('assets/frontend/img/about/ar-rehman.svg') }}" width="55%">
-                          <p class="pt-3 font-11 text-dark font-regular">
-                              OSCARS, BAFTA, GOLDEN GLOBES, SLUMDOG MILLIONAIRE, 76 wins and 68 Academy Awards Nomination
-                          </p>
-                          <h6 class="font-bold text-dark font-14 op-8">A.R.Rahman</h6>
-                        </div>
-
-                        <div class="li">
-                          <img class="d-block mx-auto shadow-round" src="{{ asset('assets/frontend/img/about/ar-rehman.svg') }}" width="55%">
-                          <p class="pt-3 font-11 text-dark font-regular">
-                              OSCARS, BAFTA, GOLDEN GLOBES, SLUMDOG MILLIONAIRE, 76 wins and 68 Academy Awards Nomination
-                          </p>
-                          <h6 class="font-bold text-dark font-14 op-8">A.R.Rahman</h6>
-                        </div>
-
-                        <div class="li">
-                          <img class="d-block mx-auto shadow-round" src="{{ asset('assets/frontend/img/about/ar-rehman.svg') }}" width="55%">
-                          <p class="pt-3 font-11 text-dark font-regular">
-                              OSCARS, BAFTA, GOLDEN GLOBES, SLUMDOG MILLIONAIRE, 76 wins and 68 Academy Awards Nomination
-                          </p>
-                          <h6 class="font-bold text-dark font-14 op-8">A.R.Rahman</h6>
-                        </div>
-
-                        <div class="li">
-                          <img class="d-block mx-auto shadow-round" src="{{ asset('assets/frontend/img/about/ar-rehman.svg') }}" width="55%">
-                          <p class="pt-3 font-11 text-dark font-regular">
-                              OSCARS, BAFTA, GOLDEN GLOBES, SLUMDOG MILLIONAIRE, 76 wins and 68 Academy Awards Nomination
-                          </p>
-                          <h6 class="font-bold text-dark font-14 op-8">A.R.Rahman</h6>
-                        </div>
-
-                        <div class="li">
-                          <img class="d-block mx-auto shadow-round" src="{{ asset('assets/frontend/img/about/ar-rehman.svg') }}" width="55%">
-                          <p class="pt-3 font-11 text-dark font-regular">
-                              OSCARS, BAFTA, GOLDEN GLOBES, SLUMDOG MILLIONAIRE, 76 wins and 68 Academy Awards Nomination
-                          </p>
-                          <h6 class="font-bold text-dark font-14 op-8">A.R.Rahman</h6>
-                        </div>
-
-                        <div class="li">
-                          <img class="d-block mx-auto shadow-round" src="{{ asset('assets/frontend/img/about/ar-rehman.svg') }}" width="55%">
-                          <p class="pt-3 font-11 text-dark font-regular">
-                              OSCARS, BAFTA, GOLDEN GLOBES, SLUMDOG MILLIONAIRE, 76 wins and 68 Academy Awards Nomination
-                          </p>
-                          <h6 class="font-bold text-dark font-14 op-8">A.R.Rahman</h6>
-                        </div>
+                        @endforeach
                       </div>
                     </div>
                     <div class="border-top px-auto scroll-hide d-block height-10 media-py-3" align="center">
@@ -561,36 +519,23 @@
             </div>
             <div class="wrapper desktop-d-none">
                 <div class="carousel">
+                  @foreach($pros as $pro)
                     <div>
                         <div class="card">
                             <div class="card-body">
                                 <div class="card-content" align="center">
-                                    <img class="d-block mx-auto shadow-round" src="{{ asset('assets/frontend/img/about/ar-rehman.svg') }}" width="55%">
+                                    <img class="d-block mx-auto shadow-round" src="{{asset('images/pros/')}}/{{$pro->image}}" width="55%">
                                     <div class="card-text">
                                         <p class="pt-3 font-11 text-dark font-regular">
-                                            OSCARS, BAFTA, GOLDEN GLOBES, SLUMDOG MILLIONAIRE, 76 wins and 68 Academy Awards Nomination
+                                            {!! \Illuminate\Support\Str::limit($pro->brief, 90, $end='...') !!}
                                         </p>
                                     </div>
-                                    <h6 class="font-bold text-dark font-14 op-8">A.R.Rahman</h6>
+                                    <h6 class="font-bold text-dark font-14 op-8">{{$pro->name}}</h6>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div>
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="card-content" align="center">
-                                    <img class="d-block mx-auto shadow-round" src="{{ asset('assets/frontend/img/about/ar-rehman.svg') }}" width="55%">
-                                    <div class="card-text">
-                                        <p class="pt-3 font-11 text-dark font-regular">
-                                            OSCARS, BAFTA, GOLDEN GLOBES, SLUMDOG MILLIONAIRE, 76 wins and 68 Academy Awards Nomination
-                                        </p>
-                                    </div>
-                                    <h6 class="font-bold text-dark font-14 op-8">A.R.Rahman</h6>
-                                </div>
-                            </div>
-                        </div>
-                    </div>  
+                    @endforeach 
                 </div>
             </div>
             <!-- admission form -->

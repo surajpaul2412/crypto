@@ -10,7 +10,7 @@
         outline: none;
         border: none;
     }
-    button[type="submit"]{
+    .button[type="submit"]{
         background: #02BC4D;
         color: #fff;
         font-family: 'Roboto-Regular';
@@ -20,11 +20,11 @@
         box-shadow: none;
         font-weight: bold;
     }
-    button[type="submit"]:hover{
+    .button[type="submit"]:hover{
         color: #fff;
         box-shadow: none;
     }
-    button[type="submit"]:disabled {
+    .button[type="submit"]:disabled {
         background: #A0A3A9;
     }
     label{
@@ -429,13 +429,13 @@
                                 <label class="bold">Any Health Problem</label>
                             </div>
                             <div class="row">
-                                <div class="col-md-6">
+                                <div class="col-md-4">
                                     <label class="bold">Parent's Signature</label><br>
                                     <div id="parent_sign" class="border">
                                         <parent_sign class="pointer"></parent_sign>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
+                                <div class="col-md-4">
                                     <label class="bold">Student's Signature</label><br>
                                     <div id="student_sign" class="border">
                                         <student_sign class="pointer"></student_sign>
@@ -526,7 +526,7 @@
                         </div>
 
                         <span class="font-bold font-14 text-black pr-3">Registration Fee : ₹ 11,800</span>
-                        <button id="myButton" type="submit" class="btn btn-mt-2" disabled>Pay Now</button>
+                        <button id="myButton" type="submit" class="btn btn-mt-2 button" disabled>Pay Now</button>
                     </div>
                 </div>
             </div>
@@ -587,7 +587,7 @@ Vue.component('parent_sign', {
     <input ref="input" @change="previewImage" type="file" id="file-field" accept="image/*" style="display: none" name="parent_sign"/>
   </span>`,
   data: () => { return {
-    showImage: 'https://getstamped.co.uk/wp-content/uploads/WebsiteAssets/Placeholder.jpg'
+    showImage: "{{asset('assets/frontend/img/upload.png')}}"
   }},
   methods: {
     openUpload () {
@@ -614,7 +614,7 @@ Vue.component('student_sign', {
     <input ref="input" @change="previewImage" type="file" id="file-field" accept="image/*" style="display: none" name="student_sign"/>
   </span>`,
   data: () => { return {
-    showImage: 'https://getstamped.co.uk/wp-content/uploads/WebsiteAssets/Placeholder.jpg'
+    showImage: "{{asset('assets/frontend/img/upload.png')}}"
   }},
   methods: {
     openUpload () {
@@ -629,7 +629,6 @@ Vue.component('student_sign', {
     }
   }
 });
-
 new Vue({
   el: '#student_sign'
 })
@@ -638,7 +637,7 @@ new Vue({
 <!-- download form -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery.print/1.3.3/jQuery.print.min.js"></script>
-<script src="https://allurewebsolutions.com/allure.js"></script>
+<!-- <script src="https://allurewebsolutions.com/allure.js"></script> -->
 <script>
 $('.print').on('click', function() {
     $.print(".register-form");

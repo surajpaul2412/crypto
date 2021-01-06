@@ -28,7 +28,7 @@
             <div class="col-md-12 my-3">
                 <div class="slider-header pt-4 pb-3 px-3">
                     <h4 class="font-bold text-black mb-3" align="center">Find your perfect role.</h4>
-                    <input type="text" class="form-control" placeholder="Search job" id="search">
+                    <input type="text" class="form-control" placeholder="Search job here ..." id="search">
 
                     @foreach($jobs as $index => $row)
                     <div class="pt-5 px-3 jobs">
