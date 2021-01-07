@@ -48,6 +48,8 @@ Route::group(['as'=>'admin.','prefix'=>'admin','namespace'=>'Admin','middleware'
     Route::resource('engineeringCourseSound','EngineeringCourseSoundController');
     Route::resource('engineeringCourseSoftware','EngineeringCourseSoftwareController');
     Route::resource('engineeringCourseHardware','EngineeringCourseHardwareController');
+    Route::resource('engineeringCourseModule','EngineeringCourseModuleController');
+    Route::resource('engineeringCourseOverview','EngineeringCourseOverviewController');
     Route::resource('contact','ContactController');
     Route::resource('productionCourse','ProductionCourseController');
     Route::resource('productionCourseQuick','ProductionCourseQuicksController');

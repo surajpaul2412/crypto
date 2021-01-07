@@ -147,6 +147,12 @@
                         <li>
                             <a href="{{ route('admin.engineeringCourseHardware.index') }}">Hardware Applications</a>
                         </li>
+                        <li>
+                            <a href="{{ route('admin.engineeringCourseOverview.index') }}">Engineering module Overview</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('admin.engineeringCourseModule.index') }}">Engineering Modules</a>
+                        </li>
                     </ul>
                 </li>
                 <li class="{{ Request::is('admin/productionCourse*') ? 'active' : '' }}">

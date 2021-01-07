@@ -4,9 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class engineeringCourseModule extends Model
+class EngineeringCourseOverview extends Model
 {
     protected $fillable = [
-        'icon','image','heading','content'
+        'content'
     ];
 }

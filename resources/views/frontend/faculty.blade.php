@@ -38,27 +38,17 @@
         </div>
         <!-- content -->
         <div class="row px-3">
+            @if($team->count())
+            @foreach($teamProduction as $row)
             <div class="col-md-4 mt-4 mb-3">
                 <div class="slider-header bg-theme" align="center">
-                    <img class="d-block mx-auto py-3 pt-4" src="{{ asset('assets/frontend/img/music.svg') }}" width="24%">
-                    <div class="about-title px-4 pt-2 bold font-16">Music Production Faculty </div>
-                    <div class="about-desc px-3 pt-3 pb-4">Am very intrigued by this ..wishing you the best …” Crypto Cipher products have been used many times on AR Rahman projects , not just this the man himself supported “Crypto Cipher mission to bring rare virtual instruments” and published a tweet in front of millions of his fan following.</div>
+                    <img class="d-block mx-auto py-3 pt-4" src="{{asset('images/team/')}}/{{$row->image}}" width="24%">
+                    <div class="about-title px-4 pt-2 bold font-16">{{$row->heading}}</div>
+                    <div class="about-desc px-3 pt-3 pb-4">{!!$row->content!!}</div>
                 </div>
             </div>
-            <div class="col-md-4 mt-4 mb-3">
-                <div class="slider-header bg-theme" align="center">
-                    <img class="d-block mx-auto py-3 pt-4" src="{{ asset('assets/frontend/img/music.svg') }}" width="24%">
-                    <div class="about-title px-4 pt-2 bold font-16">Music Production Faculty </div>
-                    <div class="about-desc px-3 pt-3 pb-4">Am very intrigued by this ..wishing you the best …” Crypto Cipher products have been used many times on AR Rahman projects , not just this the man himself supported “Crypto Cipher mission to bring rare virtual instruments” and published a tweet in front of millions of his fan following.</div>
-                </div>
-            </div>
-            <div class="col-md-4 mt-4 mb-3">
-                <div class="slider-header bg-theme" align="center">
-                    <img class="d-block mx-auto py-3 pt-4" src="{{ asset('assets/frontend/img/music.svg') }}" width="24%">
-                    <div class="about-title px-4 pt-2 bold font-16">Music Production Faculty </div>
-                    <div class="about-desc px-3 pt-3 pb-4">Am very intrigued by this ..wishing you the best …” Crypto Cipher products have been used many times on AR Rahman projects , not just this the man himself supported “Crypto Cipher mission to bring rare virtual instruments” and published a tweet in front of millions of his fan following.</div>
-                </div>
-            </div>
+            @endforeach
+            @endif
         </div>
     </section>
     <!-- team members section -->
@@ -69,47 +59,46 @@
         </div>
         <!-- content -->
         <div class="row px-3">
+            @if($team->count())
+            @foreach($team as $index => $row)
             <div class="col-md-4 mb-3" style="margin-top: 80px;">
                 <div class="slider-header bg-theme" align="center">
-                    <img src="{{ asset('assets/frontend/img/about/ar-rehman.png') }}" width="55%" class="mx-auto d-block p-2 bg-theme shadow-round" style="border-radius: 50%;margin-top: -26%">
-                    <h6 class="about-name bold pt-4">Aitoreya Mukherjee</h6>
-                    <div class="about-title pt-2 font-400">Audio Electronics & Studio Acoustics Faculty</div>
+                    <img src="{{asset('images/team/')}}/{{$row->image}}" width="55%" class="mx-auto d-block p-2 bg-theme shadow-round" style="border-radius: 50%;margin-top: -26%">
+                    <h6 class="about-name bold pt-4">{{$row->name}}</h6>
+                    <div class="about-title pb-2 font-400">{!!$row->designation!!}</div>
+                    <div class="about-title pt-2 font-400">{!!$row->content!!}</div>
                     <div class="my-4 px-3">
-                        <a class="" href="#">
+                        <a data-toggle="modal" data-target="#myModal{{$index+1}}">
                             <span class="font-regular faculty-btn">See More</span>
                         </a>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 mb-3" style="margin-top: 80px;">
-                <div class="slider-header bg-theme" align="center">
-                    <img src="{{ asset('assets/frontend/img/about/ar-rehman.png') }}" width="55%" class="mx-auto d-block p-2 bg-theme shadow-round" style="border-radius: 50%;margin-top: -26%">
-                    <h6 class="about-name bold pt-4">Aitoreya Mukherjee</h6>
-                    <div class="about-title pt-2 font-400">Audio Electronics & Studio Acoustics Faculty</div>
-                    <div class="my-4 px-3">
-                        <a class="" href="#">
-                            <span class="font-regular faculty-btn">See More</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-3" style="margin-top: 80px;">
-                <div class="slider-header bg-theme" align="center">
-                    <img src="{{ asset('assets/frontend/img/about/ar-rehman.png') }}" width="55%" class="mx-auto d-block p-2 bg-theme shadow-round" style="border-radius: 50%;margin-top: -26%">
-                    <h6 class="about-name bold pt-4">Aitoreya Mukherjee</h6>
-                    <div class="about-title pt-2 font-400">Audio Electronics & Studio Acoustics Faculty</div>
-                    <div class="my-4 px-3">
-                        <a class="" href="#">
-                            <span class="font-regular faculty-btn">See More</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
+            @endforeach
+            @endif
         </div>
     </section>
 </div>
-@endsection
 
+<!-- modal -->
+@foreach($team as $index => $row)
+<div class="modal fade" id="myModal{{$index+1}}" role="dialog" style="z-index: 999999;">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-body">
+                <h6 class="font-regular font-14 text-dark text-justify" style="transform: initial;">
+                    {!!$row->content!!}
+                </h6>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+@endforeach
+
+@endsection
 
 @section('script')
 @endsection

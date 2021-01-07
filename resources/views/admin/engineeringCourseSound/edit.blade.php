@@ -14,7 +14,7 @@
 </style>
 <div class="card uper">
   <div class="card-header">
-    <h3 class="heading">Edit Advisory Benefit</h3>
+    <h3 class="heading">Edit Point</h3>
   </div>
   <div class="card-body">
     @if ($errors->any())

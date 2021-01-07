@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateEngineeringCourseModulesTable extends Migration
+class CreateEngineeringCourseOverviewsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,8 @@ class CreateEngineeringCourseModulesTable extends Migration
      */
     public function up()
     {
-        Schema::create('engineering_course_modules', function (Blueprint $table) {
+        Schema::create('engineering_course_overviews', function (Blueprint $table) {
             $table->id();
-            $table->string('icon');
-            $table->string('image');
-            $table->string('heading');
             $table->LongText('content');
             $table->timestamps();
         });
@@ -30,6 +27,6 @@ class CreateEngineeringCourseModulesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('engineering_course_modules');
+        Schema::dropIfExists('engineering_course_overviews');
     }
 }

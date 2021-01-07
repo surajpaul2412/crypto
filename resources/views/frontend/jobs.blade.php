@@ -31,7 +31,7 @@
                     <input type="text" class="form-control" placeholder="Search job here ..." id="search">
 
                     @foreach($jobs as $index => $row)
-                    <div class="pt-5 px-3 jobs">
+                    <div class="pt-3 px-3 jobs slider-header pb-4 mt-3">
                         <h4 class="font-bold text-green" align="left">{{$index+1}}. {{$row->title}}</h4>
                         <h6 class="font-regular text-black" align="left"><b class="bold">Location :</b> New Delhi</h6>
                         <b class="bold">Job Description :</b>
