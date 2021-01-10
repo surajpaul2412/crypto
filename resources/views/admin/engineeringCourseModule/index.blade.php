@@ -35,7 +35,6 @@
           <th>Heading</th>
           <th>Content</th>
           <th>image</th>
-          <th>icon</th>
           <th>Edit</th>
           <th>Delete</th>
         </tr>
@@ -44,11 +43,10 @@
       @foreach($engineeringCourseModule as $key => $row)
         <tr>
             <td>{{ $key+1 }}.</td>
-            <td><img src="{{asset('images/module/')}}/{{$row->icon}}" width="80px"></td>
-            <td>{{$row->heading}}</td>
+            <td><img src="{{asset('images/module/')}}/{{$row->icon}}" width="50px"></td>
+            <td class="bold">{{$row->heading}}</td>
             <td>{!! \Illuminate\Support\Str::limit($row->content, 50, $end='...') !!}</td>
-            <td><img src="{{asset('images/module/')}}/{{$row->image}}" width="80px"></td>
-            <td class="bold">{!!$row->content!!}</td>
+            <td><img src="{{asset('images/module/')}}/{{$row->image}}" width="90px"></td>
             <td>
               <a href="{{ route('admin.engineeringCourseModule.edit',$row->id)}}">
                 Edit
