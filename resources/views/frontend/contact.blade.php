@@ -50,7 +50,7 @@
                                     Thanks! Send it to us
                                 </button>
                             </div>
-                            @if (isset($success))
+                            @if(isset($success))
                                 <div class="col-md-12 col-12">
                                     <div class="text-success bold font-14 pt-3">
                                         {{ $success }}

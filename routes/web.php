@@ -33,6 +33,7 @@ Route::resource('/academy_courses', 'AcademyCourseController');
 Route::resource('/jobs', 'VacancyController');
 Route::resource('/faq', 'FaqController');
 Route::resource('/faculty', 'TeamController');
+Route::resource('/register', 'RegisterController');
 
 Route::group(['as'=>'admin.','prefix'=>'admin','namespace'=>'Admin','middleware'=>['auth','admin']], function(){
     Route::get('dashboard','DashboardController@index')->name('dashboard');
@@ -50,6 +51,7 @@ Route::group(['as'=>'admin.','prefix'=>'admin','namespace'=>'Admin','middleware'
     Route::resource('engineeringCourseHardware','EngineeringCourseHardwareController');
     Route::resource('engineeringCourseModule','EngineeringCourseModuleController');
     Route::resource('engineeringCourseOverview','EngineeringCourseOverviewController');
+    Route::resource('engineeringCourseLogicAbleton','EngineeringCourseLogicAlbetonController');
     Route::resource('contact','ContactController');
     Route::resource('productionCourse','ProductionCourseController');
     Route::resource('productionCourseQuick','ProductionCourseQuicksController');
@@ -91,10 +93,6 @@ Route::get('/student_work', function () {
 // 12
 Route::get('/about_us', function () {
     return view('frontend.12');
-});
-// 11
-Route::get('/register', function () {
-    return view('frontend.11');
 });
 Route::get('/exam_schedule', function () {
     return view('frontend.exam');

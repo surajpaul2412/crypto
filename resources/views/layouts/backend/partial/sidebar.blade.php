@@ -148,6 +148,9 @@
                             <a href="{{ route('admin.engineeringCourseHardware.index') }}">Hardware Applications</a>
                         </li>
                         <li>
+                            <a href="{{ route('admin.engineeringCourseLogicAbleton.index') }}">Main Module Description</a>
+                        </li>
+                        <li>
                             <a href="{{ route('admin.engineeringCourseOverview.index') }}">Engineering module Overview</a>
                         </li>
                         <li>
