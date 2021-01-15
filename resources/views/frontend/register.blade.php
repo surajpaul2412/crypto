@@ -27,6 +27,17 @@
     .button[type="submit"]:disabled {
         background: #A0A3A9;
     }
+    .button1{
+        background: #02BC4D;
+        color: #fff;
+        font-family: 'Roboto-Regular';
+        font-size: 12px;
+        text-transform: capitalize;
+        padding: 9px 40px;
+        box-shadow: none;
+        font-weight: bold;
+        margin-top: -2px;
+    }
     label{
         font-size: 13px !important;
         font-family: 'Roboto-Regular';
@@ -105,6 +116,9 @@
     #myButton{
         margin-top: -3px;
     }
+    .invalid-feedback{
+        display: block;margin-top: -10px;
+    }
 </style>
 @endsection
 
@@ -138,9 +152,8 @@
                     <div class="font-medium text-black font-12 px-3 media-px">
                         Fill The Form ( Select Your Batch & Fill all your personal details )
                     </div>
-                    <form method="post" action="{{route('register.store')}}">
+                    <form method="POST" action="{{route('register.store')}}" enctype="multipart/form-data">
                         @csrf
-                        @method('POST')
                         <div class="slider-header bg-theme1 mx-3 mt-4 media-mx">
                             <div class="px-4 pt-4 pb-3 register-form">
                                 @csrf
@@ -164,6 +177,11 @@
                                                 <input type="radio" id="sound" name="course" value="Sound Engineering">
                                                 <label class="pl-2" for="sound">Sound Engineering</label>
                                             </span>
+                                            @error('course')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
                                         </div>
                                         <span class="font-regular font-12 text-grey2">Batch Commencement</span>
                                         <div class="mobile-d-grid">
@@ -179,13 +197,18 @@
                                                 <input type="radio" id="jun" name="batch" value="1st Jun 2020">
                                                 <label class="pl-2" for="jun">1st Jun 2020</label>
                                             </span>
+                                            @error('batch')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <!-- upload image -->
                                         <div class="avatar-upload">
                                             <div class="avatar-edit">
-                                                <input type='file' id="imageUpload" accept=".png, .jpg, .jpeg" />
+                                                <input type='file' id="imageUpload" name="profile_image"/>
                                                 <label for="imageUpload"><i class="fa fa-upload"></i></label>
                                             </div>
                                             <div class="avatar-preview">
@@ -200,79 +223,154 @@
                                 <div class="md-form mt-0 w-100">
                                     <input type="text" class="form-control" name="name" required>
                                     <label>Student Name</label>
+                                    @error('name')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
                                 </div>
                                 <!-- phone number -->
                                 <div class="md-form mt-0 w-100">
                                     <input type="number" class="form-control" name="phone" required>
                                     <label>Phone Number</label>
+                                    @error('phone')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
                                 </div>
                                 <!-- email -->
                                 <div class="md-form mt-0 w-100">
                                     <input type="email" class="form-control" name="email" required>
                                     <label>Email ID</label>
+                                    @error('email')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
                                 </div>
                                 <!-- Address -->
                                 <div class="md-form mt-0 w-100">
                                     <input type="text" class="form-control" name="address" required>
                                     <label>Address</label>
+                                    @error('address')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
                                 </div>
                                 <!-- Address -->
                                 <div class="md-form mt-0 w-100 form-row">
                                     <div class="col-6 pr-3">
-                                        <input type="text" class="form-control pr-3">
+                                        <input type="text" name="nationality" class="form-control pr-3">
                                         <label class="pr-3 pl-1">Nationality</label>
+                                        @error('nationality')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
                                     </div>
                                     <div class="col-6 pl-3">
-                                        <input type="text" class="form-control pl-3">
+                                        <input type="text" name="pincode" class="form-control pl-3">
                                         <label class="pl-3">Pincode</label>
+                                        @error('pincode')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
                                     </div>
                                 </div>
                                 <!-- DOB -->
                                 <div class="md-form mt-0 w-100">
-                                    <input type="text" class="form-control">
+                                    <input type="text" name="fathers_name" class="form-control">
                                     <label>Father's/Guardian Name</label>
+                                    @error('fathers_name')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
                                 </div>
                                 <!-- parents details -->
                                 <div class="md-form mt-0 w-100">
-                                    <input type="tel" class="form-control">
+                                    <input type="tel" name="fathers_phone" class="form-control">
                                     <label>Father's/Guardian Mobile Number</label>
+                                    @error('fathers_phone')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
                                 </div>
                                 <div class="md-form mt-0 w-100">
-                                    <input type="text" class="form-control">
+                                    <input type="text" name="guardian_name" class="form-control">
                                     <label>Mother's/Guardian Name</label>
+                                    @error('guardian_name')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
                                 </div>
                                 <div class="md-form mt-0 w-100">
-                                    <input type="tel" class="form-control">
+                                    <input type="tel" name="guardian_phone" class="form-control">
                                     <label>Mother's/Guardian Mobile Number</label>
+                                    @error('guardian_phone')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
                                 </div>
                                 <div class="md-form mt-0 w-100">
-                                    <input type="text" class="form-control">
+                                    <input type="text" name="guardian_occupation" class="form-control">
                                     <label>Father's Occupation</label>
+                                    @error('guardian_occupation')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
                                 </div>
                                 <!-- GST info. -->
                                 <h5 class="font-medium text-black font-14 pt-3">GST Information</h5>
                                 <div>
                                     <span>
-                                        <input type="radio" id="yes" name="applicable" value="0">
+                                        <input type="radio" id="yes" name="gst" value="0">
                                         <label class="pl-2" for="yes">Applicable</label>
                                     </span>
                                     <span class="pl-3">
-                                        <input type="radio" id="no" name="applicable" value="1">
+                                        <input type="radio" id="no" name="gst" value="1">
                                         <label class="pl-2" for="no">Not Applicable</label>
                                     </span>
+                                    @error('gst')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
                                 </div>
                                 <div class="md-form mt-0 w-100">
-                                    <input type="text" class="form-control">
+                                    <input type="text" class="form-control" name="trade_title">
                                     <label>Trade/Business Title</label>
+                                    @error('trade_title')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
                                 </div>
                                 <div class="md-form mt-0 w-100 form-row">
                                     <div class="col-12 col-md-6 pr-3">
-                                        <input type="text" class="form-control pr-3">
+                                        <input type="text" class="form-control pr-3" name="gst_number">
                                         <label class="pr-3 pl-1">GST Number</label>
+                                        @error('gst_number')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
                                     </div>
                                     <div class="col-12 col-md-6 pl-3 media-pl-0">
-                                        <input type="text" class="form-control pl-3 media-pl-1">
+                                        <input type="text" class="form-control pl-3 media-pl-1" name="trade_address">
                                         <label class="pl-3 media-pl-1">Trade/Business Address</label>
+                                        @error('trade_address')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
                                     </div>
                                 </div>
                                 <!-- Academic Details -->
@@ -285,20 +383,35 @@
                                     </div>
                                     <div class="col-md-4 media-pt-4">
                                         <div class="md-form mt-0 w-100 form-row">
-                                            <input type="text" class="form-control pl-3">
+                                            <input type="text" class="form-control pl-3" name="10_school">
                                             <label class="pl-3">Name of School / College</label>
+                                            @error('10_school')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
                                         </div>
                                     </div>
                                     <div class="col-md-2">
                                         <div class="md-form mt-0 w-100 form-row px-2">
-                                            <input type="text" class="form-control px-2">
+                                            <input type="text" class="form-control px-2" name="10_year">
                                             <label class="px-2">Year</label>
+                                            @error('10_year')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
                                         </div>
                                     </div>
                                     <div class="col-md-3">
                                         <div class="md-form mt-0 w-100 form-row">
-                                            <input type="text" class="form-control pl-3">
+                                            <input type="text" class="form-control pl-3" name="10_board">
                                             <label class="pl-3">Board / University</label>
+                                            @error('10_board')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
                                         </div>
                                     </div>
                                 </div>
@@ -310,20 +423,35 @@
                                     </div>
                                     <div class="col-md-4 media-pt-4">
                                         <div class="md-form mt-0 w-100 form-row">
-                                            <input type="text" class="form-control pl-3">
+                                            <input type="text" class="form-control pl-3" name="12_school">
                                             <label class="pl-3">Name of School / College</label>
+                                            @error('12_school')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
                                         </div>
                                     </div>
                                     <div class="col-md-2">
                                         <div class="md-form mt-0 w-100 form-row px-2">
-                                            <input type="text" class="form-control px-2">
+                                            <input type="text" class="form-control px-2" name="12_year">
                                             <label class="px-2">Year</label>
+                                            @error('12_year')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
                                         </div>
                                     </div>
                                     <div class="col-md-3">
                                         <div class="md-form mt-0 w-100 form-row">
-                                            <input type="text" class="form-control pl-3">
+                                            <input type="text" class="form-control pl-3" name="12_board">
                                             <label class="pl-3">Board / University</label>
+                                            @error('12_board')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
                                         </div>
                                     </div>
                                 </div>
@@ -335,20 +463,35 @@
                                     </div>
                                     <div class="col-md-4 media-pt-4">
                                         <div class="md-form mt-0 w-100 form-row">
-                                            <input type="text" class="form-control pl-3">
+                                            <input type="text" class="form-control pl-3" name="ug_school">
                                             <label class="pl-3">Name of School / College</label>
+                                            @error('ug_school')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
                                         </div>
                                     </div>
                                     <div class="col-md-2">
                                         <div class="md-form mt-0 w-100 form-row px-2">
-                                            <input type="text" class="form-control px-2">
+                                            <input type="text" class="form-control px-2" name="ug_year">
                                             <label class="px-2">Year</label>
+                                            @error('ug_year')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
                                         </div>
                                     </div>
                                     <div class="col-md-3">
                                         <div class="md-form mt-0 w-100 form-row">
-                                            <input type="text" class="form-control pl-3">
+                                            <input type="text" class="form-control pl-3" name="ug_board">
                                             <label class="pl-3">Board / University</label>
+                                            @error('ug_board')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
                                         </div>
                                     </div>
                                 </div>
@@ -360,20 +503,35 @@
                                     </div>
                                     <div class="col-md-4 media-pt-4">
                                         <div class="md-form mt-0 w-100 form-row">
-                                            <input type="text" class="form-control pl-3">
+                                            <input type="text" class="form-control pl-3" name="g_school">
                                             <label class="pl-3">Name of School / College</label>
+                                            @error('g_school')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
                                         </div>
                                     </div>
                                     <div class="col-md-2">
                                         <div class="md-form mt-0 w-100 form-row px-2">
-                                            <input type="text" class="form-control px-2">
+                                            <input type="text" class="form-control px-2" name="g_year">
                                             <label class="px-2">Year</label>
+                                            @error('g_year')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
                                         </div>
                                     </div>
                                     <div class="col-md-3">
                                         <div class="md-form mt-0 w-100 form-row">
-                                            <input type="text" class="form-control pl-3">
+                                            <input type="text" class="form-control pl-3" name="g_board">
                                             <label class="pl-3">Board / University</label>
+                                            @error('g_board')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
                                         </div>
                                     </div>
                                 </div>
@@ -385,20 +543,35 @@
                                     </div>
                                     <div class="col-md-4 media-pt-4">
                                         <div class="md-form mt-0 w-100 form-row">
-                                            <input type="text" class="form-control pl-3">
+                                            <input type="text" class="form-control pl-3" name="pg_school">
                                             <label class="pl-3">Name of School / College</label>
+                                            @error('pg_school')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
                                         </div>
                                     </div>
                                     <div class="col-md-2">
                                         <div class="md-form mt-0 w-100 form-row px-2">
-                                            <input type="text" class="form-control px-2">
+                                            <input type="text" class="form-control px-2" name="pg_year">
                                             <label class="px-2">Year</label>
+                                            @error('pg_year')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
                                         </div>
                                     </div>
                                     <div class="col-md-3">
                                         <div class="md-form mt-0 w-100 form-row">
-                                            <input type="text" class="form-control pl-3">
+                                            <input type="text" class="form-control pl-3" name="pg_board">
                                             <label class="pl-3">Board / University</label>
+                                            @error('pg_board')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
                                         </div>
                                     </div>
                                 </div>
@@ -407,43 +580,58 @@
                                 <h5 class="font-medium text-black font-14 pt-3">Education Stream</h5>
                                 <div class="mobile-d-grid">
                                     <span>
-                                        <input type="radio" id="fruit1" name="stream" value="Science">
-                                        <label class="pl-2" for="fruit1">Science</label>
+                                        <input type="radio" id="stream1" name="stream" value="Science">
+                                        <label class="pl-2" for="stream1">Science</label>
                                     </span>
                                     <span class="pl-3 media-pl-0">
-                                        <input type="radio" id="fruit4" name="stream" value="Arts">
-                                        <label class="pl-2" for="fruit4">Arts</label>
+                                        <input type="radio" id="stream2" name="stream" value="Arts">
+                                        <label class="pl-2" for="stream2">Arts</label>
                                     </span>
                                     <span class="pl-3 media-pl-0">
-                                        <input type="radio" id="fruit4" name="stream" value="Commerce">
-                                        <label class="pl-2" for="fruit4">Commerce</label>
+                                        <input type="radio" id="stream3" name="stream" value="Commerce">
+                                        <label class="pl-2" for="stream3">Commerce</label>
                                     </span>
                                     <span class="pl-3 media-pl-0">
-                                        <input type="radio" id="fruit4" name="stream" value="Other">
-                                        <label class="pl-2" for="fruit4">Other</label>
+                                        <input type="radio" id="stream4" name="stream" value="Other">
+                                        <label class="pl-2" for="stream4">Other</label>
                                     </span>
+                                    @error('stream')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
                                 </div>
                                 <div class="md-form mt-0 w-100">
-                                    <input type="text" class="form-control">
+                                    <input type="text" class="form-control" name="music_bg_info">
                                     <label class="bold">Music/Audio Background Information:</label>
+                                    @error('music_bg_info')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
                                 </div>
                                 <div class="md-form mt-0 w-100">
-                                    <input type="text" class="form-control media-pt-20px">
+                                    <input type="text" class="form-control media-pt-20px" name="plans">
                                     <label class="bold">What are your future plans related to Audio Industry?</label>
+                                    @error('plans')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
                                 </div>
                                 <div class="md-form mt-0 w-100">
-                                    <input type="text" class="form-control">
+                                    <input type="text" class="form-control" name="health_problem">
                                     <label class="bold">Any Health Problem</label>
+                                    @error('health_problem')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
                                 </div>
                                 <div class="d-flex">
-                                    <a type="button" class="print">
-                                        <div class="font-bold mt-3 page-12-btn uppercase">
-                                            download form
-                                        </div>
-                                    </a>
-                                    <button type="reset" class="pl-4 font-bold font-13 text-grey2 mt-2 btn-reset">
+                                    <button type="reset" class="font-bold font-13 text-grey2 mt-2 btn-reset">
                                         <div class="font-bold pt-1 mt-1">
-                                            <img class="pr-2 pb-1" src="{{ asset('assets/frontend/img/reset.svg') }}"> Reset
+                                            <img class="pr-2 pb-1" src="{{ asset('assets/frontend/img/reset.svg') }}"> Reset Form
                                         </div>
                                     </button>
                                 </div>
@@ -533,6 +721,7 @@
                             </div>
                             <span class="font-bold font-14 text-black pr-3">Registration Fee : ₹ 11,800</span>
                             <button id="myButton" type="submit" class="btn btn-mt-2 button" disabled>Register</button>
+                            <button type="submit" class="print btn button1">download form</button>                            
                         </div>
                     </form>
                 </div>
@@ -591,7 +780,7 @@ Vue.component('parent_sign', {
   template: `
   <span @click="openUpload">
     <img ref="preview" :src="showImage" style="cursor:pointer;width:100%;">
-    <input ref="input" @change="previewImage" type="file" id="file-field" accept="image/*" style="display: none" name="parent_sign"/>
+    <input ref="input" @change="previewImage" type="file" id="file-field" name="signature1" style="display: none"/>
   </span>`,
   data: () => { return {
     showImage: "{{asset('assets/frontend/img/upload.png')}}"
@@ -618,7 +807,7 @@ Vue.component('student_sign', {
   template: `
   <span @click="openUpload">
     <img ref="preview" :src="showImage" style="cursor:pointer;width:100%;">
-    <input ref="input" @change="previewImage" type="file" id="file-field" accept="image/*" style="display: none" name="student_sign"/>
+    <input ref="input" @change="previewImage" type="file" id="file-field" name="signature2" style="display: none"/>
   </span>`,
   data: () => { return {
     showImage: "{{asset('assets/frontend/img/upload.png')}}"

@@ -62,6 +62,132 @@
       0% { left: 0; }
       100% { left: -100%; }
     }
+    /*media query == menu icons*/
+    @media screen and (max-width: 1445px) {
+      .media-contact{
+        flex: 0 0 49% !important;
+        max-width: 49% !important;
+      }
+      .media-contact-icon{
+        flex: 0 0 51% !important;
+        max-width: 51% !important;
+      }
+      .inner-fb{
+        padding: 3.1px 4px 3px 7px !important;
+      }
+      .inner-yt{
+        padding: 2.6px 0px 4px 5px !important;
+      }
+      .inner-yt > img{
+        width: 20px !important;
+      }
+      .inner-insta{
+        padding: 2px 4px 4px 4px !important;
+      }
+      .inner-insta > img{
+        width: 19px !important;
+      }
+    }
+    @media screen and (max-width: 1415px) {
+      .media-contact{
+        flex: 0 0 48% !important;
+        max-width: 48% !important;
+      }
+      .media-contact-icon{
+        flex: 0 0 52% !important;
+        max-width: 52% !important;
+      }
+      .inner-fb{
+        padding: 3.1px 4px 3px 7px !important;
+      }
+      .inner-yt{
+        padding: 2.6px 0px 4px 5px !important;
+      }
+      .inner-yt > img{
+        width: 20px !important;
+      }
+      .inner-insta{
+        padding: 2px 4px 4px 4px !important;
+      }
+      .inner-insta > img{
+        width: 19px !important;
+      }
+    }
+    @media screen and (max-width: 1388px) {
+      .media-contact{
+        flex: 0 0 46% !important;
+        max-width: 46% !important;
+      }
+      .media-contact-icon{
+        flex: 0 0 54% !important;
+        max-width: 54% !important;
+      }
+      .inner-fb{
+        padding: 3.1px 4px 3px 7px !important;
+      }
+      .inner-yt{
+        padding: 2.6px 0px 4px 5px !important;
+      }
+      .inner-yt > img{
+        width: 20px !important;
+      }
+      .inner-insta{
+        padding: 2px 4px 4px 4px !important;
+      }
+      .inner-insta > img{
+        width: 19px !important;
+      }
+    }
+    @media screen and (max-width: 1335px) {
+      .media-contact{
+        flex: 0 0 44% !important;
+        max-width: 44% !important;
+      }
+      .media-contact-icon{
+        flex: 0 0 56% !important;
+        max-width: 56% !important;
+      }
+      .inner-fb{
+        padding: 3.1px 4px 3px 7px !important;
+      }
+      .inner-yt{
+        padding: 2.6px 0px 4px 5px !important;
+      }
+      .inner-yt > img{
+        width: 20px !important;
+      }
+      .inner-insta{
+        padding: 2px 4px 4px 4px !important;
+      }
+      .inner-insta > img{
+        width: 19px !important;
+      }
+    }
+    @media screen and (max-width: 1285px) {
+      .media-contact{
+        flex: 0 0 40% !important;
+        max-width: 40% !important;
+      }
+      .media-contact-icon{
+        flex: 0 0 60% !important;
+        max-width: 60% !important;
+      }
+      .inner-fb{
+        padding: 3.1px 4px 3px 7px !important;
+      }
+      .inner-yt{
+        padding: 2.6px 0px 4px 5px !important;
+      }
+      .inner-yt > img{
+        width: 20px !important;
+      }
+      .inner-insta{
+        padding: 2px 4px 4px 4px !important;
+      }
+      .inner-insta > img{
+        width: 19px !important;
+      }
+    }
   </style>
   @yield('css')
 </head>
@@ -312,12 +438,12 @@
               </div>
               <div class="col-md-12 border-top height-8 pl-13p">
                   <div class="row">
-                      <div class="col-md-6" style="height: 7vh;">
+                      <div class="col-md-6 media-contact" style="height: 7vh;">
                           <div class="bold font-14 text-black pl-2" style="position: relative;top: 50%;transform: translateY(-50%);">
                             <a href="{{url('contact_us')}}" class="text-black">Contact Us</a>
                           </div>
                       </div>
-                      <div class="col-md-6" align="right">
+                      <div class="col-md-6 media-contact-icon" align="right">
                         <div style="position: relative;top: 50%;transform: translateY(-50%);">
                           <span class="mr-4">
                             <a class="inner-fb" href="https://www.facebook.com/CryptoCipherAudioLab/">

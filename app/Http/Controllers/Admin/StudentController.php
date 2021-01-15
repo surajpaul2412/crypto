@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\User;
+use App\StudentDetails;
 
 class StudentController extends Controller
 {
@@ -107,8 +108,11 @@ class StudentController extends Controller
      */
     public function destroy($id)
     {
-        $user = User::find($id);
+        $user = User::findOrFail($id);
         $user->delete();
+
+        $studentDetails = StudentDetails::where('student_id', $id);
+        $studentDetails->delete();
         return redirect('/admin/student')->with('success', 'student has been deleted successfully');
     }
 }

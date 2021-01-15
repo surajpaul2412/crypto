@@ -50,7 +50,7 @@
         </div>
         <!-- content -->
         <div class="row px-3">
-            <div class="col-md-6 mb-3 mt-1">
+            <div class="col-md-5 mb-3 mt-1">
                 <h5 class="font-medium text-black font-400 font-18">
                     Indian Sample Library Development, Advanced Audio Technology Education, and Global Promotion of Indian Artists.
                 </h5>
@@ -69,8 +69,8 @@
                     </a>
                 </div>
             </div>
-            <div class="col-md-6 my-2">
-                <img src="{{ asset('assets/frontend/img/Image18.png') }}" width="100%" style="min-height: 98.5%;max-height: 98.5%;min-width: 100%;max-width: 100%;">
+            <div class="col-md-7 my-2">
+                <img src="{{ asset('assets/frontend/img/Image18.png') }}" width="100%">
             </div>
         </div>
     </section>

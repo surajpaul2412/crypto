@@ -41,9 +41,46 @@ class RegisterController extends Controller
             'name'=> 'required|min:3',
             'email'=> 'required|email|unique:users',
             'phone'=> 'required|min:7',
+
+            'course' => 'required',
+            'batch' => 'required',
+            'address' => 'required|min:3',
+            'nationality' => 'required|min:3',
+            'pincode' => 'required|min:3',
+            'fathers_name' => 'required||min:3',
+            'fathers_phone' => 'required||min:7',
+            'guardian_name' => 'nullable',
+            'guardian_phone' => 'nullable',
+            'guardian_occupation' => 'nullable|string',
+            'gst' => 'required|integer',
+            'trade_title' => 'nullable|string',
+            'trade_address' => 'nullable|string',
+            'gst_number' => 'nullable|integer',
+            '10_school' => 'nullable|string',
+            '10_year' => 'nullable|date',
+            '10_board' => 'nullable|string',
+            '12_school' => 'nullable|string',
+            '12_year' => 'nullable|date',
+            '12_board' => 'nullable|string',
+            'ug_school' => 'nullable|string',
+            'ug_year' => 'nullable|date',
+            'ug_board' => 'nullable|string',
+            'g_school' => 'nullable|string',
+            'g_year' => 'nullable|date',
+            'g_board' => 'nullable|string',
+            'pg_school' => 'nullable|string',
+            'pg_year' => 'nullable|date',
+            'pg_board' => 'nullable|string',
+            'stream' => 'required|string',
+            'music_bg_info' => 'nullable|string',
+            'health_problem' => 'nullable|string',
+            'plans' => 'nullable|string',
+            'profile_image' => 'required|image',
+            'signature1' => 'required|image',
+            'signature2' => 'required|image',
         ]);
 
-        // Users Table
+        //Users Table
         $user = new User([
             'role_id' => 4,
             'name' => $request->get('name'),
@@ -53,7 +90,28 @@ class RegisterController extends Controller
             'created_at' => carbon::now(),
         ]);
         $user->save();
-        dd("Student successfully registered");
+
+        // Student image
+        $image_name1 = $request->profile_image;
+        $profile_image = $request->file('profile_image');
+        if($profile_image != ''){
+            $image_name1 = rand() . '.' . $profile_image->getClientOriginalExtension();
+            $profile_image->move(public_path('images/students'), $image_name1);
+        }
+        // parent Details
+        $sign_name1 = $request->signature1;
+        $signature1 = $request->file('signature1');
+        if($signature1 != ''){
+            $sign_name1 = rand() . '.' . $signature1->getClientOriginalExtension();
+            $signature1->move(public_path('images/students'), $sign_name1);
+        }
+        // gardient Details
+        $sign_name2 = $request->signature2;
+        $signature2 = $request->file('signature2');
+        if($signature2 != ''){
+            $sign_name2 = rand() . '.' . $signature2->getClientOriginalExtension();
+            $signature2->move(public_path('images/students'), $sign_name2);
+        }
 
         // Student Details
         $TempId = User::where('phone', $request->get('phone'))->first();
@@ -62,7 +120,7 @@ class RegisterController extends Controller
             'student_id' => $studentTempId,
             'course' => $request->get('course'),
             'batch' => $request->get('batch'),
-            'image' => $request->get('image'),
+            'image' => $image_name1,
             'address' => $request->get('address'),
             'nationality' => $request->get('nationality'),
             'pincode' => $request->get('pincode'),
@@ -94,12 +152,12 @@ class RegisterController extends Controller
             'music_bg_info' => $request->get('music_bg_info'),
             'plans' => $request->get('plans'),
             'health_problem' => $request->get('health_problem'),
-            'parent_sign' => $request->get('parent_sign'),
-            'student_sign' => $request->get('student_sign'),
+            'parent_sign' => $sign_name1,
+            'student_sign' => $sign_name2,
             'status' => 0,
             'fees_status' => 0,
             'fees_mode_of_payment' => 0,
-        ]);        
+        ]);
         $studentDetails->save();
 
         return redirect('/register')->with('success', 'Registration Successfull');

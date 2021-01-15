@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\AboutUs;
+use App\AboutUsContent;
+use App\AboutUsContentImage;
 
 class AboutUsController extends Controller
 {
@@ -13,7 +16,10 @@ class AboutUsController extends Controller
      */
     public function index()
     {
-        //
+        $aboutUs = AboutUs::all();
+        $aboutUsContent = AboutUsContent::all();
+        $aboutUsContentImage = AboutUsContentImage::all();
+        return view('frontend.about_us', compact('aboutUs','aboutUsContent','aboutUsContentImage'));
     }
 
     /**
