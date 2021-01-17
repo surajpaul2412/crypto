@@ -375,7 +375,7 @@
                       </div>
                   </div>
               </div>
-              <div class="col-md-12 border-top height-8 pl-13p">
+              <!-- <div class="col-md-12 border-top height-8 pl-13p">
                   <div style="position: relative;top: 50%;transform: translateY(-50%);">
                       <a class="font-14 text-black pl-2 font-bold" href="{{url('music-production-course')}}">Music Production Course Modules</a>
                       <div class="menu" style="display: table;">
@@ -383,9 +383,18 @@
                         <span><a href="{{url('music-production-course#ableton')}}">Ableton Live</a></span>
                       </div>
                   </div>
-              </div>
-              <div class="col-md-12 border-top height-22 pl-13p">
-                  <div style="position: relative;top: 50%;transform: translateY(-50%);">
+              </div> -->
+              <div class="col-md-12 border-top pl-13p" style="height: 30vh;">
+                <div style="position: relative;top: 50%;transform: translateY(-50%);">
+                  <a class="font-14 text-black pl-2 font-bold" href="{{url('music-production-course')}}">Our Courses</a>
+                  <div>
+                      <a class="font-14 text-black pl-2 font-bold" href="{{url('music-production-course')}}">Music Production Course Modules</a>
+                      <div class="menu" style="display: table;">
+                        <span><a href="{{url('music-production-course#logic')}}">Logic Pro X</a></span>
+                        <span><a href="{{url('music-production-course#ableton')}}">Ableton Live</a></span>
+                      </div>
+                  </div>
+                  <div>
                       <a class="bold font-14 text-black pl-2" href="{{url('engineering-course')}}">Sound Engineering Diploma Modules</a>
                       <div class="menu" style="display: table;">
                         <span><a href="{{url('engineering-course#logicAbleton')}}">Logic Pro X</a></span>
@@ -400,6 +409,7 @@
                         <span><a href="{{url('engineering-course')}}">Studio Acoustics & Sound Proofing</a></span>
                       </div>
                   </div>
+                </div>
               </div>
               <div class="col-md-12 border-top height-5 pl-13p">
                   <div class="bold font-14 text-black pl-2" style="position: relative;top: 55%;transform: translateY(-50%);">

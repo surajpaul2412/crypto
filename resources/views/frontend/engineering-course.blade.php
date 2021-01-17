@@ -25,11 +25,18 @@
         padding-left: 18px;
         padding-bottom: 3px;
     }
+    b, strong {
+        font-weight: 800 !important;
+    }
 </style>
 @endsection
 
-
 @section('content')
+<style>
+    b, strong {
+        font-weight: 800 !important;
+    }
+</style>
 <div class="bg-theme1 main-inner">
     <section class="container slider-header">
         <!-- title -->

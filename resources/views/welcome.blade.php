@@ -18,8 +18,18 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/frontend/css/custom.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/frontend/css/responsive.css') }}">
     <!-- slick -->
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick-theme.min.css">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick.css">
+    <!-- <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick-theme.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick.css"> -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script> -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <style>
+  .carousel-inner img {
+    width: 100%;
+    height: 100%;
+  }
+  </style>
     <style>
         .page-1-btn{
             box-shadow: 2px 2px 4px 0px rgba(50,50,50,0.10), -1px -1px 3px 0px rgba(255,255,255,0.8);
@@ -388,7 +398,31 @@
             <div class="col-md-6 media-col-md-6">
                 <div class="slider-header scroll-hide height-58 overflow-y-scroll">
                     <div class="height-55-percent">
-                        <img src="{{ asset('assets/frontend/img/img.png') }}" width="100%" height="100%">
+                        <!-- <img src="{{ asset('images/banners/a.jpg') }}" width="100%" height="100%"> -->
+                        <div id="demo" class="carousel slide" data-ride="carousel">
+  <ul class="carousel-indicators">
+    <li data-target="#demo" data-slide-to="0" class="active"></li>
+    <li data-target="#demo" data-slide-to="1"></li>
+    <li data-target="#demo" data-slide-to="2"></li>
+  </ul>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="{{asset('images/banners/a.jpg')}}">  
+    </div>
+    <div class="carousel-item">
+      <img src="{{asset('images/banners/b.jpg')}}">  
+    </div>
+    <div class="carousel-item">
+      <img src="{{asset('images/banners/c.jpg')}}"> 
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#demo" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+  <a class="carousel-control-next" href="#demo" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </a>
+</div>
                     </div>
                     <div class="row mx-0 height-45-percent media-pb-3">
                         <div class="col-md-6 col-12 pt-3 p-relative">
@@ -619,7 +653,7 @@
     }
 </script>
 <!-- slider -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.min.js"></script>
 <script>
 $(document).ready(function(){
@@ -661,7 +695,7 @@ $(document).ready(function(){
     }]
   });
 });
-</script>
+</script> -->
 <!-- scroll upwards -->
 <script>
 $(function(){
