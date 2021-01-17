@@ -21,7 +21,7 @@
                 <div class="slider-header bg-theme">
                     <div class="p-x-4 py-4">
                         <h5 class="font-regular text-dark font-22">Admission Support</h5>
-                        <h6 class="font-regular text-dark font-14 pt-3">Book you studio tour & free counselling session</h6>
+                        <h6 class="font-regular text-dark font-14 pt-3">Book your studio tour & free counselling session</h6>
                         <h6 class="font-medium text-dark font-16">Time- 10 AM - 5 PM ( Sunday Closed )</h6>
                         <form class="text-center" method="POST" action="{{route('contact_us.store')}}">
                             @csrf

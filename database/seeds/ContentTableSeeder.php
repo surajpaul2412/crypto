@@ -219,6 +219,30 @@ class ContentTableSeeder extends Seeder
             ]);
         }
 
+        // Pros
+        $numberOfPros = \DB::table('pros')->count();
+        if($numberOfPros == 0)
+        {
+            DB::table('pros')->insert([
+                'name' => 'A.R. Rahman',
+                'brief' => 'OSCARS, BAFTA, GOLDEN GLOBES, SLUMDOG MILLIONAIRE, 76 wins and 68 Academy Awards Nomination',
+                'description' => 'Am very intrigued by this .wishing you the best Crypto Cipher products have been used many times on AR Rahman projects, not just this the man himself supported "Crypto Cipher mission to bring rare virtual instruments and published a tweet in front of millions of his fan following.',
+                'image' => '1731026049.png',
+            ]);
+            DB::table('pros')->insert([
+                'name' => 'Shankar Thakur',
+                'brief' => 'Music Producer/Artist Over 14000 Subscribers On YouTube',
+                'description' => 'Good Job Crypto Cipher Please keep making cool libraries specially loop libraries at the level of quality that you used for Dholak Loops and Im definitely be getting the next one for Dholak Loops and Im definitely be getting the next one.',
+                'image' => '1731026049.png',
+            ]);
+            DB::table('pros')->insert([
+                'name' => 'Nainita Desai',
+                'brief' => 'Composer For Countless BAFTA EMMY & OSCAR Winning/Nominated Films & TV Series',
+                'description' => 'Crypto Cipher is using great Indian talent from all over the country. There is no other company out there which is doing quite what you do. So, please keep up the good work in producing more unusual libraries that are so inspiring to us, Film and Television Composers specially out here in the West.',
+                'image' => '1785142521.png',
+            ]);
+        }
+
 
 
 

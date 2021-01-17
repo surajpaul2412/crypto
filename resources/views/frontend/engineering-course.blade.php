@@ -46,7 +46,7 @@
                         {!! $row->content !!}
                     @endforeach
                     <div class="mobile-center">
-                        <a href="">
+                        <a href="{{url('/register')}}">
                             <div class="font-regular mb-2 mt-4 page-12-btn">
                                 APPLY NOW
                             </div>

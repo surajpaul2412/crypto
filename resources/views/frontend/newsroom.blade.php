@@ -98,7 +98,7 @@
                                                     Read More <i class="fas fa-angle-right pl-1"></i>
                                                 </a>
                                             </div>
-                                            <div class="col-md-6 pt-2 font-regular font-11" align="right">
+                                            <div class="col-md-6 pt-2 mobile-d-none font-regular font-11" align="right">
                                                 <span style="color: #707070;">{{$row->created_at}}</span>
                                             </div>
                                         </div>

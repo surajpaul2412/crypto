@@ -543,7 +543,7 @@
                 <div class="slider-header height-68 p-relative">
                     <div class="height-22p media-pt-20px">
                         <h5 class="font-regular text-dark px-4 font-20 top-5p">Admission Support</h5>
-                        <h6 class="font-regular text-dark px-4 font-12 top-13p">Book you studio tour & free counselling session</h6>
+                        <h6 class="font-regular text-dark px-4 font-12 top-13p">Book your studio tour & free counselling session</h6>
                         <h6 class="font-bold text-dark px-4 font-14 top-17pp">Time- 10 AM - 5 PM ( Sunday Closed )</h6>
                     </div>
                     <form class="text-center mx-5 home-form-height-78" method="POST" action="{{route('welcome.store')}}">

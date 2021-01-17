@@ -36,7 +36,7 @@
                 <div class="slider-header bg-theme" align="center">
                     <img src="{{asset('images/pros/')}}/{{$row->image}}" width="55%" class="mx-auto d-block p-2 bg-theme shadow-round mar-T-26">
                     <h6 class="font-bold font-14 text-dark pt-4">{{$row->name}}</h6>
-                    <div class="about-title px-4 pt-2 bold">{!! \Illuminate\Support\Str::limit($row->brief, 90, $end='...') !!}</div>
+                    <div class="about-title px-4 pt-2 bold">{!! \Illuminate\Support\Str::limit($row->brief, 50, $end='...') !!}</div>
                     <div class="py-2 bold about-symbol"><i>"</i></div>
                     <div class="about-desc px-4 pb-2"><i>{!! \Illuminate\Support\Str::limit($row->description, 180, $end='...') !!}</i></div>
                     <div class="my-2 px-3">
