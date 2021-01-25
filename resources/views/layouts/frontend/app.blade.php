@@ -386,7 +386,6 @@
               </div> -->
               <div class="col-md-12 border-top pl-13p" style="height: 30vh;">
                 <div style="position: relative;top: 50%;transform: translateY(-50%);">
-                  <a class="font-14 text-black pl-2 font-bold" href="{{url('music-production-course')}}">Our Courses</a>
                   <div>
                       <a class="font-14 text-black pl-2 font-bold" href="{{url('music-production-course')}}">Music Production Course Modules</a>
                       <div class="menu" style="display: table;">

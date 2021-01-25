@@ -243,9 +243,39 @@ class ContentTableSeeder extends Seeder
             ]);
         }
 
-
-
-
-
+        // Banner
+        $numberOfBanners = \DB::table('banners')->count();
+        if($numberOfBanners == 0)
+        {
+            DB::table('banners')->insert([
+                'image' => 'a.jpg',
+            ]);
+            DB::table('banners')->insert([
+                'image' => 'b.jpg',
+            ]);
+            DB::table('banners')->insert([
+                'image' => 'c.jpg',
+            ]);
+            DB::table('banners')->insert([
+                'image' => 'd.jpg',
+            ]);
+        }
+        // home content
+        $numberOfHomeContent = \DB::table('home_contents')->count();
+        if($numberOfHomeContent == 0)
+        {
+            DB::table('home_contents')->insert([
+                'heading' => 'Crypto Cipher is Known Worldwide for Their Work.',
+                'content' => 'Before you zero down on one of our Crypto Cipher Courses, please check out what Crypto cipher has done to attract countless OSCAR/GRAMMY/BAFTA award winning guys.',
+                'url' => '',
+                'button' => 'View Performance',
+            ]);
+            DB::table('home_contents')->insert([
+                'heading' => 'Crypto Cipher Never Forgets to Promote Indian Culture Worldwide.',
+                'content' => 'Check out the artist Videos done by Crypto Cipher inside Ancient Monument Qutab Minar. All the audio recordings are done outdoor live- Promoting Indian Musical Art Worldwide.',
+                'url' => '',
+                'button' => 'Visit Online Store',
+            ]);
+        }
     }
 }

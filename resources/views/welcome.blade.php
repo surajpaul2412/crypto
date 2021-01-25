@@ -18,139 +18,140 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/frontend/css/custom.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/frontend/css/responsive.css') }}">
     <!-- slick -->
-    <!-- <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick-theme.min.css">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick.css"> -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick-theme.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick.css">
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script> -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <!-- try -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+  <!-- try end -->
   <style>
-  .carousel-inner img {
-    width: 100%;
-    height: 100%;
-  }
+    .carousel-inner img {
+      width: 100%;
+      height: 100%;
+    }
+    .page-1-btn{
+        box-shadow: 2px 2px 4px 0px rgba(50,50,50,0.10), -1px -1px 3px 0px rgba(255,255,255,0.8);
+        background-image: linear-gradient(to right, #edeef3 , #f4f5f9);
+        border: 1px solid rgba(255,255,255,0.3);
+        font-size: 12px;
+        font-family: 'Roboto-Bold';
+        font-weight: bold;
+        text-align: center;
+        color: #5b5e65;
+        padding: 7px 0px;
+        width: 175px;
+    }
+    .page-1-btn:hover{
+        transition: 6s;
+        transition-delay: all 5s ease;
+        -webkit-transition-delay: all 5s ease;
+        box-shadow: inset 1px 1px 4px -1px rgba(0,0,0,0.1),
+                    inset -4px -3px 6px -1px rgba(255,255,255,0.7),
+                    -0.1px -0.1px 0 rgba(255,255,255,1),
+                    0.1px 0.1px 0 rgba(0,0,0,0.15),
+                    0px 12px 10px -14px rgba(0,0,0,0.05);
+        background-image: linear-gradient(to bottom right, #f1f2f7, #f2f3f7);
+    }
+    .front-btn{
+        padding: 4px 18px 3px 18px;
+        box-shadow: 2px 2px 4px 0px rgba(50,50,50,0.10), -1px -1px 3px 0px rgba(255,255,255,0.8);
+        background-image: linear-gradient(to right, #edeef3 , #f4f5f9);
+        border: 1px solid rgba(255,255,255,0.3);
+        text-align: center;
+    }
+    .module-tab span{
+        color: #5B5E65;
+    }
+    .border-module{
+        /*box-shadow: 2px 2px 4px 0px rgba(50,50,50,0.10), -1px -1px 3px 0px rgba(255,255,255,0.8);*/
+        background-image: linear-gradient(to right, #f4f5f9 , #f4f5f9);
+        border: 1px solid rgba(255,255,255,0.3);
+        padding: 9px 0px;
+    }
+    .wrapper{
+      width:100%;
+      padding-top: 20px;
+      text-align:center;
+    }
+    .carousel{
+      width:100%;
+      margin:0px auto;
+    }
+    .slick-slide{
+      margin:10px;
+    }
+    .slick-slide img{
+      width:100%;
+    }
+    .slick-prev, .slick-next{
+      background: #5B5E65;
+      border-radius: 15px;
+      border-color: transparent;
+    }
+    .card{
+        box-shadow: 2px 2px 4px 0px rgba(50,50,50,0.10), -1px -1px 3px 0px rgba(255,255,255,0.8);
+        background-image: linear-gradient(to right, #edeef3 , #f4f5f9);
+        border: 1px solid rgba(255,255,255,0.3);
+    }
+    .card-body{
+      width: 100%;
+      vertical-align: top;
+    }
+    .card-content{
+      text-align: center;
+      color: #5B5E65;
+      padding: 15px;
+    }
+    .card-text{
+      font-size: 14px;
+      font-weight: 300;
+    }
+    .marquee {
+      height: 25px;
+      width: 100vw;
+      overflow: hidden;
+      position: relative;
+    }
+    .marquee div {
+      display: block;
+      width: 5000%;
+      height: 30px;
+      position: absolute;
+      overflow: hidden;
+      animation: marquee 5s linear infinite;
+    }
+    .marquee span {
+      float: left;
+      width: 50%;
+    }
+    @keyframes marquee {
+      0% { left: 0; }
+      100% { left: -100%; }
+    }
+    .bg-theme1{
+        background-color: #9ccd63;
+    }
+    .try{
+      box-shadow: 2px 2px 4px 0px rgba(50,50,50,0.10), -1px -1px 3px 0px rgba(255,255,255,0.8);
+        background-image: linear-gradient(to right, #edeef3 , #f4f5f9);
+        border: 1px solid rgba(255,255,255,0.3);
+        font-size: 14px;
+        font-family: 'Roboto-Bold';
+        font-weight: bold;
+        text-align: center;
+        padding: 5px 0px;
+    }
+    .ul{
+      list-style:none;
+      position:relative;
+    }
+    .li{
+      height:30vh;
+    }
   </style>
-    <style>
-        .page-1-btn{
-            box-shadow: 2px 2px 4px 0px rgba(50,50,50,0.10), -1px -1px 3px 0px rgba(255,255,255,0.8);
-            background-image: linear-gradient(to right, #edeef3 , #f4f5f9);
-            border: 1px solid rgba(255,255,255,0.3);
-            font-size: 12px;
-            font-family: 'Roboto-Bold';
-            font-weight: bold;
-            text-align: center;
-            color: #5b5e65;
-            padding: 7px 0px;
-            width: 175px;
-        }
-        .page-1-btn:hover{
-            transition: 6s;
-            transition-delay: all 5s ease;
-            -webkit-transition-delay: all 5s ease;
-            box-shadow: inset 1px 1px 4px -1px rgba(0,0,0,0.1),
-                        inset -4px -3px 6px -1px rgba(255,255,255,0.7),
-                        -0.1px -0.1px 0 rgba(255,255,255,1),
-                        0.1px 0.1px 0 rgba(0,0,0,0.15),
-                        0px 12px 10px -14px rgba(0,0,0,0.05);
-            background-image: linear-gradient(to bottom right, #f1f2f7, #f2f3f7);
-        }
-        .front-btn{
-            padding: 4px 18px 3px 18px;
-            box-shadow: 2px 2px 4px 0px rgba(50,50,50,0.10), -1px -1px 3px 0px rgba(255,255,255,0.8);
-            background-image: linear-gradient(to right, #edeef3 , #f4f5f9);
-            border: 1px solid rgba(255,255,255,0.3);
-            text-align: center;
-        }
-        .module-tab span{
-            color: #5B5E65;
-        }
-        .border-module{
-            /*box-shadow: 2px 2px 4px 0px rgba(50,50,50,0.10), -1px -1px 3px 0px rgba(255,255,255,0.8);*/
-            background-image: linear-gradient(to right, #f4f5f9 , #f4f5f9);
-            border: 1px solid rgba(255,255,255,0.3);
-            padding: 9px 0px;
-        }
-        .wrapper{
-          width:100%;
-          padding-top: 20px;
-          text-align:center;
-        }
-        .carousel{
-          width:100%;
-          margin:0px auto;
-        }
-        .slick-slide{
-          margin:10px;
-        }
-        .slick-slide img{
-          width:100%;
-        }
-        .slick-prev, .slick-next{
-          background: #5B5E65;
-          border-radius: 15px;
-          border-color: transparent;
-        }
-        .card{
-            box-shadow: 2px 2px 4px 0px rgba(50,50,50,0.10), -1px -1px 3px 0px rgba(255,255,255,0.8);
-            background-image: linear-gradient(to right, #edeef3 , #f4f5f9);
-            border: 1px solid rgba(255,255,255,0.3);
-        }
-        .card-body{
-          width: 100%;
-          vertical-align: top;
-        }
-        .card-content{
-          text-align: center;
-          color: #5B5E65;
-          padding: 15px;
-        }
-        .card-text{
-          font-size: 14px;
-          font-weight: 300;
-        }
-        .marquee {
-          height: 25px;
-          width: 100vw;
-          overflow: hidden;
-          position: relative;
-        }
-        .marquee div {
-          display: block;
-          width: 5000%;
-          height: 30px;
-          position: absolute;
-          overflow: hidden;
-          animation: marquee 5s linear infinite;
-        }
-        .marquee span {
-          float: left;
-          width: 50%;
-        }
-        @keyframes marquee {
-          0% { left: 0; }
-          100% { left: -100%; }
-        }
-        .bg-theme1{
-            background-color: #9ccd63;
-        }
-        .try{
-          box-shadow: 2px 2px 4px 0px rgba(50,50,50,0.10), -1px -1px 3px 0px rgba(255,255,255,0.8);
-            background-image: linear-gradient(to right, #edeef3 , #f4f5f9);
-            border: 1px solid rgba(255,255,255,0.3);
-            font-size: 14px;
-            font-family: 'Roboto-Bold';
-            font-weight: bold;
-            text-align: center;
-            padding: 5px 0px;
-        }
-        .ul{
-          list-style:none;
-          position:relative;
-        }
-        .li{
-          height:30vh;
-        }
-    </style>
 </head>
 <body class="bg-theme height-100">
     <!-- desktop header -->
@@ -296,7 +297,7 @@
           </div>
         </section>
         <!-- mobile sidebar -->
-        <div id="mySidenav" class="sidenav">
+        <div id="mySidenav" class="sidenav" style="z-index: 9999 !important;">
           <div class="container-fluid" style="position: static;width: 100vw;">
             <a class="pl-1" href="{{url('/')}}" style="position: absolute;top: 0;">
               <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="60%" height="100" viewBox="0 0 260 100">
@@ -398,51 +399,34 @@
             <div class="col-md-6 media-col-md-6">
                 <div class="slider-header scroll-hide height-58 overflow-y-scroll">
                     <div class="height-55-percent">
-                        <!-- <img src="{{ asset('images/banners/a.jpg') }}" width="100%" height="100%"> -->
-                        <div id="demo" class="carousel slide" data-ride="carousel">
-  <ul class="carousel-indicators">
-    <li data-target="#demo" data-slide-to="0" class="active"></li>
-    <li data-target="#demo" data-slide-to="1"></li>
-    <li data-target="#demo" data-slide-to="2"></li>
-  </ul>
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="{{asset('images/banners/a.jpg')}}">  
-    </div>
-    <div class="carousel-item">
-      <img src="{{asset('images/banners/b.jpg')}}">  
-    </div>
-    <div class="carousel-item">
-      <img src="{{asset('images/banners/c.jpg')}}"> 
-    </div>
-  </div>
-  <a class="carousel-control-prev" href="#demo" data-slide="prev">
-    <span class="carousel-control-prev-icon"></span>
-  </a>
-  <a class="carousel-control-next" href="#demo" data-slide="next">
-    <span class="carousel-control-next-icon"></span>
-  </a>
-</div>
+                      @if($banners->count())
+                        <div class="owl-slider" style="z-index: 1 !important;">
+                          <div id="carousel" class="owl-carousel">
+                            @foreach($banners as $index => $banner)
+                            <div class="item">
+                              <img src="{{asset('images/banner/')}}/{{$banner->image}}">
+                            </div>
+                            @endforeach
+                          </div>
+                        </div>
+                      @else
+                      @endif
                     </div>
                     <div class="row mx-0 height-45-percent media-pb-3">
+                      @if($homeContent->count())
+                        @foreach($homeContent as $row)
                         <div class="col-md-6 col-12 pt-3 p-relative">
-                            <div class="font-medium font-18 text-black">Crypto Cipher is Known Worldwide for Their Work</div>
-                            <p class="pt-2 p-absolute text-dark top-35-perc font-12 font-400">Before you zero down on one of our Crypto Cipher Courses, please check out what Crypto cipher has done to attract countless OSCAR/GRAMMY/BAFTA award winning guys.</p>
-                            <a href="{{url('about_us')}}" class="text-dark bold p-absolute top-78-perc">
+                            <div class="font-medium font-18 text-black">{{$row->heading}}</div>
+                            <p class="pt-2 p-absolute text-dark top-35-perc font-12 font-400">{!! $row->content !!}</p>
+                            <a href="{{$row->url}}" class="text-dark bold p-absolute top-78-perc">
                                 <div class="font-regular mt-3 page-1-btn">
-                                    View Performance
+                                    {{$row->button}}
                                 </div>
                             </a>
                         </div>
-                        <div class="col-md-6 col-12 pt-3 p-relative">
-                            <div class="font-medium font-18 text-black">Crypto Cipher Never Forgets to Promote Indian Culture Worldwide</div>
-                            <p class="pt-2 p-absolute text-dark top-35-perc font-12 font-400">Check out the artist Videos done by Crypto Cipher inside Ancient Monument Qutab Minar. All the audio recordings are done outdoor live- Promoting Indian Musical Art Worldwide.</p>
-                            <a href="{{url('about_us')}}" class="text-dark bold p-absolute top-78-perc">
-                                <div class="font-regular mt-3 page-1-btn">
-                                    Visit Online Store
-                                </div>
-                            </a>
-                        </div>
+                        @endforeach
+                      @else
+                      @endif
                     </div>
                 </div>
                 <div class="row mx-0 mt-3 height-8-1 media-mt-4 mobile-d-none">
@@ -551,6 +535,7 @@
                     </div>
                 </div>
             </div>
+            <!-- mobile view carousel -->
             <div class="wrapper desktop-d-none">
                 <div class="carousel">
                   @foreach($pros as $pro)
@@ -561,10 +546,15 @@
                                     <img class="d-block mx-auto shadow-round" src="{{asset('images/pros/')}}/{{$pro->image}}" width="55%">
                                     <div class="card-text">
                                         <p class="pt-3 font-11 text-dark font-regular">
-                                            {!! \Illuminate\Support\Str::limit($pro->brief, 90, $end='...') !!}
+                                            {!! \Illuminate\Support\Str::limit($pro->brief, 40, $end='...') !!}
                                         </p>
                                     </div>
                                     <h6 class="font-bold text-dark font-14 op-8">{{$pro->name}}</h6>
+                                    <div align="center">
+                                      <a href="{{url('crypto_celeb')}}">
+                                        <span class="font-regular faculty-btn">Read More</span>
+                                      </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -577,7 +567,7 @@
                 <div class="slider-header height-68 p-relative">
                     <div class="height-22p media-pt-20px">
                         <h5 class="font-regular text-dark px-4 font-20 top-5p">Admission Support</h5>
-                        <h6 class="font-regular text-dark px-4 font-12 top-13p">Book your studio tour & free counselling session</h6>
+                        <h6 class="font-regular text-dark pl-4 pr-0 font-12 top-13p">Book your studio tour & free counselling session</h6>
                         <h6 class="font-bold text-dark px-4 font-14 top-17pp">Time- 10 AM - 5 PM ( Sunday Closed )</h6>
                     </div>
                     <form class="text-center mx-5 home-form-height-78" method="POST" action="{{route('welcome.store')}}">
@@ -613,7 +603,7 @@
         </div>
     </section>
     <!-- footer logos -->
-    <section class="container-fluid border-top footer-shadow height-8 mobile-d-none">
+    <section class="container-fluid border-top footer-shadow mobile-d-none" style="height: 9.5vh;">
         <div class="client-logo" align="center" style="height: 7vh;position: absolute;left: 0;right: 0;padding: 10px;">
             <img src="{{ asset('assets/frontend/img/logos/xfer.svg') }}" width="50px">
             <img src="{{ asset('assets/frontend/img/logos/fabfilter-vector-logo.svg') }}" width="40px">
@@ -652,8 +642,37 @@
       document.getElementById("mySidenav").style.width = "0";
     }
 </script>
+<!-- owl carousel for banner -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<script>
+  jQuery("#carousel").owlCarousel({
+    autoplay: true,
+    rewind: true,
+    margin: 20,
+    responsiveClass: true,
+    autoHeight: true,
+    autoplayTimeout: 7000,
+    smartSpeed: 1000,
+    nav: false,
+    dots: false,
+    responsive: {
+      0: {
+        items: 1
+      },
+      600: {
+        items: 1
+      },
+      1024: {
+        items: 1
+      },
+      1366: {
+        items: 1
+      }
+    }
+  });
+</script>
 <!-- slider -->
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.min.js"></script>
 <script>
 $(document).ready(function(){
@@ -695,7 +714,7 @@ $(document).ready(function(){
     }]
   });
 });
-</script> -->
+</script>
 <!-- scroll upwards -->
 <script>
 $(function(){

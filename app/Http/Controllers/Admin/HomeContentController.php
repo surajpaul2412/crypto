@@ -1,14 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Contact;
-use App\Pros;
-use App\Banner;
 use App\HomeContent;
 
-class WelcomeController extends Controller
+class HomeContentController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,10 +15,8 @@ class WelcomeController extends Controller
      */
     public function index()
     {
-        $pros = Pros::all();
-        $banners = Banner::all();
         $homeContent = HomeContent::all();
-        return view('welcome', compact('pros','banners','homeContent'));
+        return view('admin.homeContent.index', compact('homeContent'));
     }
 
     /**
@@ -41,22 +37,7 @@ class WelcomeController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, [
-            'name'=> 'required|string|min:3|max:255',
-            'phone'=> 'required|integer',
-            'email'=> 'required',
-            'message'=> 'nullable|string',
-        ]);
-
-        $contact = new Contact();
-        $contact->name = $request->name;
-        $contact->phone = $request->phone;
-        $contact->email = $request->email;
-        $contact->message = $request->message;
-        $contact->save();
-
-        $pros = Pros::all();
-        return view('welcome', compact('pros'));
+        //
     }
 
     /**
@@ -78,7 +59,8 @@ class WelcomeController extends Controller
      */
     public function edit($id)
     {
-        //
+        $homeContent = HomeContent::findOrFail($id);
+        return view('admin.homeContent.edit', compact('homeContent'));
     }
 
     /**
@@ -90,7 +72,21 @@ class WelcomeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'heading'=> 'required|min:3|max:255',
+            'content'=> 'required|min:3',
+            'url'=> 'required|min:3',
+            'button'=> 'required|min:3|max:50',
+        ]);
+
+        $form_data = array(
+            'heading' => $request->heading,
+            'content' => $request->content,
+            'url' => $request->url,
+            'button' => $request->button
+        );
+        HomeContent::whereId($id)->update($form_data);
+        return redirect('/admin/homeContent')->with('success', 'Home Content has been updated.');
     }
 
     /**
