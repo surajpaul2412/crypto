@@ -1,13 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Contact;
-use App\Pros;
-use App\Banner;
+use App\HomeContent;
 
-class WelcomeController extends Controller
+class HomeContentController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,9 +15,8 @@ class WelcomeController extends Controller
      */
     public function index()
     {
-        $pros = Pros::all();
-        $banners = Banner::all();
-        return view('welcome', compact('pros','banners'));
+        $homeContent = HomeContent::all();
+        return view('admin.homeContent.index', compact('homeContent'));
     }
 
     /**
@@ -39,22 +37,7 @@ class WelcomeController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, [
-            'name'=> 'required|string|min:3|max:255',
-            'phone'=> 'required|integer',
-            'email'=> 'required',
-            'message'=> 'nullable|string',
-        ]);
-
-        $contact = new Contact();
-        $contact->name = $request->name;
-        $contact->phone = $request->phone;
-        $contact->email = $request->email;
-        $contact->message = $request->message;
-        $contact->save();
-
-        $pros = Pros::all();
-        return view('welcome', compact('pros'));
+        //
     }
 
     /**

@@ -71,6 +71,8 @@ Route::group(['as'=>'admin.','prefix'=>'admin','namespace'=>'Admin','middleware'
     Route::resource('faqHostel','FaqHostelController');
     Route::resource('team','TeamController');
     Route::resource('teamProduction','TeamProductionController');
+    Route::resource('banner','BannerController');
+    Route::resource('homeContent','HomeContentController');
 });
 
 Route::group(['as'=>'manager.','prefix'=>'manager','namespace'=>'Manager','middleware'=>['auth','manager']], function(){

@@ -398,31 +398,29 @@
             <div class="col-md-6 media-col-md-6">
                 <div class="slider-header scroll-hide height-58 overflow-y-scroll">
                     <div class="height-55-percent">
-                        <!-- <img src="{{ asset('images/banners/a.jpg') }}" width="100%" height="100%"> -->
+                      @if($banners->count())
                         <div id="demo" class="carousel slide" data-ride="carousel">
-  <ul class="carousel-indicators">
-    <li data-target="#demo" data-slide-to="0" class="active"></li>
-    <li data-target="#demo" data-slide-to="1"></li>
-    <li data-target="#demo" data-slide-to="2"></li>
-  </ul>
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="{{asset('images/banners/a.jpg')}}">  
-    </div>
-    <div class="carousel-item">
-      <img src="{{asset('images/banners/b.jpg')}}">  
-    </div>
-    <div class="carousel-item">
-      <img src="{{asset('images/banners/c.jpg')}}"> 
-    </div>
-  </div>
-  <a class="carousel-control-prev" href="#demo" data-slide="prev">
-    <span class="carousel-control-prev-icon"></span>
-  </a>
-  <a class="carousel-control-next" href="#demo" data-slide="next">
-    <span class="carousel-control-next-icon"></span>
-  </a>
-</div>
+                          <ul class="carousel-indicators">
+                            @foreach($banners as $index => $banner)
+                            <li data-target="#demo" data-slide-to="{{$index}}" class="{{$index == 0 ? 'active' : '' }}"></li>
+                            @endforeach
+                          </ul>
+                          <div class="carousel-inner">
+                            @foreach($banners as $index => $banner)
+                            <div class="carousel-item {{$index == 0 ? 'active' : '' }}">
+                              <img src="{{asset('images/banner/')}}/{{$banner->image}}">
+                            </div>
+                            @endforeach
+                          </div>
+                          <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                            <span class="carousel-control-prev-icon"></span>
+                          </a>
+                          <a class="carousel-control-next" href="#demo" data-slide="next">
+                            <span class="carousel-control-next-icon"></span>
+                          </a>
+                        </div>
+                        @else
+                        @endif
                     </div>
                     <div class="row mx-0 height-45-percent media-pb-3">
                         <div class="col-md-6 col-12 pt-3 p-relative">
@@ -577,7 +575,7 @@
                 <div class="slider-header height-68 p-relative">
                     <div class="height-22p media-pt-20px">
                         <h5 class="font-regular text-dark px-4 font-20 top-5p">Admission Support</h5>
-                        <h6 class="font-regular text-dark px-4 font-12 top-13p">Book your studio tour & free counselling session</h6>
+                        <h6 class="font-regular text-dark pl-4 pr-0 font-12 top-13p">Book your studio tour & free counselling session</h6>
                         <h6 class="font-bold text-dark px-4 font-14 top-17pp">Time- 10 AM - 5 PM ( Sunday Closed )</h6>
                     </div>
                     <form class="text-center mx-5 home-form-height-78" method="POST" action="{{route('welcome.store')}}">

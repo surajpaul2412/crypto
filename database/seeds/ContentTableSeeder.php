@@ -243,9 +243,22 @@ class ContentTableSeeder extends Seeder
             ]);
         }
 
-
-
-
-
+        // Banner
+        $numberOfBanners = \DB::table('banners')->count();
+        if($numberOfBanners == 0)
+        {
+            DB::table('banners')->insert([
+                'image' => 'a.jpg',
+            ]);
+            DB::table('banners')->insert([
+                'image' => 'b.jpg',
+            ]);
+            DB::table('banners')->insert([
+                'image' => 'c.jpg',
+            ]);
+            DB::table('banners')->insert([
+                'image' => 'd.jpg',
+            ]);
+        }
     }
 }

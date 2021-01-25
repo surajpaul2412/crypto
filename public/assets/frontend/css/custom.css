@@ -662,7 +662,7 @@ a:hover{
         max-width: 1250px !important;
     }
 }
-@media (min-width: 768px){
+@media (min-width: 900px){
     .media-col-md-2 {
         -ms-flex: 0 0 19.3% !important;
         flex: 0 0 19.3% !important;

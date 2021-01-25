@@ -59,6 +59,12 @@
                         <span>Artist Team</span>
                     </a>
                 </li>
+                <li class="{{ Request::is('admin/banner') ? 'active' : '' }}">
+                    <a href="{{ route('admin.banner.index') }}">
+                        <i class="material-icons">view_carousel</i>
+                        <span>Home Banners</span>
+                    </a>
+                </li>
                 <li class="{{ Request::is('admin/teamProduction') ? 'active' : '' }}">
                     <a href="{{ route('admin.teamProduction.index') }}">
                         <i class="material-icons">people_alt</i>
