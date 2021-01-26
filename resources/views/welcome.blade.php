@@ -604,19 +604,7 @@
     </section>
     <!-- footer logos -->
     <section class="container-fluid border-top footer-shadow mobile-d-none" style="height: 9.5vh;">
-        <div class="client-logo" align="center" style="height: 7vh;position: absolute;left: 0;right: 0;padding: 10px;">
-            <img src="{{ asset('assets/frontend/img/logos/xfer.svg') }}" width="50px">
-            <img src="{{ asset('assets/frontend/img/logos/fabfilter-vector-logo.svg') }}" width="40px">
-            <img src="{{ asset('assets/frontend/img/logos/izotope-vector-logo.svg') }}" width="80px">
-            <img src="{{ asset('assets/frontend/img/logos/universal-audio-vector-logo.svg') }}" width="55px">
-            <img src="{{ asset('assets/frontend/img/logos/masterign-the-max.svg') }}" width="80px">
-            <img src="{{ asset('assets/frontend/img/logos/sound-toy-svg-lgog.svg') }}" width="90px">
-            <img src="{{ asset('assets/frontend/img/logos/switch-craft.svg') }}" width="110px">
-            <img src="{{ asset('assets/frontend/img/logos/ableton-logo-vector.svg') }}" width="100px">
-            <img src="{{ asset('assets/frontend/img/logos/Native-instrment.svg') }}" width="90px">
-            <img src="{{ asset('assets/frontend/img/logos/sound-craft.svg') }}" width="90px">
-            <img src="{{ asset('assets/frontend/img/logos/rupert-neve-designs-logo-vector.svg') }}" width="130px">
-        </div>
+        <img src="{{asset('images/banner/footer.png')}}" width="40%" class="d-block mx-auto">
     </section>
     <!-- mobile footer -->
     <section class="desktop-d-none border-top footer-shadow">
