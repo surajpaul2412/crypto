@@ -53,16 +53,38 @@
                         <span>Students</span>
                     </a>
                 </li>
-                <li class="{{ Request::is('admin/team') ? 'active' : '' }}">
-                    <a href="{{ route('admin.team.index') }}">
-                        <i class="material-icons">people_alt</i>
-                        <span>Artist Team</span>
-                    </a>
-                </li>
                 <li class="{{ Request::is('admin/banner') ? 'active' : '' }}">
                     <a href="{{ route('admin.banner.index') }}">
                         <i class="material-icons">view_carousel</i>
                         <span>Home Banners</span>
+                    </a>
+                </li>
+                <li class="{{ Request::is('admin/homeContent') ? 'active' : '' }}">
+                    <a href="{{ route('admin.homeContent.index') }}">
+                        <i class="material-icons">backup_table</i>
+                        <span>Home Content</span>
+                    </a>
+                </li>
+                <li class="{{ Request::is('admin/aboutUs*') ? 'active' : '' }}">
+                    <a href="{{ route('admin.aboutUs.index') }}" class="menu-toggle">
+                        <i class="material-icons">addchart</i>
+                        <span>About Us</span>
+                    </a>
+                    <ul class="ml-menu">
+                        <li>
+                            <a href="{{ route('admin.submenu.index') }}">Sub </a>
+                        </li>
+                    </ul>
+                </li>
+
+
+
+
+
+                <li class="{{ Request::is('admin/team') ? 'active' : '' }}">
+                    <a href="{{ route('admin.team.index') }}">
+                        <i class="material-icons">people_alt</i>
+                        <span>Artist Team</span>
                     </a>
                 </li>
                 <li class="{{ Request::is('admin/teamProduction') ? 'active' : '' }}">

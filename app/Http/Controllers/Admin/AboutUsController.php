@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\AboutUs;
 
 class AboutUsController extends Controller
 {
@@ -14,7 +15,8 @@ class AboutUsController extends Controller
      */
     public function index()
     {
-        //
+        $aboutUs = AboutUs::all();
+        return view('admin.aboutUs.index', compact('aboutUs'));
     }
 
     /**
@@ -57,7 +59,8 @@ class AboutUsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $aboutUs = AboutUs::findOrFail($id);
+        return view('admin.aboutUs.edit', compact('aboutUs'));
     }
 
     /**
@@ -69,7 +72,27 @@ class AboutUsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $image_name = $request->hidden_image;
+        $image = $request->file('image');
+
+        if($image != ''){
+            $request->validate([
+                'image'=> 'required|image',
+                'heading'=> 'required|string|min:3|max:255',
+                'content'=> 'required|string|min:3',
+            ]);
+            $image_name = rand() . '.' . $image->getClientOriginalExtension();
+            $image->move(public_path('images/aboutUs'), $image_name);
+        }
+
+        $form_data = array(
+            'heading' => $request->heading,
+            'content' => $request->content,
+            'image' => $image_name,
+        );
+
+        AboutUs::whereId($id)->update($form_data);
+        return redirect('/admin/aboutUs')->with('success', 'Content has been updated.');
     }
 
     /**
