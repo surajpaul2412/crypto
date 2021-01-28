@@ -4,8 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\AboutUsLibrary;
 
-class AboutUsContentImageController extends Controller
+class aboutUsLibraryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +15,8 @@ class AboutUsContentImageController extends Controller
      */
     public function index()
     {
-        //
+        $aboutUsLibrary = AboutUsLibrary::all();
+        return view('admin.aboutUsLibrary.index', compact('aboutUsLibrary'));
     }
 
     /**
@@ -57,7 +59,8 @@ class AboutUsContentImageController extends Controller
      */
     public function edit($id)
     {
-        //
+        $aboutUsLibrary = AboutUsLibrary::findOrFail($id);
+        return view('admin.aboutUsLibrary.edit', compact('aboutUsLibrary'));
     }
 
     /**
@@ -69,7 +72,13 @@ class AboutUsContentImageController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $form_data = array(
+            'heading' => $request->heading,
+            'content' => $request->content,
+        );
+
+        AboutUsLibrary::whereId($id)->update($form_data);
+        return redirect('/admin/aboutUsLibrary')->with('success', 'Content has been updated.');
     }
 
     /**

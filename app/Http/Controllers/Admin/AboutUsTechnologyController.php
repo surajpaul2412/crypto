@@ -4,9 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\AboutUsContent;
+use App\AboutUsTechnology;
 
-class AboutUsContentController extends Controller
+class AboutUsTechnologyController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,8 @@ class AboutUsContentController extends Controller
      */
     public function index()
     {
-        $aboutUsContent = AboutUsContent::all();
-        return view('admin.aboutUsContent.index', compact('aboutUsContent'));
+        $aboutUsTechnology = AboutUsTechnology::all();
+        return view('admin.aboutUsTechnology.index', compact('aboutUsTechnology'));
     }
 
     /**
@@ -26,7 +26,7 @@ class AboutUsContentController extends Controller
      */
     public function create()
     {
-        return view('admin.aboutUsContent.create');
+        //
     }
 
     /**
@@ -37,16 +37,7 @@ class AboutUsContentController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, [
-            'heading'=> 'required|min:3|max:255',
-            'content'=> 'required|min:3',
-        ]);
-
-        $aboutUsContent = new AboutUsContent();
-        $aboutUsContent->heading = $request->heading;
-        $aboutUsContent->content = $request->content;
-        $aboutUsContent->save();
-        return redirect('/admin/aboutUsContent')->with('success', 'Content has been added.');
+        //
     }
 
     /**
@@ -68,8 +59,8 @@ class AboutUsContentController extends Controller
      */
     public function edit($id)
     {
-        $aboutUsContent = AboutUsContent::findOrFail($id);
-        return view('admin.aboutUsContent.edit', compact('aboutUsContent'));
+        $aboutUsTechnology = AboutUsTechnology::findOrFail($id);
+        return view('admin.aboutUsTechnology.edit', compact('aboutUsTechnology'));
     }
 
     /**
@@ -86,8 +77,8 @@ class AboutUsContentController extends Controller
             'content' => $request->content,
         );
 
-        AboutUsContent::whereId($id)->update($form_data);
-        return redirect('/admin/aboutUsContent')->with('success', 'Content has been updated.');
+        AboutUsTechnology::whereId($id)->update($form_data);
+        return redirect('/admin/aboutUsTechnology')->with('success', 'Content has been updated.');
     }
 
     /**
@@ -98,8 +89,6 @@ class AboutUsContentController extends Controller
      */
     public function destroy($id)
     {
-        $aboutUsContent = AboutUsContent::findOrFail($id);
-        $aboutUsContent->delete();
-        return redirect('/admin/aboutUsContent')->with('success', 'Content has been deleted successfully.');
+        //
     }
 }

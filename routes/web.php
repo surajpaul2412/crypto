@@ -74,6 +74,12 @@ Route::group(['as'=>'admin.','prefix'=>'admin','namespace'=>'Admin','middleware'
     Route::resource('banner','BannerController');
     Route::resource('homeContent','HomeContentController');
     Route::resource('aboutUs','AboutUsController');
+    Route::resource('aboutUsLibrary','AboutUsLibraryController');
+    Route::resource('aboutUsLibraryImage','AboutUsLibraryImageController');
+    Route::resource('aboutUsTechnology','AboutUsTechnologyController');
+    Route::resource('aboutUsTechnologyImage','AboutUsTechnologyImageController');
+    Route::resource('aboutUsPromotion','AboutUsPromotionController');
+    Route::resource('aboutUsPromotionImage','AboutUsPromotionImageController');
 });
 
 Route::group(['as'=>'manager.','prefix'=>'manager','namespace'=>'Manager','middleware'=>['auth','manager']], function(){

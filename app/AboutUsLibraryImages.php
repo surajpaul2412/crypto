@@ -4,9 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class AboutUsContent extends Model
+class AboutUsLibraryImages extends Model
 {
     protected $fillable = [
-        'heading', 'content'
+        'image'
     ];
 }

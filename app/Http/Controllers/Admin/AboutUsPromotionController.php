@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\AboutUs;
+use App\AboutUsPromotion;
 
-class AboutUsController extends Controller
+class AboutUsPromotionController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +15,8 @@ class AboutUsController extends Controller
      */
     public function index()
     {
-        $aboutUs = AboutUs::all();
-        return view('frontend.about_us', compact('aboutUs'));
+        $aboutUsPromotion = AboutUsPromotion::all();
+        return view('admin.aboutUsPromotion.index', compact('aboutUsPromotion'));
     }
 
     /**
@@ -58,7 +59,8 @@ class AboutUsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $aboutUsPromotion = AboutUsPromotion::findOrFail($id);
+        return view('admin.aboutUsPromotion.edit', compact('aboutUsPromotion'));
     }
 
     /**
@@ -70,7 +72,13 @@ class AboutUsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $form_data = array(
+            'heading' => $request->heading,
+            'content' => $request->content,
+        );
+
+        aboutUsPromotion::whereId($id)->update($form_data);
+        return redirect('/admin/aboutUsPromotion')->with('success', 'Content has been updated.');
     }
 
     /**

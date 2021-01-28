@@ -72,15 +72,25 @@
                     </a>
                     <ul class="ml-menu">
                         <li>
-                            <a href="{{ route('admin.submenu.index') }}">Sub </a>
+                            <a href="{{ route('admin.aboutUsLibrary.index') }}">Sample Libraries</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('admin.aboutUsLibraryImage.index') }}">Sample Library Images</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('admin.aboutUsTechnology.index') }}">Audio Technology</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('admin.aboutUsTechnologyImage.index') }}">Technology Images</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('admin.aboutUsPromotion.index') }}">Global Promotion</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('admin.aboutUsPromotionImage.index') }}">Promotion Images</a>
                         </li>
                     </ul>
                 </li>
-
-
-
-
-
                 <li class="{{ Request::is('admin/team') ? 'active' : '' }}">
                     <a href="{{ route('admin.team.index') }}">
                         <i class="material-icons">people_alt</i>
