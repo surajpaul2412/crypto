@@ -34,6 +34,7 @@ Route::resource('/jobs', 'VacancyController');
 Route::resource('/faq', 'FaqController');
 Route::resource('/faculty', 'TeamController');
 Route::resource('/register', 'RegisterController');
+Route::resource('/about_us', 'AboutUsController');
 
 Route::group(['as'=>'admin.','prefix'=>'admin','namespace'=>'Admin','middleware'=>['auth','admin']], function(){
     Route::get('dashboard','DashboardController@index')->name('dashboard');
@@ -98,10 +99,6 @@ Route::group(['as'=>'student.','prefix'=>'student','namespace'=>'Student','middl
 // try
 Route::get('/student_work', function () {
     return view('frontend.15');
-});
-// 12
-Route::get('/about_us', function () {
-    return view('frontend.12');
 });
 Route::get('/exam_schedule', function () {
     return view('frontend.exam');

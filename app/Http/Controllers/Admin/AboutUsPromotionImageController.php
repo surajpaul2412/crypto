@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\AboutUsPromotionImages;
+use App\AboutUsPromotionImage;
 
 class AboutUsPromotionImageController extends Controller
 {
@@ -15,7 +15,7 @@ class AboutUsPromotionImageController extends Controller
      */
     public function index()
     {
-        $aboutUsPromotionImage = AboutUsPromotionImages::all();
+        $aboutUsPromotionImage = AboutUsPromotionImage::all();
         return view('admin.aboutUsPromotionImage.index', compact('aboutUsPromotionImage'));
     }
 
@@ -48,7 +48,7 @@ class AboutUsPromotionImageController extends Controller
             $image->move(public_path('images/aboutUs'), $image_name);
         }
 
-        $aboutUsPromotionImage = new AboutUsPromotionImages();
+        $aboutUsPromotionImage = new AboutUsPromotionImage();
         $aboutUsPromotionImage->image = $image_name;
         $aboutUsPromotionImage->save();
         return redirect('/admin/aboutUsPromotionImage')->with('success', 'Library image has been added.');
@@ -73,7 +73,7 @@ class AboutUsPromotionImageController extends Controller
      */
     public function edit($id)
     {
-        $aboutUsPromotionImage = AboutUsPromotionImages::findOrFail($id);
+        $aboutUsPromotionImage = AboutUsPromotionImage::findOrFail($id);
         return view('admin.aboutUsPromotionImage.edit', compact('aboutUsPromotionImage'));
     }
 
@@ -100,7 +100,7 @@ class AboutUsPromotionImageController extends Controller
             'image' => $image_name
         );
 
-        AboutUsPromotionImages::whereId($id)->update($form_data);
+        AboutUsPromotionImage::whereId($id)->update($form_data);
         return redirect('/admin/aboutUsPromotionImage')->with('success', 'Library Image has been updated.');
     }
 
@@ -112,7 +112,7 @@ class AboutUsPromotionImageController extends Controller
      */
     public function destroy($id)
     {
-        $aboutUsPromotionImage = AboutUsPromotionImages::findOrFail($id);
+        $aboutUsPromotionImage = AboutUsPromotionImage::findOrFail($id);
         $aboutUsPromotionImage->delete();
         return redirect('/admin/aboutUsPromotionImage')->with('success', 'Library Image has been deleted successfully.');
     }

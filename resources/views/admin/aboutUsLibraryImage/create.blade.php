@@ -34,7 +34,7 @@
       <form method="POST" action="{{ route('admin.aboutUsLibraryImage.store') }}" enctype="multipart/form-data">
           @csrf
           
-          <label class="text-dark" for="image">Upload Image:</label>
+          <label class="text-dark" for="image">Upload Image (408x306)px:</label>
           <div class="form-group input-group">
             <label class="text-dark" for="image">Upload Image:</label>
             <input type="file" class="form-control imgInp custom-file-input" name="image" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01"/>

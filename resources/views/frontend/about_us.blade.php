@@ -49,17 +49,15 @@
             <h4 class="font-black text-black font-35 marT-10">Crypto Cipher Audio Lab</h4>
         </div>
         <!-- content -->
+        @if($aboutUs->count())
         <div class="row px-3">
+            @foreach($aboutUs as $row)
             <div class="col-md-5 mb-3 mt-1">
                 <h5 class="font-medium text-black font-400 font-18">
-                    Indian Sample Library Development, Advanced Audio Technology Education, and Global Promotion of Indian Artists.
+                    {{$row->heading}}
                 </h5>
                 <div class="font-regular text-grey2 font-13">
-                    Crypto Cipher is successfully globalising Indian art in amazingly unique ways through technology.<br>
-                    Crypto Cipher dynamically accentuate India’s sample library development industry and its artistes. Alongside, the company engage in providing quality advanced education to people aspiring to become working professionals in the music industry. Crypto Cipher continuously and relentlessly propagates the course of Indian artists all over the world.<br>
-                    Crypto Cipher has stayed true to its core values and mission statement, and for over 10 years, it has grown to become the only company that is most sought-after in Hollywood/Bollywood and all around the globe for its Indian Software Instruments and Products.<br>
-                    Also, Crypto Cipher is developing opportunities for Musicians, Composers and Students worldwide through its range of dynamic and amazing programs, features and products. With a proven track record of professionalism, quality delivery and integrity, Crypto Cipher has attracted international recognition and still continues to passionately deliver sustainable high-tech products and solutions across the globe.<br>
-                    Crypto Cipher has been proudly endorsed and supported by famous multi award-winning (Oscar/Bafta/Grammy awards) and Nomination centric artistes including the names AR Rahman, BT, John Swihart, Pete Lockett, Nainita Desai, Jorg Huttner, Laurent Zillani, K.J Singh, David Buckley and many more talented and renowned artists for their works all over the world.
+                    {!! $row->content !!}
                 </div>
                 <div class="mobile-center">
                     <a href="{{url('crypto_celeb')}}">
@@ -70,23 +68,26 @@
                 </div>
             </div>
             <div class="col-md-7 my-2">
-                <img src="{{ asset('assets/frontend/img/Image18.png') }}" width="100%">
+                <img src="{{asset('images/aboutUs/')}}/{{$row->image}}" width="100%">
             </div>
+            @endforeach
         </div>
+        @endif
     </section>
     <!-- indian sample library development -->
+    @if($aboutUsLibrary->count())
     <section class="container slider-header mt-4">
-        <!-- title -->
+        @foreach($aboutUsLibrary as $row)
         <div class="px-4 pt-4 pb-4">
-            <h6 class="font-regular text-black pb-0 font-18 bold">Indian Sample Library Development</h6>
+            <h6 class="font-regular text-black pb-0 font-18 bold">{{$row->heading}}</h6>
             <div class="font-regular text-grey2 font-13">
-                Revolutionising the sample library development in India. Crypto Cipher is constantly working in development of advanced ancient Indian Kontakt Instruments which also include some extinct and rare instruments of India, Creating Innovative Indian Playable software instruments for Modern Music Composers.
+                {!!$row->content!!}
             </div>
-            <div class="row pl-0">
+            <!-- <div class="row pl-0">
                 <div class="col-md-12 pl-0">
                     <img src="{{ asset('assets/frontend/img/del.png') }}" width="100%">
                 </div>
-            </div>
+            </div> -->
             <div class="mobile-center">
                 <a href="">
                     <div class="font-regular mt-3 page-12-btn">
@@ -95,8 +96,11 @@
                 </a>
             </div>
         </div>
+        @endforeach
     </section>
+    @endif
     <!-- Advanced Audio Technology Education -->
+    @if($aboutUsLibrary->count())
     <section class="container slider-header mt-4">
         <!-- title -->
         <div class="px-4 pt-4 pb-4" style="margin-bottom: -6px;">
@@ -123,30 +127,22 @@
             </div>
         </div>
     </section>
+    @endif
     <!-- Global Promotion of Indian Artists -->
+    @if($aboutUsPromotion->count())
     <section class="container slider-header mt-4">
-        <!-- title -->
+        @foreach($aboutUsPromotion as $row)
         <div class="px-4 pt-4 pb-4">
-            <h6 class="font-regular text-black pb-0 bold font-18">Global Promotion of Indian Artists</h6>
+            <h6 class="font-regular text-black pb-0 bold font-18">{{$row->heading}}</h6>
             <div class="font-regular text-grey2 font-13">
-                Crypto Cipher prioritizes global promotion of Indian Classical Artists in the international scene. With its multi-dynamic promotion features, Crypto Cipher catalyzes the acceptance and recognition of Indian artists while also making their works recognized across the globe.
+                {!!$row->content!!}
             </div>
             <div class="row carousel">
+                @foreach($aboutUsPromotionImage as $new)
                 <div class="col-md-2 page-12-col-md-2 pt-3">
-                    <img src="{{ asset('assets/frontend/img/Image19.png') }}" width="100%">
+                    <img src="{{asset('images/aboutUs/')}}/{{$new->image}}" width="100%">
                 </div>
-                <div class="col-md-2 page-12-col-md-2 pt-3">
-                    <img src="{{ asset('assets/frontend/img/Image19.png') }}" width="100%">
-                </div>
-                <div class="col-md-2 page-12-col-md-2 pt-3">
-                    <img src="{{ asset('assets/frontend/img/Image19.png') }}" width="100%">
-                </div>
-                <div class="col-md-2 page-12-col-md-2 pt-3">
-                    <img src="{{ asset('assets/frontend/img/Image19.png') }}" width="100%">
-                </div>
-                <div class="col-md-2 page-12-col-md-2 pt-3">
-                    <img src="{{ asset('assets/frontend/img/Image19.png') }}" width="100%">
-                </div>
+                @endforeach
             </div>
             <div class="mobile-center">
                 <a href="">
@@ -156,7 +152,9 @@
                 </a>
             </div>
         </div>
+        @endforeach
     </section>
+    @endif
 </div>
 @endsection
 
