@@ -100,32 +100,15 @@
     </section>
     @endif
     <!-- Advanced Audio Technology Education -->
-    @if($aboutUsLibrary->count())
+    @if($aboutUsTechnology->count())
     <section class="container slider-header mt-4">
         <!-- title -->
+        @foreach($aboutUsTechnology as $row)
         <div class="px-4 pt-4 pb-4" style="margin-bottom: -6px;">
-            <h6 class="font-regular text-black pb-0 font-18 bold">Advanced Audio Technology Education</h6>
-            <div class="row">
-                <div class="col-md-12 col-12 pt-3">
-                    <div class="font-regular text-grey2 font-13">
-                        Advances in Audio technology has evolved in the music industry and Crypto Cipher is dedicated to educating Musicians, Composers , Music Students and Music Aspirants on latest trends in audio technology and their applications through its various advanced education programmes in line with the education system of India. Crypto Cipher seeks to develop interest, capacity and expertise in the use of latest audio technology tools by Sound Engineers, Musicians and Students.
-                    </div>
-                </div>
-                <div class="col-md-6 col-12 pt-3">
-                    <div class="font-regular text-grey2 font-13">
-                        Crypto Cipher Mission is provide most advance audio technology education in India. Making our student powerhouse of knowledge by giving them most involving & informative process, finally developing an audio researching attitude in their practice.<br><br>
-                        This proven process develops most fundamental concepts strong to stay updated with ever evolving Audio Technology. This one complete process is developed & trained by Industry  successful experts with international standards of course structure for most rewarding career in the field of audio.<br><br>
-                        Crypto Cipher Audio Lab Provides you with sound proof classrooms for theory sessions & all practical sessions will be done inside the professional studio. A separate control room & recording studio set is just dedicated for student practice so that they do enough practice before they enter professional industry. Candidate after completing the Sound Engineering Diploma will be able to work in studio with all digital technologies related to music production and also will be able to construct complete professional studio single handily.
-                    </div>
-                </div>
-                <div class="col-md-6 col-12 pt-3">
-                    <div class="font-regular text-grey2 font-13">
-                        Crypto Cipher Future Vision, plans to launch India’s first Audio Research library where all our student after classes can practice endlessly in a library environment under various knowledgeable mentors trained in D.A.W ( Logic Pro X, Ableton Live, Fruity Loops etc ), Audio Electronics, Acoustics, EDM, Acoustics and various audio technology Dimensions.<br><br>
-                        Crypto Cipher also has vision of developing a professional career for students under same roof by giving ample career Opportunities by developing a separate professional studio where industry commercial work will be offered to students. Students will get chance of working with clients under guidance of studio experts before they enter professional industry creating a strong portfolio beforehand. 
-                    </div>
-                </div>
-            </div>
+            <h6 class="font-regular text-black pb-0 font-18 bold">{{$row->heading}}</h6>
+            {!! $row->content !!}
         </div>
+        @endforeach
     </section>
     @endif
     <!-- Global Promotion of Indian Artists -->

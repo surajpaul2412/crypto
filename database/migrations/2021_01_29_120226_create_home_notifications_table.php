@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAboutUsLibraryImagesTable extends Migration
+class CreateHomeNotificationsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,11 @@ class CreateAboutUsLibraryImagesTable extends Migration
      */
     public function up()
     {
-        Schema::create('about_us_library_images', function (Blueprint $table) {
+        Schema::create('home_notifications', function (Blueprint $table) {
             $table->id();
-            $table->string('image');
-            $table->string('url')->nullable();
+            $table->string('date')->nullable();
+            $table->string('seat')->nullable();
+            $table->string('batch')->nullable();
             $table->timestamps();
         });
     }
@@ -28,6 +29,6 @@ class CreateAboutUsLibraryImagesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('about_us_library_images');
+        Schema::dropIfExists('home_notifications');
     }
 }

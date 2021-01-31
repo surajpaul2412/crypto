@@ -16,6 +16,7 @@ class CreateAboutUsPromotionImagesTable extends Migration
         Schema::create('about_us_promotion_images', function (Blueprint $table) {
             $table->id();
             $table->string('image');
+            $table->string('url')->nullable();
             $table->timestamps();
         });
     }

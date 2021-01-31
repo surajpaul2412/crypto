@@ -39,6 +39,7 @@ class AboutUsLibraryImageController extends Controller
     {
         $this->validate($request, [
             'image'=> 'required',
+            'url'=> 'nullable'
         ]);
 
         $image_name = $request->image;
@@ -50,6 +51,7 @@ class AboutUsLibraryImageController extends Controller
 
         $aboutUsLibraryImage = new AboutUsLibraryImages();
         $aboutUsLibraryImage->image = $image_name;
+        $aboutUsLibraryImage->url = $request->get('url');
         $aboutUsLibraryImage->save();
         return redirect('/admin/aboutUsLibraryImage')->with('success', 'Library image has been added.');
     }
@@ -90,14 +92,16 @@ class AboutUsLibraryImageController extends Controller
         $image = $request->file('image');
         if($image != ''){
             $request->validate([
-                'image'=> 'required'
+                'image'=> 'required',
+                'url'=> 'nullable'
             ]);
             $image_name = rand() . '.' . $image->getClientOriginalExtension();
             $image->move(public_path('images/aboutUs'), $image_name);
         }
 
         $form_data = array(
-            'image' => $image_name
+            'image' => $image_name,
+            'url' => $request->get('url')
         );
 
         AboutUsLibraryImages::whereId($id)->update($form_data);

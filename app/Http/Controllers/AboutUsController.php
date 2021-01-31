@@ -8,6 +8,9 @@ use App\AboutUsLibrary;
 use App\AboutUsLibraryImages;
 use App\AboutUsPromotion;
 use App\AboutUsPromotionImage;
+use App\AboutUsTechnology;
+use App\AboutUsTechnologyImage;
+use App\HomeNotification;
 
 class AboutUsController extends Controller
 {
@@ -23,7 +26,10 @@ class AboutUsController extends Controller
         $aboutUsLibraryImage = AboutUsLibraryImages::all();
         $aboutUsPromotion = AboutUsPromotion::all();
         $aboutUsPromotionImage = AboutUsPromotionImage::all();
-        return view('frontend.about_us', compact('aboutUs','aboutUsLibrary','aboutUsLibraryImage','aboutUsPromotion','aboutUsPromotionImage'));
+        $aboutUsTechnology = AboutUsTechnology::all();
+        $aboutUsTechnologyImage = AboutUsTechnologyImage::all();
+        $homeNotification = HomeNotification::all();
+        return view('frontend.about_us', compact('aboutUs','aboutUsLibrary','aboutUsLibraryImage','aboutUsPromotion','aboutUsPromotionImage','aboutUsTechnology','aboutUsTechnologyImage','homeNotification'));
     }
 
     /**

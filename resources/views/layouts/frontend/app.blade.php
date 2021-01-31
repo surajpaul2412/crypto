@@ -224,14 +224,16 @@
               <div class="marquee bg-theme2 text-white mt-2">
                 <div>
                   <span class="font-regular">
-                    New Batch Commencing April , 2020. | Remaining Seats: 8 | 
-                    New Batch Commencing April , 2020. | Remaining Seats: 8 | 
-                    New Batch Commencing April , 2020. | Remaining Seats: 8 | 
-                    New Batch Commencing April , 2020. | Remaining Seats: 8 | 
-                    New Batch Commencing April , 2020. | Remaining Seats: 8 | 
-                    New Batch Commencing April , 2020. | Remaining Seats: 8 | 
-                    New Batch Commencing April , 2020. | Remaining Seats: 8 | 
-                    New Batch Commencing April , 2020. | Remaining Seats: 8 | 
+                    @foreach($homeNotification as $row)
+                      <?php
+                      $seat = $row->seat;
+                      $batch = $row->batch;
+                        for ($i=1; $i<=10; $i++)                        
+                        {   
+                        echo "New Batch Commencing ".$batch.". | Remaining Seats: ".$seat." | ";                        
+                        }
+                      ?>
+                    @endforeach
                   </span>
                 </div>
               </div>
@@ -344,7 +346,7 @@
               </div>
               <div class="col-md-4" style="display: block;margin: auto 0px;padding: 0px 12px;">
                   <div class="square" style="margin-left: -15%">
-                      <a class="content" href="{{url('/')}}" align="center">
+                      <a class="content" href="{{url('/')}}" align="center" style="text-align: center;">
                           <img src="{{ asset('assets/frontend/img/home.svg') }}" width="23%" style="position: relative;top: 42%;transform: translateY(-50%);">    
                       </a>
                   </div>
@@ -480,17 +482,21 @@
             <div class="row px-3 height-5 p-relative top-17p">
                 <div class="col-md-6 nav-media-col-md-6 pr-0">
                     <nav class="navbar navbar-expand-lg shadow-none px-0 py-1 height-5">
+                      @if($homeNotification->count())
                         <ul class="navbar-nav ml-auto">
+                          @foreach($homeNotification as $row)
                             <li class="nav-item pr-3">
-                                <div class="nav-link text-black bold font-13">28 days 01:36:14</div>
+                                <div class="nav-link text-black bold font-13">{{$row->date}} days, 01:36:14</div>
                             </li>
                             <li class="nav-item">
-                                <div class="nav-link text-black font-13 font-400">New Batch Commencing April , 2020.</div>
+                                <div class="nav-link text-black font-13 font-400">New Batch Commencing {{$row->batch}}.</div>
                             </li>
                             <li class="nav-item">
-                                <div class="nav-link text-black bold font-13">Remaining Seats: 8</div>
+                                <div class="nav-link text-black bold font-13">Remaining Seats: {{$row->seat}}</div>
                             </li>
+                          @endforeach
                         </ul>
+                      @endif
                     </nav>
                 </div>
                 <div class="col-md-3 nav-media-col-md-3">

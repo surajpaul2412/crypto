@@ -29,6 +29,12 @@
       <form method="post" action="{{ route('admin.aboutUsTechnologyImage.update', $aboutUsTechnologyImage->id) }}" enctype="multipart/form-data">
         @method('PATCH')
         @csrf
+
+        <div class="form-group">
+          <label class="text-dark" for="url">Url :</label>
+          <input type="text" class="form-control" name="url" value="{{ $aboutUsTechnologyImage->url }}"/>
+        </div>
+
         <label class="text-dark" for="image">Upload Image (408x306)px:</label>
         <div class="form-group input-group">
           <label class="text-dark" for="image">Upload Image:</label>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\News;
+use App\HomeNotification;
 
 class NewsController extends Controller
 {
@@ -15,7 +16,8 @@ class NewsController extends Controller
     public function index()
     {
         $news = News::latest()->get();
-        return view('frontend.newsroom', compact('news'));
+        $homeNotification = HomeNotification::all();
+        return view('frontend.newsroom', compact('news','homeNotification'));
     }
 
     /**

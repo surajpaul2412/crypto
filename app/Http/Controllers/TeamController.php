@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Team;
 use App\TeamProduction;
+use App\HomeNotification;
 
 class TeamController extends Controller
 {
@@ -17,7 +18,8 @@ class TeamController extends Controller
     {
         $team = Team::all();
         $teamProduction = TeamProduction::all();
-        return view('frontend.faculty', compact('team','teamProduction'));
+        $homeNotification = HomeNotification::all();
+        return view('frontend.faculty', compact('team','teamProduction','homeNotification'));
     }
 
     /**

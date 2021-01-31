@@ -10,6 +10,7 @@ use App\EngineeringCourseHardware;
 use App\engineeringCourseModule;
 use App\EngineeringCourseOverview;
 use App\EngineeringCourseLogicAbleton;
+use App\HomeNotification;
 
 class EngineeringCourseController extends Controller
 {
@@ -22,6 +23,7 @@ class EngineeringCourseController extends Controller
         $engineeringCourseModule = engineeringCourseModule::all();
         $engineeringCourseOverview = EngineeringCourseOverview::all();
         $engineeringCourseLogicAbleton = EngineeringCourseLogicAbleton::all();
-        return view('frontend.engineering-course', compact('engineeringCourse','engineeringCourseSound','engineeringCourseSoftware','engineeringCourseHardware','engineeringCourseModule','engineeringCourseOverview','engineeringCourseLogicAbleton'));
+        $homeNotification = HomeNotification::all();
+        return view('frontend.engineering-course', compact('engineeringCourse','engineeringCourseSound','engineeringCourseSoftware','engineeringCourseHardware','engineeringCourseModule','engineeringCourseOverview','engineeringCourseLogicAbleton','homeNotification'));
     }
 }

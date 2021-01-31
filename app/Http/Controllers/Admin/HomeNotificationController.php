@@ -1,15 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\ProductionCourse;
-use App\ProductionCourseLogic;
-use App\ProductionCoursePro;
-use App\ProductionCourseQuick;
 use App\HomeNotification;
 
-class ProductionCourseController extends Controller
+class HomeNotificationController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,12 +15,8 @@ class ProductionCourseController extends Controller
      */
     public function index()
     {
-        $productionCourse = ProductionCourse::all();
-        $quick = ProductionCourseQuick::all();
-        $logic = ProductionCourseLogic::all();
-        $pro = ProductionCoursePro::all();
         $homeNotification = HomeNotification::all();
-        return view('frontend.logic', compact('productionCourse','quick','logic','pro','homeNotification'));
+        return view('admin.homeNotification.index', compact('homeNotification'));
     }
 
     /**
@@ -66,7 +59,8 @@ class ProductionCourseController extends Controller
      */
     public function edit($id)
     {
-        //
+        $homeNotification = HomeNotification::findOrFail($id);
+        return view('admin.homeNotification.edit', compact('homeNotification'));
     }
 
     /**
@@ -78,7 +72,19 @@ class ProductionCourseController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'seat'=> 'nullable',
+            'date'=> 'nullable',
+            'batch'=> 'nullable',
+        ]);
+
+        $form_data = array(
+            'seat' => $request->seat,
+            'date' => $request->date,
+            'batch' => $request->batch,
+        );
+        HomeNotification::whereId($id)->update($form_data);
+        return redirect('/admin/homeNotification')->with('success', 'Notifications has been updated.');
     }
 
     /**

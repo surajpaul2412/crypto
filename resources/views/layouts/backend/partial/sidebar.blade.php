@@ -65,6 +65,12 @@
                         <span>Home Content</span>
                     </a>
                 </li>
+                <li class="{{ Request::is('admin/homeNotification') ? 'active' : '' }}">
+                    <a href="{{ route('admin.homeNotification.index') }}">
+                        <i class="material-icons">backup_table</i>
+                        <span>Update Notifications</span>
+                    </a>
+                </li>
                 <li class="{{ Request::is('admin/aboutUs*') ? 'active' : '' }}">
                     <a href="{{ route('admin.aboutUs.index') }}" class="menu-toggle">
                         <i class="material-icons">addchart</i>

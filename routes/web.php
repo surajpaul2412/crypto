@@ -81,6 +81,7 @@ Route::group(['as'=>'admin.','prefix'=>'admin','namespace'=>'Admin','middleware'
     Route::resource('aboutUsTechnologyImage','AboutUsTechnologyImageController');
     Route::resource('aboutUsPromotion','AboutUsPromotionController');
     Route::resource('aboutUsPromotionImage','AboutUsPromotionImageController');
+    Route::resource('homeNotification','HomeNotificationController');
 });
 
 Route::group(['as'=>'manager.','prefix'=>'manager','namespace'=>'Manager','middleware'=>['auth','manager']], function(){
@@ -95,11 +96,10 @@ Route::group(['as'=>'student.','prefix'=>'student','namespace'=>'Student','middl
     Route::get('dashboard','DashboardController@index')->name('dashboard');
 });
 
-
 // try
-Route::get('/student_work', function () {
-    return view('frontend.15');
-});
-Route::get('/exam_schedule', function () {
-    return view('frontend.exam');
-});
+// Route::get('/student_work', function () {
+//     return view('frontend.15');
+// });
+// Route::get('/exam_schedule', function () {
+//     return view('frontend.exam');
+// });

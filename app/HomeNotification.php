@@ -4,9 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class AboutUsLibraryImages extends Model
+class HomeNotification extends Model
 {
     protected $fillable = [
-        'image','url'
+        'batch', 'seat', 'date'
     ];
 }

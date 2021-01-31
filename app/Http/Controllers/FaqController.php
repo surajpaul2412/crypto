@@ -8,6 +8,7 @@ use App\FaqCareer;
 use App\FaqCourse;
 use App\FaqGeneral;
 use App\FaqHostel;
+use App\HomeNotification;
 
 class FaqController extends Controller
 {
@@ -23,7 +24,8 @@ class FaqController extends Controller
         $faqCourse = FaqCourse::all();
         $faqGeneral = FaqGeneral::all();
         $faqHostel = FaqHostel::all();
-        return view('frontend.faq', compact('faqs','faqCareer','faqCourse','faqGeneral','faqHostel'));
+        $homeNotification = HomeNotification::all();
+        return view('frontend.faq', compact('faqs','faqCareer','faqCourse','faqGeneral','faqHostel','homeNotification'));
     }
 
     /**

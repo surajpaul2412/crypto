@@ -39,6 +39,7 @@ class AboutUsPromotionImageController extends Controller
     {
         $this->validate($request, [
             'image'=> 'required',
+            'url'=> 'nullable'
         ]);
 
         $image_name = $request->image;
@@ -50,6 +51,7 @@ class AboutUsPromotionImageController extends Controller
 
         $aboutUsPromotionImage = new AboutUsPromotionImage();
         $aboutUsPromotionImage->image = $image_name;
+        $aboutUsPromotionImage->url = $request->get('url');
         $aboutUsPromotionImage->save();
         return redirect('/admin/aboutUsPromotionImage')->with('success', 'Library image has been added.');
     }
@@ -90,14 +92,16 @@ class AboutUsPromotionImageController extends Controller
         $image = $request->file('image');
         if($image != ''){
             $request->validate([
-                'image'=> 'required'
+                'image'=> 'required',
+                'url'=> 'nullable'
             ]);
             $image_name = rand() . '.' . $image->getClientOriginalExtension();
             $image->move(public_path('images/aboutUs'), $image_name);
         }
 
         $form_data = array(
-            'image' => $image_name
+            'image' => $image_name,
+            'url' => $request->get('url')
         );
 
         AboutUsPromotionImage::whereId($id)->update($form_data);

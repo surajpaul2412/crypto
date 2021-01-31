@@ -33,6 +33,11 @@
     @endif
       <form method="POST" action="{{ route('admin.aboutUsLibraryImage.store') }}" enctype="multipart/form-data">
           @csrf
+
+          <div class="form-group">
+              <label class="text-dark" for="url">Url :</label>
+              <input type="text" class="form-control" name="url"/>
+          </div>
           
           <label class="text-dark" for="image">Upload Image (408x306)px:</label>
           <div class="form-group input-group">

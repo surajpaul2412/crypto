@@ -39,6 +39,7 @@ class AboutUsTechnologyImageController extends Controller
     {
         $this->validate($request, [
             'image'=> 'required',
+            'url'=> 'nullable'
         ]);
 
         $image_name = $request->image;
@@ -50,6 +51,7 @@ class AboutUsTechnologyImageController extends Controller
 
         $aboutUsTechnologyImage = new AboutUsTechnologyImages();
         $aboutUsTechnologyImage->image = $image_name;
+        $aboutUsTechnologyImage->url = $request->get('url');
         $aboutUsTechnologyImage->save();
         return redirect('/admin/aboutUsTechnologyImage')->with('success', 'Technology image has been added.');
     }
@@ -90,14 +92,16 @@ class AboutUsTechnologyImageController extends Controller
         $image = $request->file('image');
         if($image != ''){
             $request->validate([
-                'image'=> 'required'
+                'image'=> 'required',
+                'url'=> 'nullable'
             ]);
             $image_name = rand() . '.' . $image->getClientOriginalExtension();
             $image->move(public_path('images/aboutUs'), $image_name);
         }
 
         $form_data = array(
-            'image' => $image_name
+            'image' => $image_name,
+            'url' => $request->get('url')
         );
 
         AboutUsTechnologyImages::whereId($id)->update($form_data);
