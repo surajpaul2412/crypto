@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Exam;
 
 class ExamController extends Controller
 {
@@ -14,7 +15,8 @@ class ExamController extends Controller
      */
     public function index()
     {
-        //
+        $exam = Exam::all();
+        return view('admin.exam.index', compact('exam'));
     }
 
     /**
@@ -24,7 +26,7 @@ class ExamController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.exam.create');
     }
 
     /**
@@ -35,7 +37,20 @@ class ExamController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'module'=>'required|min:3|max:255',
+            'structure'=> 'nullable||min:3|max:255',
+            'marks'=> 'nullable||min:3|max:255',
+            'credits'=> 'nullable||min:3|max:255'
+        ]);
+        $exam = new Exam([
+            'module' => $request->get('module'),
+            'structure'=> $request->get('structure'),
+            'marks'=> $request->get('marks'),
+            'credits'=> $request->get('credits'),
+        ]);
+        $exam->save();
+        return redirect('/admin/exam')->with('success', 'Exam structure has been added.');
     }
 
     /**
@@ -57,7 +72,8 @@ class ExamController extends Controller
      */
     public function edit($id)
     {
-        //
+        $exam = Exam::find($id);
+        return view('admin.exam.edit', compact('exam'));
     }
 
     /**
@@ -69,7 +85,21 @@ class ExamController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+      $request->validate([
+        'module'=>'required|min:3|max:255',
+        'structure'=> 'nullable||min:3|max:255',
+        'marks'=> 'nullable||min:3|max:255',
+        'credits'=> 'nullable||min:3|max:255'
+      ]);
+
+      $exam = Exam::find($id);
+      $exam->module = $request->get('module');
+      $exam->structure = $request->get('structure');
+      $exam->marks = $request->get('marks');
+      $exam->credits = $request->get('credits');
+      $exam->save();
+
+      return redirect('/admin/exam')->with('success', 'Exam structure has been updated');
     }
 
     /**
@@ -80,6 +110,8 @@ class ExamController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $exam = Exam::find($id);
+        $exam->delete();
+        return redirect('/admin/exam')->with('success', 'Exam structure has been deleted successfully');
     }
 }

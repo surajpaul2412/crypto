@@ -13,10 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
 Auth::routes();
 
 Route::resource('/', 'WelcomeController');
@@ -35,6 +31,8 @@ Route::resource('/faq', 'FaqController');
 Route::resource('/faculty', 'TeamController');
 Route::resource('/register', 'RegisterController');
 Route::resource('/about_us', 'AboutUsController');
+Route::resource('/student_work', 'StudentWorkController');
+Route::resource('/exam_schedule', 'ExamStructureController');
 
 Route::group(['as'=>'admin.','prefix'=>'admin','namespace'=>'Admin','middleware'=>['auth','admin']], function(){
     Route::get('dashboard','DashboardController@index')->name('dashboard');
@@ -82,6 +80,10 @@ Route::group(['as'=>'admin.','prefix'=>'admin','namespace'=>'Admin','middleware'
     Route::resource('aboutUsPromotion','AboutUsPromotionController');
     Route::resource('aboutUsPromotionImage','AboutUsPromotionImageController');
     Route::resource('homeNotification','HomeNotificationController');
+    Route::post('/studentsWork/{id}/enable','StudentWorkController@enable')->name('studentsWork.enable');
+    Route::post('/studentsWork/{id}/disable','StudentWorkController@disable')->name('studentsWork.disable');
+    Route::resource('studentsWork','StudentWorkController');
+    Route::resource('exam','ExamController');
 });
 
 Route::group(['as'=>'manager.','prefix'=>'manager','namespace'=>'Manager','middleware'=>['auth','manager']], function(){
@@ -95,11 +97,3 @@ Route::group(['as'=>'faculty.','prefix'=>'faculty','namespace'=>'Faculty','middl
 Route::group(['as'=>'student.','prefix'=>'student','namespace'=>'Student','middleware'=>['auth','student']], function(){
     Route::get('dashboard','DashboardController@index')->name('dashboard');
 });
-
-// try
-// Route::get('/student_work', function () {
-//     return view('frontend.15');
-// });
-// Route::get('/exam_schedule', function () {
-//     return view('frontend.exam');
-// });

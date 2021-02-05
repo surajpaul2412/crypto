@@ -20,16 +20,23 @@
   }
   td{
     font-family: 'Roboto-Bold';
-    font-size: 13px;
+    font-size: 13px !important;
     color: #6D7178;
     border-right: 1px solid #fff;
   }
   th{
     border-right: 1px solid #fff;
   }
+  .table thead th{
+    padding-top: 18px !important;
+  }
+  @media screen and (max-width: 900px) {
+    td{
+      font-size: 9px !important;
+    }
+  }
 </style>
 @endsection
-
 
 @section('content')
 <div class="bg-theme1 main-inner">
@@ -42,8 +49,9 @@
         <!-- content -->
         <div class="row px-3 pb-4" style="margin-bottom: -18px;">
             <div class="col-md-12 my-3">
-                <div class="slider-header py-4 px-3">
-                    <div class="table-responsive px-3">
+              @if($exam->count())
+                <div class="slider-header py-4 px-3 media-px-0 media-py-0">
+                    <div class="table-responsive px-3 media-px-0">
                       <table class="table table-striped">
                         <thead>
                           <tr class="uppercase bold font-regular bg-light-grey">
@@ -54,59 +62,19 @@
                           </tr>
                         </thead>
                         <tbody>
+                          @foreach($exam as $row)
                           <tr class="bold font-regular">
-                            <td>Music Production</td>
-                            <td>Written Exam</td>
-                            <td>150 Marks</td>
-                            <td>6 Credits</td>
+                            <td>{!! $row->module !!}</td>
+                            <td>{!! $row->structure !!}</td>
+                            <td>{!! $row->marks !!}</td>
+                            <td>{!! $row->credits !!}</td>
                           </tr>
-                          <tr>
-                            <td>Music Theory & Arrangements</td>
-                            <td>Written Exam</td>
-                            <td>100 Marks</td>
-                            <td>4 Credits</td>
-                          </tr>
-                          <tr>
-                            <td>Recording</td>
-                            <td>Practical Workshop</td>
-                            <td>100 Marks (Based on Attendance)</td>
-                            <td>4 Credits</td>
-                          </tr>
-                          <tr>
-                            <td>Audio System Design</td>
-                            <td>Written Exam + 2 Assignments</td>
-                            <td>100 Marks (Written Exam) + 50 Marks (Assignments)</td>
-                            <td>4 Credits + 2 Credits</td>
-                          </tr>
-
-
-
-
-
-
-
-                          <tr>
-                            <td>Music Theory & Arrangements</td>
-                            <td>Written Exam</td>
-                            <td>100 Marks</td>
-                            <td>4 Credits</td>
-                          </tr>
-                          <tr>
-                            <td>Recording</td>
-                            <td>Practical Workshop</td>
-                            <td>100 Marks (Based on Attendance)</td>
-                            <td>4 Credits</td>
-                          </tr>
-                          <tr>
-                            <td>Audio System Design</td>
-                            <td>Written Exam + 2 Assignments</td>
-                            <td>100 Marks (Written Exam) + 50 Marks (Assignments)</td>
-                            <td>4 Credits + 2 Credits</td>
-                          </tr>
+                          @endforeach
                         </tbody>
                       </table>
                     </div>
                 </div>
+              @endif
             </div>
             <div class="col-md-12 px-5 pt-3">
                 <h6 class="font-medium font-13 text-black">Total Credits - 64 Credits</h6>
@@ -118,7 +86,6 @@
     </section>
 </div>
 @endsection
-
 
 @section('script')
 @endsection

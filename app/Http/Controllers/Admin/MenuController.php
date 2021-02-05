@@ -40,11 +40,13 @@ class MenuController extends Controller
         $this->validate($request, [
             'slug'=> 'required|min:3|max:255',
             'name'=> 'required|min:3',
+            'url'=> 'nullable',
         ]);
 
         $menus = new Menu();
         $menus->slug = $request->slug;
         $menus->name = $request->name;
+        $menus->url = $request->url;
         $menus->save();
         return redirect('/admin/menu')->with('success', 'Menu has been added.');
     }
@@ -84,11 +86,13 @@ class MenuController extends Controller
         $request->validate([
             'slug'=> 'required|min:3|max:255',
             'name'=> 'required|min:3',
+            'url'=> 'nullable',
         ]);
 
         $form_data = array(
             'slug' => $request->slug,
-            'name' => $request->name
+            'name' => $request->name,
+            'url' => $request->url
         );
 
         Menu::whereId($id)->update($form_data);

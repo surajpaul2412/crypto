@@ -157,11 +157,23 @@
 	.top-5p{
 		position: absolute;top: 5%;
 	}
+	.table td, .table th{
+	    padding:.75rem .95rem .75rem 2rem !important;
+	}
 }
 /*mobile only screen*/
 @media screen and (max-width: 900px) {
 	.container-fluid, .container-lg, .container-md, .container-sm, .container-xl{
 		padding: 0px 15px;
+	}
+	.table td, .table th{
+	    padding:.5rem .5rem .5rem .5rem !important;
+	}
+	.mobile-mb-3{
+		margin-bottom: 30px;
+	}
+	.mobile-pr-2{
+		padding-right: .5rem!important;
 	}
 	.media-contact-px-2{
 		padding-left: 25px;
@@ -182,6 +194,10 @@
 	.media-px-0{
 		padding-left: 0px !important;
 		padding-right: 0px !important;
+	}
+	.media-py-0{
+		padding-top: 0px !important;
+		padding-bottom: 0px !important;
 	}
 	.media-px-2{
 		padding-left: .5rem !important;

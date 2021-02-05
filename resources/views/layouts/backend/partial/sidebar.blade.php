@@ -268,6 +268,18 @@
                         </li>
                     </ul>
                 </li>
+                <li class="{{ Request::is('admin/studentsWork') ? 'active' : '' }}">
+                    <a href="{{ route('admin.studentsWork.index') }}">
+                        <i class="material-icons">flaky</i>
+                        <span>Students Work</span>
+                    </a>
+                </li>
+                <li class="{{ Request::is('admin/exam') ? 'active' : '' }}">
+                    <a href="{{ route('admin.exam.index') }}">
+                        <i class="material-icons">tour</i>
+                        <span>Exam Structure</span>
+                    </a>
+                </li>
                 <li class="{{ Request::is('admin/vacancy') ? 'active' : '' }}">
                     <a href="{{ route('admin.vacancy.index') }}">
                         <i class="material-icons">how_to_reg</i>

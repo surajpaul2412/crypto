@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Carbon\carbon;
 
 class ContentTableSeeder extends Seeder
 {
@@ -298,6 +299,85 @@ class ContentTableSeeder extends Seeder
                 'date' => '28',
                 'seat' => '8',
                 'batch' => 'April, 2021',
+            ]);
+        }
+
+
+        // exam structure
+        $numberOfExams = \DB::table('exams')->count();
+        if($numberOfExams == 0)
+        {
+            DB::table('exams')->insert([
+                'module' => 'Music Production',
+                'structure' => 'Written Exam',
+                'marks' => '150 Marks',
+                'credits' => '6 Credits',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ]);
+            DB::table('exams')->insert([
+                'module' => 'Music Theory & Arrangements',
+                'structure' => 'Written Exam',
+                'marks' => '100 Marks',
+                'credits' => '4 Credits',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ]);
+            DB::table('exams')->insert([
+                'module' => 'Recording',
+                'structure' => 'Practical Workshop',
+                'marks' => '100 Marks<br>(Based on Attendance)',
+                'credits' => '4 Credits',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ]);
+            DB::table('exams')->insert([
+                'module' => 'Audio System Design',
+                'structure' => 'Written Exam + 2 Assignments',
+                'marks' => '100 Marks (Written Exam) +<br>50 Marks (Assignments)',
+                'credits' => '4 Credits + 2 Credits',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ]);
+            DB::table('exams')->insert([
+                'module' => 'Studio Interconnections',
+                'structure' => '8 Assignments',
+                'marks' => '100 Marks',
+                'credits' => '4 Credits',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ]);
+            DB::table('exams')->insert([
+                'module' => 'Mixers',
+                'structure' => 'Written Exam + 1 Assignment',
+                'marks' => '100 Marks',
+                'credits' => '2 Credits + 2 Credits',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ]);
+            DB::table('exams')->insert([
+                'module' => 'Synthesis',
+                'structure' => 'Preset Submission +<br>Kontakt Instrument Submission',
+                'marks' => '200 Marks (Preset Submission) +<br>100 Marks (Kontakt Instrument<br>Submission)',
+                'credits' => '8 Credits + 4 Credits',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ]);
+            DB::table('exams')->insert([
+                'module' => 'Mixing & Mastering',
+                'structure' => 'Assignments',
+                'marks' => '500 Marks',
+                'credits' => '20 Credits',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ]);
+            DB::table('exams')->insert([
+                'module' => 'Acoustics',
+                'structure' => 'Thesis Submission',
+                'marks' => '100 Marks',
+                'credits' => '4 Credits',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
             ]);
         }
     }
