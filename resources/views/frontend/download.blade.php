@@ -45,7 +45,7 @@
 <!-- modal -->
 @foreach($downloads as $index => $row)
 <div class="modal fade" id="myModal{{$index+1}}" role="dialog" style="z-index: 999999;">
-    <div class="modal-dialog modal-lg">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-body">
                 <h6 class="font-regular font-14 text-dark text-justify" style="transform: initial;">

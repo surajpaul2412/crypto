@@ -404,13 +404,29 @@
             <!-- main heading content -->
             <div class="col-md-6 media-col-md-6">
                 <div class="slider-header scroll-hide height-58 overflow-y-scroll">
-                    <div class="height-55-percent">
+                  <!-- desktop banners -->
+                    <div class="height-55-percent mobile-d-none">
                       @if($banners->count())
                         <div class="owl-slider" style="z-index: 1 !important;">
                           <div id="carousel" class="owl-carousel">
                             @foreach($banners as $index => $banner)
                             <div class="item">
-                              <img src="{{asset('images/banner/')}}/{{$banner->image}}">
+                              <img src="{{asset('images/banner/')}}/{{$banner->image}}" width="100%" style="height: 32vh;">
+                            </div>
+                            @endforeach
+                          </div>
+                        </div>
+                      @else
+                      @endif
+                    </div>
+                    <!-- mobile banners -->
+                    <div class="height-55-percent desktop-d-none">
+                      @if($banners->count())
+                        <div class="owl-slider" style="z-index: 1 !important;">
+                          <div id="carousel" class="owl-carousel">
+                            @foreach($banners as $index => $banner)
+                            <div class="item">
+                              <img src="{{asset('images/banner/')}}/{{$banner->image}}" width="100%" style="height: 32vh;">
                             </div>
                             @endforeach
                           </div>
@@ -610,7 +626,7 @@
     </section>
     <!-- footer logos -->
     <section class="container-fluid border-top footer-shadow mobile-d-none" style="height: 9.5vh;">
-        <img src="{{asset('images/banner/footer.png')}}" width="40%" class="d-block mx-auto">
+        <img src="{{asset('images/banner/footer.png')}}" width="90%" class="d-block mx-auto">
     </section>
     <!-- mobile footer -->
     <section class="desktop-d-none border-top footer-shadow">

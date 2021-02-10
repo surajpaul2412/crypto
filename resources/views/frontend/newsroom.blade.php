@@ -141,7 +141,7 @@
 <div class="desktop-d-none">
     @foreach($news as $index => $row)
     <div class="modal fade" id="myModal{{$index+1}}" role="dialog">
-        <div class="modal-dialog modal-lg">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-body">
                     <img src="{{asset('images/news/')}}/{{$row->image}}" class="d-block mx-auto" width="100%">

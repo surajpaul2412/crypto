@@ -9,4 +9,9 @@ class Submenu extends Model
     protected $fillable = [
         'name', 'slug'
     ];
+
+    public function menu()
+    {
+    	return $this->belongsTo('App\Menu');
+    }
 }

@@ -9,4 +9,9 @@ class Menu extends Model
     protected $fillable = [
         'name', 'slug'
     ];
+
+    public function submenu()
+    {
+        return $this->hasMany('App\Submenu');
+    }
 }

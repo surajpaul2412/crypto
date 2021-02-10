@@ -59,7 +59,7 @@
 <!-- modal -->
 @foreach($pros as $index => $row)
 <div class="modal fade" id="myModal{{$index+1}}" role="dialog" style="z-index: 9999;">
-    <div class="modal-dialog modal-lg">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-body">
                 <h1 class="font-regular bold font-13 text-dark">{{$row->name}}</h1>

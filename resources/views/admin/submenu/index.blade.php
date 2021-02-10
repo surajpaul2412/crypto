@@ -30,13 +30,15 @@
     <thead>
         <tr>
           <th>S. no</th>
-          <th>Title</th>
+          <th>Main Menu</th>
+          <th>Sub Menus</th>
         </tr>
     </thead>
     <tbody>
       @foreach($menus as $index => $menu)
       <tr>
         <th>{{$index+1}}.</th>
+        <td class="bold text-green">{{$menu->menu->name}}</td>
         <td class="bold">{{$menu->name}}</td>
         <td>
           <a href="{{ route('admin.menu.edit',$menu->id)}}">

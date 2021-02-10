@@ -152,7 +152,7 @@
     @if($studentsWork->count())
     @foreach($studentsWork as $key => $row)
     <div class="modal" id="myModal{{$key+1}}" role="dialog">
-        <div class="modal-dialog modal-lg">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-body">
                     <img src="{{asset('images/work/')}}/{{$row->image}}" class="d-block m-auto shadow-round" width="60%">
