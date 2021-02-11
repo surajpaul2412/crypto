@@ -33,16 +33,20 @@
     @endif
       <form method="POST" action="{{ route('admin.banner.store') }}" enctype="multipart/form-data">
           @csrf
-          <label class="text-dark" for="image">Upload Banner:(934x292)px</label>
+          <label class="text-dark" for="image">Upload Desktop Banner:(934x292)px</label>
           <div class="form-group input-group">
-            <label class="text-dark" for="image">Upload Image:</label>
             <input type="file" class="form-control imgInp custom-file-input" name="image" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01"/>
             <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
             <div class="row">
               <div class="col-md-12" id="img_contain">
-                <img id="previewImage" align='middle' src="" width="800px" class="pt-3"/>
+                <img id="previewImage" align='middle' src="" width="200px" class="pt-3"/>
               </div>
             </div>
+          </div>
+
+          <div class="form-group">
+              <label class="text-dark" for="mobile_banner">Mobile Banner Image (300 x 250)px:</label>
+              <input type="file" class="form-control" name="mobile_banner"/>
           </div>
           
           <button type="submit" class="btn btn-primary">Add Banner</button>

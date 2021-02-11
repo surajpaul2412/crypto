@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Downloads;
 use App\HomeNotification;
+use App\Menu;
 
 class DownloadController extends Controller
 {
@@ -16,8 +17,9 @@ class DownloadController extends Controller
     public function index()
     {
         $downloads = Downloads::all();
+        $menus = Menu::all();
         $homeNotification = HomeNotification::all();
-        return view('frontend.download', compact('downloads','homeNotification'));
+        return view('frontend.download', compact('downloads','homeNotification','menus'));
     }
 
     /**

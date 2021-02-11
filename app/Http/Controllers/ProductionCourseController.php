@@ -8,6 +8,7 @@ use App\ProductionCourseLogic;
 use App\ProductionCoursePro;
 use App\ProductionCourseQuick;
 use App\HomeNotification;
+use App\Menu;
 
 class ProductionCourseController extends Controller
 {
@@ -23,7 +24,8 @@ class ProductionCourseController extends Controller
         $logic = ProductionCourseLogic::all();
         $pro = ProductionCoursePro::all();
         $homeNotification = HomeNotification::all();
-        return view('frontend.logic', compact('productionCourse','quick','logic','pro','homeNotification'));
+        $menus = Menu::all();
+        return view('frontend.logic', compact('productionCourse','quick','logic','pro','homeNotification','menus'));
     }
 
     /**

@@ -188,6 +188,24 @@
         width: 19px !important;
       }
     }
+    @media screen and (min-width: 420px) and (max-width: 900px) and (orientation: landscape) {
+      html {
+        width: 50vw;
+        display: block;
+        margin: 0px auto;
+        background: #f1f2f6 !important;
+        background-image: linear-gradient(to right, #edeef3 , #f4f5f9);
+        
+      }
+      body{
+        box-shadow: 2px 2px 4px 0px rgba(50,50,50,0.10), -1px -1px 3px 0px rgba(255,255,255,0.8);
+        border: 1px solid rgba(255,255,255,0.3);
+      }
+      .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12{
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+      }
+    }
   </style>
   @yield('css')
 </head>

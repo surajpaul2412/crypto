@@ -17,9 +17,9 @@
                 </div>
                 <div class="font-regular text-grey2 font-13" align="left">
                     <h6 class="font-black text-black font-25 marT-10">Quick Links :</h6>
-                    <h5 class="font-regular"><a href="" class="text-grey2"> <i class="fa fa-angle-right text-green"></i> Home Page</a></h5>
-                    <h5 class="font-regular"><a href="" class="text-grey2"> <i class="fa fa-angle-right text-green"></i> About Us</a></h5>
-                    <h5 class="font-regular"><a href="" class="text-grey2"> <i class="fa fa-angle-right text-green"></i> Contact Us</a></h5>
+                    <h5 class="font-regular"><a href="{{url('/')}}" class="text-grey2"> <i class="fa fa-angle-right text-green"></i> Home Page</a></h5>
+                    <h5 class="font-regular"><a href="{{url('about_us')}}" class="text-grey2"> <i class="fa fa-angle-right text-green"></i> About Us</a></h5>
+                    <h5 class="font-regular"><a href="{{url('contact_us')}}" class="text-grey2"> <i class="fa fa-angle-right text-green"></i> Contact Us</a></h5>
                 </div>
             </div>
         </div>

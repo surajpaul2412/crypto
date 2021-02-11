@@ -40,7 +40,12 @@
 
           <div class="form-group">
               <label class="text-dark" for="name">Menu name :</label>
-              <textarea id="summernote" class="form-control" name="name"></textarea>
+              <input type="text" class="form-control" name="name"/>
+          </div>
+
+          <div class="form-group">
+              <label class="text-dark" for="url">url :</label>
+              <input type="text" class="form-control" name="url"/>
           </div>
 
           <button type="submit" class="btn btn-primary">Add new</button>

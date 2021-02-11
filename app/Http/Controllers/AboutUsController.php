@@ -11,6 +11,7 @@ use App\AboutUsPromotionImage;
 use App\AboutUsTechnology;
 use App\AboutUsTechnologyImage;
 use App\HomeNotification;
+use App\Menu;
 
 class AboutUsController extends Controller
 {
@@ -22,6 +23,7 @@ class AboutUsController extends Controller
     public function index()
     {
         $aboutUs = AboutUs::all();
+        $menus = Menu::all();
         $aboutUsLibrary = AboutUsLibrary::all();
         $aboutUsLibraryImage = AboutUsLibraryImages::all();
         $aboutUsPromotion = AboutUsPromotion::all();
@@ -29,7 +31,7 @@ class AboutUsController extends Controller
         $aboutUsTechnology = AboutUsTechnology::all();
         $aboutUsTechnologyImage = AboutUsTechnologyImage::all();
         $homeNotification = HomeNotification::all();
-        return view('frontend.about_us', compact('aboutUs','aboutUsLibrary','aboutUsLibraryImage','aboutUsPromotion','aboutUsPromotionImage','aboutUsTechnology','aboutUsTechnologyImage','homeNotification'));
+        return view('frontend.about_us', compact('aboutUs','aboutUsLibrary','aboutUsLibraryImage','aboutUsPromotion','aboutUsPromotionImage','aboutUsTechnology','aboutUsTechnologyImage','homeNotification','menus'));
     }
 
     /**

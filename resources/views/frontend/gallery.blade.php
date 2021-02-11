@@ -37,6 +37,11 @@
             padding: 0px 0px !important;
         }
     }
+    .box-shadow{
+        box-shadow: 2px 2px 4px 0px rgba(50,50,50,0.10), -2px -2px 3px 0px rgba(255,255,255,0.8);
+        background-image: linear-gradient(to right, #edeef3 , #f4f5f9);
+        border: 5px solid rgba(255,255,255,0.3);
+    }
 </style>
 @endsection
 
@@ -81,12 +86,11 @@
                 </div>
                 @endforeach
                 @endif
-
                 <div class="row mt-3 px-2 hardware">
                     @if($studioEquipmentHardwareImage->count())
                     @foreach($studioEquipmentHardwareImage as $row)
                     <div class="col-md-3 px-1">
-                        <div>
+                        <div class="box-shadow">
                             <a href=""><img src="{{asset('images/studioEquipment/')}}/{{$row->image}}" width="100%"></a>
                         </div>
                     </div>
@@ -125,13 +129,11 @@
                 </div>
                 @endforeach
                 @endif
-
-
                 <div class="row mt-3 px-2 software">
                     @if($studioEquipmentSoftwareImage->count())
                     @foreach($studioEquipmentSoftwareImage as $row)
                     <div class="col-md-3 px-1">
-                        <div>
+                        <div class="box-shadow">
                             <a href=""><img src="{{asset('images/studioEquipment/')}}/{{$row->image}}" width="100%"></a>
                         </div>
                     </div>

@@ -9,6 +9,7 @@ use App\FaqCourse;
 use App\FaqGeneral;
 use App\FaqHostel;
 use App\HomeNotification;
+use App\Menu;
 
 class FaqController extends Controller
 {
@@ -23,9 +24,10 @@ class FaqController extends Controller
         $faqCareer = FaqCareer::all();
         $faqCourse = FaqCourse::all();
         $faqGeneral = FaqGeneral::all();
+        $menus = Menu::all();
         $faqHostel = FaqHostel::all();
         $homeNotification = HomeNotification::all();
-        return view('frontend.faq', compact('faqs','faqCareer','faqCourse','faqGeneral','faqHostel','homeNotification'));
+        return view('frontend.faq', compact('faqs','faqCareer','faqCourse','faqGeneral','faqHostel','homeNotification','menus'));
     }
 
     /**

@@ -30,7 +30,8 @@
     <thead>
         <tr>
           <th>S. no</th>
-          <th>Banner preview</th>
+          <th>Desktop Banner preview</th>
+          <th>Mobile Banner preview</th>
           <th>Edit</th>
           <th>Delete</th>
         </tr>
@@ -40,6 +41,7 @@
       <tr>
         <th>{{$index+1}}.</th>
         <td><img src="{{asset('images/banner/')}}/{{$banner->image}}" width="200px"></td>
+        <td><img src="{{asset('images/banner/')}}/{{$banner->mobile_banner}}" width="120px"></td>
         <td>
           <a href="{{ route('admin.banner.edit',$banner->id)}}">
             <i class="material-icons">edit</i>

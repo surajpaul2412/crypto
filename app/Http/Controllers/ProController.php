@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Pros;
+use App\Menu;
 use App\HomeNotification;
 
 class ProController extends Controller
@@ -17,7 +18,8 @@ class ProController extends Controller
     {
         $pros = Pros::all();
         $homeNotification = HomeNotification::all();
-        return view('frontend.crypto_celeb', compact('pros','homeNotification'));
+        $menus = Menu::all();
+        return view('frontend.crypto_celeb', compact('pros','homeNotification','menus'));
     }
 
     /**

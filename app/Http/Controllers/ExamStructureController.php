@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\HomeNotification;
 use App\Exam;
+use App\Menu;
 
 class ExamStructureController extends Controller
 {
@@ -17,7 +18,8 @@ class ExamStructureController extends Controller
     {
         $homeNotification = HomeNotification::all();
         $exam = Exam::all();
-        return view('frontend.exam', compact('homeNotification','exam'));
+        $menus = Menu::all();
+        return view('frontend.exam', compact('homeNotification','exam','menus'));
     }
 
     /**

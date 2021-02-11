@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Contact;
 use App\Pros;
+use App\Menu;
 use App\Banner;
 use App\HomeContent;
 use App\HomeNotification;
@@ -19,10 +20,11 @@ class WelcomeController extends Controller
     public function index()
     {
         $pros = Pros::all();
+        $menus = Menu::all();
         $banners = Banner::all();
         $homeContent = HomeContent::all();
         $homeNotification = HomeNotification::all();
-        return view('welcome', compact('pros','banners','homeContent','homeNotification'));
+        return view('welcome', compact('pros','banners','homeContent','homeNotification','menus'));
     }
 
     /**

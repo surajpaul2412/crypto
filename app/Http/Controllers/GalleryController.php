@@ -9,6 +9,7 @@ use App\StudioEquipmentSoftware;
 use App\StudioEquipmentHardwareImage;
 use App\StudioEquipmentSoftwareImage;
 use App\HomeNotification;
+use App\Menu;
 
 class GalleryController extends Controller
 {
@@ -25,7 +26,8 @@ class GalleryController extends Controller
         $studioEquipmentSoftware = StudioEquipmentSoftware::all();
         $studioEquipmentSoftwareImage = StudioEquipmentSoftwareImage::all();
         $homeNotification = HomeNotification::all();
-        return view('frontend.gallery', compact('gallery','studioEquipmentHardware','studioEquipmentSoftware','studioEquipmentHardwareImage','studioEquipmentSoftwareImage','homeNotification'));
+        $menus = Menu::all();
+        return view('frontend.gallery', compact('gallery','studioEquipmentHardware','studioEquipmentSoftware','studioEquipmentHardwareImage','studioEquipmentSoftwareImage','homeNotification','menus'));
     }
 
     /**

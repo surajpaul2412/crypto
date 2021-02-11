@@ -36,6 +36,7 @@
             <img src="{{ asset('assets/backend/images/add-friend.png') }}" width="35px">
             <h6 class="bold text-dark">Name: {{$user->name}}</h6>
             <h5 class="bold text-dark">Email: {{$user->email}}</h5>
+            <a href="{{ route('admin.student.show',$user->id)}}" class="badge badge-info text-dark">Student Details</a>
         </div>
         <a href="{{ route('admin.student.edit',$user->id)}}" class="edit"><img src="{{ asset('assets/backend/images/writing.png') }}"></a>
       </div>

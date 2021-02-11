@@ -30,9 +30,8 @@
         @method('PATCH')
         @csrf
 
-        <label class="text-dark" for="image">Upload Image:(934x292)px</label>
+        <label class="text-dark" for="image">Upload Desktop Banner:(934x292)px</label>
         <div class="form-group input-group">
-          <label class="text-dark" for="image">Upload Image:</label>
           <input type="file" class="form-control imgInp custom-file-input" name="image" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01"/>
           <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
           <div class="row">
@@ -41,6 +40,12 @@
             </div>
           </div>
           <input type="hidden" name="hidden_image" value="{{ $banner->image }}">
+        </div>
+
+        <div class="form-group">
+            <label class="text-dark" for="mobile_banner">Upload Mobile Banner:(300x250)px</label>
+            <input type="file" class="form-control" name="mobile_banner"/>
+            <input type="hidden" name="hidden_mobile_banner" value="{{ $banner->mobile_banner }}">
         </div>
 
         <button type="submit" class="btn btn-primary">Update Banner</button>

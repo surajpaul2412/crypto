@@ -45,16 +45,12 @@ class MenusTableSeeder extends Seeder
 	        	'slug' => 'admission_procedure',
 	        ]);
 	        DB::table('menus')->insert([
-	        	'name' => 'Resources',
-	        	'slug' => 'resources',
-	        ]);
-	        DB::table('menus')->insert([
 	        	'name' => 'Jobs',
 	        	'slug' => 'jobs',
 	        ]);
 	        DB::table('menus')->insert([
-	        	'name' => 'Contact Us',
-	        	'slug' => 'contact_us',
+	        	'name' => 'Resources',
+	        	'slug' => 'resources',
 	        ]);
     	}
     }

@@ -60,7 +60,9 @@ class StudentController extends Controller
      */
     public function show($id)
     {
-        //
+        $user = User::findOrFail($id);
+        $details = StudentDetails::where('student_id', $id)->first();
+        return view('admin.student.show', compact('user','details'));
     }
 
     /**

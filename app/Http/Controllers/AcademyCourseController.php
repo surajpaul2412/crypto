@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\AcademyCourse;
 use App\HomeNotification;
+use App\Menu;
 
 class AcademyCourseController extends Controller
 {
@@ -17,7 +18,8 @@ class AcademyCourseController extends Controller
     {
         $academyCourse = AcademyCourse::all();
         $homeNotification = HomeNotification::all();
-        return view('frontend.course', compact('academyCourse','homeNotification'));
+        $menus = Menu::all();
+        return view('frontend.course', compact('academyCourse','homeNotification','menus'));
     }
 
     /**

@@ -112,11 +112,11 @@
                 <li class="{{ Request::is('admin/menu*') ? 'active' : '' }}">
                     <a href="{{ route('admin.menu.index') }}" class="menu-toggle">
                         <i class="material-icons">dashboard</i>
-                        <span>Menu</span>
+                        <span>Mobile Menu</span>
                     </a>
                     <ul class="ml-menu">
                         <li>
-                            <a href="{{ route('admin.submenu.index') }}">Sub menu</a>
+                            <a href="{{ route('admin.submenu.index') }}">Mobile Sub menu</a>
                         </li>
                     </ul>
                 </li>
@@ -132,50 +132,12 @@
                         <span>Downloads</span>
                     </a>
                 </li>
-                <!-- <li class="{{ Request::is('admin/menu') ? 'active' : '' }}">
-                    <a href="{{ route('admin.menu.index') }}">
-                        <i class="material-icons">emoji_flags</i>
-                        <span>Cources</span>
-                    </a>
-                </li> -->
                 <li class="{{ Request::is('admin/newsroom') ? 'active' : '' }}">
                     <a href="{{ route('admin.newsroom.index') }}">
                         <i class="material-icons">emoji_food_beverage</i>
                         <span>Newsroom</span>
                     </a>
                 </li>
-                <!-- <li class="{{ Request::is('admin/menu') ? 'active' : '' }}">
-                    <a href="{{ route('admin.menu.index') }}">
-                        <i class="material-icons">school</i>
-                        <span>exams</span>
-                    </a>
-                </li> -->
-                <!-- <li class="{{ Request::is('admin/menu') ? 'active' : '' }}">
-                    <a href="{{ route('admin.menu.index') }}">
-                        <i class="material-icons">poll</i>
-                        <span>Diploma Cources</span>
-                    </a>
-                </li>
-                <li class="{{ Request::is('admin/menu') ? 'active' : '' }}">
-                    <a href="{{ route('admin.menu.index') }}">
-                        <i class="material-icons">people_alt</i>
-                        <span>Artist Team</span>
-                    </a>
-                </li> -->
-                <!-- <li class="{{ Request::is('admin/submenu*') ? 'active' : '' }}">
-                    <a href="{{ route('admin.submenu.index') }}" class="menu-toggle">
-                        <i class="material-icons">star</i>
-                        <span>Studio Equipments</span>
-                    </a>
-                    <ul class="ml-menu">
-                        <li>
-                            <a href="{{ route('admin.submenu.index') }}">Hardware Equipments</a>
-                        </li>
-                        <li>
-                            <a href="{{ route('admin.submenu.index') }}">Software Applications</a>
-                        </li>
-                    </ul>
-                </li> -->
                 <li class="{{ Request::is('admin/engineeringCourse*') ? 'active' : '' }}">
                     <a href="{{ route('admin.engineeringCourse.index') }}" class="menu-toggle">
                         <i class="material-icons">star</i>

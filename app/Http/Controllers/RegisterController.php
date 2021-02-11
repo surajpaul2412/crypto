@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Carbon\carbon;
 use App\User;
 use App\StudentDetails;
+use App\Menu;
 use App\HomeNotification;
 
 class RegisterController extends Controller
@@ -18,7 +19,8 @@ class RegisterController extends Controller
     public function index()
     {
         $homeNotification = HomeNotification::all();
-        return view('frontend.register', compact('homeNotification'));
+        $menus = Menu::all();
+        return view('frontend.register', compact('homeNotification','menus'));
     }
 
     /**

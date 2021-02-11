@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Vacancy;
 use App\HomeNotification;
+use App\Menu;
 
 class VacancyController extends Controller
 {
@@ -17,7 +18,8 @@ class VacancyController extends Controller
     {
         $jobs = Vacancy::latest()->get();
         $homeNotification = HomeNotification::all();
-        return view('frontend.jobs', compact('jobs','homeNotification'));
+        $menus = Menu::all();
+        return view('frontend.jobs', compact('jobs','homeNotification','menus'));
     }
 
     /**

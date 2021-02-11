@@ -151,6 +151,24 @@
     .li{
       height:30vh;
     }
+    @media screen and (min-width: 420px) and (max-width: 900px) and (orientation: landscape) {
+      html {
+        width: 50vw;
+        display: block;
+        margin: 0px auto;
+        background: #f1f2f6 !important;
+        background-image: linear-gradient(to right, #edeef3 , #f4f5f9);
+        
+      }
+      body{
+        box-shadow: 2px 2px 4px 0px rgba(50,50,50,0.10), -1px -1px 3px 0px rgba(255,255,255,0.8);
+        border: 1px solid rgba(255,255,255,0.3);
+      }
+      .col-md-6, .col-md-4{
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+      }
+    }
   </style>
 </head>
 <body class="bg-theme height-100">
@@ -311,66 +329,18 @@
               </svg>
             </a>
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><img src="{{ asset('assets/frontend/img/arrow.svg') }}" width="34px"></a>
+            @if($menus->count())
             <div class="row mt-5">
-              <div class="col-md-12 border-bottom">
-                <a class="text-black bold pl-2" href="{{url('about_us')}}">About Us</a>
+              @foreach($menus as $index => $menu)
+              <div class="col-md-12 border-bottom" style="padding-top: 6px;padding-bottom: 2px;">
+                <a class="text-black bold pl-2" href="{{url('about_us')}}">{{$menu->name}}</a>
                 <div class="menu pb-1" style="display: table;">
-                    <span><a href="{{url('about_us')}}">Mission & Vision Statements</a></span>
-                    <span><a href="{{url('about_us')}}">Success Stories</a></span>
-                    <span><a href="{{url('student_work')}}">Student Work</a></span>
-                    <span><a href="{{url('gallery')}}">Studio Equipment & Gallery</a></span>
+                    @foreach($menu->submenu as $key => $row)
+                      <span><a href="{{$row->url}}">{{$row->name}}</a></span>
+                    @endforeach
                 </div>
               </div>
-              <div class="col-md-12 border-bottom" style="padding-top: 3px;padding-bottom: 2px;">
-                <a class="text-black bold pl-2" href="{{url('music-production-course')}}">Music Production Course Modules</a>
-                <div class="menu pb-1" style="display: table;">
-                    <span><a href="{{url('music-production-course#logic')}}">Logic Pro X</a></span>
-                    <span><a href="{{url('music-production-course#ableton')}}">Ableton Live</a></span>
-                </div>
-              </div>
-              <div class="col-md-12 border-bottom" style="padding-top: 3px;padding-bottom: 2px;">
-                <a class="text-black bold pl-2" href="{{url('engineering-course')}}">Sound Engineering Diploma Modules</a>
-                <div class="menu pb-1" style="display: table;">
-                    <span><a href="{{url('engineering-course#logicAbleton')}}">Logic Pro X</a></span>
-                    <span><a href="{{url('engineering-course#logicAbleton')}}">Ableton Live</a></span>
-                    <span><a href="{{url('engineering-course#recordings')}}">Studio Recordings</a></span>
-                    <span><a href="{{url('engineering-course')}}">Music Theory & Arrangements</a></span>
-                    <span><a href="{{url('engineering-course')}}">Audio System Design Foundation</a></span>
-                    <span><a href="{{url('engineering-course')}}">Studio Interconnection</a></span>
-                    <span><a href="{{url('engineering-course')}}">Synthesis & Sound Design</a></span>
-                    <span><a href="{{url('engineering-course')}}">Mixing & Mastering</a></span>
-                    <span><a href="{{url('engineering-course')}}">Live Analogue & Digital Mixers</a></span>
-                    <span><a href="{{url('engineering-course')}}">Studio Acoustics & Sound Proofing</a></span>
-                </div>
-              </div>
-              <div class="col-md-12 border-bottom" style="padding-top: 3px;padding-bottom: 2px;">
-                <a class="text-black bold pl-2" href="{{url('faculty')}}">Audio Faculty Departments</a>
-              </div>
-              <div class="col-md-12 border-bottom" style="padding-top: 3px;padding-bottom: 2px;">
-                <a class="text-black bold pl-2" href="{{url('exam_schedule')}}">Exam Structure & Certification</a>
-              </div>
-              <div class="col-md-12 border-bottom" style="padding-top: 3px;padding-bottom: 2px;">
-                <a class="text-black bold pl-2" href="{{url('faq')}}">Frequently Asked Questions</a>
-                <div class="menu pb-1" style="display: table;">
-                    <span><a href="{{url('faq')}}">Course Related Queries</a></span>
-                    <span><a href="{{url('faq')}}">General Questions</a></span>
-                    <span><a href="{{url('faq')}}">Hostel</a></span>
-                    <span><a href="{{url('faq')}}">Career</a></span>
-                </div>
-              </div>
-              <div class="col-md-12 border-bottom" style="padding-top: 3px;padding-bottom: 2px;">
-                <a class="text-black bold pl-2" href="{{url('register')}}">Admission Procedure</a>
-              </div>
-              <div class="col-md-12 border-bottom" style="padding-top: 3px;padding-bottom: 2px;">
-                <a class="text-black bold pl-2" href="{{url('jobs')}}">Jobs</a>
-              </div>
-              <div class="col-md-12 border-bottom" style="padding-top: 3px;padding-bottom: 2px;">
-                <a class="text-black bold pl-2">Resources</a>
-                <div class="menu pb-1" style="display: table;">
-                    <span><a href="{{url('download')}}">Downloads</a></span>
-                    <span><a href="{{url('newsroom')}}">News & Articles</a></span>
-                </div>
-              </div>
+              @endforeach
               <div class="col-md-6 col-6" style="height: 7vh;">
                 <a href="{{url('contact_us')}}" class="text-black bold">
                   <div class="menu bold font-14 text-black pl-2" style="position: relative;top: 50%;transform: translateY(-50%);">Contact Us</div>
@@ -396,6 +366,7 @@
                 </div>
               </div>
             </div>
+            @endif
           </div>
         </div>
     <!-- body -->
@@ -404,23 +375,28 @@
             <!-- main heading content -->
             <div class="col-md-6 media-col-md-6">
                 <div class="slider-header scroll-hide height-58 overflow-y-scroll">
+                  <!-- mobile banner -->
+                  <div class="height-55-percent desktop-d-none">
+                    @if($banners->count())                      
+                      <div id="demo" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                          @foreach($banners as $index => $banner)
+                          <div class="carousel-item {{$index == 0 ? 'active' : '' }}">
+                            <img src="{{asset('images/banner/')}}/{{$banner->mobile_banner}}" width="100%">
+                          </div>
+                          @endforeach
+                        </div>
+                        <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                          <span class="carousel-control-prev-icon"></span>
+                        </a>
+                        <a class="carousel-control-next" href="#demo" data-slide="next">
+                          <span class="carousel-control-next-icon"></span>
+                        </a>
+                      </div>
+                    @endif
+                  </div>
                   <!-- desktop banners -->
                     <div class="height-55-percent mobile-d-none">
-                      @if($banners->count())
-                        <div class="owl-slider" style="z-index: 1 !important;">
-                          <div id="carousel" class="owl-carousel">
-                            @foreach($banners as $index => $banner)
-                            <div class="item">
-                              <img src="{{asset('images/banner/')}}/{{$banner->image}}" width="100%" style="height: 32vh;">
-                            </div>
-                            @endforeach
-                          </div>
-                        </div>
-                      @else
-                      @endif
-                    </div>
-                    <!-- mobile banners -->
-                    <div class="height-55-percent desktop-d-none">
                       @if($banners->count())
                         <div class="owl-slider" style="z-index: 1 !important;">
                           <div id="carousel" class="owl-carousel">
@@ -559,7 +535,7 @@
             </div>
             <!-- mobile view carousel -->
             <div class="wrapper desktop-d-none">
-                <div class="carousel">
+                <div class="carousel-pro">
                   @foreach($pros as $pro)
                     <div>
                         <div class="card">
@@ -686,7 +662,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.min.js"></script>
 <script>
 $(document).ready(function(){
-  $('.carousel').slick({
+  $('.carousel-pro').slick({
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,

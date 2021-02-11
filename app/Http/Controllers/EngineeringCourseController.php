@@ -11,12 +11,14 @@ use App\engineeringCourseModule;
 use App\EngineeringCourseOverview;
 use App\EngineeringCourseLogicAbleton;
 use App\HomeNotification;
+use App\Menu;
 
 class EngineeringCourseController extends Controller
 {
     public function index()
     {
         $engineeringCourse = EngineeringCourse::all();
+        $menus = Menu::all();
         $engineeringCourseSound = EngineeringCourseSound::all();
         $engineeringCourseSoftware = EngineeringCourseSoftware::all();
         $engineeringCourseHardware = EngineeringCourseHardware::all();
@@ -24,6 +26,6 @@ class EngineeringCourseController extends Controller
         $engineeringCourseOverview = EngineeringCourseOverview::all();
         $engineeringCourseLogicAbleton = EngineeringCourseLogicAbleton::all();
         $homeNotification = HomeNotification::all();
-        return view('frontend.engineering-course', compact('engineeringCourse','engineeringCourseSound','engineeringCourseSoftware','engineeringCourseHardware','engineeringCourseModule','engineeringCourseOverview','engineeringCourseLogicAbleton','homeNotification'));
+        return view('frontend.engineering-course', compact('engineeringCourse','engineeringCourseSound','engineeringCourseSoftware','engineeringCourseHardware','engineeringCourseModule','engineeringCourseOverview','engineeringCourseLogicAbleton','homeNotification','menus'));
     }
 }

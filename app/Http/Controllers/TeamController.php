@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Team;
 use App\TeamProduction;
 use App\HomeNotification;
+use App\Menu;
 
 class TeamController extends Controller
 {
@@ -19,7 +20,8 @@ class TeamController extends Controller
         $team = Team::all();
         $teamProduction = TeamProduction::all();
         $homeNotification = HomeNotification::all();
-        return view('frontend.faculty', compact('team','teamProduction','homeNotification'));
+        $menus = Menu::all();
+        return view('frontend.faculty', compact('team','teamProduction','homeNotification','menus'));
     }
 
     /**

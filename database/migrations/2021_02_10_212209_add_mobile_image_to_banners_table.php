@@ -14,7 +14,7 @@ class AddMobileImageToBannersTable extends Migration
     public function up()
     {
         Schema::table('banners', function (Blueprint $table) {
-            $table->string('mobile_image');
+            $table->string('mobile_banner');
         });
     }
 

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Contact;
 use App\HomeNotification;
+use App\Menu;
 
 class ContactController extends Controller
 {
@@ -16,7 +17,8 @@ class ContactController extends Controller
     public function index()
     {
         $homeNotification = HomeNotification::all();
-        return view('frontend.contact', compact('homeNotification'));
+        $menus = Menu::all();
+        return view('frontend.contact', compact('homeNotification','menus'));
     }
 
     /**

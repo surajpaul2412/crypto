@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\HomeNotification;
 use App\StudentsWork;
+use App\Menu;
 
 class StudentWorkController extends Controller
 {
@@ -17,7 +18,8 @@ class StudentWorkController extends Controller
     {
         $homeNotification = HomeNotification::all();
         $studentsWork = StudentsWork::whereNotNull('status')->get();
-        return view('frontend.studentsWork', compact('homeNotification','studentsWork'));
+        $menus = Menu::all();
+        return view('frontend.studentsWork', compact('homeNotification','studentsWork','menus'));
     }
 
     /**

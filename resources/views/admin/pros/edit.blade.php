@@ -41,7 +41,7 @@
           <label class="text-dark" for="description">Description :</label>
           <textarea id="summernote" class="form-control" name="description">{{ $pro->description }}</textarea>
       	</div>
-        <label class="text-dark" for="image">Upload Image:(168x168px)</label>
+        <label class="text-dark" for="image">Upload Image:(600x600px)</label>
         <div class="form-group input-group">
           <label class="text-dark" for="image">Upload Image:</label>
           <input type="file" class="form-control imgInp custom-file-input" name="image" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01"/>
