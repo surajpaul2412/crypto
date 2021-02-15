@@ -229,7 +229,7 @@
               <div class="col-4 my-auto d-block">
                   <div class="square" style="margin-left: -13%">
                       <a class="content" align="center" onclick="openNav()">
-                          <img src="{{ asset('assets/frontend/img/dashboard.svg') }}" width="30%" style="position: relative;top: 45%;transform: translateY(-36%);left:1%;">
+                          <img src="{{ asset('assets/frontend/img/dashboard.svg') }}" width="30%" style="position: absolute;top: 50%;transform: translateY(-45%);left: 1%;right: 0;margin: 0 auto;">
                       </a>
                   </div>
               </div>
@@ -274,7 +274,7 @@
             <div class="row mt-5">
               @foreach($menus as $index => $menu)
               <div class="col-md-12 border-bottom" style="padding-top: 6px;padding-bottom: 2px;">
-                <a class="text-black bold pl-2" href="{{url('about_us')}}">{{$menu->name}}</a>
+                <a class="text-black bold pl-2" href="{{$menu->url}}">{{$menu->name}}</a>
                 <div class="menu pb-1" style="display: table;">
                     @foreach($menu->submenu as $key => $row)
                       <span><a href="{{$row->url}}">{{$row->name}}</a></span>
@@ -290,17 +290,17 @@
               <div class="col-md-6 col-6" align="right">
                 <div style="position: relative;top: 50%;transform: translateY(-50%);">
                   <span class="mr-4">
-                    <a class="inner-fb" href="https://www.facebook.com/CryptoCipherAudioLab/">
+                    <a class="inner-fb" target="_blank" href="https://www.facebook.com/CryptoCipherAudioLab/">
                       <img src="{{ asset('assets/frontend/img/facebook.svg') }}" width="8px">
                     </a>
                   </span>
                   <span class="mr-4">
-                    <a class="inner-yt" href="https://www.youtube.com/user/CryptoCipherLab/videos">
+                    <a class="inner-yt" target="_blank" href="https://www.youtube.com/user/CryptoCipherLab/videos">
                       <img src="{{ asset('assets/frontend/img/youtube.svg') }}" width="18px">
                     </a>
                   </span>
                   <span>
-                    <a class="inner-insta" href="https://www.instagram.com/cryptocipher/">
+                    <a class="inner-insta" target="_blank" href="https://www.instagram.com/cryptocipher/">
                       <img src="{{ asset('assets/frontend/img/instagram.svg') }}" width="18px">
                     </a>
                   </span>
@@ -346,7 +346,7 @@
                       <a class="font-14 text-black pl-2 font-bold" href="{{url('about_us')}}">About Us</a>
                       <div class="menu" style="display: table;">
                         <span><a href="{{url('about_us')}}">Mission & Vision Statements</a></span>
-                        <span><a href="{{url('about_us')}}">Success Stories</a></span>
+                        <span><a href="{{url('crypto_celeb')}}">Success Stories</a></span>
                         <span><a href="{{url('student_work')}}">Student Work</a></span>
                         <span><a href="{{url('gallery')}}">Studio Equipment & Gallery</a></span>
                       </div>

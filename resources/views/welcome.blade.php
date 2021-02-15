@@ -268,9 +268,9 @@
                             </a>
                         </div>
                         <div class="col-md-2 nav2-col-md-3 px-1" align="right" style="margin: auto 0;">
-                            <a href="https://www.facebook.com/CryptoCipherAudioLab/" style="padding-right:18px;"><img src="{{ asset('assets/frontend/img/facebook.svg') }}" class="social1 fb" style="padding: 5px 4px;"></a>
-                            <a href="https://www.youtube.com/user/CryptoCipherLab/videos" style="padding-right:18px;"><img src="{{ asset('assets/frontend/img/youtube.svg') }}" class="social1 yt" style="padding: 4.4px 3.5px 4px 3.8px;"></a>
-                            <a href="https://www.instagram.com/cryptocipher/" style="padding-right: 3px;"><img src="{{ asset('assets/frontend/img/instagram.svg') }}" class="social1 in" style="padding: 3.6px 4.4px 4px 4px;"></a>
+                            <a target="_blank" href="https://www.facebook.com/CryptoCipherAudioLab/" style="padding-right:18px;"><img src="{{ asset('assets/frontend/img/facebook.svg') }}" class="social1 fb" style="padding: 5px 4px;"></a>
+                            <a target="_blank" href="https://www.youtube.com/user/CryptoCipherLab/videos" style="padding-right:18px;"><img src="{{ asset('assets/frontend/img/youtube.svg') }}" class="social1 yt" style="padding: 4.4px 3.5px 4px 3.8px;"></a>
+                            <a target="_blank" href="https://www.instagram.com/cryptocipher/" style="padding-right: 3px;"><img src="{{ asset('assets/frontend/img/instagram.svg') }}" class="social1 in" style="padding: 3.6px 4.4px 4px 4px;"></a>
                         </div>
                     </div>
                 </div>
@@ -333,7 +333,7 @@
             <div class="row mt-5">
               @foreach($menus as $index => $menu)
               <div class="col-md-12 border-bottom" style="padding-top: 6px;padding-bottom: 2px;">
-                <a class="text-black bold pl-2" href="{{url('about_us')}}">{{$menu->name}}</a>
+                <a class="text-black bold pl-2" href="{{$menu->url}}">{{$menu->name}}</a>
                 <div class="menu pb-1" style="display: table;">
                     @foreach($menu->submenu as $key => $row)
                       <span><a href="{{$row->url}}">{{$row->name}}</a></span>
@@ -349,17 +349,17 @@
               <div class="col-md-6 col-6" align="right">
                 <div style="position: relative;top: 50%;transform: translateY(-50%);">
                   <span class="mr-4">
-                    <a class="inner-fb" href="https://www.facebook.com/CryptoCipherAudioLab/">
+                    <a class="inner-fb" target="_blank" href="https://www.facebook.com/CryptoCipherAudioLab/">
                       <img src="{{ asset('assets/frontend/img/facebook.svg') }}" width="8px">
                     </a>
                   </span>
                   <span class="mr-4">
-                    <a class="inner-yt" href="https://www.youtube.com/user/CryptoCipherLab/videos">
+                    <a class="inner-yt" target="_blank" href="https://www.youtube.com/user/CryptoCipherLab/videos">
                       <img src="{{ asset('assets/frontend/img/youtube.svg') }}" width="18px">
                     </a>
                   </span>
                   <span>
-                    <a class="inner-insta" href="https://www.instagram.com/cryptocipher/">
+                    <a class="inner-insta" target="_blank" href="https://www.instagram.com/cryptocipher/">
                       <img src="{{ asset('assets/frontend/img/instagram.svg') }}" width="18px">
                     </a>
                   </span>
