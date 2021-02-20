@@ -28,6 +28,15 @@
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
   <!-- try end -->
   <style>
+    .faculty-btn1{
+        border-radius: 16px;
+        font-weight: 400;
+        color: #5B5E65 !important;
+        padding: 5px 18px;
+        font-size: 11px;
+        box-shadow: 1px 1px 3px 0px rgb(50 50 50 / 10%), -1.8px -1.8px 3px 0px rgb(255 255 255 / 80%);
+        background-image: linear-gradient(to right, #eeeff4, #f4f5f9);
+    }
     .carousel-inner img {
       width: 100%;
       height: 100%;
@@ -168,6 +177,47 @@
         flex: 0 0 100% !important;
         max-width: 100% !important;
       }
+
+
+      .sidenav .container-fluid{
+        width: 50vw !important;
+        display: block !important;
+        margin: 0px auto !important;
+        background: #f1f2f6 !important;
+        background-image: linear-gradient(to right, #edeef3 , #f4f5f9) !important;
+        box-shadow: 2px 2px 4px 0px rgba(50,50,50,0.10), -1px -1px 3px 0px rgba(255,255,255,0.8);
+        border: 1px solid rgba(255,255,255,0.3);
+      }
+      #mySidenav{
+        background: #f1f2f6 !important;
+        background-image: linear-gradient(to right, #edeef3 , #f4f5f9);
+        padding-top: 0px;
+      }
+      .sidenav .container-fluid .mt-5{
+        margin-top: 5.5rem!important;
+      }
+      .sidenav .closebtn{
+        position: absolute;
+        top: 4.6%;
+        right: 30%;
+        font-size: 36px;
+        margin-left: 50px;
+      }
+      .container-fluid .row .col-8{
+        padding-top: 0rem !important;
+      }
+      .port-col-md-6{
+        flex: 0 0 60% !important;
+        max-width: 60% !important;
+        margin-top: 15px;
+        margin-bottom: 15px;
+      }
+      .port-col-md-4{
+        flex: 0 0 40% !important;
+        max-width: 40% !important;
+        margin-top: 15px;
+        margin-bottom: 15px;
+      }
     }
   </style>
 </head>
@@ -202,8 +252,33 @@
                                 <ul class="navbar-nav ml-auto">
                                   @foreach($homeNotification as $row)
                                     <li class="nav-item pr-3">
-                                        <div class="nav-link font-regular text-black bold font-13">{{$row->date}} days, 01:36:14</div>
+                                        <div class="nav-link font-regular text-black bold font-13 d-flex">{{$row->date}} days, <span class="pl-3" id="timer"></span></div>
                                     </li>
+                                    <script type="text/javascript">
+                                    function updateTimer() {
+                                        future = Date.parse("{{$row->batch}} {{$row->date}}, 2021 12:00:00");
+                                        now = new Date();
+                                        diff = future - now;
+
+                                        days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                                        hours = Math.floor(diff / (1000 * 60 * 60));
+                                        mins = Math.floor(diff / (1000 * 60));
+                                        secs = Math.floor(diff / 1000);
+
+                                        d = days;
+                                        h = hours - days * 24;
+                                        m = mins - hours * 60;
+                                        s = secs - mins * 60;
+
+                                        document.getElementById("timer")
+                                            .innerHTML =
+                                            '<span>' + d + '<span>d: </span></span>' +
+                                            '<span>' + h + '<span>h: </span></span>' +
+                                            '<span>' + m + '<span>m: </span></span>' +
+                                            '<span>' + s + '<span>s</span></span>';
+                                    }
+                                    setInterval('updateTimer()', 1000);
+                                    </script>
                                     <li class="nav-item">
                                         <div class="nav-link font-regular text-black font-13 font-400">New Batch Commencing {{$row->batch}}.</div>
                                     </li>
@@ -341,12 +416,12 @@
                 </div>
               </div>
               @endforeach
-              <div class="col-md-6 col-6" style="height: 7vh;">
+              <div class="col-md-6 col-6 port-col-md-4" style="height: 7vh;">
                 <a href="{{url('contact_us')}}" class="text-black bold">
                   <div class="menu bold font-14 text-black pl-2" style="position: relative;top: 50%;transform: translateY(-50%);">Contact Us</div>
                 </a>
               </div>
-              <div class="col-md-6 col-6" align="right">
+              <div class="col-md-6 col-6 port-col-md-6" align="right">
                 <div style="position: relative;top: 50%;transform: translateY(-50%);">
                   <span class="mr-4">
                     <a class="inner-fb" target="_blank" href="https://www.facebook.com/CryptoCipherAudioLab/">
@@ -544,13 +619,13 @@
                                     <img class="d-block mx-auto shadow-round" src="{{asset('images/pros/')}}/{{$pro->image}}" width="55%">
                                     <div class="card-text">
                                         <p class="pt-3 font-11 text-dark font-regular">
-                                            {!! \Illuminate\Support\Str::limit($pro->brief, 40, $end='...') !!}
+                                            {!! \Illuminate\Support\Str::limit($pro->brief, 100, $end='...') !!}
                                         </p>
                                     </div>
                                     <h6 class="font-bold text-dark font-14 op-8">{{$pro->name}}</h6>
                                     <div align="center">
                                       <a href="{{url('crypto_celeb')}}">
-                                        <span class="font-regular faculty-btn">Read More</span>
+                                        <span class="font-regular faculty-btn1">Read More</span>
                                       </a>
                                     </div>
                                 </div>
@@ -602,7 +677,7 @@
     </section>
     <!-- footer logos -->
     <section class="container-fluid border-top footer-shadow mobile-d-none" style="height: 9.5vh;">
-        <img src="{{asset('images/banner/footer.png')}}" width="90%" class="d-block mx-auto">
+        <img src="{{asset('images/banner/footer.png')}}" width="75%" class="d-block mx-auto pt-1">
     </section>
     <!-- mobile footer -->
     <section class="desktop-d-none border-top footer-shadow">
@@ -666,7 +741,7 @@ $(document).ready(function(){
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplay: false,
+    autoplay: true,
     autoplaySpeed: 2000,
     dots:false,
     arrows:false,
@@ -694,7 +769,7 @@ $(document).ready(function(){
         dots: false,
         infinite: true,
         arrows:false,
-        autoplay: false,
+        autoplay: true,
         autoplaySpeed: 2000,
       }
     }]

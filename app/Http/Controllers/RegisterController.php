@@ -198,7 +198,21 @@ class RegisterController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+      $request->validate([
+        'fees_status'=> 'required',
+        'fees_mode_of_payment'=> 'required',
+        'result'=> 'nullable',
+        'result_review'=> 'nullable'
+      ]);
+
+      $studentDetails = StudentDetails::findOrFail($id);
+      $studentDetails->fees_status = $request->get('fees_status');
+      $studentDetails->fees_mode_of_payment = $request->get('fees_mode_of_payment');
+      $studentDetails->result = $request->get('result');
+      $studentDetails->result_review = $request->get('result_review');
+      $studentDetails->save();
+
+      return redirect()->back()->with('success', 'Student Updated successfully');
     }
 
     /**

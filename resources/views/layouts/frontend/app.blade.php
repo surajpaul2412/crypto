@@ -209,6 +209,45 @@
         width: 65px !important;
         height: 65px !important;
       }
+      .sidenav .container-fluid{
+        width: 50vw !important;
+        display: block !important;
+        margin: 0px auto !important;
+        background: #f1f2f6 !important;
+        background-image: linear-gradient(to right, #edeef3 , #f4f5f9) !important;
+        box-shadow: 2px 2px 4px 0px rgba(50,50,50,0.10), -1px -1px 3px 0px rgba(255,255,255,0.8);
+        border: 1px solid rgba(255,255,255,0.3);
+      }
+      #mySidenav{
+        background: #f1f2f6 !important;
+        background-image: linear-gradient(to right, #edeef3 , #f4f5f9);
+        padding-top: 0px;
+      }
+      .sidenav .container-fluid .mt-5{
+        margin-top: 5.5rem!important;
+      }
+      .sidenav .closebtn{
+        position: absolute;
+        top: 4.6%;
+        right: 30%;
+        font-size: 36px;
+        margin-left: 50px;
+      }
+      .container-fluid .row .col-8{
+        padding-top: 0rem !important;
+      }
+      .port-col-md-6{
+        flex: 0 0 60% !important;
+        max-width: 60% !important;
+        margin-top: 15px;
+        margin-bottom: 15px;
+      }
+      .port-col-md-4{
+        flex: 0 0 40% !important;
+        max-width: 40% !important;
+        margin-top: 15px;
+        margin-bottom: 15px;
+      }
     }
   </style>
   @yield('css')
@@ -282,12 +321,12 @@
                 </div>
               </div>
               @endforeach
-              <div class="col-md-6 col-6" style="height: 7vh;">
+              <div class="col-md-6 col-6 port-col-md-4" style="height: 7vh;">
                 <a href="{{url('contact_us')}}" class="text-black bold">
                   <div class="menu bold font-14 text-black pl-2" style="position: relative;top: 50%;transform: translateY(-50%);">Contact Us</div>
                 </a>
               </div>
-              <div class="col-md-6 col-6" align="right">
+              <div class="col-md-6 col-6 port-col-md-6" align="right">
                 <div style="position: relative;top: 50%;transform: translateY(-50%);">
                   <span class="mr-4">
                     <a class="inner-fb" target="_blank" href="https://www.facebook.com/CryptoCipherAudioLab/">
@@ -451,9 +490,35 @@
                       @if($homeNotification->count())
                         <ul class="navbar-nav ml-auto">
                           @foreach($homeNotification as $row)
-                            <li class="nav-item pr-3">
-                                <div class="nav-link text-black bold font-13">{{$row->date}} days, 01:36:14</div>
+                            <li class="nav-item pr-2 d-flex">
+                                <div class="nav-link text-black bold font-13">{{$row->date}} days, <span class="pl-2" id="timer"></span></div>
                             </li>
+
+                            <script type="text/javascript">
+                            function updateTimer() {
+                                future = Date.parse("{{$row->batch}} {{$row->date}}, 2021 12:00:00");
+                                now = new Date();
+                                diff = future - now;
+
+                                days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                                hours = Math.floor(diff / (1000 * 60 * 60));
+                                mins = Math.floor(diff / (1000 * 60));
+                                secs = Math.floor(diff / 1000);
+
+                                d = days;
+                                h = hours - days * 24;
+                                m = mins - hours * 60;
+                                s = secs - mins * 60;
+
+                                document.getElementById("timer")
+                                    .innerHTML =
+                                    '<span>' + d + '<span>d: </span></span>' +
+                                    '<span>' + h + '<span>h: </span></span>' +
+                                    '<span>' + m + '<span>m: </span></span>' +
+                                    '<span>' + s + '<span>s</span></span>';
+                            }
+                            setInterval('updateTimer()', 1000);
+                            </script>
                             <li class="nav-item">
                                 <div class="nav-link text-black font-13 font-400">New Batch Commencing {{$row->batch}}.</div>
                             </li>
@@ -485,7 +550,9 @@
         @yield('content')
         <!-- footer -->
         <section class="container-fluid border-top footer-shadow height-8 marT-30 mobile-d-none">
-            <div class="row" align="center"></div>
+            <div class="row" align="center">
+              <img src="{{asset('images/banner/footer.png')}}" width="85%" class="d-block mx-auto pt-1">
+            </div>
         </section>
         <!-- mobile footer -->
         <section class="desktop-d-none border-top footer-shadow">
