@@ -491,7 +491,7 @@
                         <ul class="navbar-nav ml-auto">
                           @foreach($homeNotification as $row)
                             <li class="nav-item pr-2 d-flex">
-                                <div class="nav-link text-black bold font-13">{{$row->date}} days, <span class="pl-2" id="timer"></span></div>
+                                <div class="nav-link text-black bold" style="font-size: 12px;">{{$row->date}} days, <span class="pl-2" id="timer"></span></div>
                             </li>
 
                             <script type="text/javascript">
@@ -512,10 +512,10 @@
 
                                 document.getElementById("timer")
                                     .innerHTML =
-                                    '<span>' + d + '<span>d: </span></span>' +
-                                    '<span>' + h + '<span>h: </span></span>' +
-                                    '<span>' + m + '<span>m: </span></span>' +
-                                    '<span>' + s + '<span>s</span></span>';
+                                    '<span style="font-size:11px !important;">' + d + '<span>d:</span></span>' +
+                                    '<span style="font-size:11px !important;">' + h + '<span>h:</span></span>' +
+                                    '<span style="font-size:11px !important;">' + m + '<span>m:</span></span>' +
+                                    '<span style="font-size:11px !important;">' + s + '<span>s</span></span>';
                             }
                             setInterval('updateTimer()', 1000);
                             </script>

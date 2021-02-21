@@ -16,7 +16,7 @@ class CreateProsTable extends Migration
         Schema::create('pros', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->string('brief');
+            $table->longText('brief');
             $table->longText('description');
             $table->longText('workings')->nullable();
             $table->string('image');

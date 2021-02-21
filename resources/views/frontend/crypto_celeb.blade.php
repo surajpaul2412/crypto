@@ -36,9 +36,9 @@
                 <div class="slider-header bg-theme" align="center">
                     <img src="{{asset('images/pros/')}}/{{$row->image}}" width="55%" class="mx-auto d-block p-1 bg-theme shadow-round mar-T-26">
                     <h6 class="font-bold font-14 text-dark pt-4">{{$row->name}}</h6>
-                    <div class="about-title px-4 pt-2 bold">{!! \Illuminate\Support\Str::limit($row->brief, 50, $end='...') !!}</div>
+                    <div class="about-title px-1 pt-2 bold" style="min-height: 14vh;">{!! \Illuminate\Support\Str::limit($row->brief, 500, $end='...') !!}</div>
                     <div class="py-2 bold about-symbol"><i>"</i></div>
-                    <div class="about-desc px-4 pb-2"><i>{!! \Illuminate\Support\Str::limit($row->description, 180, $end='...') !!}</i></div>
+                    <div class="about-desc px-4 pb-2" style="min-height: 5vh;"><i>{!! \Illuminate\Support\Str::limit($row->description, 110, $end='...') !!}</i></div>
                     <div class="my-2 px-3">
                         <a data-toggle="modal" data-target="#myModal{{$index+1}}">
                             <div class="about-see-more w-100 font-regular bold pt-2">

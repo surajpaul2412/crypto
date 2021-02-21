@@ -158,7 +158,7 @@
       position:relative;
     }
     .li{
-      height:30vh;
+      height:auto;
     }
     @media screen and (min-width: 420px) and (max-width: 900px) and (orientation: landscape) {
       html {
@@ -177,8 +177,10 @@
         flex: 0 0 100% !important;
         max-width: 100% !important;
       }
-
-
+      .port-22{
+        height: 150px !important;
+        overflow: hidden;
+      }
       .sidenav .container-fluid{
         width: 50vw !important;
         display: block !important;
@@ -251,8 +253,8 @@
                               @if($homeNotification->count())
                                 <ul class="navbar-nav ml-auto">
                                   @foreach($homeNotification as $row)
-                                    <li class="nav-item pr-3">
-                                        <div class="nav-link font-regular text-black bold font-13 d-flex">{{$row->date}} days, <span class="pl-3" id="timer"></span></div>
+                                    <li class="nav-item pr-2">
+                                        <div class="nav-link font-regular text-black bold d-flex" style="font-size: 12px;">{{$row->date}} days, <span class="pl-2" id="timer"></span></div>
                                     </li>
                                     <script type="text/javascript">
                                     function updateTimer() {
@@ -272,10 +274,10 @@
 
                                         document.getElementById("timer")
                                             .innerHTML =
-                                            '<span>' + d + '<span>d: </span></span>' +
-                                            '<span>' + h + '<span>h: </span></span>' +
-                                            '<span>' + m + '<span>m: </span></span>' +
-                                            '<span>' + s + '<span>s</span></span>';
+                                            '<span style="font-size:11px !important;">' + d + '<span>d:</span></span>' +
+                                            '<span style="font-size:11px !important;">' + h + '<span>h:</span></span>' +
+                                            '<span style="font-size:11px !important;">' + m + '<span>m:</span></span>' +
+                                            '<span style="font-size:11px !important;">' + s + '<span>s</span></span>';
                                     }
                                     setInterval('updateTimer()', 1000);
                                     </script>
@@ -591,12 +593,12 @@
                     <div class="px-4 scroll-hide height-58 overflow-y-scroll" align="center">
                       <div class="ul mt-4">
                         @foreach($pros as $pro)
-                        <div class="li">
+                        <div class="li mb-3">
                           <img class="d-block mx-auto shadow-round" src="{{asset('images/pros/')}}/{{$pro->image}}" width="55%">
-                          <p class="pt-3 font-11 text-dark font-regular">
-                              {!! \Illuminate\Support\Str::limit($pro->brief, 90, $end='...') !!}
-                          </p>
-                          <h6 class="font-bold text-dark font-14 op-8">{{$pro->name}}</h6>
+                          <div class="pt-3 font-11 text-dark font-regular">
+                              {!! $pro->brief !!}
+                          </div>
+                          <span class="font-bold text-dark font-14">{{$pro->name}}</span>
                         </div>
                         @endforeach
                       </div>
@@ -618,8 +620,8 @@
                                 <div class="card-content" align="center">
                                     <img class="d-block mx-auto shadow-round" src="{{asset('images/pros/')}}/{{$pro->image}}" width="55%">
                                     <div class="card-text">
-                                        <p class="pt-3 font-11 text-dark font-regular">
-                                            {!! \Illuminate\Support\Str::limit($pro->brief, 100, $end='...') !!}
+                                        <p class="pt-3 font-11 text-dark font-regular port-22" style="min-height: 22vh;">
+                                            {!! \Illuminate\Support\Str::limit($pro->brief, 200, $end='...') !!}
                                         </p>
                                     </div>
                                     <h6 class="font-bold text-dark font-14 op-8">{{$pro->name}}</h6>
