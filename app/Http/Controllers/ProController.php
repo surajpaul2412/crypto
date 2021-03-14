@@ -16,9 +16,9 @@ class ProController extends Controller
      */
     public function index()
     {
-        $pros = Pros::all();
+        $pros = Pros::orderBy('sort_by', "asc")->get();
         $homeNotification = HomeNotification::all();
-        $menus = Menu::all();
+        $menus = Menu::orderBy('sort_by', "asc")->get();
         return view('frontend.crypto_celeb', compact('pros','homeNotification','menus'));
     }
 

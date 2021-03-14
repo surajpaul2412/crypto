@@ -18,7 +18,7 @@ class ExamStructureController extends Controller
     {
         $homeNotification = HomeNotification::all();
         $exam = Exam::all();
-        $menus = Menu::all();
+        $menus = Menu::orderBy('sort_by', "asc")->get();
         return view('frontend.exam', compact('homeNotification','exam','menus'));
     }
 

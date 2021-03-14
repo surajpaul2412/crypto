@@ -18,7 +18,7 @@ class EngineeringCourseController extends Controller
     public function index()
     {
         $engineeringCourse = EngineeringCourse::all();
-        $menus = Menu::all();
+        $menus = Menu::orderBy('sort_by', "asc")->get();
         $engineeringCourseSound = EngineeringCourseSound::all();
         $engineeringCourseSoftware = EngineeringCourseSoftware::all();
         $engineeringCourseHardware = EngineeringCourseHardware::all();

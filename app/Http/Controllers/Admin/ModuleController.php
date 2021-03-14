@@ -4,9 +4,11 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Menu;
+use App\Module;
+use App\User;
+use DB;
 
-class MenuController extends Controller
+class ModuleController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +17,8 @@ class MenuController extends Controller
      */
     public function index()
     {
-        $menus = Menu::orderBy('sort_by', "asc")->get();
-        return view('admin.menu.index', compact('menus'));
+        $modules = Module::latest()->get();
+        return view('admin.modules.index', compact('modules'));
     }
 
     /**
@@ -26,7 +28,7 @@ class MenuController extends Controller
      */
     public function create()
     {
-        return view('admin.menu.create');
+        return view('admin.modules.create');
     }
 
     /**
@@ -38,19 +40,13 @@ class MenuController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'slug'=> 'required|min:3|max:255',
-            'name'=> 'required|min:3',
-            'url'=> 'nullable|string',
-            'sort_by'=> 'nullable|string',
+            'name'=> 'required|min:3|max:255',
         ]);
 
-        $menus = new Menu();
-        $menus->slug = $request->slug;
-        $menus->name = $request->name;
-        $menus->url = $request->url;
-        $menus->sort_by = $request->sort_by;
-        $menus->save();
-        return redirect('/admin/menu')->with('success', 'Menu has been added.');
+        $modules = new Module();
+        $modules->name = $request->name;
+        $modules->save();
+        return redirect('/admin/modules')->with('success', 'Module name has been added.');
     }
 
     /**
@@ -61,7 +57,18 @@ class MenuController extends Controller
      */
     public function show($id)
     {
-        //
+        $students = Db::table('user_module')->where('module_id', $id)->get();
+$users = User::where('role_id',4)->get();
+        return view('admin.modules.show', compact('students','users'));
+
+        // $students = Db::table('user_module')->where('module_id', $id)->get('user_id');
+
+        // $users = array();
+        // foreach ($students as $key => $value) {
+        //     $users[] = User::where('id', $value->user_id)->get();
+        // }
+
+        // return view('admin.modules.show', compact('users','students'));
     }
 
     /**
@@ -72,8 +79,8 @@ class MenuController extends Controller
      */
     public function edit($id)
     {
-        $menu = Menu::findOrFail($id);
-        return view('admin.menu.edit', compact('menu'));
+        $modules = Module::findOrFail($id);
+        return view('admin.modules.edit', compact('modules'));
     }
 
     /**
@@ -86,21 +93,15 @@ class MenuController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'slug'=> 'required|min:3|max:255',
-            'name'=> 'required|min:3',
-            'url'=> 'nullable|string',
-            'sort_by'=> 'nullable|string',
+            'name'=> 'required|min:3|max:255',
         ]);
 
         $form_data = array(
-            'slug' => $request->slug,
-            'name' => $request->name,
-            'url' => $request->url,
-            'sort_by' => $request->sort_by,
+            'name' => $request->name
         );
 
-        Menu::whereId($id)->update($form_data);
-        return redirect('/admin/menu')->with('success', 'Menu has been updated.');
+        Module::whereId($id)->update($form_data);
+        return redirect('/admin/modules')->with('success', 'Module name has been updated.');
     }
 
     /**
@@ -111,8 +112,6 @@ class MenuController extends Controller
      */
     public function destroy($id)
     {
-        $menus = Menu::findOrFail($id);
-        $menus->delete();
-        return redirect('/admin/menu')->with('success', 'Menu item has been deleted successfully.');
+        //
     }
 }

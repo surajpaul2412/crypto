@@ -24,37 +24,41 @@
     background: transparent;
   }
 </style>
-@if($pros->count())
+@if($videos->count())
 <div class="table-responsive px-3 pb-5">
  <table class="table table-striped">
     <thead>
         <tr>
           <th>S. no</th>
-          <th>Sort By</th>
-          <th>Name</th>
-          <th>Brief</th>
+          <th>Module</th>
+          <th>Title</th>
           <th>Description</th>
-          <th>Image</th>
+          <th>Video Url</th>
+          <th>Watch</th>
           <th>Edit</th>
           <th>Delete</th>
         </tr>
     </thead>
     <tbody>
-      @foreach($pros as $index => $pro)
+      @foreach($videos as $index => $row)
       <tr>
         <th>{{$index+1}}.</th>
-        <th>{{$pro->sort_by}}</th>
-        <td class="bold">{{$pro->name}}</td>
-        <td class="bold">{{ \Illuminate\Support\Str::limit($pro->brief, 50, $end='...') }}</td>
-        <td>{{ \Illuminate\Support\Str::limit($pro->description, 80, $end='...') }}</td>
-        <td><img src="{{asset('images/pros/')}}/{{$pro->image}}" width="80px"></td>
+        <td class="bold">{{$row->module->name}}</td>
+        <td>{{$row->title}}</td>
+        <td>{{ \Illuminate\Support\Str::limit($row->description, 50, $end='...') }}</td>
+        <td>{{ \Illuminate\Support\Str::limit($row->video_url, 50, $end='...') }}</td>
         <td>
-          <a href="{{ route('admin.pros.edit',$pro->id)}}">
+          <a href="{{ route('admin.videos.show',$row->id)}}">
+            <i class="material-icons">play_circle_outline</i>
+          </a>
+        </td>
+        <td>
+          <a href="{{ route('admin.videos.edit',$row->id)}}">
             <i class="material-icons">edit</i>
           </a>
         </td>
         <td>
-          <form action="{{ route('admin.pros.destroy', $pro->id)}}" method="post">
+          <form action="{{ route('admin.videos.destroy', $row->id)}}" method="post">
             @csrf
             @method('DELETE')
             <button class="" type="submit"><i class="material-icons">delete</i></button>
@@ -66,12 +70,12 @@
   </table>
 </div>
 @else
-<h3 class="bold text-dark" align="center">Enter some Pros</h3>
+<h3 class="bold text-dark" align="center">Enter some academy Course</h3>
 @endif
 
 <div align="right" style="position: fixed;bottom: 30px;right: 30px;">
-  <a href="{{ route('admin.pros.create')}}">
-    <button class="btn px-5 pt-3" style="background: #1d1b27;color:#fff;">Add new pro 
+  <a href="{{ route('admin.videos.create')}}">
+    <button class="btn px-5 pt-3" style="background: #1d1b27;color:#fff;">Add new Video
       <img class="pl-3" src="{{ asset('assets/backend/images/right-arrow.png') }}">
     </button>
   </a>

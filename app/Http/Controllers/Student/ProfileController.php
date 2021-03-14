@@ -1,13 +1,14 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Student;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\HomeNotification;
-use App\StudentsWork;
-use App\Menu;
+use App\User;
+use App\StudentDetails;
+use Auth;
 
-class StudentWorkController extends Controller
+class ProfileController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,10 +17,9 @@ class StudentWorkController extends Controller
      */
     public function index()
     {
-        $homeNotification = HomeNotification::all();
-        $studentsWork = StudentsWork::whereNotNull('status')->get();
-        $menus = Menu::orderBy('sort_by', "asc")->get();
-        return view('frontend.studentsWork', compact('homeNotification','studentsWork','menus'));
+        $student = Auth::user();
+        $info = StudentDetails::where('student_id', $student->id)->firstOrFail();
+        return view('student.profile.index', compact('student','info'));
     }
 
     /**
@@ -74,7 +74,21 @@ class StudentWorkController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'name' => 'required|string|min:2|max:255',
+            'email' => 'required',
+            'phone' => 'required',
+            'password' => 'required|string|min:7',
+        ]);
+
+        $student = User::find($id);
+        $student->name = $request->get('name');
+        $student->email = $request->get('email');
+        $student->phone = $request->get('phone');
+        $student->password = bcrypt($request->get('password'));
+        $student->save();
+
+        return redirect('/student/profile')->with('success', 'Your profile has been successfully updated.');
     }
 
     /**

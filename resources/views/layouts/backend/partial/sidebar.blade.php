@@ -254,6 +254,18 @@
                         <span>Contact</span>
                     </a>
                 </li>
+                <li class="{{ Request::is('admin/modules') ? 'active' : '' }}">
+                    <a href="{{ route('admin.modules.index') }}">
+                        <i class="material-icons">movie</i>
+                        <span>Manage Video Modules</span>
+                    </a>
+                </li>
+                <li class="{{ Request::is('admin/videos') ? 'active' : '' }}">
+                    <a href="{{ route('admin.videos.index') }}">
+                        <i class="material-icons">video_library</i>
+                        <span>Videos For Students</span>
+                    </a>
+                </li>
                 <li>
                     <a href="{{ route('logout') }}"
                         onclick="event.preventDefault();
@@ -312,6 +324,18 @@
                     <a href="{{ route('student.dashboard') }}">
                         <i class="material-icons">home</i>
                         <span>Dashboard</span>
+                    </a>
+                </li>
+                <li class="{{ Request::is('student/profile') ? 'active' : '' }}">
+                    <a href="{{ route('student.profile.index') }}">
+                        <i class="material-icons">person</i>
+                        <span>Profile</span>
+                    </a>
+                </li>
+                <li class="{{ Request::is('student/modules') ? 'active' : '' }}">
+                    <a href="{{ route('student.modules.index') }}">
+                        <i class="material-icons">movie</i>
+                        <span>Video Modules</span>
                     </a>
                 </li>
                 <li>

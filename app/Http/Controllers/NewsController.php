@@ -18,7 +18,7 @@ class NewsController extends Controller
     {
         $news = News::latest()->get();
         $homeNotification = HomeNotification::all();
-        $menus = Menu::all();
+        $menus = Menu::orderBy('sort_by', "asc")->get();
         return view('frontend.newsroom', compact('news','homeNotification','menus'));
     }
 

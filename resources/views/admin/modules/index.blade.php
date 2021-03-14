@@ -24,33 +24,30 @@
     background: transparent;
   }
 </style>
-@if($menus->count())
+@if($modules->count())
 <div class="table-responsive px-3 pb-5">
  <table class="table table-striped">
     <thead>
         <tr>
           <th>S. no</th>
-          <th>Sort By</th>
-          <th>Title</th>
+          <th>Module Name</th>
+          <th>Video Containing</th>
+          <th>Accessed By</th>
+          <th>Edit</th>
         </tr>
     </thead>
     <tbody>
-      @foreach($menus as $index => $menu)
+      @foreach($modules as $index => $row)
       <tr>
+        <!-- <th>{{$row->videos}}</th> -->
         <th>{{$index+1}}.</th>
-        <th>{{$menu->sort_by}}</th>
-        <td class="bold">{{$menu->name}}</td>
+        <td class="bold">{{$row->name}}</td>
+        <td>{{$row->videos->count()}} Video(s)</td>
+        <td><a href="{{route('admin.modules.show', $row->id)}}">Edit Student(s)</a></td>
         <td>
-          <a href="{{ route('admin.menu.edit',$menu->id)}}">
+          <a href="{{ route('admin.modules.edit',$row->id)}}">
             <i class="material-icons">edit</i>
           </a>
-        </td>
-        <td>
-          <form action="{{ route('admin.menu.destroy', $menu->id)}}" method="post">
-            @csrf
-            @method('DELETE')
-            <button class="" type="submit"><i class="material-icons">delete</i></button>
-          </form>
         </td>
       </tr>
       @endforeach
@@ -58,12 +55,12 @@
   </table>
 </div>
 @else
-<h3 class="bold text-dark" align="center">Enter Main Menu</h3>
+<h3 class="bold text-dark" align="center">Enter some modules</h3>
 @endif
 
 <div align="right" style="position: fixed;bottom: 30px;right: 30px;">
-  <a href="{{ route('admin.menu.create')}}">
-    <button class="btn px-5 pt-3" style="background: #1d1b27;color:#fff;">Add new Menu item 
+  <a href="{{ route('admin.modules.create')}}">
+    <button class="btn px-5 pt-3" style="background: #1d1b27;color:#fff;">Add new Module
       <img class="pl-3" src="{{ asset('assets/backend/images/right-arrow.png') }}">
     </button>
   </a>

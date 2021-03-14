@@ -1,13 +1,15 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Student;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\HomeNotification;
-use App\StudentsWork;
-use App\Menu;
+use App\Module;
+use App\Video;
+use Auth;
+use DB;
 
-class StudentWorkController extends Controller
+class ModuleController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,10 +18,13 @@ class StudentWorkController extends Controller
      */
     public function index()
     {
-        $homeNotification = HomeNotification::all();
-        $studentsWork = StudentsWork::whereNotNull('status')->get();
-        $menus = Menu::orderBy('sort_by', "asc")->get();
-        return view('frontend.studentsWork', compact('homeNotification','studentsWork','menus'));
+        $userModules = DB::table('user_module')->where('user_id', Auth::user()->id)->get('module_id');
+        $videos = array();
+        foreach ($userModules as $key => $value) {
+            $videos[] = Video::where('module_id', $value->module_id)->get();
+        }
+
+        return view('student.modules.index', compact('videos','userModules'));
     }
 
     /**
@@ -51,7 +56,8 @@ class StudentWorkController extends Controller
      */
     public function show($id)
     {
-        //
+        $video = Video::findOrFail($id);
+        return view('student.modules.show', compact('video'));
     }
 
     /**

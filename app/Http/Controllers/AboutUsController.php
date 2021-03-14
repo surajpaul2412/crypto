@@ -23,7 +23,7 @@ class AboutUsController extends Controller
     public function index()
     {
         $aboutUs = AboutUs::all();
-        $menus = Menu::all();
+        $menus = Menu::orderBy('sort_by', "asc")->get();
         $aboutUsLibrary = AboutUsLibrary::all();
         $aboutUsLibraryImage = AboutUsLibraryImages::all();
         $aboutUsPromotion = AboutUsPromotion::all();
