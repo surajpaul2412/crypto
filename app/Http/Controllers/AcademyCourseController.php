@@ -18,7 +18,7 @@ class AcademyCourseController extends Controller
     {
         $academyCourse = AcademyCourse::all();
         $homeNotification = HomeNotification::all();
-        $menus = Menu::all();
+        $menus = Menu::orderBy('sort_by', "asc")->get();
         return view('frontend.course', compact('academyCourse','homeNotification','menus'));
     }
 

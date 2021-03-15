@@ -9,12 +9,12 @@
 
 <div class="row clearfix pt-5">
     <div class="col-lg-3 mb-4 col-md-3 col-sm-6 col-xs-12">
-        <a href="" class="decoration-none">
+        <a href="{{route('student.profile.index')}}" class="decoration-none">
             <div class="pb-3 pt-4 px-4 bg-white" style="border-radius: 5px;border: solid 0.5px #d3d2d8;">
                 <img src="{{ asset('assets/backend/images/user.svg') }}" width="35px">
-                <h6 class="bold text-dark">Add New Faculty</h6>
+                <h6 class="bold text-dark">Edit Profile</h6>
                 <p class="text-dark" style="font-size: 11px;">
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                    You can change your basic information details from here.
                 </p>
             </div>
         </a>
@@ -23,9 +23,9 @@
         <a href="" class="decoration-none">
             <div class="pb-3 pt-4 px-4 bg-white" style="border-radius: 5px;border: solid 0.5px #d3d2d8;">
                 <img src="{{ asset('assets/backend/images/resume.svg') }}" width="35px">
-                <h6 class="bold text-dark">Add New Vacancy</h6>
+                <h6 class="bold text-dark">View Exam Result</h6>
                 <p class="text-dark" style="font-size: 11px;">
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                    Hey ! Check out your exam results from here. All the Best !
                 </p>
             </div>
         </a>

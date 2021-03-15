@@ -26,7 +26,7 @@ class GalleryController extends Controller
         $studioEquipmentSoftware = StudioEquipmentSoftware::all();
         $studioEquipmentSoftwareImage = StudioEquipmentSoftwareImage::all();
         $homeNotification = HomeNotification::all();
-        $menus = Menu::all();
+        $menus = Menu::orderBy('sort_by', "asc")->get();
         return view('frontend.gallery', compact('gallery','studioEquipmentHardware','studioEquipmentSoftware','studioEquipmentHardwareImage','studioEquipmentSoftwareImage','homeNotification','menus'));
     }
 

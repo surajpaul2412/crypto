@@ -20,7 +20,7 @@ class WelcomeController extends Controller
     public function index()
     {
         $pros = Pros::all();
-        $menus = Menu::all();
+        $menus = Menu::orderBy('sort_by', "asc")->get();
         $banners = Banner::all();
         $homeContent = HomeContent::all();
         $homeNotification = HomeNotification::all();

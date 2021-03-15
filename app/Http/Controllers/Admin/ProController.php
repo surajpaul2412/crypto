@@ -15,7 +15,7 @@ class ProController extends Controller
      */
     public function index()
     {
-        $pros = Pros::all();
+        $pros = Pros::orderBy('sort_by', "asc")->get();
         return view('admin.pros.index', compact('pros'));
     }
 
@@ -43,6 +43,7 @@ class ProController extends Controller
             'brief'=> 'required|min:3',
             'description'=> 'required|min:3',
             'workings'=> 'nullable',
+            'sort_by'=> 'nullable|string',
         ]);
 
         $image_name = $request->image;
@@ -57,6 +58,7 @@ class ProController extends Controller
         $pro->brief = $request->brief;
         $pro->description = $request->description;
         $pro->workings = $request->workings;
+        $pro->sort_by = $request->sort_by;
         $pro->image = $image_name;
         $pro->save();
         return redirect('/admin/pros')->with('success', 'Pros has been added.');
@@ -103,6 +105,7 @@ class ProController extends Controller
                 'brief'=> 'required|min:3',
                 'description'=> 'required|min:3',
                 'workings'=> 'nullable',
+                'sort_by'=> 'nullable|string',
             ]);
             $image_name = rand() . '.' . $image->getClientOriginalExtension();
             $image->move(public_path('images/pros'), $image_name);
@@ -112,6 +115,7 @@ class ProController extends Controller
                 'brief'=> 'required|min:3',
                 'description'=> 'required|min:3',
                 'workings'=> 'nullable',
+                'sort_by'=> 'nullable|string',
             ]);
         }
 
@@ -120,7 +124,8 @@ class ProController extends Controller
             'brief' => $request->brief,
             'description' => $request->description,
             'workings' => $request->workings,
-            'image' => $image_name
+            'image' => $image_name,
+            'sort_by' => $request->sort_by,
         );
 
         Pros::whereId($id)->update($form_data);
