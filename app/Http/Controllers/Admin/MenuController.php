@@ -15,7 +15,7 @@ class MenuController extends Controller
      */
     public function index()
     {
-        $menus = Menu::all();
+        $menus = Menu::orderBy('sort_by', "asc")->get();
         return view('admin.menu.index', compact('menus'));
     }
 
@@ -40,13 +40,15 @@ class MenuController extends Controller
         $this->validate($request, [
             'slug'=> 'required|min:3|max:255',
             'name'=> 'required|min:3',
-            'url'=> 'nullable',
+            'url'=> 'nullable|string',
+            'sort_by'=> 'nullable|string',
         ]);
 
         $menus = new Menu();
         $menus->slug = $request->slug;
         $menus->name = $request->name;
         $menus->url = $request->url;
+        $menus->sort_by = $request->sort_by;
         $menus->save();
         return redirect('/admin/menu')->with('success', 'Menu has been added.');
     }
@@ -86,13 +88,15 @@ class MenuController extends Controller
         $request->validate([
             'slug'=> 'required|min:3|max:255',
             'name'=> 'required|min:3',
-            'url'=> 'nullable',
+            'url'=> 'nullable|string',
+            'sort_by'=> 'nullable|string',
         ]);
 
         $form_data = array(
             'slug' => $request->slug,
             'name' => $request->name,
-            'url' => $request->url
+            'url' => $request->url,
+            'sort_by' => $request->sort_by,
         );
 
         Menu::whereId($id)->update($form_data);

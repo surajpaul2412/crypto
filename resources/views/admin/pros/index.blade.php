@@ -30,6 +30,7 @@
     <thead>
         <tr>
           <th>S. no</th>
+          <th>Sort By</th>
           <th>Name</th>
           <th>Brief</th>
           <th>Description</th>
@@ -42,6 +43,7 @@
       @foreach($pros as $index => $pro)
       <tr>
         <th>{{$index+1}}.</th>
+        <th>{{$pro->sort_by}}</th>
         <td class="bold">{{$pro->name}}</td>
         <td class="bold">{{ \Illuminate\Support\Str::limit($pro->brief, 50, $end='...') }}</td>
         <td>{{ \Illuminate\Support\Str::limit($pro->description, 80, $end='...') }}</td>

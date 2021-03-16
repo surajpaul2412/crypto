@@ -24,7 +24,7 @@ class ProductionCourseController extends Controller
         $logic = ProductionCourseLogic::all();
         $pro = ProductionCoursePro::all();
         $homeNotification = HomeNotification::all();
-        $menus = Menu::all();
+        $menus = Menu::orderBy('sort_by', "asc")->get();
         return view('frontend.logic', compact('productionCourse','quick','logic','pro','homeNotification','menus'));
     }
 

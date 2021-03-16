@@ -106,5 +106,6 @@
     <script src="{{ asset('assets/backend/js/demo.js') }}"></script>
     <!-- upload image -->
     <script src="{{ asset('assets/backend/js/uploadImage.js') }}"></script>
+    @yield('script')
 </body>
 </html>

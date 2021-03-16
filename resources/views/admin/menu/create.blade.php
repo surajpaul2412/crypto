@@ -34,6 +34,11 @@
       <form method="POST" action="{{ route('admin.menu.store') }}" enctype="multipart/form-data">
           @csrf
           <div class="form-group">
+              <label class="text-dark" for="sort_by">Sort By :</label>
+              <input type="decimal" class="form-control" name="sort_by"/>
+          </div>
+
+          <div class="form-group">
               <label class="text-dark" for="slug">Label :</label>
               <input type="text" class="form-control" name="slug"/>
           </div>

@@ -30,6 +30,7 @@
     <thead>
         <tr>
           <th>S. no</th>
+          <th>Sort By</th>
           <th>Title</th>
         </tr>
     </thead>
@@ -37,6 +38,7 @@
       @foreach($menus as $index => $menu)
       <tr>
         <th>{{$index+1}}.</th>
+        <th>{{$menu->sort_by}}</th>
         <td class="bold">{{$menu->name}}</td>
         <td>
           <a href="{{ route('admin.menu.edit',$menu->id)}}">

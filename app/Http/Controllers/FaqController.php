@@ -24,7 +24,7 @@ class FaqController extends Controller
         $faqCareer = FaqCareer::all();
         $faqCourse = FaqCourse::all();
         $faqGeneral = FaqGeneral::all();
-        $menus = Menu::all();
+        $menus = Menu::orderBy('sort_by', "asc")->get();
         $faqHostel = FaqHostel::all();
         $homeNotification = HomeNotification::all();
         return view('frontend.faq', compact('faqs','faqCareer','faqCourse','faqGeneral','faqHostel','homeNotification','menus'));
