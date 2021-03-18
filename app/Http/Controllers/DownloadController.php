@@ -17,7 +17,7 @@ class DownloadController extends Controller
     public function index()
     {
         $downloads = Downloads::all();
-        $menus = Menu::all();
+        $menus = Menu::orderBy('sort_by', "asc")->get();
         $homeNotification = HomeNotification::all();
         return view('frontend.download', compact('downloads','homeNotification','menus'));
     }

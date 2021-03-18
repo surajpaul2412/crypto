@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Menu extends Model
 {
     protected $fillable = [
-        'name', 'slug'
+        'name', 'slug','sort_by','url'
     ];
 
     public function submenu()

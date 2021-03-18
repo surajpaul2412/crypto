@@ -30,6 +30,11 @@
         @method('PATCH')
         @csrf
         <div class="form-group">
+              <label class="text-dark" for="sort_by">Sort By :</label>
+              <input type="decimal" class="form-control" name="sort_by" value="{{ $menu->sort_by }}"/>
+          </div>
+
+        <div class="form-group">
     		  <label class="text-dark" for="slug">Label :</label>
     		  <input type="text" class="form-control" name="slug" value="{{ $menu->slug }}"/>
     		</div>

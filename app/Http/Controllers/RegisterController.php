@@ -19,7 +19,7 @@ class RegisterController extends Controller
     public function index()
     {
         $homeNotification = HomeNotification::all();
-        $menus = Menu::all();
+        $menus = Menu::orderBy('sort_by', "asc")->get();
         return view('frontend.register', compact('homeNotification','menus'));
     }
 

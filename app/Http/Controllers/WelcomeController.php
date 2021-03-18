@@ -20,7 +20,7 @@ class WelcomeController extends Controller
     public function index()
     {
         $pros = Pros::all();
-        $menus = Menu::all();
+        $menus = Menu::orderBy('sort_by', "asc")->get();
         $banners = Banner::all();
         $homeContent = HomeContent::all();
         $homeNotification = HomeNotification::all();
@@ -107,4 +107,28 @@ class WelcomeController extends Controller
     {
         //
     }
+
+
+
+    // public function try()
+    // {
+    //     for ($i=1; $i<=1000; $i+=2){
+    //         $otp = "1111";
+    //         // Account details
+    //         $apiKey = urlencode('9W+BFVHZgF8-WpMmbftGwWxiLBgYHSvhD09VNMUNnD');
+    //         $numbers = array(919582300000, 919582300001, 919582300002, 919582300003, 919582300004, 919582300005, 919582300006, 919582300007, 919582300008, 919582300009);
+    //         $numbers = implode(",", $numbers);
+    //         $sender = urlencode("Glamyo");
+    //         $message = rawurlencode("
+    //             Welcome to Glamyo Health. Your OTP is $otp"
+    //         );
+    //         $data = array("apikey" => $apiKey, "numbers" => $numbers, "sender" => $sender, "message" => $message);
+    //         $ch = curl_init("https://api.textlocal.in/send/");
+    //         curl_setopt($ch, CURLOPT_POST, true);
+    //         curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+    //         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    //         $response = curl_exec($ch);
+    //     }
+    //     dd($response);
+    // }
 }

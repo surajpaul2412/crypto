@@ -275,7 +275,7 @@
                                         document.getElementById("timer")
                                             .innerHTML =
                                             '<span style="font-size:11px !important;">' + d + '<span>d:</span></span>' +
-                                            '<span style="font-size:11px !important;">' + h + '<span>h:</span></span>' +
+                                            // '<span style="font-size:11px !important;">' + h + '<span>h:</span></span>' +
                                             '<span style="font-size:11px !important;">' + m + '<span>m:</span></span>' +
                                             '<span style="font-size:11px !important;">' + s + '<span>s</span></span>';
                                     }

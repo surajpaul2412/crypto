@@ -20,7 +20,7 @@ class TeamController extends Controller
         $team = Team::all();
         $teamProduction = TeamProduction::all();
         $homeNotification = HomeNotification::all();
-        $menus = Menu::all();
+        $menus = Menu::orderBy('sort_by', "asc")->get();
         return view('frontend.faculty', compact('team','teamProduction','homeNotification','menus'));
     }
 

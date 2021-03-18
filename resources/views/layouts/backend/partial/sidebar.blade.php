@@ -17,7 +17,7 @@
                 </svg>                        
             </div>
             <div class="col-md-3 col-3 pt-5">
-                <img src="{{ asset('assets/backend/images/user.png') }}" width="48" height="48" alt="User" style="border-radius: 50%;">
+                <img src="{{ asset('assets/backend/images/admin.svg') }}" width="48" height="48" alt="User-type">
             </div>
             <div class="col-md-9 col-9 pt-5">
                 <div class="name text-white" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Hi ! {{ Auth::user()->name }}</div>
@@ -117,6 +117,20 @@
                     <ul class="ml-menu">
                         <li>
                             <a href="{{ route('admin.submenu.index') }}">Mobile Sub menu</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="{{ Request::is('admin/desktopMenu*') ? 'active' : '' }}">
+                    <a href="{{ route('admin.desktopMenu.index') }}" class="menu-toggle">
+                        <i class="material-icons">widgets</i>
+                        <span>Desktop Menu Section</span>
+                    </a>
+                    <ul class="ml-menu">
+                        <li>
+                            <a href="{{ route('admin.desktopMenuMain.index') }}">Desktop main menu</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('admin.desktopMenuSub.index') }}">Desktop Sub menu</a>
                         </li>
                     </ul>
                 </li>
@@ -254,6 +268,18 @@
                         <span>Contact</span>
                     </a>
                 </li>
+                <li class="{{ Request::is('admin/modules') ? 'active' : '' }}">
+                    <a href="{{ route('admin.modules.index') }}">
+                        <i class="material-icons">movie</i>
+                        <span>Manage Video Modules</span>
+                    </a>
+                </li>
+                <li class="{{ Request::is('admin/videos') ? 'active' : '' }}">
+                    <a href="{{ route('admin.videos.index') }}">
+                        <i class="material-icons">video_library</i>
+                        <span>Videos For Students</span>
+                    </a>
+                </li>
                 <li>
                     <a href="{{ route('logout') }}"
                         onclick="event.preventDefault();
@@ -312,6 +338,18 @@
                     <a href="{{ route('student.dashboard') }}">
                         <i class="material-icons">home</i>
                         <span>Dashboard</span>
+                    </a>
+                </li>
+                <li class="{{ Request::is('student/profile') ? 'active' : '' }}">
+                    <a href="{{ route('student.profile.index') }}">
+                        <i class="material-icons">person</i>
+                        <span>Profile</span>
+                    </a>
+                </li>
+                <li class="{{ Request::is('student/modules') ? 'active' : '' }}">
+                    <a href="{{ route('student.modules.index') }}">
+                        <i class="material-icons">movie</i>
+                        <span>Video Modules</span>
                     </a>
                 </li>
                 <li>

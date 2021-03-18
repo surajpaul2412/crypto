@@ -33,9 +33,9 @@
           <button class="cross" type="submit"><img src="{{ asset('assets/backend/images/cancel.png') }}"  width="25px"></button>
         </form>
         <div class="pb-3 pt-4 px-4 bg-white" style="border-radius: 5px;border: solid 0.5px #d3d2d8;">
-            <img src="{{ asset('assets/backend/images/add-friend.png') }}" width="35px">
+            <img src="{{ asset('assets/backend/images/faculty.svg') }}" width="35px">
             <h6 class="bold text-dark">Name: {{$user->name}}</h6>
-            <h5 class="bold text-dark">Email: {{$user->email}}</h5>
+            <h6 class="bold text-dark">Email: {{$user->email}}</h6>
         </div>
         <a href="{{ route('admin.faculty.edit',$user->id)}}" class="edit"><img src="{{ asset('assets/backend/images/writing.png') }}"></a>
       </div>

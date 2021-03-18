@@ -83,7 +83,15 @@ Route::group(['as'=>'admin.','prefix'=>'admin','namespace'=>'Admin','middleware'
     Route::post('/studentsWork/{id}/enable','StudentWorkController@enable')->name('studentsWork.enable');
     Route::post('/studentsWork/{id}/disable','StudentWorkController@disable')->name('studentsWork.disable');
     Route::resource('studentsWork','StudentWorkController');
-    Route::resource('exam','ExamController');
+    Route::resource('exam','ExamController');    
+    Route::post('/modules/{id}/usermodule','ModuleController@usermodule')->name('modules.usermodule');
+    Route::get('/modules/{id}/showStudents','ModuleController@showStudents')->name('modules.showStudents');
+    Route::resource('modules','ModuleController');
+    Route::resource('videos','VideoController');
+    Route::resource('desktopMenu','DesktopMainMenuController');    
+    Route::resource('desktopMenuMain','DesktopMainMenuSectionController');    
+    Route::resource('desktopMenuSub','DesktopMainSubSectionController');
+    // create
 });
 
 Route::group(['as'=>'manager.','prefix'=>'manager','namespace'=>'Manager','middleware'=>['auth','manager']], function(){
@@ -96,4 +104,6 @@ Route::group(['as'=>'faculty.','prefix'=>'faculty','namespace'=>'Faculty','middl
 
 Route::group(['as'=>'student.','prefix'=>'student','namespace'=>'Student','middleware'=>['auth','student']], function(){
     Route::get('dashboard','DashboardController@index')->name('dashboard');
+    Route::resource('profile','ProfileController');
+    Route::resource('modules','ModuleController');
 });

@@ -16,5 +16,6 @@ class DatabaseSeeder extends Seeder
         $this->call(MenusTableSeeder::class);
         $this->call(SubmenusTableSeeder::class);
         $this->call(ContentTableSeeder::class);
+        $this->call(DesktopMenuSectionSeeder::class);
     }
 }

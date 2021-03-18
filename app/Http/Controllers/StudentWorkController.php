@@ -18,7 +18,7 @@ class StudentWorkController extends Controller
     {
         $homeNotification = HomeNotification::all();
         $studentsWork = StudentsWork::whereNotNull('status')->get();
-        $menus = Menu::all();
+        $menus = Menu::orderBy('sort_by', "asc")->get();
         return view('frontend.studentsWork', compact('homeNotification','studentsWork','menus'));
     }
 
