@@ -91,7 +91,6 @@ Route::group(['as'=>'admin.','prefix'=>'admin','namespace'=>'Admin','middleware'
     Route::resource('desktopMenu','DesktopMainMenuController');    
     Route::resource('desktopMenuMain','DesktopMainMenuSectionController');    
     Route::resource('desktopMenuSub','DesktopMainSubSectionController');
-    // create
 });
 
 Route::group(['as'=>'manager.','prefix'=>'manager','namespace'=>'Manager','middleware'=>['auth','manager']], function(){
