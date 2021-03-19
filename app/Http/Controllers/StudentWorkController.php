@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\HomeNotification;
 use App\StudentsWork;
 use App\Menu;
+use App\DesktopMenuSection;
 
 class StudentWorkController extends Controller
 {
@@ -19,7 +20,8 @@ class StudentWorkController extends Controller
         $homeNotification = HomeNotification::all();
         $studentsWork = StudentsWork::whereNotNull('status')->get();
         $menus = Menu::orderBy('sort_by', "asc")->get();
-        return view('frontend.studentsWork', compact('homeNotification','studentsWork','menus'));
+        $desktopMenu = DesktopMenuSection::orderBy('sort_by', "asc")->get();
+        return view('frontend.studentsWork', compact('homeNotification','studentsWork','menus','desktopMenu'));
     }
 
     /**

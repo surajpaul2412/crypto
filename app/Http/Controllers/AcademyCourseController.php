@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\AcademyCourse;
 use App\HomeNotification;
 use App\Menu;
+use App\DesktopMenuSection;
 
 class AcademyCourseController extends Controller
 {
@@ -19,7 +20,8 @@ class AcademyCourseController extends Controller
         $academyCourse = AcademyCourse::all();
         $homeNotification = HomeNotification::all();
         $menus = Menu::orderBy('sort_by', "asc")->get();
-        return view('frontend.course', compact('academyCourse','homeNotification','menus'));
+        $desktopMenu = DesktopMenuSection::orderBy('sort_by', "asc")->get();
+        return view('frontend.course', compact('academyCourse','homeNotification','menus','desktopMenu'));
     }
 
     /**

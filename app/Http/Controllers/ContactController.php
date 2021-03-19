@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Contact;
 use App\HomeNotification;
 use App\Menu;
+use App\DesktopMenuSection;
 
 class ContactController extends Controller
 {
@@ -18,7 +19,8 @@ class ContactController extends Controller
     {
         $homeNotification = HomeNotification::all();
         $menus = Menu::orderBy('sort_by', "asc")->get();
-        return view('frontend.contact', compact('homeNotification','menus'));
+        $desktopMenu = DesktopMenuSection::orderBy('sort_by', "asc")->get();
+        return view('frontend.contact', compact('homeNotification','menus','desktopMenu'));
     }
 
     /**

@@ -10,6 +10,7 @@ use App\StudioEquipmentHardwareImage;
 use App\StudioEquipmentSoftwareImage;
 use App\HomeNotification;
 use App\Menu;
+use App\DesktopMenuSection;
 
 class GalleryController extends Controller
 {
@@ -27,7 +28,8 @@ class GalleryController extends Controller
         $studioEquipmentSoftwareImage = StudioEquipmentSoftwareImage::all();
         $homeNotification = HomeNotification::all();
         $menus = Menu::orderBy('sort_by', "asc")->get();
-        return view('frontend.gallery', compact('gallery','studioEquipmentHardware','studioEquipmentSoftware','studioEquipmentHardwareImage','studioEquipmentSoftwareImage','homeNotification','menus'));
+        $desktopMenu = DesktopMenuSection::orderBy('sort_by', "asc")->get();
+        return view('frontend.gallery', compact('gallery','studioEquipmentHardware','studioEquipmentSoftware','studioEquipmentHardwareImage','studioEquipmentSoftwareImage','homeNotification','menus','desktopMenu'));
     }
 
     /**

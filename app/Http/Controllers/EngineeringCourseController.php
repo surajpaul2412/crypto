@@ -12,6 +12,7 @@ use App\EngineeringCourseOverview;
 use App\EngineeringCourseLogicAbleton;
 use App\HomeNotification;
 use App\Menu;
+use App\DesktopMenuSection;
 
 class EngineeringCourseController extends Controller
 {
@@ -26,6 +27,7 @@ class EngineeringCourseController extends Controller
         $engineeringCourseOverview = EngineeringCourseOverview::all();
         $engineeringCourseLogicAbleton = EngineeringCourseLogicAbleton::all();
         $homeNotification = HomeNotification::all();
-        return view('frontend.engineering-course', compact('engineeringCourse','engineeringCourseSound','engineeringCourseSoftware','engineeringCourseHardware','engineeringCourseModule','engineeringCourseOverview','engineeringCourseLogicAbleton','homeNotification','menus'));
+        $desktopMenu = DesktopMenuSection::orderBy('sort_by', "asc")->get();
+        return view('frontend.engineering-course', compact('engineeringCourse','engineeringCourseSound','engineeringCourseSoftware','engineeringCourseHardware','engineeringCourseModule','engineeringCourseOverview','engineeringCourseLogicAbleton','homeNotification','menus','desktopMenu'));
     }
 }

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\HomeNotification;
 use App\Exam;
 use App\Menu;
+use App\DesktopMenuSection;
 
 class ExamStructureController extends Controller
 {
@@ -19,7 +20,8 @@ class ExamStructureController extends Controller
         $homeNotification = HomeNotification::all();
         $exam = Exam::all();
         $menus = Menu::orderBy('sort_by', "asc")->get();
-        return view('frontend.exam', compact('homeNotification','exam','menus'));
+        $desktopMenu = DesktopMenuSection::orderBy('sort_by', "asc")->get();
+        return view('frontend.exam', compact('homeNotification','exam','menus','desktopMenu'));
     }
 
     /**

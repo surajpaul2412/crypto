@@ -10,6 +10,7 @@ use App\FaqGeneral;
 use App\FaqHostel;
 use App\HomeNotification;
 use App\Menu;
+use App\DesktopMenuSection;
 
 class FaqController extends Controller
 {
@@ -27,7 +28,8 @@ class FaqController extends Controller
         $menus = Menu::orderBy('sort_by', "asc")->get();
         $faqHostel = FaqHostel::all();
         $homeNotification = HomeNotification::all();
-        return view('frontend.faq', compact('faqs','faqCareer','faqCourse','faqGeneral','faqHostel','homeNotification','menus'));
+        $desktopMenu = DesktopMenuSection::orderBy('sort_by', "asc")->get();
+        return view('frontend.faq', compact('faqs','faqCareer','faqCourse','faqGeneral','faqHostel','homeNotification','menus','desktopMenu'));
     }
 
     /**

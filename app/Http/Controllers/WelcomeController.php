@@ -9,6 +9,7 @@ use App\Menu;
 use App\Banner;
 use App\HomeContent;
 use App\HomeNotification;
+use App\DesktopMenuSection;
 
 class WelcomeController extends Controller
 {
@@ -24,7 +25,8 @@ class WelcomeController extends Controller
         $banners = Banner::all();
         $homeContent = HomeContent::all();
         $homeNotification = HomeNotification::all();
-        return view('welcome', compact('pros','banners','homeContent','homeNotification','menus'));
+        $desktopMenu = DesktopMenuSection::orderBy('sort_by', "asc")->get();
+        return view('welcome', compact('pros','banners','homeContent','homeNotification','menus','desktopMenu'));
     }
 
     /**

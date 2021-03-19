@@ -9,6 +9,7 @@ use App\ProductionCoursePro;
 use App\ProductionCourseQuick;
 use App\HomeNotification;
 use App\Menu;
+use App\DesktopMenuSection;
 
 class ProductionCourseController extends Controller
 {
@@ -25,7 +26,8 @@ class ProductionCourseController extends Controller
         $pro = ProductionCoursePro::all();
         $homeNotification = HomeNotification::all();
         $menus = Menu::orderBy('sort_by', "asc")->get();
-        return view('frontend.logic', compact('productionCourse','quick','logic','pro','homeNotification','menus'));
+        $desktopMenu = DesktopMenuSection::orderBy('sort_by', "asc")->get();
+        return view('frontend.logic', compact('productionCourse','quick','logic','pro','homeNotification','menus','desktopMenu'));
     }
 
     /**

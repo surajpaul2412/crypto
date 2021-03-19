@@ -8,6 +8,7 @@ use App\User;
 use App\StudentDetails;
 use App\Menu;
 use App\HomeNotification;
+use App\DesktopMenuSection;
 
 class RegisterController extends Controller
 {
@@ -20,7 +21,8 @@ class RegisterController extends Controller
     {
         $homeNotification = HomeNotification::all();
         $menus = Menu::orderBy('sort_by', "asc")->get();
-        return view('frontend.register', compact('homeNotification','menus'));
+        $desktopMenu = DesktopMenuSection::orderBy('sort_by', "asc")->get();
+        return view('frontend.register', compact('homeNotification','menus','desktopMenu'));
     }
 
     /**

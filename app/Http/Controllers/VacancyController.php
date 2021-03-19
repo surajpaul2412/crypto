@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Vacancy;
 use App\HomeNotification;
 use App\Menu;
+use App\DesktopMenuSection;
 
 class VacancyController extends Controller
 {
@@ -19,7 +20,8 @@ class VacancyController extends Controller
         $jobs = Vacancy::latest()->get();
         $homeNotification = HomeNotification::all();
         $menus = Menu::orderBy('sort_by', "asc")->get();
-        return view('frontend.jobs', compact('jobs','homeNotification','menus'));
+        $desktopMenu = DesktopMenuSection::orderBy('sort_by', "asc")->get();
+        return view('frontend.jobs', compact('jobs','homeNotification','menus','desktopMenu'));
     }
 
     /**

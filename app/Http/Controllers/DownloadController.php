@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Downloads;
 use App\HomeNotification;
 use App\Menu;
+use App\DesktopMenuSection;
 
 class DownloadController extends Controller
 {
@@ -19,7 +20,8 @@ class DownloadController extends Controller
         $downloads = Downloads::all();
         $menus = Menu::orderBy('sort_by', "asc")->get();
         $homeNotification = HomeNotification::all();
-        return view('frontend.download', compact('downloads','homeNotification','menus'));
+        $desktopMenu = DesktopMenuSection::orderBy('sort_by', "asc")->get();
+        return view('frontend.download', compact('downloads','homeNotification','menus','desktopMenu'));
     }
 
     /**
