@@ -68,7 +68,7 @@
                 </div>
             </div>
             <div class="col-md-7 my-2">
-                <img src="{{asset('images/aboutUs/')}}/{{$row->image}}" width="100%">
+                <img src="{{env('image_url')}}/aboutUs/{{$row->image}}" width="100%">
             </div>
             @endforeach
         </div>
@@ -123,7 +123,7 @@
             <div class="row carousel">
                 @foreach($aboutUsPromotionImage as $new)
                 <div class="col-md-2 page-12-col-md-2 pt-3">
-                    <img src="{{asset('images/aboutUs/')}}/{{$new->image}}" width="100%">
+                    <img src="{{env('image_url')}}/aboutUs/{{$new->image}}" width="100%">
                 </div>
                 @endforeach
             </div>

@@ -39,7 +39,7 @@
       @foreach($aboutUsPromotionImage as $index => $new)
       <tr>
         <th>{{$index+1}}.</th>
-        <td><img src="{{asset('images/aboutUs/')}}/{{$new->image}}" width="80px"></td>
+        <td><img src="{{env('image_url')}}/aboutUs/{{ $new->image }}" width="80px"></td>
         <td>
           <a href="{{ route('admin.aboutUsPromotionImage.edit',$new->id)}}">
             <i class="material-icons">edit</i>

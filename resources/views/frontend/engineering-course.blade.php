@@ -155,14 +155,14 @@
         <div class="row mx-2 media-mx-0">
             <div class="col-md-7 col-12 py-4">
                 <div class="pb-3">
-                    <h6 class="font-black bold font-20"><span><img class="pr-3 media-studio-img" src="{{asset('images/module/')}}/{{$row->icon}}" width="7%"></span>{{$row->heading}}</h6>
+                    <h6 class="font-black bold font-20"><span><img class="pr-3 media-studio-img" src="{{env('image_url')}}/module/{{$row->icon}}" width="7%"></span>{{$row->heading}}</h6>
                     <div class="font-regular pb-3 font-13 text-grey2">
                         {!! $row->content !!}
                     </div>
                 </div>
             </div>
             <div class="col-md-5 col-12 py-4" align="right">
-                <img src="{{asset('images/module/')}}/{{$row->image}}" class="media-w-100" width="90%">
+                <img src="{{env('image_url')}}/module/{{$row->image}}" class="media-w-100" width="90%">
             </div>
         </div>
     </section>

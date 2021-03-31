@@ -41,7 +41,7 @@
       @foreach($teamProduction as $index => $row)
       <tr>
         <th>{{$index+1}}.</th>
-        <td><img src="{{asset('images/team/')}}/{{$row->image}}" width="80px"></td>
+        <td><img src="{{env('image_url')}}/team/{{$row->image}}" width="80px"></td>
         <th>{{$row->heading}}.</th>
         <th>{!!$row->content!!}.</th>
         <td>

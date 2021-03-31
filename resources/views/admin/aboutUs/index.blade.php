@@ -40,7 +40,7 @@
         <tr>
             <td class="bold">{!!$row->heading!!}</td>
             <td>{!!$row->content!!}</td>
-            <td><img src="{{asset('images/aboutUs/')}}/{{$row->image}}" width="200px"></td>
+            <td><img src="{{env('image_url')}}/aboutUs/{{ $row->image }}" width="200px"></td>
         </tr>
       @endforeach
     </tbody>

@@ -42,7 +42,7 @@
             @foreach($teamProduction as $row)
             <div class="col-md-4 mt-4 mb-3">
                 <div class="slider-header bg-theme" align="center">
-                    <img class="d-block mx-auto py-3 pt-4" src="{{asset('images/team/')}}/{{$row->image}}" width="24%">
+                    <img class="d-block mx-auto py-3 pt-4" src="{{env('image_url')}}/team/{{$row->image}}" width="24%">
                     <div class="about-title px-4 pt-2 bold font-16">{{$row->heading}}</div>
                     <div class="about-desc px-3 pt-3 pb-4">{!!$row->content!!}</div>
                 </div>
@@ -63,7 +63,7 @@
             @foreach($team as $index => $row)
             <div class="col-md-4 mb-3" style="margin-top: 80px;">
                 <div class="slider-header bg-theme" align="center">
-                    <img src="{{asset('images/team/')}}/{{$row->image}}" width="55%" class="mx-auto d-block p-2 bg-theme shadow-round" style="border-radius: 50%;margin-top: -26%">
+                    <img src="{{env('image_url')}}/team/{{$row->image}}" width="55%" class="mx-auto d-block p-2 bg-theme shadow-round" style="border-radius: 50%;margin-top: -26%">
                     <h6 class="about-name bold pt-4">{{$row->name}}</h6>
                     <div class="about-title pb-2 font-400">{!!$row->designation!!}</div>
                     <div class="about-title pt-2 font-400">{!!$row->content!!}</div>

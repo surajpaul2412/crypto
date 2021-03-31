@@ -43,10 +43,10 @@
       @foreach($engineeringCourseModule as $key => $row)
         <tr>
             <td>{{ $key+1 }}.</td>
-            <td><img src="{{asset('images/module/')}}/{{$row->icon}}" width="50px"></td>
+            <td><img src="{{env('image_url')}}/module/{{$row->icon}}" width="50px"></td>
             <td class="bold">{{$row->heading}}</td>
             <td>{!! \Illuminate\Support\Str::limit($row->content, 50, $end='...') !!}</td>
-            <td><img src="{{asset('images/module/')}}/{{$row->image}}" width="90px"></td>
+            <td><img src="{{env('image_url')}}/module/{{$row->image}}" width="90px"></td>
             <td>
               <a href="{{ route('admin.engineeringCourseModule.edit',$row->id)}}">
                 Edit

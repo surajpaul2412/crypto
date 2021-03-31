@@ -23,7 +23,7 @@
                 <div class="slider-header pt-4 pb-3 px-3">
                     <div class="row">
                         <div class="col-md-1 col-3">
-                            <img src="{{ URL('/') }}/images/academyCourse/{{ $row->image }}" width="100%">
+                            <img src="{{env('image_url')}}/academyCourse/{{$row->image}}" width="100%">
                         </div>
                         <div class="col-md-11 col-9 px-0 font-regular bold font-18 media-pt-0" style="padding-top: 1%;">
                             {{$row->heading}}

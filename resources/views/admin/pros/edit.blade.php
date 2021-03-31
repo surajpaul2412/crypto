@@ -52,7 +52,7 @@
           <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
           <div class="row">
             <div class="col-md-3" id="img_contain">
-              <img id="previewImage" align='middle' src="{{ URL('/') }}/images/pros/{{ $pro->image }}" width="200px"  class="pt-3"/>
+              <img id="previewImage" align='middle' src="{{env('image_url')}}/pros/{{$pro->image}}" width="200px"  class="pt-3"/>
             </div>
           </div>
           <input type="hidden" name="hidden_image" value="{{ $pro->image }}">

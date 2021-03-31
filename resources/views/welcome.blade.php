@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Crypto Cipher</title>
+    <link rel="icon" href="{{asset('assets/backend/images/logo')}}" type="image" sizes="16x16">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Font Awesome -->
@@ -459,7 +460,7 @@
                         <div class="carousel-inner">
                           @foreach($banners as $index => $banner)
                           <div class="carousel-item {{$index == 0 ? 'active' : '' }}">
-                            <img src="{{asset('images/banner/')}}/{{$banner->mobile_banner}}" width="100%">
+                            <img src="{{env('image_url')}}/banner/{{$banner->mobile_banner}}" width="100%">
                           </div>
                           @endforeach
                         </div>
@@ -479,7 +480,7 @@
                           <div id="carousel" class="owl-carousel">
                             @foreach($banners as $index => $banner)
                             <div class="item">
-                              <img src="{{asset('images/banner/')}}/{{$banner->image}}" width="100%" style="height: 32vh;">
+                              <img src="{{env('image_url')}}/banner/{{$banner->image}}" width="100%" style="height: 32vh;">
                             </div>
                             @endforeach
                           </div>
@@ -594,7 +595,7 @@
                       <div class="ul mt-4">
                         @foreach($pros as $pro)
                         <div class="li mb-3">
-                          <img class="d-block mx-auto shadow-round" src="{{asset('images/pros/')}}/{{$pro->image}}" width="55%">
+                          <img class="d-block mx-auto shadow-round" src="{{env('image_url')}}/pros/{{$pro->image}}" width="55%">
                           <div class="pt-3 font-11 text-dark font-regular">
                               {!! $pro->brief !!}
                           </div>
@@ -618,7 +619,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <div class="card-content" align="center">
-                                    <img class="d-block mx-auto shadow-round" src="{{asset('images/pros/')}}/{{$pro->image}}" width="55%">
+                                    <img class="d-block mx-auto shadow-round" src="{{env('image_url')}}/pros/{{$pro->image}}" width="55%">
                                     <div class="card-text">
                                         <p class="pt-3 font-11 text-dark font-regular port-22" style="min-height: 22vh;">
                                             {!! \Illuminate\Support\Str::limit($pro->brief, 200, $end='...') !!}

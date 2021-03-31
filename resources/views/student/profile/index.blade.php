@@ -22,7 +22,7 @@
       <div class="col-lg-4">
         <div class="card card-profile py-4">
           <div class="card-body text-center">
-            <img class="card-profile-img" src="{{url('/')}}/images/students/{{$info->image}}" width="40%">
+            <img class="card-profile-img" src="{{env('image_url')}}/students/{{$info->image}}" width="40%">
             <h3 class="mb-3">{{ Auth::user()->name }}</h3>
             <p class="mb-4">
               <a href="mailto:{{$student->email}}"> {{ Auth::user()->email }}</a>

@@ -47,7 +47,7 @@
         <td class="bold">{{$pro->name}}</td>
         <td class="bold">{{ \Illuminate\Support\Str::limit($pro->brief, 50, $end='...') }}</td>
         <td>{{ \Illuminate\Support\Str::limit($pro->description, 80, $end='...') }}</td>
-        <td><img src="{{asset('images/pros/')}}/{{$pro->image}}" width="80px"></td>
+        <td><img src="{{env('image_url')}}/pros/{{$pro->image}}" width="80px"></td>
         <td>
           <a href="{{ route('admin.pros.edit',$pro->id)}}">
             <i class="material-icons">edit</i>

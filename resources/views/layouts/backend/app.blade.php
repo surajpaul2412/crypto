@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <title>Crypto Cipher | CMS</title>
-    <link rel="icon" href="{{ asset('assets/frontend/images/favicon.png') }}" type="image" sizes="16x16">
+    <link rel="icon" href="{{asset('assets/backend/images/logo')}}" type="image" sizes="16x16">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
     <!-- Bootstrap core CSS -->
@@ -66,14 +66,12 @@
             </div>
         </div>
     </nav>
-
     <!-- Left Sidebar -->
     @include('layouts.backend.partial.sidebar')
-
     <section class="content" style="background-color: #1d1b27;">
-        <div class="container-fluid bg-white py-5 bold" align="center" style="border-top-left-radius: 35px;">
+        <div class="container-fluid bg-white py-3 bold" align="center" style="border-top-left-radius: 35px;">
             <a href="{{url('/admin/dashboard')}}" class="px-0">
-                Crypto cipher logo
+                <img src="{{asset('assets/backend/images/logo')}}" width="150px">
             </a>
         </div>
         <div class="bg-white">
@@ -81,15 +79,11 @@
                 <div class="block-header">
                     <h2></h2>
                 </div>
-
                 <!-- Widgets -->
                 @yield('content')
-                
             </div>
         </div>
-            
     </section>
-
 <!-- Jquery Core Js -->
     <script src="{{ asset('assets/backend/plugins/akvizuals/jquery/jquery.min.js') }}"></script>
     <!-- Bootstrap Core Js -->

@@ -43,7 +43,7 @@
         <th>{{$index+1}}.</th>
         <td class="bold">{{ \Illuminate\Support\Str::limit($new->title, 50, $end='...') }}</td>
         <td>{{ \Illuminate\Support\Str::limit($new->content, 80, $end='...') }}</td>
-        <td><img src="{{asset('images/news/')}}/{{$new->image}}" width="80px"></td>
+        <td><img src="{{env('image_url')}}/news/{{$new->image}}" width="80px"></td>
         <td>
           <a href="{{ route('admin.newsroom.edit',$new->id)}}">
             <i class="material-icons">edit</i>

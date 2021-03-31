@@ -63,7 +63,7 @@
                 <div class="slider-header bg-theme px-2 pb-4">
                     <div class="row py-3">
                         <div class="col-md-2 pl-4 col-3">
-                            <img class="pr-3" src="{{asset('images/faq/')}}/{{$row->image}}" width="70px">
+                            <img class="pr-3" src="{{env('image_url')}}/faq/{{$row->image}}" width="70px">
                         </div>
                         <div class="col-md-10 col-9">
                             <div class="font-medium text-black font-18">

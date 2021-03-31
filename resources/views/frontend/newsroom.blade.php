@@ -81,7 +81,7 @@
                             <a class="nav-link {{$index == 0 ? 'active' : '' }}" href="#tab{{$index+1}}" data-toggle="tab">
                                 <div class="row p-0">
                                     <div class="col-md-12 col-12 p-0">
-                                        <img src="{{asset('images/news/')}}/{{$row->image}}" width="100%">
+                                        <img src="{{env('image_url')}}/news/{{$row->image}}" width="100%">
                                     </div>
                                     <div class="col-md-12 py-3">
                                         <div class="text-dark font-bold font-13">
@@ -116,7 +116,7 @@
                     <div role="tabpanel" class="tab-pane {{$index == 0 ? 'active' : '' }}" id="tab{{$index+1}}">
                         <div class="row">
                             <div class="col-md-12 col-12 pl-3 p-0">
-                                <img src="{{asset('images/news/')}}/{{$row->image}}" class="d-block mx-auto" width="98%">
+                                <img src="{{env('image_url')}}/news/{{$row->image}}" class="d-block mx-auto" width="98%">
                             </div>
                             <div class="col-md-12 col-12">
                                 <div class="font-bold text-black font-13 pt-3 px-3">
@@ -144,7 +144,7 @@
         <div class="modal-dialog modal-lg modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-body">
-                    <img src="{{asset('images/news/')}}/{{$row->image}}" class="d-block mx-auto" width="100%">
+                    <img src="{{env('image_url')}}/news/{{$row->image}}" class="d-block mx-auto" width="100%">
                     <div class="font-bold text-black" style="text-align: justify;">{{$row->title}}</div>
                     <p class="font-regular text-grey2">{!! $row->content !!}</p>
                 </div>
