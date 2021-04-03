@@ -33,6 +33,7 @@ Route::resource('/register', 'RegisterController');
 Route::resource('/about_us', 'AboutUsController');
 Route::resource('/student_work', 'StudentWorkController');
 Route::resource('/exam_schedule', 'ExamStructureController');
+Route::resource('/video_gallery', 'VideoGalleryController');
 
 Route::group(['as'=>'admin.','prefix'=>'admin','namespace'=>'Admin','middleware'=>['auth','admin']], function(){
     Route::get('dashboard','DashboardController@index')->name('dashboard');
@@ -91,6 +92,8 @@ Route::group(['as'=>'admin.','prefix'=>'admin','namespace'=>'Admin','middleware'
     Route::resource('desktopMenu','DesktopMainMenuController');    
     Route::resource('desktopMenuMain','DesktopMainMenuSectionController');    
     Route::resource('desktopMenuSub','DesktopMainSubSectionController');
+    Route::resource('videoGallery','VideoGalleryController');
+    Route::resource('videoGalleryUrl','VideoGalleryUrlController');
 });
 
 Route::group(['as'=>'manager.','prefix'=>'manager','namespace'=>'Manager','middleware'=>['auth','manager']], function(){

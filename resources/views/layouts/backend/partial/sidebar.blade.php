@@ -224,6 +224,17 @@
                         <span>Gallery</span>
                     </a>
                 </li>
+                <li class="{{ Request::is('admin/videoGallery') ? 'active' : '' }}">
+                    <a href="{{ route('admin.videoGallery.index') }}" class="menu-toggle">
+                        <i class="material-icons">ac_unit</i>
+                        <span>Video Gallery Section</span>
+                    </a>
+                    <ul class="ml-menu">
+                        <li>
+                            <a href="{{ route('admin.videoGalleryUrl.index') }}">video Gallery</a>
+                        </li>
+                    </ul>
+                </li>
                 <li class="{{ Request::is('admin/faq*') ? 'active' : '' }}">
                     <a href="{{ route('admin.faq.index') }}" class="menu-toggle">
                         <i class="material-icons">support_agent</i>
