@@ -402,12 +402,11 @@
               </div>
               @foreach($desktopMenu as $key => $try1)              
               <div class="col-md-12 pl-13p section{{$key+1}} scroll-hide overflow-y-scroll">
-                @if($try1->desktopMainMenu->count() < 2)
+                @if($try1->desktopMainMenu->count() <= 2)
                   <div style="position: relative;top: 50%;transform: translateY(-50%);">
                 @else
                   <div style="position: relative;">
                     <div style="position: absolute;top: 0;right: 0;">
-                      <?xml version="1.0"?>
                       <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" version="1.1" width="15" height="15" x="0" y="0" viewBox="0 0 292.362 292.362" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g>
                       <g xmlns="http://www.w3.org/2000/svg">
                         <path d="M286.935,69.377c-3.614-3.617-7.898-5.424-12.848-5.424H18.274c-4.952,0-9.233,1.807-12.85,5.424   C1.807,72.998,0,77.279,0,82.228c0,4.948,1.807,9.229,5.424,12.847l127.907,127.907c3.621,3.617,7.902,5.428,12.85,5.428   s9.233-1.811,12.847-5.428L286.935,95.074c3.613-3.617,5.427-7.898,5.427-12.847C292.362,77.279,290.548,72.998,286.935,69.377z" fill="#79bd50" data-original="#000000" style="" class=""/>
@@ -450,7 +449,7 @@
                       <a class="font-14 text-black pl-2 font-bold" href="{{url('about_us')}}">{{$try2->name}}</a>
                       <div class="menu" style="display: table;">
                         @foreach($try2->desktopSubMenu as $trytry)
-                          <span><a href="{{url('music-production-course#ableton')}}">{{$trytry->name}}</a></span>
+                          <span><a href="{{url('/')}}{{$trytry->url}}">{{$trytry->name}}</a></span>
                         @endforeach
                       </div>
                     </div>
