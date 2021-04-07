@@ -446,7 +446,7 @@
                 @endif
                     @foreach($try1->desktopMainMenu as $try2)
                     <div>
-                      <a class="font-14 text-black pl-2 font-bold" href="{{url('about_us')}}">{{$try2->name}}</a>
+                      <a class="font-14 text-black pl-2 font-bold" href="{{url('/')}}{{$try2->url}}">{{$try2->name}}</a>
                       <div class="menu" style="display: table;">
                         @foreach($try2->desktopSubMenu as $trytry)
                           <span><a href="{{url('/')}}{{$trytry->url}}">{{$trytry->name}}</a></span>
