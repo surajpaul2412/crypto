@@ -146,13 +146,13 @@
                 <h4 class="mt-3 font-black text-black font-35">Crypto Cipher Studio & Lab</h4>
                 @if($gallery->count())
                 <?php $count = 0; ?>
-                @foreach($gallery as $gallery)
+                @foreach($gallery as $key=> $gallery)
                     @if($count % 2 == 0)
                     <div class="row px-2">
                         <div class="col-md-3 px-2 my-2">
                             <div class="gallery-wrapper">
-                                <a href="#image1" class="item"><img src="{{env('image_url')}}/gallery/{{$gallery->short_image1}}" width="100%"></a>
-                                <div class="lightbox short-animate" id="image1">
+                                <a href="#image1{{$key+1}}" class="item"><img src="{{env('image_url')}}/gallery/{{$gallery->short_image1}}" width="100%"></a>
+                                <div class="lightbox short-animate" id="image1{{$key+1}}">
                                     <img src="{{env('image_url')}}/gallery/{{$gallery->short_image1}}" class="long-animate"/>
                                 </div>
                                 <div class="short-animate" id="close-wrapper">
@@ -162,8 +162,8 @@
                         </div>
                         <div class="col-md-3 px-2 my-2">
                             <div class="gallery-wrapper">
-                                <a href="#image2" class="item"><img src="{{env('image_url')}}/gallery/{{$gallery->short_image2}}" width="100%"></a>
-                                <div class="lightbox short-animate" id="image2">
+                                <a href="#image2{{$key+1}}" class="item"><img src="{{env('image_url')}}/gallery/{{$gallery->short_image2}}" width="100%"></a>
+                                <div class="lightbox short-animate" id="image2{{$key+1}}">
                                     <img src="{{env('image_url')}}/gallery/{{$gallery->short_image2}}" class="long-animate"/>
                                 </div>
                                 <div class="short-animate" id="close-wrapper">
@@ -171,11 +171,22 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-6 px-2 my-2">
+                        <div class="col-md-3 px-2 my-2">
                             <div class="gallery-wrapper">
-                                <a href="#image3" class="item"><img src="{{env('image_url')}}/gallery/{{$gallery->long_image}}" width="100%"></a>
-                                <div class="lightbox short-animate" id="image3">
-                                    <img src="{{env('image_url')}}/gallery/{{$gallery->long_image}}" class="long-animate"/>
+                                <a href="#image3{{$key+1}}" class="item"><img src="{{env('image_url')}}/gallery/{{$gallery->short_image3}}" width="100%"></a>
+                                <div class="lightbox short-animate" id="image3{{$key+1}}">
+                                    <img src="{{env('image_url')}}/gallery/{{$gallery->short_image3}}" class="long-animate"/>
+                                </div>
+                                <div class="short-animate" id="close-wrapper">
+                                    <a href="#!" id="close-lightbox" class="long-animate"></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 px-2 my-2">
+                            <div class="gallery-wrapper">
+                                <a href="#image4{{$key+1}}" class="item"><img src="{{env('image_url')}}/gallery/{{$gallery->short_image4}}" width="100%"></a>
+                                <div class="lightbox short-animate" id="image4{{$key+1}}">
+                                    <img src="{{env('image_url')}}/gallery/{{$gallery->short_image4}}" class="long-animate"/>
                                 </div>
                                 <div class="short-animate" id="close-wrapper">
                                     <a href="#!" id="close-lightbox" class="long-animate"></a>
@@ -185,11 +196,11 @@
                     </div>
                     @else
                     <div class="row px-2">
-                        <div class="col-md-6 px-2 my-2">
+                        <div class="col-md-3 px-2 my-2">
                             <div class="gallery-wrapper">
-                                <a href="#image4" class="item"><img src="{{env('image_url')}}/gallery/{{$gallery->long_image}}" width="100%"></a>
-                                <div class="lightbox short-animate" id="image4">
-                                    <img src="{{env('image_url')}}/gallery/{{$gallery->long_image}}" class="long-animate"/>
+                                <a href="#image5{{$key+1}}" class="item"><img src="{{env('image_url')}}/gallery/{{$gallery->short_image1}}" width="100%"></a>
+                                <div class="lightbox short-animate" id="image5{{$key+1}}">
+                                    <img src="{{env('image_url')}}/gallery/{{$gallery->short_image1}}" class="long-animate"/>
                                 </div>
                                 <div class="short-animate" id="close-wrapper">
                                     <a href="#!" id="close-lightbox" class="long-animate"></a>
@@ -198,8 +209,8 @@
                         </div>
                         <div class="col-md-3 px-2 my-2">
                             <div class="gallery-wrapper">
-                                <a href="#image5" class="item"><img src="{{env('image_url')}}/gallery/{{$gallery->short_image2}}" width="100%"></a>
-                                <div class="lightbox short-animate" id="image5">
+                                <a href="#image6{{$key+1}}" class="item"><img src="{{env('image_url')}}/gallery/{{$gallery->short_image2}}" width="100%"></a>
+                                <div class="lightbox short-animate" id="image6{{$key+1}}">
                                     <img src="{{env('image_url')}}/gallery/{{$gallery->short_image2}}" class="long-animate"/>
                                 </div>
                                 <div class="short-animate" id="close-wrapper">
@@ -209,9 +220,20 @@
                         </div>
                         <div class="col-md-3 px-2 my-2">
                             <div class="gallery-wrapper">
-                                <a href="#image6" class="item"><img src="{{env('image_url')}}/gallery/{{$gallery->short_image1}}" width="100%"></a>
-                                <div class="lightbox short-animate" id="image6">
-                                    <img src="{{env('image_url')}}/gallery/{{$gallery->short_image1}}" class="long-animate"/>
+                                <a href="#image7{{$key+1}}" class="item"><img src="{{env('image_url')}}/gallery/{{$gallery->short_image3}}" width="100%"></a>
+                                <div class="lightbox short-animate" id="image7{{$key+1}}">
+                                    <img src="{{env('image_url')}}/gallery/{{$gallery->short_image3}}" class="long-animate"/>
+                                </div>
+                                <div class="short-animate" id="close-wrapper">
+                                    <a href="#!" id="close-lightbox" class="long-animate"></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 px-2 my-2">
+                            <div class="gallery-wrapper">
+                                <a href="#image8{{$key+1}}" class="item"><img src="{{env('image_url')}}/gallery/{{$gallery->short_image4}}" width="100%"></a>
+                                <div class="lightbox short-animate" id="image8{{$key+1}}">
+                                    <img src="{{env('image_url')}}/gallery/{{$gallery->short_image4}}" class="long-animate"/>
                                 </div>
                                 <div class="short-animate" id="close-wrapper">
                                     <a href="#!" id="close-lightbox" class="long-animate"></a>

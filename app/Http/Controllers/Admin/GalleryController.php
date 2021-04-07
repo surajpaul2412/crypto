@@ -40,7 +40,8 @@ class GalleryController extends Controller
         $request->validate([
         'short_image1'=> 'required|image',
         'short_image2'=> 'required|image',
-        'long_image'=> 'required|image'
+        'short_image3'=> 'required|image',
+        'short_image4'=> 'required|image',
         ]);
 
         // short_image1
@@ -57,18 +58,26 @@ class GalleryController extends Controller
             $image_name2 = rand() . '.' . $short_image2->getClientOriginalExtension();
             $short_image2->move(public_path('images/gallery'), $image_name2);
         }
-        // long image
+        // short_image3
         $image_name3 = $request->short_image3;
-        $short_image3 = $request->file('long_image');
+        $short_image3 = $request->file('short_image3');
         if($short_image3 != ''){
             $image_name3 = rand() . '.' . $short_image3->getClientOriginalExtension();
             $short_image3->move(public_path('images/gallery'), $image_name3);
+        }
+        // short_image2
+        $image_name4 = $request->short_image4;
+        $short_image4 = $request->file('short_image4');
+        if($short_image4 != ''){
+            $image_name4 = rand() . '.' . $short_image4->getClientOriginalExtension();
+            $short_image4->move(public_path('images/gallery'), $image_name4);
         }
 
         $gallery = new Gallery([
         'short_image1' => $image_name1,
         'short_image2' => $image_name2,
-        'long_image' => $image_name3,
+        'short_image3' => $image_name3,
+        'short_image4' => $image_name4,
         ]);
         $gallery->save();
         return redirect('/admin/gallery')->with('success', 'Gallery Image has been added');
@@ -109,10 +118,12 @@ class GalleryController extends Controller
         $image_name1 = $request->hidden_image1;
         $image_name2 = $request->hidden_image2;
         $image_name3 = $request->hidden_image3;
+        $image_name4 = $request->hidden_image4;
 
         $short_image1 = $request->file('short_image1');
         $short_image2 = $request->file('short_image2');
-        $short_image3 = $request->file('long_image');
+        $short_image3 = $request->file('short_image3');
+        $short_image4 = $request->file('short_image4');
 
         if($short_image1 != ''){
             $request->validate([
@@ -130,18 +141,28 @@ class GalleryController extends Controller
             $short_image2->move(public_path('images/gallery'), $image_name2);
         }
 
+
         if($short_image3 != ''){
             $request->validate([
-                'long_image'=> 'required|image',
+                'short_image3'=> 'required|image',
             ]);
             $image_name3 = rand() . '.' . $short_image3->getClientOriginalExtension();
             $short_image3->move(public_path('images/gallery'), $image_name3);
         }
 
+        if($short_image4 != ''){
+            $request->validate([
+                'short_image4'=> 'required|image',
+            ]);
+            $image_name4 = rand() . '.' . $short_image4->getClientOriginalExtension();
+            $short_image4->move(public_path('images/gallery'), $image_name4);
+        }
+
         $form_data = array(
             'short_image1' => $image_name1,
             'short_image2' => $image_name2,
-            'long_image' => $image_name3,
+            'short_image3' => $image_name3,
+            'short_image4' => $image_name4,
         );
         Gallery::whereId($id)->update($form_data);
         return redirect('/admin/gallery')->with('success', 'Gallery image has been updated.');

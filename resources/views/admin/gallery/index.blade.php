@@ -43,7 +43,8 @@
         <th>{{$index+1}}.</th>
         <td><img src="{{env('image_url')}}/gallery/{{$gallery->short_image1}}" width="80px"></td>
         <td><img src="{{env('image_url')}}/gallery/{{$gallery->short_image2}}" width="80px"></td>
-        <td><img src="{{env('image_url')}}/gallery/{{$gallery->long_image}}" width="160px"></td>
+        <td><img src="{{env('image_url')}}/gallery/{{$gallery->short_image3}}" width="80px"></td>
+        <td><img src="{{env('image_url')}}/gallery/{{$gallery->short_image4}}" width="80px"></td>
         <td>
           <a href="{{ route('admin.gallery.edit',$gallery->id)}}">
             <i class="material-icons">edit</i>

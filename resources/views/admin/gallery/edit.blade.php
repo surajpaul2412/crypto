@@ -47,9 +47,15 @@
           </div>
 
           <div class="form-group">
-              <label class="text-dark" for="long_image">Long Image (615 x 300)px:</label>
-              <input type="file" class="form-control" name="long_image"/>
-              <input type="hidden" name="hidden_image3" value="{{ $gallery->long_image }}">
+              <label class="text-dark" for="short_image3">Short Image 3 (300 x 300)px:</label>
+              <input type="file" class="form-control" name="short_image3"/>
+              <input type="hidden" name="hidden_image3" value="{{ $gallery->short_image3 }}">
+          </div>
+
+          <div class="form-group">
+              <label class="text-dark" for="short_image4">Short Image 4 (300 x 300)px:</label>
+              <input type="file" class="form-control" name="short_image4"/>
+              <input type="hidden" name="hidden_image4" value="{{ $gallery->short_image4 }}">
           </div>
           
           <button type="submit" class="btn btn-primary">Edit image</button>
