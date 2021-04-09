@@ -17,6 +17,9 @@
     .about-see-more span{
         font-size: 13px;
     }
+    .font-1vw{
+        font-size: 1vw;
+    }
 </style>
 @endsection
 
@@ -35,7 +38,7 @@
             <div class="col-md-4 my-5">
                 <div class="slider-header bg-theme" align="center">
                     <img src="{{env('image_url')}}/pros/{{$row->image}}" width="55%" class="mx-auto d-block p-1 bg-theme shadow-round mar-T-26">
-                    <h6 class="font-bold font-14 text-dark pt-4">{{$row->name}}</h6>
+                    <h6 class="font-bold font-1vw text-dark pt-4">{{$row->name}}</h6>
                     <div class="about-title px-1 pt-2 bold" style="min-height: 14vh;">{!! \Illuminate\Support\Str::limit($row->brief, 500, $end='...') !!}</div>
                     <div class="py-2 bold about-symbol"><i>"</i></div>
                     <div class="about-desc px-4 pb-2" style="min-height: 5vh;"><i>{!! \Illuminate\Support\Str::limit($row->description, 110, $end='...') !!}</i></div>
