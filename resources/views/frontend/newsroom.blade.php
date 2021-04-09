@@ -85,7 +85,7 @@
                                     </div>
                                     <div class="col-md-12 py-3">
                                         <div class="text-dark font-bold font-13">
-                                            {{$row->title}}
+                                            {{$row->title}}--{{$index+1}}
                                         </div>
                                         <div class="row">
                                             <div class="col-md-6 pt-2 mobile-d-none" align="left">
@@ -115,12 +115,12 @@
                     @foreach($news as $index => $row)
                     <div role="tabpanel" class="tab-pane {{$index == 0 ? 'active' : '' }}" id="tab{{$index+1}}">
                         <div class="row">
-                            <div class="col-md-12 col-12 pl-3 p-0">
-                                <img src="{{env('image_url')}}/news/{{$row->image}}" class="d-block mx-auto" width="98%">
+                            <div class="col-md-12 col-12">
+                                <img src="{{env('image_url')}}/news/{{$row->image}}" class="d-block mx-auto" width="100%">
                             </div>
                             <div class="col-md-12 col-12">
                                 <div class="font-bold text-black font-13 pt-3 px-3">
-                                    {{$row->title}}
+                                    {{$row->title}}--{{$index+1}}
                                 </div>
                                 <div class="font-regular text-grey2 font-13 py-2 px-3">
                                     {!! $row->content !!}
