@@ -18,4 +18,16 @@ class NewsController extends Controller
         $desktopMenu = DesktopMenuSection::orderBy('sort_by', "asc")->get();
         return view('frontend.newsroom', compact('news','homeNotification','menus','desktopMenu'));
     }
+
+    public function show($slug)
+    {
+        $news = News::where('slug', $slug)->first();
+        if(empty($news)){
+            return redirect('404');
+        }
+        $homeNotification = HomeNotification::all();
+        $menus = Menu::orderBy('sort_by', "asc")->get();
+        $desktopMenu = DesktopMenuSection::orderBy('sort_by', "asc")->get();
+        return view('frontend.inner_newsroom', compact('news','homeNotification','menus','desktopMenu'));
+    }
 }

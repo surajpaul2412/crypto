@@ -30,9 +30,14 @@
         @method('PATCH')
         @csrf
         <div class="form-group">
-		  <label class="text-dark" for="title">Title :</label>
-		  <input type="text" class="form-control" name="title" value="{{ $news->title }}"/>
-		</div>
+          <label class="text-dark" for="slug">Seo Url :</label>
+          <input type="text" class="form-control" name="slug" value="{{ $news->slug }}"/>
+        </div>
+
+        <div class="form-group">
+    		  <label class="text-dark" for="title">Title :</label>
+    		  <input type="text" class="form-control" name="title" value="{{ $news->title }}"/>
+    		</div>
 		<div class="form-group">
           <label class="text-dark" for="content">Description :</label>
           <textarea id="summernote" class="form-control" name="content">{{ $news->content }}</textarea>

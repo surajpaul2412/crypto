@@ -4,6 +4,7 @@
 @endsection
 
 @section('css')
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.10.0/css/lightbox.min.css">
 <style>
     .hw-flex a div{
         font-family: 'Roboto-Bold';
@@ -145,387 +146,48 @@
             <div class="px-3 pb-2">
                 <h4 class="mt-3 font-black text-black font-35">Crypto Cipher Studio & Lab</h4>
                 @if($gallery->count())
-                <?php $count = 0; ?>
-                @foreach($gallery as $key=> $gallery)
-                    @if($count % 2 == 0)
-                    <div class="row px-2">
-                        <div class="col-md-3 px-2 my-2">
-                            <div class="gallery-wrapper">
-                                <a href="#image1{{$key+1}}" class="item"><img src="{{env('image_url')}}/gallery/{{$gallery->short_image1}}" width="100%"></a>
-                                <div class="lightbox short-animate" id="image1{{$key+1}}">
-                                    <img src="{{env('image_url')}}/gallery/{{$gallery->short_image1}}" class="long-animate"/>
-                                </div>
-                                <div class="short-animate" id="close-wrapper">
-                                    <a href="#!" id="close-lightbox" class="long-animate"></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 px-2 my-2">
-                            <div class="gallery-wrapper">
-                                <a href="#image2{{$key+1}}" class="item"><img src="{{env('image_url')}}/gallery/{{$gallery->short_image2}}" width="100%"></a>
-                                <div class="lightbox short-animate" id="image2{{$key+1}}">
-                                    <img src="{{env('image_url')}}/gallery/{{$gallery->short_image2}}" class="long-animate"/>
-                                </div>
-                                <div class="short-animate" id="close-wrapper">
-                                    <a href="#!" id="close-lightbox" class="long-animate"></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 px-2 my-2">
-                            <div class="gallery-wrapper">
-                                <a href="#image3{{$key+1}}" class="item"><img src="{{env('image_url')}}/gallery/{{$gallery->short_image3}}" width="100%"></a>
-                                <div class="lightbox short-animate" id="image3{{$key+1}}">
-                                    <img src="{{env('image_url')}}/gallery/{{$gallery->short_image3}}" class="long-animate"/>
-                                </div>
-                                <div class="short-animate" id="close-wrapper">
-                                    <a href="#!" id="close-lightbox" class="long-animate"></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 px-2 my-2">
-                            <div class="gallery-wrapper">
-                                <a href="#image4{{$key+1}}" class="item"><img src="{{env('image_url')}}/gallery/{{$gallery->short_image4}}" width="100%"></a>
-                                <div class="lightbox short-animate" id="image4{{$key+1}}">
-                                    <img src="{{env('image_url')}}/gallery/{{$gallery->short_image4}}" class="long-animate"/>
-                                </div>
-                                <div class="short-animate" id="close-wrapper">
-                                    <a href="#!" id="close-lightbox" class="long-animate"></a>
-                                </div>
-                            </div>
-                        </div>
+                <div class="row">
+                @foreach($gallery as $gallery)
+                    <div class="col-md-3 mt-3">
+                        <a href="{{env('image_url')}}/gallery/{{$gallery->short_image1}}" data-lightbox="gallery" class="w-100 d-flex mx-auto">
+                            <div class="img-fluid img-thumbnail" style="background-image: url('{{env('image_url')}}/gallery/{{$gallery->short_image1}}');background-size:150%;background-position:center;min-height:200px;min-width:15vw;max-width:240px;max-height: 200px;background-repeat: no-repeat;"></div>
+                        </a>
                     </div>
-                    @else
-                    <div class="row px-2">
-                        <div class="col-md-3 px-2 my-2">
-                            <div class="gallery-wrapper">
-                                <a href="#image5{{$key+1}}" class="item"><img src="{{env('image_url')}}/gallery/{{$gallery->short_image1}}" width="100%"></a>
-                                <div class="lightbox short-animate" id="image5{{$key+1}}">
-                                    <img src="{{env('image_url')}}/gallery/{{$gallery->short_image1}}" class="long-animate"/>
-                                </div>
-                                <div class="short-animate" id="close-wrapper">
-                                    <a href="#!" id="close-lightbox" class="long-animate"></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 px-2 my-2">
-                            <div class="gallery-wrapper">
-                                <a href="#image6{{$key+1}}" class="item"><img src="{{env('image_url')}}/gallery/{{$gallery->short_image2}}" width="100%"></a>
-                                <div class="lightbox short-animate" id="image6{{$key+1}}">
-                                    <img src="{{env('image_url')}}/gallery/{{$gallery->short_image2}}" class="long-animate"/>
-                                </div>
-                                <div class="short-animate" id="close-wrapper">
-                                    <a href="#!" id="close-lightbox" class="long-animate"></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 px-2 my-2">
-                            <div class="gallery-wrapper">
-                                <a href="#image7{{$key+1}}" class="item"><img src="{{env('image_url')}}/gallery/{{$gallery->short_image3}}" width="100%"></a>
-                                <div class="lightbox short-animate" id="image7{{$key+1}}">
-                                    <img src="{{env('image_url')}}/gallery/{{$gallery->short_image3}}" class="long-animate"/>
-                                </div>
-                                <div class="short-animate" id="close-wrapper">
-                                    <a href="#!" id="close-lightbox" class="long-animate"></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 px-2 my-2">
-                            <div class="gallery-wrapper">
-                                <a href="#image8{{$key+1}}" class="item"><img src="{{env('image_url')}}/gallery/{{$gallery->short_image4}}" width="100%"></a>
-                                <div class="lightbox short-animate" id="image8{{$key+1}}">
-                                    <img src="{{env('image_url')}}/gallery/{{$gallery->short_image4}}" class="long-animate"/>
-                                </div>
-                                <div class="short-animate" id="close-wrapper">
-                                    <a href="#!" id="close-lightbox" class="long-animate"></a>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="col-md-3 mt-3">
+                        <a href="{{env('image_url')}}/gallery/{{$gallery->short_image2}}" data-lightbox="gallery" class="w-100 d-flex mx-auto">
+                            <div class="img-fluid img-thumbnail" style="background-image: url('{{env('image_url')}}/gallery/{{$gallery->short_image2}}');background-size:150%;background-position:center;min-height:200px;min-width:15vw;max-width:240px;max-height: 200px;background-repeat: no-repeat;"></div>
+                        </a>
                     </div>
-                    @endif
-                <?php $count++; ?>
+                    <div class="col-md-3 mt-3">
+                        <a href="{{env('image_url')}}/gallery/{{$gallery->short_image3}}" data-lightbox="gallery" class="w-100 d-flex mx-auto">
+                            <div class="img-fluid img-thumbnail" style="background-image: url('{{env('image_url')}}/gallery/{{$gallery->short_image3}}');background-size:150%;background-position:center;min-height:200px;min-width:15vw;max-width:240px;max-height: 200px;background-repeat: no-repeat;"></div>
+                        </a>
+                    </div>
+                    <div class="col-md-3 mt-3">
+                        <a href="{{env('image_url')}}/gallery/{{$gallery->short_image4}}" data-lightbox="gallery" class="w-100 d-flex mx-auto">
+                            <div class="img-fluid img-thumbnail" style="background-image: url('{{env('image_url')}}/gallery/{{$gallery->short_image4}}');background-size:150%;background-position:center;min-height:200px;min-width:15vw;max-width:240px;max-height: 200px;background-repeat: no-repeat;"></div>
+                        </a>
+                    </div>
                 @endforeach
+                </div>
+                @else
                 @endif
             </div>
-<!-- lightbox try -->
-<style>
-.short-animate {
-     transition: 0.5s ease-in-out;
-}
- .long-animate {
-     transition: 0.5s 0.5s ease-in-out;
-}
- .lightbox {
-     position: fixed;
-     top: -100%;
-     bottom: 100%;
-     left: 0;
-     right: 0;
-     background: #2f3332;
-     z-index: 9999 !important;
-     opacity: 0;
-}
- .lightbox img {
-     position: absolute;
-     margin: auto;
-     top: 0;
-     left: 0;
-     right: 0;
-     bottom: 0;
-     max-width: 0%;
-     max-height: 0%;
-}
- .lightbox:target {
-     top: 0%;
-     bottom: 0%;
-     opacity: 1;
-}
- .lightbox:target img {
-     max-width: 100%;
-     max-height: 100%;
-}
- .lightbox:target ~ #close-wrapper {
-     top: 0;
-}
- .lightbox:target ~ #close-wrapper #close-lightbox:after {
-     width: 50px;
-}
- .lightbox:target ~ #close-wrapper #close-lightbox:before {
-     height: 50px;
-}
- .lightbox:target ~ #next-wrapper {
-     right: 0;
-}
- .lightbox:target ~ #prev-wrapper {
-     left: 0;
-}
- #close-wrapper {
-     position: fixed;
-     top: -70px;
-     right: 0;
-     height: 70px;
-     width: 70px;
-     z-index: 9999;
-     background: rgba(0, 0, 0, 0.1);
-}
- #close-wrapper #close-lightbox {
-     display: block;
-     position: absolute;
-     overflow: hidden;
-     height: 50px;
-     width: 50px;
-     right: 10px;
-     top: 10px;
-     transform: rotate(45deg);
-}
- #close-wrapper #close-lightbox:before, #close-wrapper #close-lightbox:after {
-     content: "";
-     display: block;
-     position: absolute;
-     background: #dfecee;
-     border-radius: 2px;
-}
- #close-wrapper #close-lightbox:before {
-     height: 0;
-     width: 3px;
-     left: 24px;
-     top: 0;
-     transition: 0.5s 1s ease-in-out;
-}
- #close-wrapper #close-lightbox:after {
-     width: 0;
-     height: 3px;
-     top: 24px;
-     left: 0;
-     transition: 0.5s 1.5s ease-in-out;
-}
- #next-wrapper {
-     position: fixed;
-     top: 40%;
-     right: -70px;
-     height: 70px;
-     width: 70px;
-     z-index: 9999;
-     background: rgba(0, 0, 0, 0.1);
-}
- #next-wrapper #next-lightbox {
-     display: flex;
-     align-items: center;
-     justify-content: center;
-     overflow: hidden;
-     height: 50px;
-     width: 50px;
-}
- #next-wrapper #next-lightbox:before, #next-wrapper #next-lightbox:after {
-     border-right: 3px solid #dfecee;
-     content: "";
-     display: block;
-     height: 16px;
-     position: absolute;
-     background: #dfecee;
-     border-radius: 2px;
-     transform: rotate(-135deg);
-     left: 45%;
-     top: 45%;
-     width: 0;
-}
- #next-wrapper #next-lightbox:after {
-     margin-top: -10px;
-     transform: rotate(-45deg);
-}
- #prev-wrapper {
-     position: fixed;
-     top: 40%;
-     left: -70px;
-     height: 70px;
-     width: 70px;
-     z-index: 9999;
-     background: rgba(0, 0, 0, 0.1);
-}
- #prev-wrapper #prev-lightbox {
-     display: flex;
-     align-items: center;
-     justify-content: center;
-     overflow: hidden;
-     height: 50px;
-     width: 50px;
-}
- #prev-wrapper #prev-lightbox:before, #prev-wrapper #prev-lightbox:after {
-     border-right: 3px solid #dfecee;
-     content: "";
-     display: block;
-     height: 16px;
-     position: absolute;
-     background: #dfecee;
-     border-radius: 2px;
-     transform: rotate(135deg);
-     left: 45%;
-     top: 45%;
-     width: 0;
-}
- #prev-wrapper #prev-lightbox:after {
-     margin-top: -10px;
-     transform: rotate(45deg);
-}
-</style>
-<!-- lightbox try end -->
         </div>
     </section>
 </div>
 @endsection
 
-
 @section('script')
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.10.0/js/lightbox.min.js"></script>
 <script>
-    //lightbox
-    'use strict';
-    let link;
-    let imageCount = 4;
-    let regExDigit = /\d+/;
-    function imageLink() {
-        let regExImage = /#image\d+/;
-        let image = location.href;
-        link = regExImage.exec(image)[0];
-        link = regExDigit.exec(link)[0];
-    }
-    let next = document.getElementById('next-lightbox');
-    let prev = document.getElementById('prev-lightbox');
-    next.addEventListener('click', evt => {
-        evt.preventDefault();
-        imageLink();
-        let newLink = Number(link) + 1;
-        if (newLink > imageCount) newLink = 1;  
-        location.href = location.href.replace(regExDigit, newLink);
-    });
-    prev.addEventListener('click', evt => {
-        evt.preventDefault();
-        imageLink();
-        let newLink = Number(link) - 1;
-        if (newLink < 1) newLink = imageCount;
-        location.href = location.href.replace(regExDigit, newLink);
-    });
+lightbox.option({
+    'albumLabel':   "picture %1 of %2",
+    'fadeDuration': 300,
+    'resizeDuration': 150,
+    'wrapAround': true
+});
 </script>
-
-<!-- slider -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.min.js"></script>
-<!-- <script>
-$(document).ready(function(){
-  $('.hardware').slick({
-    speed: 500,
-    slidesToShow: 4,
-    slidesToScroll: 1,
-    autoplay: false,
-    autoplaySpeed: 2000,
-    dots:false,
-    arrows:false,
-    centerMode: true,
-    responsive: [{
-      breakpoint: 1024,
-      settings: {
-        slidesToShow: 3,
-        slidesToScroll: 1,
-      }
-    }, {
-      breakpoint: 800,
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 2,
-        dots: false,
-        arrows:false,
-        infinite: true,
-      }
-    },  {
-      breakpoint: 480,
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        dots: false,
-        infinite: true,
-        arrows:false,
-        autoplay: false,
-        autoplaySpeed: 2000,
-      }
-    }]
-  });
-});
-$(document).ready(function(){
-  $('.software').slick({
-    speed: 500,
-    slidesToShow: 4,
-    slidesToScroll: 1,
-    autoplay: false,
-    autoplaySpeed: 2000,
-    dots:false,
-    arrows:false,
-    centerMode: true,
-    responsive: [{
-      breakpoint: 1024,
-      settings: {
-        slidesToShow: 3,
-        slidesToScroll: 1,
-      }
-    }, {
-      breakpoint: 800,
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 2,
-        dots: false,
-        arrows:false,
-        infinite: true,
-      }
-    },  {
-      breakpoint: 480,
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        dots: false,
-        infinite: true,
-        arrows:false,
-        autoplay: false,
-        autoplaySpeed: 2000,
-      }
-    }]
-  });
-});
-</script> -->
 @endsection

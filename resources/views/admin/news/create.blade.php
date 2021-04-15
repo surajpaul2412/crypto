@@ -34,6 +34,11 @@
       <form method="POST" action="{{ route('admin.newsroom.store') }}" enctype="multipart/form-data">
           @csrf
           <div class="form-group">
+              <label class="text-dark" for="slug">Seo Url :</label>
+              <input type="text" class="form-control" name="slug"/>
+          </div>
+
+          <div class="form-group">
               <label class="text-dark" for="title">Title :</label>
               <input type="text" class="form-control" name="title"/>
           </div>
