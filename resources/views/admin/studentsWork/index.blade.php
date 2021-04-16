@@ -35,10 +35,6 @@
           <th>Speciality</th>
           <th>Short Description</th>
           <th>Profile Description</th>
-          <th>Education</th>
-          <th>Interest</th>
-          <th>Work Professional</th>
-          <th>testimonial</th>
           <th>Status</th>
           <th>Image</th>
           <th>Edit</th>
@@ -54,10 +50,6 @@
         <td>{{$row->speciality}}</td>
         <td>{!! substr($row->short_desc, 0, 40) !!}...</td>
         <td>{!! substr($row->student_profile, 0, 40) !!}...</td>
-        <td>{!! substr($row->education, 0, 40) !!}...</td>
-        <td>{!! substr($row->interest, 0, 40) !!}...</td>
-        <td>{!! substr($row->work_prof, 0, 40) !!}...</td>
-        <td>{!! substr($row->testimonial, 0, 40) !!}...</td>
         @if(isset($row->status))
           <td>
             <form method="post" action="{{ route('admin.studentsWork.disable', $row->id) }}">

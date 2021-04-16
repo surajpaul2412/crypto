@@ -41,6 +41,7 @@ class NewsroomController extends Controller
             'image'=> 'required',
             'title'=> 'required|min:3|max:255',
             'content'=> 'required|min:3',
+            'slug'=> 'required|min:3',
         ]);
 
         $image_name = $request->image;
@@ -52,6 +53,7 @@ class NewsroomController extends Controller
 
         $news = new News();
         $news->title = $request->title;
+        $news->slug = $request->slug;
         $news->content = $request->content;
         $news->image = $image_name;
         $news->save();
@@ -97,6 +99,7 @@ class NewsroomController extends Controller
                 'image'=> 'required',
                 'title'=> 'required|min:3|max:255',
                 'content'=> 'required|min:3',
+                'slug'=> 'required|min:3',
             ]);
             $image_name = rand() . '.' . $image->getClientOriginalExtension();
             $image->move(public_path('images/news'), $image_name);
@@ -104,12 +107,14 @@ class NewsroomController extends Controller
             $request->validate([
                 'title'=> 'required|min:3|max:255',
                 'content'=> 'required|min:3',
+                'slug'=> 'required|min:3',
             ]);
         }
 
         $form_data = array(
             'title' => $request->title,
             'content' => $request->content,
+            'slug' => $request->slug,
             'image' => $image_name
         );
 

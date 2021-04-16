@@ -56,7 +56,7 @@
                             <a class="nav-link {{$index == 0 ? 'active' : '' }}" href="#tab{{$index+1}}" data-toggle="tab">
                                 <div class="row">
                                     <div class="col-md-4 col-5 student">
-                                        <img src="{{env('image_url')}}/work/{{$row->image}}" class="d-block m-auto shadow-round" width="100%">
+                                        <img data-original="{{env('image_url')}}/work/{{$row->image}}" class="lazy d-block m-auto shadow-round" width="100%">
                                     </div>
                                     <div class="col-md-8 col-7 px-0">
                                         <h6 class="font-11 text-dark font-regular">{{$row->year}}</h6>
@@ -84,14 +84,14 @@
                         <div role="tabpanel" class="tab-pane {{$key == 0 ? 'active' : '' }}" id="tab{{$key+1}}">
                             <div class="row px-3">
                                 <div class="col-md-3 py-3">
-                                    <img src="{{env('image_url')}}/work/{{$row->image}}" class="d-block m-auto shadow-round" width="94%">
+                                    <img data-original="{{env('image_url')}}/work/{{$row->image}}" class="lazy d-block m-auto shadow-round" width="94%">
                                 </div>
                                 <div class="col-md-9 px-0">
                                     <h1 class="font-regular bold font-13 text-dark">{{$row->name}}</h1>
                                     <h2 class="font-regular text-dark font-11">{{$row->speciality}}</h2>
-                                    <p class="font-regular font-12 text-dark text-justify">
+                                    <div class="font-regular font-12 text-dark text-justify">
                                         {!! $row->short_desc !!}
-                                    </p>
+                                    </div>
                                 </div>
                                 <div class="col-md-12">
                                     <ul id="myTabs" class="row navbar navbar-expand-lg shadow-none nav nav-pills1 p-0 main-nav2" role="tablist" data-tabs="tabs" style="list-style: none;text-align: center;display: flex !important;box-shadow: 1px 1px 4px 0px rgba(25,25,25,0.15), -1px -1px 2px 1px rgba(255,255,255,0.8) !important;border: 1px solid rgba(255,255,255,0.3) !important;">
@@ -155,7 +155,7 @@
         <div class="modal-dialog modal-lg modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-body">
-                    <img src="{{env('image_url')}}/work/{{$row->image}}" class="d-block m-auto shadow-round" width="60%">
+                    <img data-original="{{env('image_url')}}/work/{{$row->image}}" class="lazy d-block m-auto shadow-round" width="60%">
                     <h1 class="font-regular bold font-13 text-dark">{{$row->name}}</h1>
                     <h2 class="font-regular text-dark font-11">{{$row->speciality}}</h2>
                     <p class="font-regular font-12 text-dark text-justify">
@@ -217,4 +217,15 @@
 @endsection
 
 @section('script')
+<!-- lazyloader -->
+<script src="js/customLazy.js"></script>
+<script src="https://rawgit.com/intoro/Lazy_Load_JQuery/master/js/2_2_4_jquery.min.js"></script>
+<script src="https://rawgit.com/intoro/Lazy_Load_JQuery/master/js/1_9_7_jquery.lazyload.js"></script>
+<script>
+$(document).ready(function(){
+  $('img.lazy').lazyload({
+    effect: "fadeIn"
+  });
+});
+</script>
 @endsection

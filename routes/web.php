@@ -20,6 +20,7 @@ Route::resource('/welcome', 'WelcomeController');
 Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('/crypto_celeb', 'ProController');
 Route::resource('/download', 'DownloadController');
+Route::get('/newsroom/{$slug}','NewsController@show')->name('newsroom.show');
 Route::resource('/newsroom', 'NewsController');
 Route::resource('/engineering-course', 'EngineeringCourseController');//left
 Route::resource('/contact_us', 'ContactController');
@@ -109,3 +110,7 @@ Route::group(['as'=>'student.','prefix'=>'student','namespace'=>'Student','middl
     Route::resource('profile','ProfileController');
     Route::resource('modules','ModuleController');
 });
+
+
+
+// make slug from db;

@@ -14,7 +14,7 @@
 </style>
 <div class="card uper">
   <div class="card-header">
-    <h3 class="heading">Edit new</h3>
+    <h3 class="heading">Edit News</h3>
   </div>
   <div class="card-body">
     @if ($errors->any())
@@ -30,9 +30,14 @@
         @method('PATCH')
         @csrf
         <div class="form-group">
-		  <label class="text-dark" for="title">Title :</label>
-		  <input type="text" class="form-control" name="title" value="{{ $news->title }}"/>
-		</div>
+          <label class="text-dark" for="slug">Seo Url :</label>
+          <input type="text" class="form-control" name="slug" value="{{ $news->slug }}"/>
+        </div>
+
+        <div class="form-group">
+    		  <label class="text-dark" for="title">Title :</label>
+    		  <input type="text" class="form-control" name="title" value="{{ $news->title }}"/>
+    		</div>
 		<div class="form-group">
           <label class="text-dark" for="content">Description :</label>
           <textarea id="summernote" class="form-control" name="content">{{ $news->content }}</textarea>

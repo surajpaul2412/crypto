@@ -19,7 +19,7 @@
 </style>
 <div class="card uper">
   <div class="card-header">
-    <h3 class="heading">Add news</h3>
+    <h3 class="heading">Add News</h3>
   </div>
   <div class="card-body">
     @if ($errors->any())
@@ -33,6 +33,11 @@
     @endif
       <form method="POST" action="{{ route('admin.newsroom.store') }}" enctype="multipart/form-data">
           @csrf
+          <div class="form-group">
+              <label class="text-dark" for="slug">Seo Url :</label>
+              <input type="text" class="form-control" name="slug"/>
+          </div>
+
           <div class="form-group">
               <label class="text-dark" for="title">Title :</label>
               <input type="text" class="form-control" name="title"/>

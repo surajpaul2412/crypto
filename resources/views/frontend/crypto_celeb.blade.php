@@ -37,7 +37,7 @@
             @foreach($pros as $index => $row)
             <div class="col-md-4 my-5">
                 <div class="slider-header bg-theme" align="center">
-                    <img src="{{env('image_url')}}/pros/{{$row->image}}" width="55%" class="mx-auto d-block p-1 bg-theme shadow-round mar-T-26">
+                    <img data-original="{{env('image_url')}}/pros/{{$row->image}}" width="55%" class="lazy mx-auto d-block p-1 bg-theme shadow-round mar-T-26">
                     <h6 class="font-bold font-1vw text-dark pt-4">{{$row->name}}</h6>
                     <div class="about-title px-1 pt-2 bold" style="min-height: 14vh;">{!! \Illuminate\Support\Str::limit($row->brief, 500, $end='...') !!}</div>
                     <div class="py-2 bold about-symbol"><i>"</i></div>
@@ -45,7 +45,7 @@
                     <div class="my-2 px-3">
                         <a data-toggle="modal" data-target="#myModal{{$index+1}}">
                             <div class="about-see-more w-100 font-regular bold pt-2">
-                              <img src="{{ asset('assets/frontend/img/wallpaper.svg') }}" class="" width="20px">
+                              <img data-original="{{ asset('assets/frontend/img/wallpaper.svg') }}" class="lazy" width="20px">
                               <span class="pl-1"> See More</span>
                             </div>
                         </a>
@@ -83,4 +83,14 @@
 @endsection
 
 @section('script')
+<script src="js/customLazy.js"></script>
+<script src="https://rawgit.com/intoro/Lazy_Load_JQuery/master/js/2_2_4_jquery.min.js"></script>
+<script src="https://rawgit.com/intoro/Lazy_Load_JQuery/master/js/1_9_7_jquery.lazyload.js"></script>
+<script>
+$(document).ready(function(){
+  $('img.lazy').lazyload({
+    effect: "fadeIn"
+  });
+});
+</script>
 @endsection
