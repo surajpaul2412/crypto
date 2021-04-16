@@ -421,7 +421,7 @@
               @endforeach
               <div class="col-md-6 col-6 port-col-md-4" style="height: 7vh;">
                 <a href="{{url('contact_us')}}" class="text-black bold">
-                  <div class="menu bold font-14 text-black pl-2" style="position: relative;top: 50%;transform: translateY(-50%);">Contact Us</div>
+                  <div class="menu bold text-black pl-2" style="position: relative;top: 50%;transform: translateY(-50%);">Contact Us</div>
                 </a>
               </div>
               <div class="col-md-6 col-6 port-col-md-6" align="right">
