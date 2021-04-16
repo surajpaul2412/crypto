@@ -35,9 +35,9 @@
         @if($news->count())
         <div class="row px-3">
             <div class="col-md-12 col-12">
-            	<img class="lazy" data-original="{{env('image_url')}}/news/{{$news->image}}" width="100%">
-            	<h4 class="font-bold text-black pt-3">{{$news->title}}</h4>
-            	<p class="font-regular text-grey2 pt-2">{!! $news->content !!}</p>
+                <img class="lazy" data-original="{{env('image_url')}}/news/{{$news->image}}" width="100%">
+                <h4 class="font-bold text-black pt-3">{{$news->title}}</h4>
+                <p class="font-regular text-grey2 pt-2">{!! $news->content !!}</p>
             </div>
         </div>
         @else
