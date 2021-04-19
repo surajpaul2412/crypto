@@ -28,8 +28,17 @@
     <section class="container slider-header">
         <!-- title -->
         <div class="px-3 pt-4 media-pt-0 pb-3">
-            <h6 class="font-regular text-grey2 pl-2 pb-0 font-13 inner-title">Crypto Cipher Newsroom</h6>
-            <h4 class="font-black text-black font-35 marT-10">{!! \Illuminate\Support\Str::limit($news->title, 120, $end='...') !!}</h4>
+            <div class="row">
+                <div class="col-md-8 col-8" align="left">
+                    <h6 class="font-regular text-grey2 pl-2 pb-0 font-13 inner-title">Crypto Cipher Newsroom</h6>
+                </div>
+                <div class="col-md-4 col-4" align="right" style="margin-top: -5px;">
+                    <button class="page-4-btn font-regular pt-1" onclick="document.location.href='{{url('newsroom')}}';">
+                        <i class="fas fa-angle-left pr-1"></i> Back
+                    </button>
+                </div>
+            </div>            
+            <h4 class="font-black text-black font-35 marT-10 pt-2">{!! \Illuminate\Support\Str::limit($news->title, 120, $end='...') !!}</h4>
         </div>
         <!-- content -->
         @if($news->count())

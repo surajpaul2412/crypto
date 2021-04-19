@@ -87,7 +87,7 @@
                                             <div class="col-md-4 col-6 media-center" align="left">
                                                 <h6 class="mt-2">
                                                     <button class="page-4-btn font-regular" onclick="document.location.href='{{route('newsroom.show',$row->slug)}}';">
-                                                        Open News <i class="fas fa-angle-right pl-1"></i>
+                                                        View More <i class="fas fa-angle-right pl-1"></i>
                                                     </button>
                                                 </h6>
                                             </div>

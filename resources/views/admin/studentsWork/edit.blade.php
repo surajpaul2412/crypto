@@ -50,7 +50,7 @@
           <label class="text-dark" for="student_profile">Profile Description :</label>
           <textarea id="summernote1" class="form-control" name="student_profile">{{ $studentsWork->student_profile }}</textarea>
       	</div>
-      	<div class="form-group">
+      	<!-- <div class="form-group">
           <label class="text-dark" for="education">Education Description :</label>
           <textarea id="summernote2" class="form-control" name="education">{{ $studentsWork->education }}</textarea>
       	</div>
@@ -61,7 +61,7 @@
       	<div class="form-group">
           <label class="text-dark" for="work_prof">Work Professional Description :</label>
           <textarea id="summernote4" class="form-control" name="work_prof">{{ $studentsWork->work_prof }}</textarea>
-      	</div>
+      	</div> -->
       	<div class="form-group">
           <label class="text-dark" for="testimonial">Testimonial :</label>
           <textarea id="summernote5" class="form-control" name="testimonial">{{ $studentsWork->testimonial }}</textarea>

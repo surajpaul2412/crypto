@@ -110,7 +110,7 @@
                                                     <p class="font-regular font-12 text-dark text-justify">
                                                         {!! $row->student_profile !!}
                                                     </p>
-                                                    <h1 class="font-regular bold font-13 text-dark">Education</h1>
+                                                    <!-- <h1 class="font-regular bold font-13 text-dark">Education</h1>
                                                     <p class="font-regular font-12 text-dark text-justify">
                                                         {!! $row->education !!}
                                                     </p>
@@ -121,7 +121,7 @@
                                                     <h1 class="font-regular bold font-13 text-dark">Work Professional</h1>
                                                     <p class="font-regular font-12 text-dark text-justify">
                                                         {!! $row->work_prof !!}
-                                                    </p>
+                                                    </p> -->
                                                 </div>
                                             </div>
                                         </div>
@@ -178,7 +178,7 @@
                                         <p class="font-regular font-12 text-dark text-justify">
                                             {!! $row->student_profile !!}
                                         </p>
-                                        <h1 class="font-regular bold font-13 text-dark">Education</h1>
+                                        <!-- <h1 class="font-regular bold font-13 text-dark">Education</h1>
                                         <p class="font-regular font-12 text-dark text-justify">
                                             {!! $row->education !!}
                                         </p>
@@ -189,7 +189,7 @@
                                         <h1 class="font-regular bold font-13 text-dark">Work Professional</h1>
                                         <p class="font-regular font-12 text-dark text-justify">
                                             {!! $row->work_prof !!}
-                                        </p>
+                                        </p> -->
                                     </div>
                                 </div>
                             </div>
