@@ -14,7 +14,7 @@ class CreateStudioEquipmentHardwareTable extends Migration
     public function up()
     {
         Schema::create('studio_equipment_hardware', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
             $table->string('label');
             $table->string('option1')->nullable();
             $table->string('option2')->nullable();
