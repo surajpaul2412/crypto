@@ -8,11 +8,11 @@ class DesktopMainMenu extends Model
 {
     public function desktopSubMenu()
     {
-        return $this->hasMany('App\DesktopSubMenu');
+        return $this->hasMany('App\DesktopSubMenu')->orderBy('sort_by', 'asc');
     }
 
     public function desktopMenuSections()
     {
-    	return $this->belongsTo('App\DesktopMenuSection');
+    	return $this->belongsTo('App\DesktopMenuSection')->orderBy('sort_by', 'asc');
     }
 }

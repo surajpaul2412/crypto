@@ -38,7 +38,7 @@
               <textarea id="summernote" class="form-control" name="content"></textarea>
           </div>
           
-          <button type="submit" class="btn btn-primary">Add Hardware Application</button>
+          <button type="submit" class="btn btn-primary">Add Point</button>
       </form>
   </div>
 </div>

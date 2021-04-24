@@ -16,7 +16,7 @@ class DesktopMainMenuSectionController extends Controller
      */
     public function index()
     {
-        $desktopMenuSection = DesktopMainMenu::orderBy('desktop_menu_section_id', "asc")->get();
+        $desktopMenuSection = DesktopMainMenu::orderBy('sort_by', 'asc')->get();
         return view('admin.desktopMenuMain.index', compact('desktopMenuSection'));
     }
 

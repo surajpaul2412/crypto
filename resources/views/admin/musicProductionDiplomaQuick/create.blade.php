@@ -19,7 +19,7 @@
 </style>
 <div class="card uper">
   <div class="card-header">
-    <h3 class="heading">Add Logic Pro X</h3>
+    <h3 class="heading">Add Music Production Course</h3>
   </div>
   <div class="card-body">
     @if ($errors->any())
@@ -31,21 +31,21 @@
         </ul>
       </div><br/>
     @endif
-      <form method="POST" action="{{ route('admin.productionCourseLogic.store') }}" enctype="multipart/form-data">
+      <form method="POST" action="{{ route('admin.musicProductionDiplomaQuick.store') }}" enctype="multipart/form-data">
           @csrf
           <div class="form-group">
               <label class="text-dark" for="content">Content :</label>
               <textarea id="summernote" class="form-control" name="content"></textarea>
           </div>
           
-          <button type="submit" class="btn btn-primary">Add Content</button>
+          <button type="submit" class="btn btn-primary">Add Pouint</button>
       </form>
   </div>
 </div>
 
 <script>
   $('#summernote').summernote({
-    placeholder: 'Edit content',
+    placeholder: 'Add content',
     tabsize: 2,
     height: 150,
     toolbar: [

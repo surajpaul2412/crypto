@@ -52,7 +52,7 @@
         @if($aboutUs->count())
         <div class="row px-3">
             @foreach($aboutUs as $row)
-            <div class="col-md-5 mb-3 mt-1">
+            <div class="col-md-5 mb-3 mt-"1>
                 <h5 class="font-medium text-black font-400 font-18">
                     {{$row->heading}}
                 </h5>

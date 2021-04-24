@@ -22,10 +22,16 @@ Route::resource('/crypto_celeb', 'ProController');
 Route::resource('/download', 'DownloadController');
 Route::get('/newsroom/{$slug}','NewsController@show')->name('newsroom.show');
 Route::resource('/newsroom', 'NewsController');
-Route::resource('/engineering-course', 'EngineeringCourseController');//left
+Route::resource('/music-production-course', 'ProductionCourseController');
+Route::resource('/sound-engineering-diploma-course', 'EngineeringCourseController');//left
+Route::resource('/engineering-course', 'EngineeringCourseController');//deleted
+Route::resource('/music-production-diploma-course', 'MusicProductionDiplomaController');
+
+
+
+
 Route::resource('/contact_us', 'ContactController');
 Route::resource('/gallery', 'GalleryController');
-Route::resource('/music-production-course', 'ProductionCourseController');
 Route::resource('/academy_courses', 'AcademyCourseController');
 Route::resource('/jobs', 'VacancyController');
 Route::resource('/faq', 'FaqController');
@@ -53,6 +59,9 @@ Route::group(['as'=>'admin.','prefix'=>'admin','namespace'=>'Admin','middleware'
     Route::resource('engineeringCourseModule','EngineeringCourseModuleController');
     Route::resource('engineeringCourseOverview','EngineeringCourseOverviewController');
     Route::resource('engineeringCourseLogicAbleton','EngineeringCourseLogicAlbetonController');
+    Route::resource('musicProductionDiploma','MusicProductionDiplomaController');
+    Route::resource('musicProductionDiplomaQuick','MusicProductionDiplomaQuicksController');
+    Route::resource('musicProductionDiplomaLogic','MusicProductionDiplomaLogicController');
     Route::resource('contact','ContactController');
     Route::resource('productionCourse','ProductionCourseController');
     Route::resource('productionCourseQuick','ProductionCourseQuicksController');

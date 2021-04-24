@@ -85,6 +85,7 @@
     <div class="modal-dialog modal-lg modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-body">
+                <h4 align="center" class="about-name bold">{{$row->name}}</h4>
                 <h6 class="font-regular font-14 text-dark text-justify" style="transform: initial;">
                     {!!$row->content!!}
                 </h6>

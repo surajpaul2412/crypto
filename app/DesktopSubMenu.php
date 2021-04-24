@@ -8,6 +8,6 @@ class DesktopSubMenu extends Model
 {
     public function desktopMainMenus()
     {
-    	return $this->belongsTo('App\DesktopMainMenu');
+    	return $this->belongsTo('App\DesktopMainMenu')->orderBy('sort_by', 'asc');
     }
 }

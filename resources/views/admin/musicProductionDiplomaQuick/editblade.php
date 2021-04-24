@@ -1,10 +1,5 @@
 @extends('layouts.backend.app')
 
-@section('title','dashboard')
-
-@push('css')
-@endpush
-
 @section('content')
 <style>
   .card-body{
@@ -14,12 +9,12 @@
     border-bottom: 1px solid #888 !important;
   }
   .heading{
-    color: #6bb51e;padding-top: 0px;text-align: center;
+    color: #333;padding-top: 0px;text-align: center;
   }
 </style>
 <div class="card uper">
   <div class="card-header">
-    <h3 class="heading">Add Logic Pro X</h3>
+    <h3 class="heading">Edit Music Production Course Quick</h3>
   </div>
   <div class="card-body">
     @if ($errors->any())
@@ -31,14 +26,15 @@
         </ul>
       </div><br/>
     @endif
-      <form method="POST" action="{{ route('admin.productionCourseLogic.store') }}" enctype="multipart/form-data">
-          @csrf
-          <div class="form-group">
-              <label class="text-dark" for="content">Content :</label>
-              <textarea id="summernote" class="form-control" name="content"></textarea>
-          </div>
-          
-          <button type="submit" class="btn btn-primary">Add Content</button>
+      <form method="post" action="{{ route('admin.musicProductionDiplomaQuick.update', $musicProductionDiplomaQuick->id) }}" enctype="multipart/form-data">
+        @method('PATCH')
+        @csrf
+        <div class="form-group">
+    		  <label class="text-dark" for="content">Content :</label>
+          <textarea id="summernote" class="form-control" name="content" value="{{ $musicProductionDiplomaQuick->content }}">{{ $musicProductionDiplomaQuick->content }}</textarea>
+    		</div>
+
+        <button type="submit" class="btn btn-primary">Update Content</button>
       </form>
   </div>
 </div>

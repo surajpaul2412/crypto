@@ -152,10 +152,47 @@
                         <span>Newsroom</span>
                     </a>
                 </li>
+                <li class="{{ Request::is('admin/academyCourse') ? 'active' : '' }}">
+                    <a href="{{ route('admin.academyCourse.index') }}">
+                        <i class="material-icons">star</i>
+                        <span>Academy Courses</span>
+                    </a>
+                </li>
+                <li class="{{ Request::is('admin/productionCourse*') ? 'active' : '' }}">
+                    <a href="{{ route('admin.productionCourse.index') }}" class="menu-toggle">
+                        <i class="material-icons">star</i>
+                        <span>Music Production Course</span>
+                    </a>
+                    <ul class="ml-menu">
+                        <li>
+                            <a href="{{ route('admin.productionCourseQuick.index') }}">Quick Course ?</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('admin.productionCourseLogic.index') }}">Logic Pro X</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('admin.productionCoursePro.index') }}">Pro Ableton Live</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="{{ Request::is('admin/musicProductionDiploma*') ? 'active' : '' }}">
+                    <a href="{{ route('admin.musicProductionDiploma.index') }}" class="menu-toggle">
+                        <i class="material-icons">star</i>
+                        <span>Music Production Diploma Course</span>
+                    </a>
+                    <ul class="ml-menu">
+                        <li>
+                            <a href="{{ route('admin.musicProductionDiplomaQuick.index') }}">Quick Course ?</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('admin.musicProductionDiplomaLogic.index') }}">Logic Pro X</a>
+                        </li>
+                    </ul>
+                </li>
                 <li class="{{ Request::is('admin/engineeringCourse*') ? 'active' : '' }}">
                     <a href="{{ route('admin.engineeringCourse.index') }}" class="menu-toggle">
                         <i class="material-icons">star</i>
-                        <span>Engineering Diploma Course</span>
+                        <span>Sound Engineering Diploma</span>
                     </a>
                     <ul class="ml-menu">
                         <li>
@@ -178,27 +215,10 @@
                         </li>
                     </ul>
                 </li>
-                <li class="{{ Request::is('admin/productionCourse*') ? 'active' : '' }}">
-                    <a href="{{ route('admin.productionCourse.index') }}" class="menu-toggle">
-                        <i class="material-icons">star</i>
-                        <span>Music Production Course</span>
-                    </a>
-                    <ul class="ml-menu">
-                        <li>
-                            <a href="{{ route('admin.productionCourseQuick.index') }}">Quick Course ?</a>
-                        </li>
-                        <li>
-                            <a href="{{ route('admin.productionCourseLogic.index') }}">Logic Pro X</a>
-                        </li>
-                        <li>
-                            <a href="{{ route('admin.productionCoursePro.index') }}">Pro Ableton Live</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="{{ Request::is('admin/academyCourse') ? 'active' : '' }}">
-                    <a href="{{ route('admin.academyCourse.index') }}">
-                        <i class="material-icons">star</i>
-                        <span>Academy Courses</span>
+                <li class="{{ Request::is('admin/gallery') ? 'active' : '' }}">
+                    <a href="{{ route('admin.gallery.index') }}">
+                        <i class="material-icons">emoji_food_beverage</i>
+                        <span>Gallery</span>
                     </a>
                 </li>
                 <li class="{{ Request::is('admin/studioEquipmentHardware*') ? 'active' : '' }}">
@@ -217,12 +237,6 @@
                             <a href="{{ route('admin.studioEquipmentSoftwareImage.index') }}">Software Images</a>
                         </li>
                     </ul>
-                </li>
-                <li class="{{ Request::is('admin/gallery') ? 'active' : '' }}">
-                    <a href="{{ route('admin.gallery.index') }}">
-                        <i class="material-icons">emoji_food_beverage</i>
-                        <span>Gallery</span>
-                    </a>
                 </li>
                 <li class="{{ Request::is('admin/videoGallery') ? 'active' : '' }}">
                     <a href="{{ route('admin.videoGallery.index') }}" class="menu-toggle">

@@ -31,7 +31,7 @@
         </ul>
       </div><br/>
     @endif
-      <form method="POST" action="{{ route('admin.productionCourseLogic.store') }}" enctype="multipart/form-data">
+      <form method="POST" action="{{ route('admin.musicProductionDiplomaLogic.store') }}" enctype="multipart/form-data">
           @csrf
           <div class="form-group">
               <label class="text-dark" for="content">Content :</label>
