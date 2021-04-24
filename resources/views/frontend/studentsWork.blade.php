@@ -110,18 +110,6 @@
                                                     <p class="font-regular font-12 text-dark text-justify">
                                                         {!! $row->student_profile !!}
                                                     </p>
-                                                    <!-- <h1 class="font-regular bold font-13 text-dark">Education</h1>
-                                                    <p class="font-regular font-12 text-dark text-justify">
-                                                        {!! $row->education !!}
-                                                    </p>
-                                                    <h1 class="font-regular bold font-13 text-dark">Interest</h1>
-                                                    <p class="font-regular font-12 text-dark text-justify">
-                                                        {!! $row->interest !!}
-                                                    </p>
-                                                    <h1 class="font-regular bold font-13 text-dark">Work Professional</h1>
-                                                    <p class="font-regular font-12 text-dark text-justify">
-                                                        {!! $row->work_prof !!}
-                                                    </p> -->
                                                 </div>
                                             </div>
                                         </div>
@@ -155,7 +143,7 @@
         <div class="modal-dialog modal-lg modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-body">
-                    <img data-original="{{env('image_url')}}/work/{{$row->image}}" class="lazy d-block m-auto shadow-round" width="60%">
+                    <img src="{{env('image_url')}}/work/{{$row->image}}" class="d-block m-auto shadow-round" width="60%">
                     <h1 class="font-regular bold font-13 text-dark">{{$row->name}}</h1>
                     <h2 class="font-regular text-dark font-11">{{$row->speciality}}</h2>
                     <p class="font-regular font-12 text-dark text-justify">
@@ -178,18 +166,6 @@
                                         <p class="font-regular font-12 text-dark text-justify">
                                             {!! $row->student_profile !!}
                                         </p>
-                                        <!-- <h1 class="font-regular bold font-13 text-dark">Education</h1>
-                                        <p class="font-regular font-12 text-dark text-justify">
-                                            {!! $row->education !!}
-                                        </p>
-                                        <h1 class="font-regular bold font-13 text-dark">Interest</h1>
-                                        <p class="font-regular font-12 text-dark text-justify">
-                                            {!! $row->interest !!}
-                                        </p>
-                                        <h1 class="font-regular bold font-13 text-dark">Work Professional</h1>
-                                        <p class="font-regular font-12 text-dark text-justify">
-                                            {!! $row->work_prof !!}
-                                        </p> -->
                                     </div>
                                 </div>
                             </div>
