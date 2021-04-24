@@ -4,13 +4,9 @@
 		left: 14% !important;
 	}
 	.about-desc{
-	    font-family: 'Roboto-Regular';
-	    color: #6D7178;
 	    font-size: 0.85vw;
 	}
 	.about-title{
-	    font-family: 'Roboto-Bold';
-	    color: #5B5E65;
 	    font-size: 0.85vw;
 	    line-height: 13px;
 	}

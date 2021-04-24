@@ -124,6 +124,14 @@ html,button{
 .uppercase{
     text-transform: uppercase;
 }
+.about-desc{
+    font-family: 'Roboto-Regular';
+    color: #6D7178;
+}
+.about-title{
+    font-family: 'Roboto-Bold';
+    color: #5B5E65;
+}
 .slider-header{
     border: 1px solid rgba(255,255,255,0.6) !important;
     padding:4px;

@@ -65,7 +65,7 @@
                     <img src="{{env('image_url')}}/team/{{$row->image}}" width="55%" class="mx-auto d-block p-1 bg-theme shadow-round" style="border-radius: 50%;margin-top: -26%">
                     <h6 class="about-name bold pt-4">{{$row->name}}</h6>
                     <div class="about-title pb-2 font-400">{!!$row->designation!!}</div>
-                    <div class="about-title pt-2 font-400">{!! \Illuminate\Support\Str::limit($row->content, 400, $end='...') !!}</div>
+                    <div class="about-desc pt-2 px-1 font-400">{!! \Illuminate\Support\Str::limit($row->content, 310, $end='...') !!}</div>
                     <div class="my-4 px-3">
                         <a data-toggle="modal" data-target="#myModal{{$index+1}}">
                             <span class="font-regular faculty-btn">See More</span>
