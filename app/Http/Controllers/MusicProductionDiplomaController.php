@@ -26,6 +26,6 @@ class MusicProductionDiplomaController extends Controller
         $homeNotification = HomeNotification::all();
         $menus = Menu::orderBy('sort_by', "asc")->get();
         $desktopMenu = DesktopMenuSection::orderBy('sort_by', "asc")->get();
-        return view('frontend.music-production-diploma-course', compact('musicProductionDiploma','quick','logic','pro','homeNotification','menus','desktopMenu'));
+        return view('frontend.music-production-diploma-course', compact('musicProductionDiploma','quick','logic','homeNotification','menus','desktopMenu'));
     }
 }
