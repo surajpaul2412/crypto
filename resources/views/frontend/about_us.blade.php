@@ -52,7 +52,7 @@
         @if($aboutUs->count())
         <div class="row px-3">
             @foreach($aboutUs as $row)
-            <div class="col-md-5 mb-3 mt-"1>
+            <div class="col-md-6 mb-3 mt-"1>
                 <h5 class="font-medium text-black font-400 font-18">
                     {{$row->heading}}
                 </h5>
@@ -67,7 +67,7 @@
                     </a>
                 </div>
             </div>
-            <div class="col-md-7 my-2">
+            <div class="col-md-6 my-2">
                 <img src="{{env('image_url')}}/aboutUs/{{$row->image}}" width="100%">
             </div>
             @endforeach

@@ -26,10 +26,6 @@ Route::resource('/music-production-course', 'ProductionCourseController');
 Route::resource('/sound-engineering-diploma-course', 'EngineeringCourseController');//left
 Route::resource('/engineering-course', 'EngineeringCourseController');//deleted
 Route::resource('/music-production-diploma-course', 'MusicProductionDiplomaController');
-
-
-
-
 Route::resource('/contact_us', 'ContactController');
 Route::resource('/gallery', 'GalleryController');
 Route::resource('/academy_courses', 'AcademyCourseController');
