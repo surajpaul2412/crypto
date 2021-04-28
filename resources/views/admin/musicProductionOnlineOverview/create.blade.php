@@ -19,7 +19,7 @@
 </style>
 <div class="card uper">
   <div class="card-header">
-    <h3 class="heading">Add Point</h3>
+    <h3 class="heading">Add Module Overview</h3>
   </div>
   <div class="card-body">
     @if ($errors->any())
@@ -31,15 +31,32 @@
         </ul>
       </div><br/>
     @endif
-      <form method="POST" action="{{ route('admin.engineeringCourseSound.store') }}" enctype="multipart/form-data">
+      <form method="POST" action="{{ route('admin.musicProductionOnlineOverview.store') }}" enctype="multipart/form-data">
           @csrf
           <div class="form-group">
               <label class="text-dark" for="content">Content :</label>
-              <input type="text" class="form-control" name="content"/>
+              <textarea id="summernote" class="form-control" name="content"></textarea>
           </div>
           
-          <button type="submit" class="btn btn-primary">Add Point</button>
+          <button type="submit" class="btn btn-primary">Add Module Overview</button>
       </form>
   </div>
 </div>
+
+<script>
+  $('#summernote').summernote({
+    placeholder: 'Edit content',
+    tabsize: 2,
+    height: 150,
+    toolbar: [
+      ['style', ['style']],
+      ['font', ['bold', 'underline', 'clear']],
+      ['color', ['color']],
+      ['para', ['ul', 'ol', 'paragraph']],
+      ['table', ['table']],
+      ['insert', ['link', 'picture', 'video']],
+      ['view', ['fullscreen', 'codeview', 'help']]
+    ]
+  });
+</script>
 @endsection

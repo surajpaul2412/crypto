@@ -175,7 +175,7 @@
                         </li>
                     </ul>
                 </li>
-                <li class="{{ Request::is('admin/musicProductionDiploma*') ? 'active' : '' }}">
+                <!-- <li class="{{ Request::is('admin/musicProductionDiploma*') ? 'active' : '' }}">
                     <a href="{{ route('admin.musicProductionDiploma.index') }}" class="menu-toggle">
                         <i class="material-icons">star</i>
                         <span>Music Production Diploma Course</span>
@@ -188,7 +188,7 @@
                             <a href="{{ route('admin.musicProductionDiplomaLogic.index') }}">Logic Pro X</a>
                         </li>
                     </ul>
-                </li>
+                </li> -->
                 <li class="{{ Request::is('admin/engineeringCourse*') ? 'active' : '' }}">
                     <a href="{{ route('admin.engineeringCourse.index') }}" class="menu-toggle">
                         <i class="material-icons">star</i>
@@ -212,6 +212,23 @@
                         </li>
                         <li>
                             <a href="{{ route('admin.engineeringCourseModule.index') }}">Engineering Modules</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="{{ Request::is('admin/musicProductionOnline*') ? 'active' : '' }}">
+                    <a href="{{ route('admin.musicProductionOnline.index') }}" class="menu-toggle">
+                        <i class="material-icons">star</i>
+                        <span>Music Production Online Course</span>
+                    </a>
+                    <ul class="ml-menu">
+                        <li>
+                            <a href="{{ route('admin.musicProductionOnlineSound.index') }}">Quick Course ?</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('admin.musicProductionOnlineOverview.index') }}">Music Production Online Overview</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('admin.musicProductionOnlineModule.index') }}">Music Production Online Modules</a>
                         </li>
                     </ul>
                 </li>

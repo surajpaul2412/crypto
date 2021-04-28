@@ -14,7 +14,7 @@
 </style>
 <div class="card uper">
   <div class="card-header">
-    <h3 class="heading">Edit Module Overview</h3>
+    <h3 class="heading">Edit Music Production Online Content</h3>
   </div>
   <div class="card-body">
     @if ($errors->any())
@@ -26,13 +26,13 @@
         </ul>
       </div><br/>
     @endif
-      <form method="post" action="{{ route('admin.engineeringCourseOverview.update', $engineeringCourseOverview->id) }}" enctype="multipart/form-data">
+      <form method="post" action="{{ route('admin.musicProductionOnline.update', $musicProductionOnline->id) }}" enctype="multipart/form-data">
         @method('PATCH')
         @csrf
         <div class="form-group">
-    		  <label class="text-dark" for="content">Content :</label>
-          <textarea id="summernote" class="form-control" name="content" value="{{ $engineeringCourseOverview->content }}">{{ $engineeringCourseOverview->content }}</textarea>
-    		</div>
+          <label class="text-dark" for="content">Content :</label>
+          <textarea id="summernote" class="form-control" name="content" value="{{ $musicProductionOnline->content }}">{{ $musicProductionOnline->content }}</textarea>
+        </div>
 
         <button type="submit" class="btn btn-primary">Update Content</button>
       </form>

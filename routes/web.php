@@ -26,6 +26,7 @@ Route::resource('/music-production-course', 'ProductionCourseController');
 Route::resource('/sound-engineering-diploma-course', 'EngineeringCourseController');//left
 Route::resource('/engineering-course', 'EngineeringCourseController');//deleted
 Route::resource('/music-production-diploma-course', 'MusicProductionDiplomaController');
+Route::resource('/music-production-online', 'MusicProductionOnlineController');
 Route::resource('/contact_us', 'ContactController');
 Route::resource('/gallery', 'GalleryController');
 Route::resource('/academy_courses', 'AcademyCourseController');
@@ -100,6 +101,10 @@ Route::group(['as'=>'admin.','prefix'=>'admin','namespace'=>'Admin','middleware'
     Route::resource('desktopMenuSub','DesktopMainSubSectionController');
     Route::resource('videoGallery','VideoGalleryController');
     Route::resource('videoGalleryUrl','VideoGalleryUrlController');
+    Route::resource('musicProductionOnline','MusicProductionOnlineController');
+    Route::resource('musicProductionOnlineSound','MusicProductionOnlineSoundController');
+    Route::resource('musicProductionOnlineOverview','MusicProductionOnlineOverviewController');
+    Route::resource('musicProductionOnlineModule','MusicProductionOnlineModuleController');
 });
 
 Route::group(['as'=>'manager.','prefix'=>'manager','namespace'=>'Manager','middleware'=>['auth','manager']], function(){

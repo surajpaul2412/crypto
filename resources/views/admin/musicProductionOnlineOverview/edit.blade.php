@@ -26,12 +26,12 @@
         </ul>
       </div><br/>
     @endif
-      <form method="post" action="{{ route('admin.engineeringCourseOverview.update', $engineeringCourseOverview->id) }}" enctype="multipart/form-data">
+      <form method="post" action="{{ route('admin.musicProductionOnlineOverview.update', $musicProductionOnlineOverview->id) }}" enctype="multipart/form-data">
         @method('PATCH')
         @csrf
         <div class="form-group">
     		  <label class="text-dark" for="content">Content :</label>
-          <textarea id="summernote" class="form-control" name="content" value="{{ $engineeringCourseOverview->content }}">{{ $engineeringCourseOverview->content }}</textarea>
+          <textarea id="summernote" class="form-control" name="content" value="{{ $musicProductionOnlineOverview->content }}">{{ $musicProductionOnlineOverview->content }}</textarea>
     		</div>
 
         <button type="submit" class="btn btn-primary">Update Content</button>
