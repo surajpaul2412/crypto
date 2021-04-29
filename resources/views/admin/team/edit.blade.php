@@ -30,6 +30,11 @@
         @method('PATCH')
         @csrf
         <div class="form-group">
+          <label class="text-dark" for="sort_by">Order By :</label>
+          <input type="text" class="form-control" name="sort_by" value="{{ $team->sort_by }}"/>
+        </div>
+
+        <div class="form-group">
           <label class="text-dark" for="name">Name :</label>
           <input type="text" class="form-control" name="name" value="{{ $team->name }}"/>
         </div>

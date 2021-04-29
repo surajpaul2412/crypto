@@ -15,7 +15,7 @@ class TeamController extends Controller
      */
     public function index()
     {
-        $team = Team::all();
+        $team = Team::orderBy('sort_by', 'asc')->get();
         return view('admin.team.index', compact('team'));
     }
 
@@ -39,6 +39,7 @@ class TeamController extends Controller
     {
         $this->validate($request, [
             'image'=> 'required',
+            'sort_by'=> 'nullable|string',
             'name'=> 'required|min:3|max:255',
             'content'=> 'required|min:3',
             'designation'=> 'required|min:3|max:255',
@@ -53,6 +54,7 @@ class TeamController extends Controller
 
         $team = new Team();
         $team->name = $request->name;
+        $team->sort_by = $request->sort_by;
         $team->content = $request->content;
         $team->designation = $request->designation;
         $team->image = $image_name;
@@ -97,6 +99,7 @@ class TeamController extends Controller
         if($image != ''){
             $request->validate([
                 'image'=> 'required',
+                'sort_by'=> 'nullable|string',
                 'name'=> 'required|min:3|max:255',
                 'designation'=> 'required|min:3|max:255',
                 'content'=> 'required|min:3',
@@ -106,6 +109,7 @@ class TeamController extends Controller
         } else{
             $request->validate([
                 'name'=> 'required|min:3|max:255',
+                'sort_by'=> 'nullable|string',
                 'designation'=> 'required|min:3|max:255',
                 'content'=> 'required|min:3',
             ]);
@@ -113,6 +117,7 @@ class TeamController extends Controller
 
         $form_data = array(
             'name' => $request->name,
+            'sort_by'=> $request->sort_by,
             'name' => $request->designation,
             'content' => $request->content,
             'image' => $image_name

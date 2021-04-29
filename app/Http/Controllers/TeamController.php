@@ -13,7 +13,7 @@ class TeamController extends Controller
 {
     public function index()
     {
-        $team = Team::all();
+        $team = Team::orderBy('sort_by', 'asc')->get();
         $teamProduction = TeamProduction::all();
         $homeNotification = HomeNotification::all();
         $menus = Menu::orderBy('sort_by', "asc")->get();

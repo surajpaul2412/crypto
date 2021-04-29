@@ -30,8 +30,10 @@
     <thead>
         <tr>
           <th>S. no</th>
+          <th>Sort By</th>
           <th>Image</th>
           <th>Name</th>
+          <th>Designation</th>
           <th>Content</th>
           <th>Edit</th>
           <th>Delete</th>
@@ -41,10 +43,11 @@
       @foreach($team as $index => $row)
       <tr>
         <th>{{$index+1}}.</th>
+        <th>{{$row->sort_by}}</th>
         <td><img src="{{env('image_url')}}/team/{{$row->image}}" width="80px"></td>
-        <th>{{$row->name}}.</th>
-        <th>{{$row->designation}}.</th>
-        <th>{!!$row->content!!}.</th>
+        <th class="bold">{{$row->name}}.</th>
+        <td class="bold">{{$row->designation}}.</td>
+        <td>{{ \Illuminate\Support\Str::limit($row->content, 300, $end='...') }}.</td>
         <td>
           <a href="{{ route('admin.team.edit',$row->id)}}">
             <i class="material-icons">edit</i>

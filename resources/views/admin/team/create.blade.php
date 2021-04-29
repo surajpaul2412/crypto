@@ -35,6 +35,11 @@
           @csrf
 
           <div class="form-group">
+              <label class="text-dark" for="sort_by">Order By :</label>
+              <input type="text" class="form-control" name="sort_by"/>
+          </div>
+
+          <div class="form-group">
               <label class="text-dark" for="name">Member Name :</label>
               <input type="text" class="form-control" name="name"/>
           </div>
