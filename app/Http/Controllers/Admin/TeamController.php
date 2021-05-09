@@ -39,7 +39,7 @@ class TeamController extends Controller
     {
         $this->validate($request, [
             'image'=> 'required',
-            'sort_by'=> 'nullable|string',
+            'sort_by'=> 'nullable|numeric|between:0,99.99',
             'name'=> 'required|min:3|max:255',
             'content'=> 'required|min:3',
             'designation'=> 'required|min:3|max:255',
@@ -99,7 +99,7 @@ class TeamController extends Controller
         if($image != ''){
             $request->validate([
                 'image'=> 'required',
-                'sort_by'=> 'nullable|string',
+                'sort_by'=> 'nullable|numeric|between:0,99.99',
                 'name'=> 'required|min:3|max:255',
                 'designation'=> 'required|min:3|max:255',
                 'content'=> 'required|min:3',
@@ -109,7 +109,7 @@ class TeamController extends Controller
         } else{
             $request->validate([
                 'name'=> 'required|min:3|max:255',
-                'sort_by'=> 'nullable|string',
+                'sort_by'=> 'nullable|numeric|between:0,99.99',
                 'designation'=> 'required|min:3|max:255',
                 'content'=> 'required|min:3',
             ]);

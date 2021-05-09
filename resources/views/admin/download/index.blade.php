@@ -30,6 +30,7 @@
     <thead>
         <tr>
           <th>S. no</th>
+          <th>Order By</th>
           <th>Name</th>
           <th>Content</th>
           <th>Edit</th>
@@ -40,6 +41,7 @@
       @foreach($downloads as $index => $download)
       <tr>
         <th>{{$index+1}}.</th>
+        <th class="bold ">{{$download->sort_by}}</th>
         <td class="bold">{{$download->name}}</td>
         <td>{{ \Illuminate\Support\Str::limit($download->content, 50, $end='...') }}</td>
         <td>

@@ -15,7 +15,7 @@ class DownloadController extends Controller
      */
     public function index()
     {
-        $downloads = Downloads::latest()->get();
+        $downloads = Downloads::orderBy('sort_by', 'asc')->get();
         return view('admin.download.index', compact('downloads'));
     }
 
@@ -39,12 +39,14 @@ class DownloadController extends Controller
     {
         $this->validate($request, [
             'name'=> 'required|min:3|max:255',
-            'content'=> 'required|min:3',
-            'file'=> 'required|min:3',
+            'sort_by'=> 'nullable|numeric|between:0,99.99',
+            'content'=> 'nullable|min:3',
+            'file'=> 'nullable|min:3',
         ]);
 
         $download = new Downloads();
         $download->name = $request->name;
+        $download->sort_by = $request->sort_by;
         $download->content = $request->content;
         $download->file = $request->file;
         $download->save();
@@ -83,10 +85,18 @@ class DownloadController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $request->validate([
+            'name'=> 'required|min:3|max:255',
+            'sort_by'=> 'nullable|numeric|between:0,99.99',
+            'content'=> 'nullable|min:3',
+            'file'=> 'nullable|min:3',
+        ]);
+        
         $form_data = array(
             'name' => $request->name,
             'content' => $request->content,
             'file' => $request->file,
+            'sort_by'=> $request->sort_by
         );
 
         Downloads::whereId($id)->update($form_data);

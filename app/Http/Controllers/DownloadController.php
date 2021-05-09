@@ -17,7 +17,7 @@ class DownloadController extends Controller
      */
     public function index()
     {
-        $downloads = Downloads::all();
+        $downloads = Downloads::orderBy('sort_by','asc')->get();
         $menus = Menu::orderBy('sort_by', "asc")->get();
         $homeNotification = HomeNotification::all();
         $desktopMenu = DesktopMenuSection::orderBy('sort_by', "asc")->get();

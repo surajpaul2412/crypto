@@ -33,12 +33,16 @@
     		  <label class="text-dark" for="name">Name :</label>
     		  <input type="text" class="form-control" name="name" value="{{ $download->name }}"/>
     		</div>
+        <div class="form-group">
+          <label class="text-dark" for="sort_by">Order By :</label>
+          <input type="text" class="form-control" name="sort_by" value="{{ $download->sort_by }}"/>
+        </div>
     		<div class="form-group">
-          <label class="text-dark" for="content">Content :</label>
+          <label class="text-dark" for="content">Display Content :</label>
           <textarea id="summernote" class="form-control" name="content">{{ $download->content }}</textarea>
       	</div>
         <div class="form-group">
-          <label class="text-dark" for="file">Video Link :</label>
+          <label class="text-dark" for="file">Description :</label>
           <textarea id="summernote1" class="form-control" name="file">{{ $download->file }}</textarea>
         </div>
 
@@ -63,7 +67,7 @@
     ]
   });
   $('#summernote1').summernote({
-    placeholder: 'Edit Content',
+    placeholder: 'Edit Description',
     tabsize: 2,
     height: 150,
     toolbar: [

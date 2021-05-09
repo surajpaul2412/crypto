@@ -38,11 +38,15 @@
               <input type="text" class="form-control" name="name"/>
           </div>
           <div class="form-group">
-              <label class="text-dark" for="content">Content :</label>
+              <label class="text-dark" for="sort_by">Order By :</label>
+              <input type="text" class="form-control" name="sort_by"/>
+          </div>
+          <div class="form-group">
+              <label class="text-dark" for="content">Display Content :</label>
               <textarea id="summernote" class="form-control" name="content"></textarea>
           </div>
           <div class="form-group">
-              <label class="text-dark" for="file">Video link :</label>
+              <label class="text-dark" for="file">Description :</label>
               <textarea id="summernote1" class="form-control" name="file"></textarea>
           </div>
           <button type="submit" class="btn btn-primary">Add Download</button>
@@ -66,7 +70,7 @@
     ]
   });
   $('#summernote1').summernote({
-    placeholder: 'Add Content',
+    placeholder: 'Add Description',
     tabsize: 2,
     height: 150,
     toolbar: [

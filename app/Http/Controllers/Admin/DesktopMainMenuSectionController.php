@@ -44,7 +44,7 @@ class DesktopMainMenuSectionController extends Controller
             'name'=> 'required|min:3',
             'slug'=> 'required|min:3',
             'url'=> 'nullable',
-            'sort_by'=> 'nullable|string',
+            'sort_by'=> 'nullable|numeric|between:0,99.99',
         ]);
 
         $desktopMainMenu = new DesktopMainMenu();
@@ -95,7 +95,7 @@ class DesktopMainMenuSectionController extends Controller
             'slug'=> 'required|min:3|max:255',
             'name'=> 'required|min:3',
             'url'=> 'nullable',
-            'sort_by'=> 'nullable|string',
+            'sort_by'=> 'nullable|numeric|between:0,99.99',
         ]);
 
         $form_data = array(

@@ -22,7 +22,7 @@
                     <div class="slider-header p-3 w-100 d-flex">
                         <div class="w-80">
                             <h6 class="text-black bold uppercase font-regular font-13">{{$row->name}}</h6>
-                            <div class="text-black font-regular uppercase font-13">{!! $row->content !!}</div>
+                            <div class="text-black font-regular uppercase font-13">{!! \Illuminate\Support\Str::limit($row->content, 100, $end='...') !!}</div>
                         </div>
                         <div class="w-20">
                             <div class="download-square">

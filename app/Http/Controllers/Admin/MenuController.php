@@ -41,7 +41,7 @@ class MenuController extends Controller
             'slug'=> 'required|min:3|max:255',
             'name'=> 'required|min:3',
             'url'=> 'nullable|string',
-            'sort_by'=> 'nullable|string',
+            'sort_by'=> 'nullable|numeric|between:0,99.99',
         ]);
 
         $menus = new Menu();
@@ -89,7 +89,7 @@ class MenuController extends Controller
             'slug'=> 'required|min:3|max:255',
             'name'=> 'required|min:3',
             'url'=> 'nullable|string',
-            'sort_by'=> 'nullable|string',
+            'sort_by'=> 'nullable|numeric|between:0,99.99',
         ]);
 
         $form_data = array(

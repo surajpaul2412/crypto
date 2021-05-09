@@ -41,7 +41,7 @@ class VideoGalleryController extends Controller
     {
         $this->validate($request, [
             'name'=> 'required|min:3',
-            'sort_by'=> 'nullable|string',
+            'sort_by'=> 'nullable|numeric|between:0,99.99',
         ]);
 
         $videoGallery = new VideoGallery();
@@ -74,7 +74,7 @@ class VideoGalleryController extends Controller
     {
         $request->validate([
             'name'=> 'required|min:3|max:255',
-            'sort_by'=> 'nullable|string',
+            'sort_by'=> 'nullable|numeric|between:0,99.99',
             'url.*'=> 'nullable|string|min:3',
         ]);
 

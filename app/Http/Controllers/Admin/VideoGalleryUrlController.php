@@ -42,7 +42,7 @@ class VideoGalleryUrlController extends Controller
         $this->validate($request, [
             'video_gallery_id'=> 'required|integer',
             'url'=> 'required|min:3',
-            'sort_by'=> 'nullable|string',
+            'sort_by'=> 'nullable|numeric|between:0,99.99',
         ]);
 
         $videoGalleryUrls = new VideoGalleryUrls();
@@ -78,7 +78,7 @@ class VideoGalleryUrlController extends Controller
         $request->validate([
             'video_gallery_id'=> 'required|integer',
             'url'=> 'required|string|min:3',
-            'sort_by'=> 'nullable|string',
+            'sort_by'=> 'nullable|numeric|between:0,99.99',
         ]);
 
         $form_data = array(

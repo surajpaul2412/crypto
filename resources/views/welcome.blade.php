@@ -461,7 +461,10 @@
                         <div class="carousel-inner">
                           @foreach($banners as $index => $banner)
                           <div class="carousel-item {{$index == 0 ? 'active' : '' }}">
+                            @if($banner->mobile_banner != null)
                             <img src="{{env('image_url')}}/banner/{{$banner->mobile_banner}}" width="100%">
+                            @else
+                            @endif
                           </div>
                           @endforeach
                         </div>
