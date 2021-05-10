@@ -15,7 +15,7 @@ class StudentWorkController extends Controller
      */
     public function index()
     {
-        $studentsWork = StudentsWork::all();
+        $studentsWork = StudentsWork::paginate(3);
         return view('admin.studentsWork.index', compact('studentsWork'));
     }
 
