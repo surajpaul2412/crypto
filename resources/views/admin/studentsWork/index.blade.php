@@ -87,6 +87,7 @@
     </tbody>
   </table>
 </div>
+{{$studentsWork->links()}}
 @else
 <h3 class="bold text-dark" align="center">Add some Students Work</h3>
 @endif
