@@ -83,7 +83,7 @@
                         @foreach($studentsWork as $key => $row)
                         <div role="tabpanel" class="tab-pane {{$key == 0 ? 'active' : '' }}" id="tab{{$key+1}}">
                             <div class="row px-3">
-                                <div class="col-md-3 py-3">
+                                <div class="col-md-3 pb-3">
                                     <img src="{{env('image_url')}}/work/{{$row->image}}" class="d-block m-auto shadow-round" width="94%">
                                 </div>
                                 <div class="col-md-9 px-0">
