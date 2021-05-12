@@ -83,11 +83,9 @@
             <div class="font-regular text-grey2 font-13">
                 {!!$row->content!!}
             </div>
-            <!-- <div class="row pl-0">
-                <div class="col-md-12 pl-0">
-                    <img src="{{ asset('assets/frontend/img/del.png') }}" width="100%">
-                </div>
-            </div> -->
+            <div class="mt-3">
+                <img src="{{ asset('images/aboutUs/about.png') }}" width="100%">
+            </div>
             <div class="mobile-center">
                 <a href="">
                     <div class="font-regular mt-3 page-12-btn">

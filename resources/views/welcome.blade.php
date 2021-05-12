@@ -28,202 +28,201 @@
     <!-- try -->
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-  <!-- try end -->
-  <style>
-    .faculty-btn1{
-        border-radius: 16px;
-        font-weight: 400;
-        color: #5B5E65 !important;
-        padding: 5px 18px;
-        font-size: 11px;
-        box-shadow: 1px 1px 3px 0px rgb(50 50 50 / 10%), -1.8px -1.8px 3px 0px rgb(255 255 255 / 80%);
-        background-image: linear-gradient(to right, #eeeff4, #f4f5f9);
-    }
-    .carousel-inner img {
-      width: 100%;
-      height: 100%;
-    }
-    .page-1-btn{
-        box-shadow: 2px 2px 4px 0px rgba(50,50,50,0.10), -1px -1px 3px 0px rgba(255,255,255,0.8);
-        background-image: linear-gradient(to right, #edeef3 , #f4f5f9);
-        border: 1px solid rgba(255,255,255,0.3);
-        font-size: 12px;
-        font-family: 'Roboto-Bold';
-        font-weight: bold;
+    <style>
+      .faculty-btn1{
+          border-radius: 16px;
+          font-weight: 400;
+          color: #5B5E65 !important;
+          padding: 5px 18px;
+          font-size: 11px;
+          box-shadow: 1px 1px 3px 0px rgb(50 50 50 / 10%), -1.8px -1.8px 3px 0px rgb(255 255 255 / 80%);
+          background-image: linear-gradient(to right, #eeeff4, #f4f5f9);
+      }
+      .carousel-inner img {
+        width: 100%;
+        height: 100%;
+      }
+      .page-1-btn{
+          box-shadow: 2px 2px 4px 0px rgba(50,50,50,0.10), -1px -1px 3px 0px rgba(255,255,255,0.8);
+          background-image: linear-gradient(to right, #edeef3 , #f4f5f9);
+          border: 1px solid rgba(255,255,255,0.3);
+          font-size: 12px;
+          font-family: 'Roboto-Bold';
+          font-weight: bold;
+          text-align: center;
+          color: #5b5e65;
+          padding: 7px 0px;
+          width: 175px;
+      }
+      .page-1-btn:hover{
+          transition: 6s;
+          transition-delay: all 5s ease;
+          -webkit-transition-delay: all 5s ease;
+          box-shadow: inset 1px 1px 4px -1px rgba(0,0,0,0.1),
+                      inset -4px -3px 6px -1px rgba(255,255,255,0.7),
+                      -0.1px -0.1px 0 rgba(255,255,255,1),
+                      0.1px 0.1px 0 rgba(0,0,0,0.15),
+                      0px 12px 10px -14px rgba(0,0,0,0.05);
+          background-image: linear-gradient(to bottom right, #f1f2f7, #f2f3f7);
+      }
+      .front-btn{
+          padding: 4px 18px 3px 18px;
+          box-shadow: 2px 2px 4px 0px rgba(50,50,50,0.10), -1px -1px 3px 0px rgba(255,255,255,0.8);
+          background-image: linear-gradient(to right, #edeef3 , #f4f5f9);
+          border: 1px solid rgba(255,255,255,0.3);
+          text-align: center;
+      }
+      .module-tab span{
+          color: #5B5E65;
+      }
+      .border-module{
+          /*box-shadow: 2px 2px 4px 0px rgba(50,50,50,0.10), -1px -1px 3px 0px rgba(255,255,255,0.8);*/
+          background-image: linear-gradient(to right, #f4f5f9 , #f4f5f9);
+          border: 1px solid rgba(255,255,255,0.3);
+          padding: 9px 0px;
+      }
+      .wrapper{
+        width:100%;
+        padding-top: 20px;
+        text-align:center;
+      }
+      .carousel{
+        width:100%;
+        margin:0px auto;
+      }
+      .slick-slide{
+        margin:10px;
+      }
+      .slick-slide img{
+        width:100%;
+      }
+      .slick-prev, .slick-next{
+        background: #5B5E65;
+        border-radius: 15px;
+        border-color: transparent;
+      }
+      .card{
+          box-shadow: 2px 2px 4px 0px rgba(50,50,50,0.10), -1px -1px 3px 0px rgba(255,255,255,0.8);
+          background-image: linear-gradient(to right, #edeef3 , #f4f5f9);
+          border: 1px solid rgba(255,255,255,0.3);
+      }
+      .card-body{
+        width: 100%;
+        vertical-align: top;
+      }
+      .card-content{
         text-align: center;
-        color: #5b5e65;
-        padding: 7px 0px;
-        width: 175px;
-    }
-    .page-1-btn:hover{
-        transition: 6s;
-        transition-delay: all 5s ease;
-        -webkit-transition-delay: all 5s ease;
-        box-shadow: inset 1px 1px 4px -1px rgba(0,0,0,0.1),
-                    inset -4px -3px 6px -1px rgba(255,255,255,0.7),
-                    -0.1px -0.1px 0 rgba(255,255,255,1),
-                    0.1px 0.1px 0 rgba(0,0,0,0.15),
-                    0px 12px 10px -14px rgba(0,0,0,0.05);
-        background-image: linear-gradient(to bottom right, #f1f2f7, #f2f3f7);
-    }
-    .front-btn{
-        padding: 4px 18px 3px 18px;
-        box-shadow: 2px 2px 4px 0px rgba(50,50,50,0.10), -1px -1px 3px 0px rgba(255,255,255,0.8);
-        background-image: linear-gradient(to right, #edeef3 , #f4f5f9);
-        border: 1px solid rgba(255,255,255,0.3);
-        text-align: center;
-    }
-    .module-tab span{
         color: #5B5E65;
-    }
-    .border-module{
-        /*box-shadow: 2px 2px 4px 0px rgba(50,50,50,0.10), -1px -1px 3px 0px rgba(255,255,255,0.8);*/
-        background-image: linear-gradient(to right, #f4f5f9 , #f4f5f9);
-        border: 1px solid rgba(255,255,255,0.3);
-        padding: 9px 0px;
-    }
-    .wrapper{
-      width:100%;
-      padding-top: 20px;
-      text-align:center;
-    }
-    .carousel{
-      width:100%;
-      margin:0px auto;
-    }
-    .slick-slide{
-      margin:10px;
-    }
-    .slick-slide img{
-      width:100%;
-    }
-    .slick-prev, .slick-next{
-      background: #5B5E65;
-      border-radius: 15px;
-      border-color: transparent;
-    }
-    .card{
-        box-shadow: 2px 2px 4px 0px rgba(50,50,50,0.10), -1px -1px 3px 0px rgba(255,255,255,0.8);
-        background-image: linear-gradient(to right, #edeef3 , #f4f5f9);
-        border: 1px solid rgba(255,255,255,0.3);
-    }
-    .card-body{
-      width: 100%;
-      vertical-align: top;
-    }
-    .card-content{
-      text-align: center;
-      color: #5B5E65;
-      padding: 15px;
-    }
-    .card-text{
-      font-size: 14px;
-      font-weight: 300;
-    }
-    .marquee {
-      height: 25px;
-      width: 100vw;
-      overflow: hidden;
-      position: relative;
-    }
-    .marquee div {
-      display: block;
-      width: 5000%;
-      height: 30px;
-      position: absolute;
-      overflow: hidden;
-      animation: marquee 5s linear infinite;
-    }
-    .marquee span {
-      float: left;
-      width: 50%;
-    }
-    @keyframes marquee {
-      0% { left: 0; }
-      100% { left: -100%; }
-    }
-    .bg-theme1{
-        background-color: #9ccd63;
-    }
-    .try{
-      box-shadow: 2px 2px 4px 0px rgba(50,50,50,0.10), -1px -1px 3px 0px rgba(255,255,255,0.8);
-        background-image: linear-gradient(to right, #edeef3 , #f4f5f9);
-        border: 1px solid rgba(255,255,255,0.3);
+        padding: 15px;
+      }
+      .card-text{
         font-size: 14px;
-        font-family: 'Roboto-Bold';
-        font-weight: bold;
-        text-align: center;
-        padding: 5px 0px;
-    }
-    .ul{
-      list-style:none;
-      position:relative;
-    }
-    .li{
-      height:auto;
-    }
-    @media screen and (min-width: 420px) and (max-width: 900px) and (orientation: landscape) {
-      html {
-        width: 50vw;
-        display: block;
-        margin: 0px auto;
-        background: #f1f2f6 !important;
-        background-image: linear-gradient(to right, #edeef3 , #f4f5f9);
-        
+        font-weight: 300;
       }
-      body{
-        box-shadow: 2px 2px 4px 0px rgba(50,50,50,0.10), -1px -1px 3px 0px rgba(255,255,255,0.8);
-        border: 1px solid rgba(255,255,255,0.3);
-      }
-      .col-md-6, .col-md-4{
-        flex: 0 0 100% !important;
-        max-width: 100% !important;
-      }
-      .port-22{
-        height: 150px !important;
+      .marquee {
+        height: 25px;
+        width: 100vw;
         overflow: hidden;
+        position: relative;
       }
-      .sidenav .container-fluid{
-        width: 50vw !important;
-        display: block !important;
-        margin: 0px auto !important;
-        background: #f1f2f6 !important;
-        background-image: linear-gradient(to right, #edeef3 , #f4f5f9) !important;
-        box-shadow: 2px 2px 4px 0px rgba(50,50,50,0.10), -1px -1px 3px 0px rgba(255,255,255,0.8);
-        border: 1px solid rgba(255,255,255,0.3);
-      }
-      #mySidenav{
-        background: #f1f2f6 !important;
-        background-image: linear-gradient(to right, #edeef3 , #f4f5f9);
-        padding-top: 0px;
-      }
-      .sidenav .container-fluid .mt-5{
-        margin-top: 5.5rem!important;
-      }
-      .sidenav .closebtn{
+      .marquee div {
+        display: block;
+        width: 5000%;
+        height: 30px;
         position: absolute;
-        top: 4.6%;
-        right: 30%;
-        font-size: 36px;
-        margin-left: 50px;
+        overflow: hidden;
+        animation: marquee 5s linear infinite;
       }
-      .container-fluid .row .col-8{
-        padding-top: 0rem !important;
+      .marquee span {
+        float: left;
+        width: 50%;
       }
-      .port-col-md-6{
-        flex: 0 0 60% !important;
-        max-width: 60% !important;
-        margin-top: 15px;
-        margin-bottom: 15px;
+      @keyframes marquee {
+        0% { left: 0; }
+        100% { left: -100%; }
       }
-      .port-col-md-4{
-        flex: 0 0 40% !important;
-        max-width: 40% !important;
-        margin-top: 15px;
-        margin-bottom: 15px;
+      .bg-theme1{
+          background-color: #9ccd63;
       }
-    }
-  </style>
+      .try{
+        box-shadow: 2px 2px 4px 0px rgba(50,50,50,0.10), -1px -1px 3px 0px rgba(255,255,255,0.8);
+          background-image: linear-gradient(to right, #edeef3 , #f4f5f9);
+          border: 1px solid rgba(255,255,255,0.3);
+          font-size: 14px;
+          font-family: 'Roboto-Bold';
+          font-weight: bold;
+          text-align: center;
+          padding: 5px 0px;
+      }
+      .ul{
+        list-style:none;
+        position:relative;
+      }
+      .li{
+        height:auto;
+      }
+      @media screen and (min-width: 420px) and (max-width: 900px) and (orientation: landscape) {
+        html {
+          width: 50vw;
+          display: block;
+          margin: 0px auto;
+          background: #f1f2f6 !important;
+          background-image: linear-gradient(to right, #edeef3 , #f4f5f9);
+          
+        }
+        body{
+          box-shadow: 2px 2px 4px 0px rgba(50,50,50,0.10), -1px -1px 3px 0px rgba(255,255,255,0.8);
+          border: 1px solid rgba(255,255,255,0.3);
+        }
+        .col-md-6, .col-md-4{
+          flex: 0 0 100% !important;
+          max-width: 100% !important;
+        }
+        .port-22{
+          height: 150px !important;
+          overflow: hidden;
+        }
+        .sidenav .container-fluid{
+          width: 50vw !important;
+          display: block !important;
+          margin: 0px auto !important;
+          background: #f1f2f6 !important;
+          background-image: linear-gradient(to right, #edeef3 , #f4f5f9) !important;
+          box-shadow: 2px 2px 4px 0px rgba(50,50,50,0.10), -1px -1px 3px 0px rgba(255,255,255,0.8);
+          border: 1px solid rgba(255,255,255,0.3);
+        }
+        #mySidenav{
+          background: #f1f2f6 !important;
+          background-image: linear-gradient(to right, #edeef3 , #f4f5f9);
+          padding-top: 0px;
+        }
+        .sidenav .container-fluid .mt-5{
+          margin-top: 5.5rem!important;
+        }
+        .sidenav .closebtn{
+          position: absolute;
+          top: 4.6%;
+          right: 30%;
+          font-size: 36px;
+          margin-left: 50px;
+        }
+        .container-fluid .row .col-8{
+          padding-top: 0rem !important;
+        }
+        .port-col-md-6{
+          flex: 0 0 60% !important;
+          max-width: 60% !important;
+          margin-top: 15px;
+          margin-bottom: 15px;
+        }
+        .port-col-md-4{
+          flex: 0 0 40% !important;
+          max-width: 40% !important;
+          margin-top: 15px;
+          margin-bottom: 15px;
+        }
+      }
+    </style>
 </head>
 <body class="bg-theme height-100">
     <!-- desktop header -->
@@ -696,6 +695,8 @@
     <a href="https://api.whatsapp.com/send?phone=+919910092983&text=Hello!" class="float" target="_blank">
       <i class="fa fa-whatsapp my-float text-white"></i>
     </a>
+    <!-- alert notification -->
+    
 
 <!-- JQuery -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

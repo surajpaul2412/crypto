@@ -20,6 +20,11 @@
     .font-1vw{
         font-size: 1vw;
     }
+    @media only screen and (max-width: 945px) {
+        .marT-10{
+            margin-top: 5px !important;
+        }
+    }
 </style>
 @endsection
 
