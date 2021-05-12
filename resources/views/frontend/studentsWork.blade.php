@@ -56,7 +56,7 @@
                             <a class="nav-link {{$index == 0 ? 'active' : '' }}" href="#tab{{$index+1}}" data-toggle="tab">
                                 <div class="row">
                                     <div class="col-md-4 col-5 student">
-                                        <img data-original="{{env('image_url')}}/work/{{$row->image}}" class="lazy d-block m-auto shadow-round" width="100%">
+                                        <img src="{{env('image_url')}}/work/{{$row->image}}" class="d-block m-auto shadow-round" width="100%">
                                     </div>
                                     <div class="col-md-8 col-7 px-0">
                                         <h6 class="font-11 text-dark font-regular">{{$row->year}}</h6>
@@ -84,7 +84,7 @@
                         <div role="tabpanel" class="tab-pane {{$key == 0 ? 'active' : '' }}" id="tab{{$key+1}}">
                             <div class="row px-3">
                                 <div class="col-md-3 py-3">
-                                    <img data-original="{{env('image_url')}}/work/{{$row->image}}" class="lazy d-block m-auto shadow-round" width="94%">
+                                    <img src="{{env('image_url')}}/work/{{$row->image}}" class="d-block m-auto shadow-round" width="94%">
                                 </div>
                                 <div class="col-md-9 px-0">
                                     <h1 class="font-regular bold font-13 text-dark">{{$row->name}}</h1>
