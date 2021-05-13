@@ -555,11 +555,9 @@
         <!-- inner content -->
         @yield('content')
         <!-- footer -->
-        <section class="container-fluid border-top footer-shadow height-8 marT-30 mobile-d-none">
-            <div class="row" align="center">
-              <img src="{{asset('images/banner/footer.png')}}" width="85%" class="d-block mx-auto pt-1">
-            </div>
-        </section>
+        <div class="container-fluid border-top footer-shadow height-8 marT-30 mobile-d-none">
+          <img src="{{asset('images/banner/footer.png')}}" width="95%" class="d-block mx-auto pt-1">
+        </div>
         <!-- mobile footer -->
         <section class="desktop-d-none border-top footer-shadow">
           <div align="center" class="py-3 font-11">
