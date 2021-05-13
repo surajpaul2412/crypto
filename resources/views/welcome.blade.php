@@ -255,7 +255,7 @@
                                 <ul class="navbar-nav ml-auto">
                                   @foreach($homeNotification as $row)
                                     <li class="nav-item pr-2">
-                                        <div class="nav-link font-regular text-black bold d-flex" style="font-size: 0.85vw;">{{$row->date}} days, <span class="pl-2" id="timer" style="font-size: 0.85vw;"></span></div>
+                                        <div class="nav-link font-regular text-black bold d-flex" style="font-size: 0.75vw;">{{$row->date}} days, <span class="pl-2" id="timer" style="font-size: 0.75vw;"></span></div>
                                     </li>
                                     <script type="text/javascript">
                                     function updateTimer() {
@@ -283,10 +283,10 @@
                                     setInterval('updateTimer()', 1000);
                                     </script>
                                     <li class="nav-item">
-                                        <div class="nav-link font-regular text-black font-400" style="font-size: 0.85vw;">New Batch Commencing {{$row->batch}}.</div>
+                                        <div class="nav-link font-regular text-black font-400" style="font-size: 0.75vw;">New Batch Commencing {{$row->batch}}.</div>
                                     </li>
                                     <li class="nav-item">
-                                        <div class="nav-link font-regular text-black bold" style="font-size: 0.85vw;">Remaining Seats: {{$row->seat}}</div>
+                                        <div class="nav-link font-regular text-black bold" style="font-size: 0.75vw;">Remaining Seats: {{$row->seat}}</div>
                                     </li>
                                     @endforeach
                                 </ul>
