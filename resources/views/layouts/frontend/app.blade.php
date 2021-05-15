@@ -2,7 +2,7 @@
 <html>
 <head>
   @yield('title')
-  <link rel="icon" href="{{asset('assets/backend/images/logo')}}" type="image" sizes="16x16">
+  <link rel="icon" href="{{asset('assets/backend/images/fav.png')}}" type="image" sizes="16x16">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Font Awesome -->

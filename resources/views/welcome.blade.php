@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Crypto Cipher</title>
-    <link rel="icon" href="{{asset('assets/backend/images/logo')}}" type="image" sizes="16x16">
+    <link rel="icon" href="{{asset('assets/backend/images/fav.png')}}" type="image" sizes="16x16">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Font Awesome -->
@@ -696,7 +696,19 @@
       <i class="fa fa-whatsapp my-float text-white"></i>
     </a>
     <!-- alert notification -->
-    
+    <div id="floating-notification" align="center" style="width:200px;position: absolute;bottom: 5.2%;right: 8%;background-color: #25d366;">
+      <div class="p-4 font-13 font-regular">
+        Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print.
+        <div class="mt-3 py-2 text-white font-regular" id="click-notification" style="border-radius: 28px;background-color: #106731;cursor: pointer;">
+          I Got It.
+        </div>
+      </div>
+    </div>
+    <script>
+      $("#click-notification").click(function(){
+        $("#floating-notification").hide(500);
+      });
+    </script>
 
 <!-- JQuery -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

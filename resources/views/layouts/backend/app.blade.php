@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <title>Crypto Cipher | CMS</title>
-    <link rel="icon" href="{{asset('assets/backend/images/logo')}}" type="image" sizes="16x16">
+    <link rel="icon" href="{{asset('assets/backend/images/fav.png')}}" type="image" sizes="16x16">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
     <!-- Bootstrap core CSS -->
