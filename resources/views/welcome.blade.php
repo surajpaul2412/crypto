@@ -688,7 +688,7 @@
     <!-- mobile footer -->
     <section class="desktop-d-none border-top footer-shadow">
         <div align="center" class="py-3 font-11">
-            Copyright © 2020 Crypto Cipher | All Rights Reserved.​
+            Copyright © 2021 Crypto Cipher | All Rights Reserved.​
         </div>
     </section>
     <!-- whatsapp chat -->
@@ -696,7 +696,7 @@
       <i class="fa fa-whatsapp my-float text-white"></i>
     </a>
     <!-- alert notification -->
-    <div id="floating-notification" align="center" style="width:200px;position: absolute;bottom: 5.2%;right: 8%;background-color: #25d366;">
+    <div id="floating-notification" class="mobile-d-none" align="center" style="width:200px;position: absolute;bottom: 5.2%;right: 8%;background-color: #25d366;">
       <div class="p-4 font-13 font-regular">
         Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print.
         <div class="mt-3 py-2 text-white font-regular" id="click-notification" style="border-radius: 28px;background-color: #106731;cursor: pointer;">

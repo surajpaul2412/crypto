@@ -561,7 +561,7 @@
         <!-- mobile footer -->
         <section class="desktop-d-none border-top footer-shadow">
           <div align="center" class="py-3 font-11">
-            Copyright © 2020 Crypto Cipher | All Rights Reserved.​
+            Copyright © 2021 Crypto Cipher | All Rights Reserved.​
           </div>
         </section>
       </div>
