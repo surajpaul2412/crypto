@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\News;
+use App\NewsTag;
 
 class NewsroomController extends Controller
 {
@@ -57,6 +58,15 @@ class NewsroomController extends Controller
         $news->content = $request->content;
         $news->image = $image_name;
         $news->save();
+
+        $tags = array_values(array_filter($request->tags));
+        foreach ($tags as $key => $tag) {
+            $newstag = new Newstag();
+            $newstag->news_id = $news->id;
+            $newstag->tag = $tag;
+            $newstag->is_updated = 1;
+            $newstag->save();
+        }
         return redirect('/admin/newsroom')->with('success', 'Newsroom has been added.');
     }
 
@@ -117,8 +127,23 @@ class NewsroomController extends Controller
             'slug' => $request->slug,
             'image' => $image_name
         );
-
         News::whereId($id)->update($form_data);
+
+        $tags = array_values(array_filter($request->tags));
+        NewsTag::where('news_id',$id)->update(['is_updated'=>0]);
+        foreach($tags as $tag){
+            $newstags = NewsTag::where([['news_id' , $id],['tag' , $tag]])->first();
+            if($newstags){
+                $newstags->update(['is_updated'=>1]);
+            }else{
+                $newstags = NewsTag::create([
+                    'news_id' => $id,
+                    'tag' => $tag,
+                    'is_updated' => 1,
+                ]);
+            }
+        }
+        NewsTag::where([['news_id',$id],['is_updated',0]])->delete();        
         return redirect('/admin/newsroom')->with('success', 'Newsroom has been updated.');
     }
 

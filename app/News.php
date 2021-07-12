@@ -21,4 +21,9 @@ class News extends Model
             $news->update(['slug' => $news->slug]);
         });
     }
+
+    public function newstags()
+    {
+        return $this->hasMany('App\NewsTag');
+    }
 }

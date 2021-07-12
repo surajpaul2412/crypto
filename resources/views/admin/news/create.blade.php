@@ -59,7 +59,19 @@
               </div>
             </div>
           </div>
-          <button type="submit" class="btn btn-primary">Add new</button>
+
+          <div class="form-group">
+            <div class="multi-field-wrapper mt-3">
+              <div class="multi-fields">
+                <div class="multi-field d-flex">
+                  <input type="text" class="form-control" name="tags[]" placeholder="Give any tag (optional)">
+                  <button type="button" class="remove-field" style="background:#fff;border:none;color: red;cursor: pointer;outline: none;">x</button>
+                </div>
+              </div>
+              <button type="button" class="btn btn-info add-field-left">Add more</button>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary">Add New Article</button>
       </form>
   </div>
 </div>
@@ -78,6 +90,19 @@
       ['insert', ['link', 'picture', 'video']],
       ['view', ['fullscreen', 'codeview', 'help']]
     ]
+  });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script>
+  $('.multi-field-wrapper').each(function() {
+      var $wrapper = $('.multi-fields', this);
+      $(".add-field-left", $(this)).click(function(e) {
+          $('.multi-field:first-child', $wrapper).clone(true).appendTo($wrapper).find('input').val('').focus();
+      });
+      $('.multi-field .remove-field', $wrapper).click(function() {
+          if ($('.multi-field', $wrapper).length > 1)
+              $(this).parent('.multi-field').remove();
+      });
   });
 </script>
 @endsection

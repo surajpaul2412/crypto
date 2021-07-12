@@ -135,14 +135,14 @@
         <div class="row px-3">
             <div class="col-md-12 my-2">
                 <div class="" align="left">
-@if(session()->get('success'))
-  <div class="alert alert-success">
-    {{ session()->get('success') }}  
-  </div><br/>
-@endif
-@if (session('error'))
-<div class="alert alert-danger">{{ session('error') }}</div>
-@endif
+                    @if(session()->get('success'))
+                      <div class="alert alert-success">
+                        {{ session()->get('success') }}  
+                      </div><br/>
+                    @endif
+                    @if (session('error'))
+                    <div class="alert alert-danger">{{ session('error') }}</div>
+                    @endif
                     <div class="font-regular pb-3 font-13 text-grey2 px-3 media-px">
                         Please note our all admissions happens through this page only ( url ) via online payment gateway and filling the form and paying registration amount confirms your seat.<br>
                         <span class="bold">01.</span> Upload your signatures & parents/guardian signatures after reading all terms & conditions mentioned under this page.<br>

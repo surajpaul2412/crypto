@@ -38,7 +38,7 @@
     		  <label class="text-dark" for="title">Title :</label>
     		  <input type="text" class="form-control" name="title" value="{{ $news->title }}"/>
     		</div>
-		<div class="form-group">
+		    <div class="form-group">
           <label class="text-dark" for="content">Description :</label>
           <textarea id="summernote" class="form-control" name="content">{{ $news->content }}</textarea>
       	</div>
@@ -53,6 +53,20 @@
             </div>
           </div>
           <input type="hidden" name="hidden_image" value="{{ $news->image }}">
+        </div>
+
+        <div class="form-group">
+          <div class="multi-field-wrapper mt-3">
+            <div class="multi-fields">
+              @foreach($news->newstags as $tag)
+              <div class="multi-field d-flex">
+                <input type="text" class="form-control" name="tags[]" placeholder="Give any tag (optional)" value="{{$tag->tag}}">
+                <button type="button" class="remove-field" style="background:#fff;border:none;color: red;cursor: pointer;outline: none;">x</button>
+              </div>
+              @endforeach
+            </div>
+            <button type="button" class="btn btn-info add-field-left">Add more</button>
+          </div>
         </div>
 
         <button type="submit" class="btn btn-primary">Update Content</button>
@@ -74,6 +88,19 @@
       ['insert', ['link', 'picture', 'video']],
       ['view', ['fullscreen', 'codeview', 'help']]
     ]
+  });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script>
+  $('.multi-field-wrapper').each(function() {
+      var $wrapper = $('.multi-fields', this);
+      $(".add-field-left", $(this)).click(function(e) {
+          $('.multi-field:first-child', $wrapper).clone(true).appendTo($wrapper).find('input').val('').focus();
+      });
+      $('.multi-field .remove-field', $wrapper).click(function() {
+          if ($('.multi-field', $wrapper).length > 1)
+              $(this).parent('.multi-field').remove();
+      });
   });
 </script>
 @endsection

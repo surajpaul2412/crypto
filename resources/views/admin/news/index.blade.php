@@ -67,7 +67,7 @@
 
 <div align="right" style="position: fixed;bottom: 30px;right: 30px;">
   <a href="{{ route('admin.newsroom.create')}}">
-    <button class="btn px-5 pt-3" style="background: #1d1b27;color:#fff;">Add new new 
+    <button class="btn px-5 pt-3" style="background: #1d1b27;color:#fff;">Add new article 
       <img class="pl-3" src="{{ asset('assets/backend/images/right-arrow.png') }}">
     </button>
   </a>

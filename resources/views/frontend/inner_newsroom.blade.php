@@ -25,6 +25,11 @@
             margin-top: 5px !important;
         }
     }
+    .bg-green{
+        background: #7EC051 !important;
+        font-weight: 400;
+        border-radius: 28px;
+    }
 </style>
 @endsection
 
@@ -44,6 +49,12 @@
                 </div>
             </div>            
             <h4 class="font-black text-black font-35 marT-10 pt-2">{!! \Illuminate\Support\Str::limit($news->title, 120, $end='...') !!}</h4>
+            <div>
+                <strong class="bold font-regular mt-2">Tags :</strong> 
+                @foreach($news->newstags as $tag)
+                    <span class="bg-green px-3 text-white font-13 py-2 mr-2 mt-2">{{$tag->tag}}</span>
+                @endforeach
+            </div>
         </div>
         <!-- content -->
         @if($news->count())
