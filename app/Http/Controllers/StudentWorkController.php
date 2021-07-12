@@ -18,4 +18,13 @@ class StudentWorkController extends Controller
         $desktopMenu = DesktopMenuSection::orderBy('sort_by', "asc")->get();
         return view('frontend.studentsWork', compact('homeNotification','studentsWork','menus','desktopMenu'));
     }
+
+    public function show($id)
+    {
+        $homeNotification = HomeNotification::all();
+        $menus = Menu::orderBy('sort_by', "asc")->get();
+        $desktopMenu = DesktopMenuSection::orderBy('sort_by', "asc")->get();
+        $work = StudentsWork::findOrFail($id);
+        return view('frontend.studentsWorkShow', compact('homeNotification','work','menus','desktopMenu'));
+    }
 }

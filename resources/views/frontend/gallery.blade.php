@@ -99,7 +99,7 @@
                     @foreach($studioEquipmentHardwareImage as $row)
                     <div class="col-md-3 px-1">
                         <div class="box-shadow">
-                            <a href=""><img class="lazy" data-original="{{env('image_url')}}/studioEquipment/{{$row->image}}" width="100%"></a>
+                            <img class="lazy" data-original="{{env('image_url')}}/studioEquipment/{{$row->image}}" width="100%">
                         </div>
                     </div>
                     @endforeach
@@ -142,7 +142,7 @@
                     @foreach($studioEquipmentSoftwareImage as $row)
                     <div class="col-md-3 px-1">
                         <div class="box-shadow">
-                            <a href=""><img class="lazy" data-original="{{env('image_url')}}/studioEquipment/{{$row->image}}" width="100%"></a>
+                            <img class="lazy" data-original="{{env('image_url')}}/studioEquipment/{{$row->image}}" width="100%">
                         </div>
                     </div>
                     @endforeach

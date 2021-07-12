@@ -63,9 +63,8 @@
             <h4 class="font-black text-black font-35 marT-10">Crypto Cipher Newsroom</h4>
         </div>
         <!-- content -->
-        <div class="row px-4 pb-2">
+        <!-- <div class="row px-4 pb-2">
             <div class="col-md-4 pl-2 mobile-pr-2">
-                <!-- search -->
                 <div class="search">
                     <input type="text" id="myFilter" class="form-control" onkeyup="myFunction()" placeholder="Search Via Keyword..">
                 </div>
@@ -130,6 +129,47 @@
                 </div>
                 @endif
             </div>
+        </div> -->
+
+        <div class="row px-4 pb-4">
+            <div class="col-md-12 col-12">
+                <div class="search" align="center">
+                    <input type="text" id="myFilter" class="form-control w-50 py-4" onkeyup="myFunction()" placeholder="Search Via Keyword..">
+                </div>
+            </div>
+            @foreach($news as $index => $row)
+                <div class="nav-item col-md-4 col-12 mobile-mb-3 mt-4">
+                    <div class="slider-header nav-link {{$index == 0 ? 'active' : '' }}" href="#tab{{$index+1}}" data-toggle="tab">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <img class="lazy" data-original="{{env('image_url')}}/news/{{$row->image}}" width="100%">
+                            </div>
+                            <div class="col-md-12 bold title">
+                                <div class="px-2 pt-2">
+                                    {{ \Illuminate\Support\Str::limit($row->title, 35, $end='...') }}
+                                </div>                                
+                            </div>
+                            <div class="col-md-12 py-2 px-4">
+                                <div class="row">
+                                    <div class="col-md-4 col-6 media-center" align="left">
+                                        <h6 class="mt-2">
+                                            <button class="page-4-btn font-regular" onclick="document.location.href='{{route('newsroom.show',$row->slug)}}';">
+                                                View More <i class="fas fa-angle-right pl-1"></i>
+                                            </button>
+                                        </h6>
+                                    </div>
+                                    <div class="col-md-8 col-6 media-pt-1 media-center" align="right">
+                                        <button class="desktop-d-none page-4-btn font-regular" data-toggle="modal" data-target="#myModal{{$index+1}}">
+                                            Read More <i class="fas fa-angle-right pl-1"></i>
+                                        </button>
+                                        <span class="font-regular font-11 mobile-d-none text-dark">{{$row->created_at}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @endforeach
         </div>
     </section>
 </div>

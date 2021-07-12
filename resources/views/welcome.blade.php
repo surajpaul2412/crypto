@@ -692,7 +692,7 @@
         </div>
     </section>
     <!-- whatsapp chat -->
-    <a href="https://api.whatsapp.com/send?phone=+919910092983&text=Hello!" class="float" target="_blank">
+    <a href="https://api.whatsapp.com/send?phone=+919910092983&text=Hello!" class="float wave" target="_blank">
       <i class="fa fa-whatsapp my-float text-white"></i>
     </a>
     <!-- alert notification -->

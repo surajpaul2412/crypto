@@ -30,7 +30,7 @@
         @method('PATCH')
         @csrf
         <div class="form-group">
-          <label class="text-dark" for="slug">Seo Url :</label>
+          <label class="text-dark" for="slug">Seo Url : <sup class="text-danger">(don't leave any space between)</sup></label>
           <input type="text" class="form-control" name="slug" value="{{ $news->slug }}"/>
         </div>
 

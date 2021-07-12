@@ -91,6 +91,11 @@
                                     <h2 class="font-regular text-dark font-11">{{$row->speciality}}</h2>
                                     <div class="font-regular font-12 text-dark text-justify">
                                         {!! $row->short_desc !!}
+                                        <div class="mb-3">
+                                            <a class="page-4-btn px-2 py-1 font-regular pt-1" href="{{route('student_work.show', $row->id)}}">
+                                                 View More <i class="fas fa-angle-right pl-2"></i>
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
