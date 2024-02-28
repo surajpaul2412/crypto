@@ -146,6 +146,12 @@
                         <span>Downloads</span>
                     </a>
                 </li>
+                <li class="{{ Request::is('admin/downloaderList') ? 'active' : '' }}">
+                    <a href="{{ route('admin.downloader.list') }}">
+                        <i class="material-icons">people_alt</i>
+                        <span>Downloader List</span>
+                    </a>
+                </li>
                 <li class="{{ Request::is('admin/newsroom') ? 'active' : '' }}">
                     <a href="{{ route('admin.newsroom.index') }}">
                         <i class="material-icons">emoji_food_beverage</i>
@@ -392,6 +398,12 @@
                     <a href="{{ route('student.modules.index') }}">
                         <i class="material-icons">movie</i>
                         <span>Video Modules</span>
+                    </a>
+                </li>
+                <li class="{{ Request::is('student/invoice') ? 'active' : '' }}">
+                    <a href="{{ route('student.invoice.index') }}">
+                        <i class="material-icons">receipt</i>
+                        <span>Invoice</span>
                     </a>
                 </li>
                 <li>

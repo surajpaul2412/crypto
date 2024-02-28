@@ -1,6 +1,7 @@
 @extends('layouts.frontend.app')
-@section('title')
-<title>Crypto Cipher</title>
+@section('metas')
+<title>Crypto Cipher Student Work | Course Reviews & Profiles | Crypto Cipher ®</title>
+<meta name="description" content="Sound Engineering & Music Production Course pass out student profiles and course reviews.">
 @endsection
 
 @section('css')
@@ -40,14 +41,18 @@
 <div class="bg-theme1 main-inner">
     <section class="container slider-header">
         <!-- title -->
-        <div class="px-3 pt-4 media-pt-0">
-            <h6 class="font-regular text-grey2 pl-2 pb-0 font-13 inner-title uppercase">STUDENT WORK</h6>
+         <div >
+             <div class="px-3 pt-4 media-pt-0" >
+            <h1 class="font-regular text-grey2 pl-2 pb-0 font-13 inner-title uppercase" >STUDENT WORK</h1>
             <h4 class="font-black text-black font-35 marT-10">Student Profile</h4>
         </div>
+         </div>
+       
         <!-- content -->
         <div class="row px-4 pb-2">
-            <div class="col-md-4 pl-2 mobile-pr-2">
-                <div class="">
+
+            <div class="col-md-4 pl-2 mobile-pr-2" >
+                <div class="" style="position: sticky !important; top: 10% !important;">
                     <!-- try -->
                     @if($studentsWork->count())
                     <ul id="myTabs" class="nav nav-pills" role="tablist" data-tabs="tabs">
@@ -56,7 +61,7 @@
                             <a class="nav-link {{$index == 0 ? 'active' : '' }}" href="#tab{{$index+1}}" data-toggle="tab">
                                 <div class="row">
                                     <div class="col-md-4 col-5 student">
-                                        <img src="{{env('image_url')}}/work/{{$row->image}}" class="d-block m-auto shadow-round" width="100%">
+                                        <img alt="{{$row->name}}" src="{{env('image_url')}}/work/{{$row->image}}" class="d-block m-auto shadow-round" width="100%">
                                     </div>
                                     <div class="col-md-8 col-7 px-0">
                                         <h6 class="font-11 text-dark font-regular">{{$row->year}}</h6>
@@ -73,6 +78,9 @@
                         </li>
                         @endforeach
                     </ul>
+                    <div align="center" class="d-flex mt-3 justify-content-center">
+                        {{$studentsWork->links()}}
+                    </div>
                     @endif
                 </div>
             </div>
@@ -84,16 +92,16 @@
                         <div role="tabpanel" class="tab-pane {{$key == 0 ? 'active' : '' }}" id="tab{{$key+1}}">
                             <div class="row px-3">
                                 <div class="col-md-3 pb-3">
-                                    <img src="{{env('image_url')}}/work/{{$row->image}}" class="d-block m-auto shadow-round" width="94%">
+                                    <img alt="{{$row->name}}" src="{{env('image_url')}}/work/{{$row->image}}" class="d-block m-auto shadow-round" width="94%">
                                 </div>
                                 <div class="col-md-9 px-0">
-                                    <h1 class="font-regular bold font-13 text-dark">{{$row->name}}</h1>
+                                    <h2 class="font-regular bold font-13 text-dark">{{$row->name}}</h2>
                                     <h2 class="font-regular text-dark font-11">{{$row->speciality}}</h2>
                                     <div class="font-regular font-12 text-dark text-justify">
                                         {!! $row->short_desc !!}
                                         <div class="mb-3">
-                                            <a class="page-4-btn px-2 py-1 font-regular pt-1" href="{{route('student_work.show', $row->id)}}">
-                                                 View More <i class="fas fa-angle-right pl-2"></i>
+                                            <a class="page-4-btn px-2 py-1 font-regular pt-1" href="{{route('student_work.show', $row->slug)}}">
+                                                 View More <!-- <i class="fas fa-angle-right pl-2"></i> -->
                                             </a>
                                         </div>
                                     </div>
@@ -111,7 +119,7 @@
                                         <div role="tabpanel" class="tab-pane active" id="generalProfile{{$key+1}}">
                                             <div class="row py-3">
                                                 <div class="col-md-12 col-12">
-                                                    <h1 class="font-regular bold font-13 text-dark">Student Profile</h1>
+                                                    <h2 class="font-regular bold font-13 text-dark">Student Profile</h2>
                                                     <p class="font-regular font-12 text-dark text-justify">
                                                         {!! $row->student_profile !!}
                                                     </p>
@@ -148,8 +156,8 @@
         <div class="modal-dialog modal-lg modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-body">
-                    <img src="{{env('image_url')}}/work/{{$row->image}}" class="d-block m-auto shadow-round" width="60%">
-                    <h1 class="font-regular bold font-13 text-dark">{{$row->name}}</h1>
+                    <img alt="{{$row->name}}" src="{{env('image_url')}}/work/{{$row->image}}" class="d-block m-auto shadow-round" width="60%">
+                    <h2 class="font-regular bold font-13 text-dark">{{$row->name}}</h2>
                     <h2 class="font-regular text-dark font-11">{{$row->speciality}}</h2>
                     <p class="font-regular font-12 text-dark text-justify">
                         {!! $row->short_desc !!}
@@ -167,7 +175,7 @@
                             <div role="tabpanel" class="tab-pane active" id="generalProfileModal{{$key+1}}">
                                 <div class="row py-3">
                                     <div class="col-md-12 col-12">
-                                        <h1 class="font-regular bold font-13 text-dark">Student Profile</h1>
+                                        <h2 class="font-regular bold font-13 text-dark">Student Profile</h2>
                                         <p class="font-regular font-12 text-dark text-justify">
                                             {!! $row->student_profile !!}
                                         </p>

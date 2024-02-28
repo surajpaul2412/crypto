@@ -34,6 +34,10 @@
       <form method="POST" action="{{ route('admin.studentsWork.store') }}" enctype="multipart/form-data">
           @csrf
           <div class="form-group">
+            <label class="text-dark" for="slug">Slug : <sup class="text-danger">(Don't leave any blank space between)</sup></label>
+            <input type="text" class="form-control" name="slug"/>
+          </div>
+          <div class="form-group">
               <label class="text-dark" for="year">Year :</label>
               <input type="text" class="form-control" name="year"/>
           </div>
@@ -90,12 +94,39 @@
             </div>
           </div>
 
+          <div class="form-group">
+              <label class="text-dark" for="meta_title">Meta Title :</label>
+              <input type="text" class="form-control" name="meta_title"/>
+          </div>
+          <div class="form-group">
+            <label class="text-dark" for="meta_keyword">Meta Keyword :</label>
+            <textarea id="summernote1" class="form-control" name="meta_keyword"></textarea>
+          </div>
+          <div class="form-group">
+            <label class="text-dark" for="meta_description">Meta Description :</label>
+            <textarea id="summernoteDesc" class="form-control" name="meta_description"></textarea>
+          </div>
+
           <button type="submit" class="btn btn-primary">Add Work</button>
       </form>
   </div>
 </div>
 
 <script>
+  $('#summernoteDesc').summernote({
+    placeholder: 'Add Meta Description',
+    tabsize: 2,
+    height: 150,
+    toolbar: [
+      ['style', ['style']],
+      ['font', ['bold', 'underline', 'clear']],
+      ['color', ['color']],
+      ['para', ['ul', 'ol', 'paragraph']],
+      ['table', ['table']],
+      ['insert', ['link', 'picture', 'video']],
+      ['view', ['fullscreen', 'codeview', 'help']]
+    ]
+  });
   $('#summernote').summernote({
     placeholder: 'Add Description',
     tabsize: 2,

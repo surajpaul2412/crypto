@@ -1,6 +1,7 @@
 @extends('layouts.frontend.app')
-@section('title')
-<title>Crypto Cipher</title>
+@section('metas')
+<title>Music Production & Sound Engineering Certification | Crypto Cipher ®</title>
+<meta name="description" content="Audio Engineering Diploma & Music Production course syllabus, passing credits for diploma certificate.">
 @endsection
 
 @section('css')
@@ -43,7 +44,7 @@
     <section class="container slider-header">
         <!-- title -->
         <div class="px-3 pt-4 media-pt-0">
-            <h6 class="font-regular text-grey2 pl-2 pb-0 font-13 inner-title uppercase">Exam structure & certification</h6>
+            <h1 class="font-regular text-grey2 pl-2 pb-0 font-13 inner-title uppercase">Exam structure & certification</h1>
             <h4 class="font-black text-black font-35 marT-10">Exam Details</h4>
         </div>
         <!-- content -->

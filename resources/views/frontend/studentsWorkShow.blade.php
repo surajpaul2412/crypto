@@ -1,6 +1,7 @@
 @extends('layouts.frontend.app')
-@section('title')
-<title>Crypto Cipher | {{$work->name}}</title>
+@section('metas')
+<title>{{$work->name}} | Crypto Cipher ®</title>
+<meta name="description" content="{!!$work->meta_description!!}">
 @endsection
 
 @section('css')
@@ -35,7 +36,7 @@
         <div class="px-3 pt-4 media-pt-0 pb-3">
             <div class="row">
                 <div class="col-md-8 col-8" align="left">
-                    <h6 class="font-regular text-grey2 pl-2 pb-0 font-13 inner-title">Crypto Cipher Student Work</h6>
+                    <h2 class="font-regular text-grey2 pl-2 pb-0 font-13 inner-title">Crypto Cipher Student Work</h2>
                 </div>
                 <div class="col-md-4 col-4" align="right" style="margin-top: -5px;">
                     <button class="page-4-btn font-regular pt-1" onclick="document.location.href='{{url('student_work')}}';">
@@ -49,17 +50,9 @@
         @if($work)
         <div class="row px-3">
             <div class="col-md-12 col-12">
-                <!-- <h4 class="font-bold text-black pt-3">{{$work}}</h4> -->
-                <!-- <p class="font-regular text-grey2 pt-2">{!! $work !!}</p> -->
-
-
-
-
-
-
     			<div class="row px-3">
                     <div class="col-md-3 pb-3">
-                        <img src="{{env('image_url')}}/work/{{$work->image}}" class="d-block m-auto shadow-round" width="94%">
+                        <img alt="{{$work->name}}" src="{{env('image_url')}}/work/{{$work->image}}" class="d-block m-auto shadow-round" width="94%">
                     </div>
                     <div class="col-md-9 px-0">
                         <h1 class="font-regular bold font-13 text-dark">{{$work->name}}</h1>
@@ -73,7 +66,7 @@
                             <div role="tabpanel" class="tab-pane active">
                                 <div class="row py-3">
                                     <div class="col-md-12 col-12">
-                                        <h1 class="font-regular bold font-13 text-dark">Student Workings :</h1>
+                                        <h2 class="font-regular bold font-13 text-dark">Student Workings :</h2>
                                         <p class="font-regular font-12 text-dark text-justify">
                                             {!! $work->student_profile !!}
                                         </p>

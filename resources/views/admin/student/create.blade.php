@@ -35,15 +35,19 @@
           @csrf
           <div class="form-group">
               <label class="text-dark" for="name">Name :</label>
-              <input type="text" class="form-control" name="name"/>
+              <input type="text" class="form-control" name="name" required/>
           </div>
           <div class="form-group">
               <label class="text-dark" for="email">Email :</label>
-              <input type="text" class="form-control" name="email"/>
+              <input type="email" class="form-control" name="email" required/>
+          </div>
+          <div class="form-group">
+              <label class="text-dark" for="phone">Mobile Number :</label>
+              <input type="text" class="form-control" name="phone" required/>
           </div>
           <div class="form-group">
               <label class="text-dark" for="password">Password :</label>
-              <input type="text" class="form-control" name="password"/>
+              <input type="text" class="form-control" name="password" required/>
           </div>
           <button type="submit" class="btn btn-primary">Add</button>
       </form>

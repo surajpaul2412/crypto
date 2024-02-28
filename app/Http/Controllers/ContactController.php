@@ -7,6 +7,8 @@ use App\Contact;
 use App\HomeNotification;
 use App\Menu;
 use App\DesktopMenuSection;
+use App\Mail\QueryMail;
+use Mail;
 
 class ContactController extends Controller
 {
@@ -43,17 +45,23 @@ class ContactController extends Controller
     {
         $this->validate($request, [
             'name'=> 'required|string|min:3|max:255',
-            'phone'=> 'required|integer',
-            'email'=> 'required',
+            'phone'=> 'required|digits_between:8,10',
+            'email'=> 'required|email',
             'message'=> 'nullable|string',
         ]);
 
-        $contact = new Contact();
-        $contact->name = $request->name;
-        $contact->phone = $request->phone;
-        $contact->email = $request->email;
-        $contact->message = $request->message;
-        $contact->save();
+        $details = $request->all();
+        Contact::create($details);
+
+        $data = $details;
+        $data['content'] = $details['message'];
+
+        Mail::send('emails.query', $data, function($message) {
+         $message->to('academy@cryptocipher.in', 'Crypto Cipher Academy | Query')->subject
+            ('A new query has been raised on your website');
+         $message->from('academy@cryptocipher.in','Crypto Cipher Academy | Query');
+        });
+
         return view('frontend.contact')->with('success', 'Thanks '.$request->name.' ! Your Query has been raised.');
     }
 

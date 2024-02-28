@@ -1,6 +1,6 @@
 @extends('layouts.frontend.app')
 @section('title')
-<title>Crypto Cipher</title>
+<title>Crypto Cipher ®</title>
 @endsection
 
 @section('css')
@@ -41,7 +41,7 @@
     <section class="container slider-header">
         <!-- title -->
         <div class="px-3 pt-4 media-pt-0">
-            <h6 class="font-regular text-grey2 pl-2 pb-0 font-13 inner-title uppercase">Music Production Module</h6>
+            <h1 class="font-regular text-grey2 pl-2 pb-0 font-13 inner-title uppercase">Music Production Module</h1>
             <h4 class="font-black text-black font-35 marT-10">Music Production (Online Course)</h4>
         </div>
         <!-- content -->
@@ -102,14 +102,14 @@
         <div class="row mx-2 media-mx-0">
             <div class="col-md-7 col-12 py-4">
                 <div class="pb-3">
-                    <h6 class="font-black bold font-20"><span><img class="pr-3 media-studio-img" src="{{env('image_url')}}/module/{{$row->icon}}" width="7%"></span>{{$row->heading}}</h6>
+                    <h6 class="font-black bold font-20"><span><img alt="{{$row->heading}}" class="pr-3 media-studio-img" src="{{env('image_url')}}/module/{{$row->icon}}" width="7%"></span>{{$row->heading}}</h6>
                     <div class="font-regular pb-3 font-13 text-grey2">
                         {!! $row->content !!}
                     </div>
                 </div>
             </div>
             <div class="col-md-5 col-12 py-4" align="right">
-                <img src="{{env('image_url')}}/module/{{$row->image}}" class="media-w-100" width="90%">
+                <img src="{{env('image_url')}}/module/{{$row->image}}" alt="{{$row->heading}}" class="media-w-100" width="90%">
             </div>
         </div>
     </section>

@@ -40,15 +40,18 @@ class StudentController extends Controller
     {
         $request->validate([
         'name'=>'required',
-        'email'=> 'required',
+        'email'=> 'required|unique:users,email',
+        'phone'=> 'required|unique:users,phone',
+        'password'=> 'required',
         ]);
-        $user = new User([
-        'role_id' => 4,
-        'name' => $request->get('name'),
-        'email'=> $request->get('email'),
-        'password' => bcrypt($request->get('password')),
-        ]);
-        $user->save();
+
+        $data = $request->all();
+        $data['password'] = bcrypt($request->get('password'));
+
+        $user = User::create($data);
+
+        $studentData['student_id'] = $user->id;
+        $studentDetails = StudentDetails::create($studentData);
         return redirect('/admin/student')->with('success', 'student has been added');
     }
 
@@ -89,6 +92,7 @@ class StudentController extends Controller
         $request->validate([
         'name'=> 'required',
         'email'=> 'required',
+        'phone'=> 'required',
         'password'=> 'required'
       ]);
 

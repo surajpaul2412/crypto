@@ -82,6 +82,7 @@ class ContactController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Contact::whereId($id)->delete();
+        return redirect('admin/contact')->with('success', 'Junk email deleted successfully.');
     }
 }

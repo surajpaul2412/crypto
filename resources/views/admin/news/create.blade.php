@@ -71,6 +71,17 @@
               <button type="button" class="btn btn-info add-field-left">Add more</button>
             </div>
           </div>
+
+          <hr>
+          <div class="form-group">
+              <label class="text-dark" for="meta_title">Meta Title :</label>
+              <input type="text" class="form-control" name="meta_title" />
+          </div>
+          <div class="form-group">
+            <label class="text-dark" for="meta_description">Meta Description :</label>
+            <textarea id="summernote2" class="form-control" name="meta_description" value=""></textarea>
+          </div>
+
           <button type="submit" class="btn btn-primary">Add New Article</button>
       </form>
   </div>
@@ -79,6 +90,20 @@
 <script>
   $('#summernote').summernote({
     placeholder: 'Add Content',
+    tabsize: 2,
+    height: 150,
+    toolbar: [
+      ['style', ['style']],
+      ['font', ['bold', 'underline', 'clear']],
+      ['color', ['color']],
+      ['para', ['ul', 'ol', 'paragraph']],
+      ['table', ['table']],
+      ['insert', ['link', 'picture', 'video']],
+      ['view', ['fullscreen', 'codeview', 'help']]
+    ]
+  });
+  $('#summernote2').summernote({
+    placeholder: 'Edit description',
     tabsize: 2,
     height: 150,
     toolbar: [

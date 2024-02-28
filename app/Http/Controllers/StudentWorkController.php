@@ -13,18 +13,18 @@ class StudentWorkController extends Controller
     public function index()
     {
         $homeNotification = HomeNotification::all();
-        $studentsWork = StudentsWork::whereNotNull('status')->get();
+        $studentsWork = StudentsWork::whereNotNull('status')->paginate(5);
         $menus = Menu::orderBy('sort_by', "asc")->get();
         $desktopMenu = DesktopMenuSection::orderBy('sort_by', "asc")->get();
         return view('frontend.studentsWork', compact('homeNotification','studentsWork','menus','desktopMenu'));
     }
 
-    public function show($id)
+    public function show($slug)
     {
         $homeNotification = HomeNotification::all();
         $menus = Menu::orderBy('sort_by', "asc")->get();
         $desktopMenu = DesktopMenuSection::orderBy('sort_by', "asc")->get();
-        $work = StudentsWork::findOrFail($id);
+        $work = StudentsWork::whereSlug($slug)->first();
         return view('frontend.studentsWorkShow', compact('homeNotification','work','menus','desktopMenu'));
     }
 }

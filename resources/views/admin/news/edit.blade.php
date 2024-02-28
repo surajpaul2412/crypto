@@ -58,15 +58,32 @@
         <div class="form-group">
           <div class="multi-field-wrapper mt-3">
             <div class="multi-fields">
+              @if($news->newstags->count())
               @foreach($news->newstags as $tag)
               <div class="multi-field d-flex">
                 <input type="text" class="form-control" name="tags[]" placeholder="Give any tag (optional)" value="{{$tag->tag}}">
                 <button type="button" class="remove-field" style="background:#fff;border:none;color: red;cursor: pointer;outline: none;">x</button>
               </div>
               @endforeach
+              @else
+                <div class="multi-field d-flex">
+                  <input type="text" class="form-control" name="tags[]" placeholder="Give any tag (optional)">
+                  <button type="button" class="remove-field" style="background:#fff;border:none;color: red;cursor: pointer;outline: none;">x</button>
+                </div>
+              @endif
             </div>
             <button type="button" class="btn btn-info add-field-left">Add more</button>
           </div>
+        </div>
+
+        <hr>
+        <div class="form-group">
+            <label class="text-dark" for="meta_title">Meta Title :</label>
+            <input type="text" class="form-control" name="meta_title" value="{{$news->meta_title}}" />
+        </div>
+        <div class="form-group">
+          <label class="text-dark" for="meta_description">Meta Description :</label>
+          <textarea id="summernote2" class="form-control" name="meta_description" value="{{ $news->meta_description }}">{{ $news->meta_description }}</textarea>
         </div>
 
         <button type="submit" class="btn btn-primary">Update Content</button>
@@ -77,6 +94,20 @@
 <script>
   $('#summernote').summernote({
     placeholder: 'Edit Description',
+    tabsize: 2,
+    height: 150,
+    toolbar: [
+      ['style', ['style']],
+      ['font', ['bold', 'underline', 'clear']],
+      ['color', ['color']],
+      ['para', ['ul', 'ol', 'paragraph']],
+      ['table', ['table']],
+      ['insert', ['link', 'picture', 'video']],
+      ['view', ['fullscreen', 'codeview', 'help']]
+    ]
+  });
+  $('#summernote2').summernote({
+    placeholder: 'Edit description',
     tabsize: 2,
     height: 150,
     toolbar: [

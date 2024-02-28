@@ -49,6 +49,10 @@
               <label class="text-dark" for="file">Description :</label>
               <textarea id="summernote1" class="form-control" name="file"></textarea>
           </div>
+          <div class="form-group">
+              <label class="text-dark" for="path">File name :</label>
+              <input type="text" class="form-control" name="path"/>
+          </div>
           <button type="submit" class="btn btn-primary">Add Download</button>
       </form>
   </div>

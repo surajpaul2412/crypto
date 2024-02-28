@@ -18,6 +18,19 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+          <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-B75SYXQR4M"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-B75SYXQR4M');
+    </script>
+
+    <!--end-->
+    <meta name="google-site-verification" content="0U-h6zOkdjXdokVXza1kzxJD9Q43mw9vje1bhV6fzDU" />
+    <link rel="canonical" href="https://www.cryptocipheracademy.com/" />
 </head>
 <body>
     <div id="app">

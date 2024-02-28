@@ -1,5 +1,5 @@
 @section('title')
-<title>Crypto Cipher | 404 Page</title>
+<title>404 Page | Crypto Cipher ®</title>
 @endsection
 
 <div class="bg-theme1 main-inner">

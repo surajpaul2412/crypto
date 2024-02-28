@@ -45,6 +45,10 @@
           <label class="text-dark" for="file">Description :</label>
           <textarea id="summernote1" class="form-control" name="file">{{ $download->file }}</textarea>
         </div>
+        <div class="form-group">
+          <label class="text-dark" for="path">File Name :</label>
+          <input type="text" class="form-control" name="path" value="{{ $download->path }}"/>
+        </div>
 
         <button type="submit" class="btn btn-primary">Update Content</button>
       </form>

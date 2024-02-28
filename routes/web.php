@@ -18,26 +18,32 @@ Auth::routes();
 Route::resource('/', 'WelcomeController');
 Route::resource('/welcome', 'WelcomeController');
 Route::get('/home', 'HomeController@index')->name('home');
-Route::resource('/crypto_celeb', 'ProController');
+Route::resource('/composers-review', 'ProController');
 Route::resource('/download', 'DownloadController');
 Route::get('/newsroom/{$slug}','NewsController@show')->name('newsroom.show');
+Route::post('/newsroom/search', 'NewsController@search')->name('newsroom.search');
+Route::get('/newsroom/search/{tag}', 'NewsController@searchBy')->name('newsroom.searchBy');
 Route::resource('/newsroom', 'NewsController');
 Route::resource('/music-production-course', 'ProductionCourseController');
 Route::resource('/sound-engineering-diploma-course', 'EngineeringCourseController');//left
-Route::resource('/engineering-course', 'EngineeringCourseController');//deleted
+Route::resource('/sound-engineering-course', 'EngineeringCourseController');//deleted
 Route::resource('/music-production-diploma-course', 'MusicProductionDiplomaController');
 Route::resource('/music-production-online', 'MusicProductionOnlineController');
-Route::resource('/contact_us', 'ContactController');
-Route::resource('/gallery', 'GalleryController');
-Route::resource('/academy_courses', 'AcademyCourseController');
+Route::resource('/contact-us', 'ContactController');
+Route::resource('/studio-equipment', 'GalleryController');
+Route::resource('/our-courses', 'AcademyCourseController');
 Route::resource('/jobs', 'VacancyController');
 Route::resource('/faq', 'FaqController');
-Route::resource('/faculty', 'TeamController');
+Route::resource('/music-production-faculty', 'TeamController');
 Route::resource('/register', 'RegisterController');
-Route::resource('/about_us', 'AboutUsController');
-Route::resource('/student_work', 'StudentWorkController');
-Route::resource('/exam_schedule', 'ExamStructureController');
-Route::resource('/video_gallery', 'VideoGalleryController');
+Route::resource('/about-us', 'AboutUsController');
+Route::get('/student-work/{slug}', 'StudentWorkController@show')->name('student_work.show');
+Route::resource('/student-work', 'StudentWorkController');
+Route::resource('/exam-schedule', 'ExamStructureController');
+Route::resource('/video-gallery', 'VideoGalleryController');
+Route::get('/payment1', function () {
+    return view('frontend.payment');
+});
 
 Route::group(['as'=>'admin.','prefix'=>'admin','namespace'=>'Admin','middleware'=>['auth','admin']], function(){
     Route::get('dashboard','DashboardController@index')->name('dashboard');
@@ -45,6 +51,8 @@ Route::group(['as'=>'admin.','prefix'=>'admin','namespace'=>'Admin','middleware'
     Route::resource('faculty','FacultyController');
     Route::resource('student','StudentController');
     Route::resource('download','DownloadController');
+    Route::get('/downloaderList','DownloadController@list')->name('downloader.list');
+    Route::delete('/downloaderList/{id}/delete','DownloadController@delete')->name('downloader.delete');
     Route::resource('newsroom','NewsroomController');
     Route::resource('menu','MenuController');
     Route::resource('submenu','SubmenuController');
@@ -119,8 +127,27 @@ Route::group(['as'=>'student.','prefix'=>'student','namespace'=>'Student','middl
     Route::get('dashboard','DashboardController@index')->name('dashboard');
     Route::resource('profile','ProfileController');
     Route::resource('modules','ModuleController');
+    Route::resource('invoice','InvoiceController');
 });
 
 
 
-// make slug from db;
+// 301 redirection
+Route::get('engineering-course', function(){return Redirect::to('/sound-engineering-course', 301);});
+Route::get('academy_courses', function(){return Redirect::to('/our_courses', 301);});
+Route::get('gallery', function(){return Redirect::to('/studio_equipment', 301);});
+Route::get('crypto_celeb', function(){return Redirect::to('/composers_review', 301);});
+Route::get('faculty', function(){return Redirect::to('/music_production_faculty', 301);});
+
+
+Route::get('composers_review', function(){return Redirect::to('/composers-review', 301);});
+Route::get('contact_us', function(){return Redirect::to('/contact-us', 301);});
+Route::get('contact-crypto-cipher', function(){return Redirect::to('/contact-us', 301);});
+Route::get('studio_equipment', function(){return Redirect::to('/studio-equipment', 301);});
+Route::get('our_courses', function(){return Redirect::to('/our-courses', 301);});
+Route::get('music_production_faculty', function(){return Redirect::to('/music-production-faculty', 301);});
+Route::get('about_us', function(){return Redirect::to('/about-us', 301);});
+Route::get('student_work', function(){return Redirect::to('/student-work', 301);});
+Route::get('exam_schedule', function(){return Redirect::to('/exam-schedule', 301);});
+Route::get('video_gallery', function(){return Redirect::to('/video-gallery', 301);});
+Route::get('sound_engineering_course', function(){return Redirect::to('/sound-engineering-course', 301);});

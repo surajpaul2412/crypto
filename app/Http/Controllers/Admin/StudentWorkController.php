@@ -49,6 +49,10 @@ class StudentWorkController extends Controller
             'work_prof'=> 'nullable|string|min:3',
             'testimonial'=> 'nullable|string|min:3',
             'status'=> 'nullable',
+            'slug'=> 'nullable|string|min:3',
+            'meta_title'=> 'nullable|string|min:3',
+            'meta_keyword'=> 'nullable|string|min:3',
+            'meta_description'=> 'nullable|string|min:3',
         ]);
 
         $image_name = $request->image;
@@ -68,6 +72,10 @@ class StudentWorkController extends Controller
         $studentsWork->interest = $request->interest;
         $studentsWork->work_prof = $request->work_prof;
         $studentsWork->testimonial = $request->testimonial;
+        $studentsWork->slug = $request->slug;
+        $studentsWork->meta_title = $request->meta_title;
+        $studentsWork->meta_keyword = $request->meta_keyword;
+        $studentsWork->meta_description = $request->meta_description;
         $studentsWork->status = null;
         $studentsWork->image = $image_name;
         $studentsWork->save();
@@ -120,6 +128,10 @@ class StudentWorkController extends Controller
                 'interest'=> 'nullable|string|min:3',
                 'work_prof'=> 'nullable|string|min:3',
                 'testimonial'=> 'nullable|string|min:3',
+                'slug'=> 'nullable|string|min:3',
+                'meta_title'=> 'nullable|string|min:3',
+                'meta_keyword'=> 'nullable|string|min:3',
+                'meta_description'=> 'nullable|string|min:3',
             ]);
             $image_name = rand() . '.' . $image->getClientOriginalExtension();
             $image->move(public_path('images/work'), $image_name);
@@ -135,6 +147,10 @@ class StudentWorkController extends Controller
             'interest' => $request->interest,
             'work_prof' => $request->work_prof,
             'testimonial' => $request->testimonial,
+            'slug' => $request->slug,
+            'meta_title' => $request->meta_title,
+            'meta_keyword' => $request->meta_keyword,
+            'meta_description' => $request->meta_description,
             'image' => $image_name
         );
 

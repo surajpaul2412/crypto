@@ -1,6 +1,7 @@
 @extends('layouts.frontend.app')
-@section('title')
-<title>Crypto Cipher</title>
+@section('metas')
+<title>Audio Faculty Department | Music Production Course | Crypto Cipher ®</title>
+<meta name="description" content="Crypto Cipher experienced Music Production Faculty & Sound Engineering Faculty in Delhi, India.">
 @endsection
 
 @section('css')
@@ -32,7 +33,7 @@
     <section class="container slider-header">
         <!-- title -->
         <div class="px-3 pt-4 media-pt-0">
-            <h6 class="font-regular text-grey2 pl-2 pb-0 font-13 inner-title uppercase">AUDIO FACULTY DEPARTMENTS</h6>
+            <h1 class="font-regular text-grey2 pl-2 pb-0 font-13 inner-title uppercase">AUDIO FACULTY DEPARTMENTS</h1>
             <h4 class="font-black text-black font-35 marT-10">Meet Faculty, Management & Artist Team</h4>
         </div>
         <!-- content -->
@@ -41,7 +42,7 @@
             @foreach($teamProduction as $row)
             <div class="col-md-4 mt-4 mb-3">
                 <div class="slider-header bg-theme" align="center">
-                    <img class="d-block mx-auto py-3 pt-4" src="{{env('image_url')}}/team/{{$row->image}}" width="24%">
+                    <img class="d-block mx-auto py-3 pt-4" src="{{env('image_url')}}/team/{{$row->image}}" alt="{{$row->heading}}" width="24%">
                     <div class="about-title px-4 pt-2 bold font-16">{{$row->heading}}</div>
                     <div class="about-desc px-3 pt-3 pb-4">{!!$row->content!!}</div>
                 </div>
@@ -62,7 +63,7 @@
             @foreach($team as $index => $row)
             <div class="col-md-4 mb-3" style="margin-top: 80px;">
                 <div class="slider-header bg-theme" align="center">
-                    <img src="{{env('image_url')}}/team/{{$row->image}}" width="55%" class="mx-auto d-block p-1 bg-theme shadow-round" style="border-radius: 50%;margin-top: -26%">
+                    <img src="{{env('image_url')}}/team/{{$row->image}}" width="55%" alt="{{$row->name}}" class="mx-auto d-block p-1 bg-theme shadow-round" style="border-radius: 50%;margin-top: -26%">
                     <h6 class="about-name bold pt-4">{{$row->name}}</h6>
                     <div class="about-title pb-2 font-400">{!!$row->designation!!}</div>
                     <div class="about-desc pt-2 px-1 font-400">{!! \Illuminate\Support\Str::limit($row->content, 310, $end='...') !!}</div>

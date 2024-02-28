@@ -35,7 +35,7 @@
         @csrf
         <div class="form-group">
           <label class="text-dark" for="module_id">Module :</label>
-            <select class="form-control" name="module_id">
+            <select class="form-control" name="module_id" required>
               @foreach($modules as $module)
                 <option value="{{$module->id}}">{{$module->name}}</option>
               @endforeach
@@ -43,15 +43,15 @@
         </div>
         <div class="form-group">
             <label class="text-dark" for="title">Title :</label>
-            <input type="text" class="form-control" name="title"/>
+            <input type="text" class="form-control" name="title" required/>
         </div>
         <div class="form-group">
             <label class="text-dark" for="description">Description :</label>
-            <input type="text" class="form-control" name="description"/>
+            <input type="text" class="form-control" name="description" required/>
         </div>
         <div class="form-group">
             <label class="text-dark" for="video_url">video_url :</label>
-            <input type="text" class="form-control" name="video_url"/>
+            <input type="text" class="form-control" name="video_url" required/>
         </div>
         <button type="submit" class="btn btn-primary">Add Video</button>
       </form>

@@ -47,14 +47,9 @@ iframe {
     <h6 class="text-dark">Module: {{$video->module->name}}</h6>
   </div>
   <div class="col-lg-12 mb-4 col-md-12 col-sm-12 col-xs-12" align="center">
-    <div class="pb-3 pt-4 px-4">
-
-        <div class="top">
-          <div class="wrapper">
-            {!! $video->video_url !!}
-          </div>
-        </div>
-    </div>
+    <video width="100%" height="auto" controls controlsList="nodownload" src="{{asset('storage/videos')}}/{{$video->video_url}}">
+    Your browser does not support the video tag.
+    </video>
   </div>
 </div>
 

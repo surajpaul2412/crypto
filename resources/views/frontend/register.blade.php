@@ -1,6 +1,10 @@
 @extends('layouts.frontend.app')
-@section('title')
-<title>Crypto Cipher</title>
+@section('metas')
+<title>Admissions are open now | Crypto Cipher ®</title>
+<meta name="description" content="Sound Engineering & Music Production Course Admissions Crypto Cipher Admission form, fee details, batch commencement dates & registration.">
+<meta property="og:title" content="Admissions are open now | Crypto Cipher" />
+<meta property="og:image:url" content="{{asset('assets/backend/images/fav.png')}}" />
+<meta property="og:description" content="Sound Engineering & Music Production Course Admissions Crypto Cipher Admission form, fee details, batch commencement dates & registration." />
 @endsection
 
 @section('css')
@@ -122,13 +126,12 @@
 </style>
 @endsection
 
-
 @section('content')
 <div class="bg-theme1 main-inner">
     <section class="container slider-header">
         <!-- title -->
         <div class="px-3 pt-4 media-pt-0">
-            <h6 class="font-regular text-grey2 pl-2 pb-0 font-13 inner-title uppercase">Course registration</h6>
+            <h1 class="font-regular text-grey2 pl-2 pb-0 font-13 inner-title uppercase">Course registration</h1>
             <h4 class="font-black text-black font-35 marT-10">Admission Procedure</h4>
         </div>
         <!-- content -->
@@ -144,10 +147,18 @@
                     <div class="alert alert-danger">{{ session('error') }}</div>
                     @endif
                     <div class="font-regular pb-3 font-13 text-grey2 px-3 media-px">
-                        Please note our all admissions happens through this page only ( url ) via online payment gateway and filling the form and paying registration amount confirms your seat.<br>
+                        <span class="bold">Please note Registration of your seat is done in two steps:</span><br><br>
+                        <span class="bold text-black">Step A :</span> Online Payment of Rs 11800, Call Academy Counsellor <a class="text-grey2 bold font-regular" href="tel:9910092983">9910092983</a> and ask for 24 hours valid online quick payment link.<br>
+                        <span class="bold text-black">Step B :</span> Submit the form available on this below given page.<br><br>
+
+                        <span class="bold text-black">01.</span> Upload your signatures & parents/guardian signatures after reading all terms & conditions mentioned under this page.<br>
+                        <span class="bold text-black">02.</span> You'll receive the confirmation of your seat within 24 hours after filling the form below & Submitting Registration amount. Registration Fees is not extra payment, It is part of your fees.<br>
+                        <span class="bold text-black">03.</span> Incase you need any support or have any queries then don’t hesitate and contact at <a class="text-grey2 bold font-regular" href="tel:9910092983">9910092983</a> or email us at <a class="text-grey2 bold font-regular" href="mailto:academy@cryptocipher.in">academy@cryptocipher.in</a>.
+
+                        <!-- Please note our all admissions happens through this page only ( url ) via online payment gateway and filling the form and paying registration amount confirms your seat.<br>
                         <span class="bold">01.</span> Upload your signatures & parents/guardian signatures after reading all terms & conditions mentioned under this page.<br>
-                        <span class="bold">02.</span> You ll receive the confirmation of your seat just after filling the form and paying registration amount of <span class="bold">₹ 11800.</span> Your Registration amount is part of your total fees.<br>
-                        <span class="bold">03.</span> Incase you need any support or have any queries then don’t hesitate and contact at <a class="text-grey2 bold font-regular" href="callto:9910092983">9910092983</a> or email us at <a class="text-grey2 bold font-regular" href="mailto:academy@cryptocipher.in">academy@cryptocipher.in</a>
+                        <span class="bold">02.</span> You'll receive the confirmation of your seat just after filling the form below.<br>
+                        <span class="bold">03.</span> Incase you need any support or have any queries then don’t hesitate and contact at <a class="text-grey2 bold font-regular" href="callto:9910092983">9910092983</a> or email us at <a class="text-grey2 bold font-regular" href="mailto:academy@cryptocipher.in">academy@cryptocipher.in</a> -->
                     </div>
                     <div class="font-medium text-black font-12 px-3 media-px">
                         Fill The Form ( Select Your Batch & Fill all your personal details )
@@ -170,7 +181,7 @@
                                         <span class="font-regular font-12 text-grey2">Select Course</span>
                                         <div class="mobile-d-grid">
                                             <span>
-                                                <input type="radio" id="music" name="course" value="Music Production">
+                                                <input type="radio" id="music" name="course" value="Music Production" required>
                                                 <label class="pl-2" for="music">Music Production</label>
                                             </span>
                                             <span class="pl-3 media-pl-0">
@@ -185,17 +196,20 @@
                                         </div>
                                         <span class="font-regular font-12 text-grey2">Batch Commencement</span>
                                         <div class="mobile-d-grid">
+                                            @php
+                                                $homeNotification = $homeNotification->first();
+                                            @endphp
                                             <span>
-                                                <input type="radio" id="april" name="batch" value="30th April 2020">
-                                                <label class="pl-2" for="april">30th April 2020</label>
+                                                <input type="radio" id="april" name="batch" value="{{$homeNotification->register_date1}}" required>
+                                                <label class="pl-2" for="april">{{$homeNotification->register_date1}}</label>
                                             </span>
                                             <span class="pl-3 media-pl-0">
-                                                <input type="radio" id="may" name="batch" value="10th May 2020">
-                                                <label class="pl-2" for="may">10th May 2020</label>
+                                                <input type="radio" id="may" name="batch" value="{{$homeNotification->register_date2}}">
+                                                <label class="pl-2" for="may">{{$homeNotification->register_date2}}</label>
                                             </span>
                                             <span class="pl-3 media-pl-0">
-                                                <input type="radio" id="jun" name="batch" value="1st Jun 2020">
-                                                <label class="pl-2" for="jun">1st Jun 2020</label>
+                                                <input type="radio" id="jun" name="batch" value="{{$homeNotification->register_date3}}">
+                                                <label class="pl-2" for="jun">{{$homeNotification->register_date3}}</label>
                                             </span>
                                             @error('batch')
                                                 <span class="invalid-feedback" role="alert">
@@ -221,7 +235,7 @@
                                 <!-- Student Details -->
                                 <h5 class="font-medium text-black font-14 pt-3">Student Details</h5>
                                 <div class="md-form mt-0 w-100">
-                                    <input type="text" class="form-control" name="name" required>
+                                    <input type="text" class="form-control" name="name" required value="{{ old('name') }}">
                                     <label>Student Name</label>
                                     @error('name')
                                         <span class="invalid-feedback" role="alert">
@@ -231,7 +245,7 @@
                                 </div>
                                 <!-- phone number -->
                                 <div class="md-form mt-0 w-100">
-                                    <input type="number" class="form-control" name="phone" required>
+                                    <input type="number" class="form-control" name="phone" required value="{{ old('phone') }}">
                                     <label>Phone Number</label>
                                     @error('phone')
                                         <span class="invalid-feedback" role="alert">
@@ -241,7 +255,7 @@
                                 </div>
                                 <!-- email -->
                                 <div class="md-form mt-0 w-100">
-                                    <input type="email" class="form-control" name="email" required>
+                                    <input type="email" class="form-control" name="email" required value="{{ old('email') }}">
                                     <label>Email ID</label>
                                     @error('email')
                                         <span class="invalid-feedback" role="alert">
@@ -251,7 +265,7 @@
                                 </div>
                                 <!-- Address -->
                                 <div class="md-form mt-0 w-100">
-                                    <input type="text" class="form-control" name="address" required>
+                                    <input type="text" class="form-control" name="address" required value="{{ old('address') }}">
                                     <label>Address</label>
                                     @error('address')
                                         <span class="invalid-feedback" role="alert">
@@ -262,7 +276,7 @@
                                 <!-- Address -->
                                 <div class="md-form mt-0 w-100 form-row">
                                     <div class="col-6 pr-3">
-                                        <input type="text" name="nationality" class="form-control pr-3">
+                                        <input type="text" name="nationality" class="form-control pr-3" required value="{{ old('nationality') }}">
                                         <label class="pr-3 pl-1">Nationality</label>
                                         @error('nationality')
                                             <span class="invalid-feedback" role="alert">
@@ -271,7 +285,7 @@
                                         @enderror
                                     </div>
                                     <div class="col-6 pl-3">
-                                        <input type="text" name="pincode" class="form-control pl-3">
+                                        <input type="text" name="pincode" class="form-control pl-3" value="{{ old('pincode') }}">
                                         <label class="pl-3">Pincode</label>
                                         @error('pincode')
                                             <span class="invalid-feedback" role="alert">
@@ -282,7 +296,7 @@
                                 </div>
                                 <!-- DOB -->
                                 <div class="md-form mt-0 w-100">
-                                    <input type="text" name="fathers_name" class="form-control">
+                                    <input type="text" name="fathers_name" class="form-control" required value="{{ old('fathers_name') }}">
                                     <label>Father's/Guardian Name</label>
                                     @error('fathers_name')
                                         <span class="invalid-feedback" role="alert">
@@ -292,7 +306,7 @@
                                 </div>
                                 <!-- parents details -->
                                 <div class="md-form mt-0 w-100">
-                                    <input type="tel" name="fathers_phone" class="form-control">
+                                    <input type="tel" name="fathers_phone" class="form-control" required value="{{ old('fathers_phone') }}">
                                     <label>Father's/Guardian Mobile Number</label>
                                     @error('fathers_phone')
                                         <span class="invalid-feedback" role="alert">
@@ -301,7 +315,7 @@
                                     @enderror
                                 </div>
                                 <div class="md-form mt-0 w-100">
-                                    <input type="text" name="guardian_name" class="form-control">
+                                    <input type="text" name="guardian_name" class="form-control" value="{{ old('guardian_name') }}">
                                     <label>Mother's/Guardian Name</label>
                                     @error('guardian_name')
                                         <span class="invalid-feedback" role="alert">
@@ -310,7 +324,7 @@
                                     @enderror
                                 </div>
                                 <div class="md-form mt-0 w-100">
-                                    <input type="tel" name="guardian_phone" class="form-control">
+                                    <input type="tel" name="guardian_phone" class="form-control" value="{{ old('guardian_phone') }}">
                                     <label>Mother's/Guardian Mobile Number</label>
                                     @error('guardian_phone')
                                         <span class="invalid-feedback" role="alert">
@@ -319,7 +333,7 @@
                                     @enderror
                                 </div>
                                 <div class="md-form mt-0 w-100">
-                                    <input type="text" name="guardian_occupation" class="form-control">
+                                    <input type="text" name="guardian_occupation" class="form-control" value="{{ old('guardian_occupation') }}">
                                     <label>Father's Occupation</label>
                                     @error('guardian_occupation')
                                         <span class="invalid-feedback" role="alert">
@@ -335,7 +349,7 @@
                                         <label class="pl-2" for="yes">Applicable</label>
                                     </span>
                                     <span class="pl-3">
-                                        <input type="radio" id="no" name="gst" value="1">
+                                        <input type="radio" id="no" name="gst" value="1" required>
                                         <label class="pl-2" for="no">Not Applicable</label>
                                     </span>
                                     @error('gst')
@@ -383,7 +397,7 @@
                                     </div>
                                     <div class="col-md-4 media-pt-4">
                                         <div class="md-form mt-0 w-100 form-row">
-                                            <input type="text" class="form-control pl-3" name="10_school">
+                                            <input type="text" class="form-control pl-3" name="10_school" value="{{ old('10_school') }}">
                                             <label class="pl-3">Name of School / College</label>
                                             @error('10_school')
                                                 <span class="invalid-feedback" role="alert">
@@ -394,7 +408,7 @@
                                     </div>
                                     <div class="col-md-2">
                                         <div class="md-form mt-0 w-100 form-row px-2">
-                                            <input type="text" class="form-control px-2" name="10_year">
+                                            <input type="text" class="form-control px-2" name="10_year" value="{{ old('10_year') }}">
                                             <label class="px-2">Year</label>
                                             @error('10_year')
                                                 <span class="invalid-feedback" role="alert">
@@ -405,7 +419,7 @@
                                     </div>
                                     <div class="col-md-3">
                                         <div class="md-form mt-0 w-100 form-row">
-                                            <input type="text" class="form-control pl-3" name="10_board">
+                                            <input type="text" class="form-control pl-3" name="10_board" value="{{ old('10_board') }}">
                                             <label class="pl-3">Board / University</label>
                                             @error('10_board')
                                                 <span class="invalid-feedback" role="alert">
@@ -423,7 +437,7 @@
                                     </div>
                                     <div class="col-md-4 media-pt-4">
                                         <div class="md-form mt-0 w-100 form-row">
-                                            <input type="text" class="form-control pl-3" name="12_school">
+                                            <input type="text" class="form-control pl-3" name="12_school" value="{{ old('12_school') }}">
                                             <label class="pl-3">Name of School / College</label>
                                             @error('12_school')
                                                 <span class="invalid-feedback" role="alert">
@@ -434,7 +448,7 @@
                                     </div>
                                     <div class="col-md-2">
                                         <div class="md-form mt-0 w-100 form-row px-2">
-                                            <input type="text" class="form-control px-2" name="12_year">
+                                            <input type="text" class="form-control px-2" name="12_year" value="{{ old('12_year') }}">
                                             <label class="px-2">Year</label>
                                             @error('12_year')
                                                 <span class="invalid-feedback" role="alert">
@@ -445,7 +459,7 @@
                                     </div>
                                     <div class="col-md-3">
                                         <div class="md-form mt-0 w-100 form-row">
-                                            <input type="text" class="form-control pl-3" name="12_board">
+                                            <input type="text" class="form-control pl-3" name="12_board" value="{{ old('12_board') }}">
                                             <label class="pl-3">Board / University</label>
                                             @error('12_board')
                                                 <span class="invalid-feedback" role="alert">
@@ -463,7 +477,7 @@
                                     </div>
                                     <div class="col-md-4 media-pt-4">
                                         <div class="md-form mt-0 w-100 form-row">
-                                            <input type="text" class="form-control pl-3" name="ug_school">
+                                            <input type="text" class="form-control pl-3" name="ug_school" value="{{ old('ug_school') }}">
                                             <label class="pl-3">Name of School / College</label>
                                             @error('ug_school')
                                                 <span class="invalid-feedback" role="alert">
@@ -474,7 +488,7 @@
                                     </div>
                                     <div class="col-md-2">
                                         <div class="md-form mt-0 w-100 form-row px-2">
-                                            <input type="text" class="form-control px-2" name="ug_year">
+                                            <input type="text" class="form-control px-2" name="ug_year" value="{{ old('ug_year') }}">
                                             <label class="px-2">Year</label>
                                             @error('ug_year')
                                                 <span class="invalid-feedback" role="alert">
@@ -485,7 +499,7 @@
                                     </div>
                                     <div class="col-md-3">
                                         <div class="md-form mt-0 w-100 form-row">
-                                            <input type="text" class="form-control pl-3" name="ug_board">
+                                            <input type="text" class="form-control pl-3" name="ug_board" value="{{ old('ug_board') }}">
                                             <label class="pl-3">Board / University</label>
                                             @error('ug_board')
                                                 <span class="invalid-feedback" role="alert">
@@ -503,7 +517,7 @@
                                     </div>
                                     <div class="col-md-4 media-pt-4">
                                         <div class="md-form mt-0 w-100 form-row">
-                                            <input type="text" class="form-control pl-3" name="g_school">
+                                            <input type="text" class="form-control pl-3" name="g_school" value="{{ old('g_school') }}">
                                             <label class="pl-3">Name of School / College</label>
                                             @error('g_school')
                                                 <span class="invalid-feedback" role="alert">
@@ -514,7 +528,7 @@
                                     </div>
                                     <div class="col-md-2">
                                         <div class="md-form mt-0 w-100 form-row px-2">
-                                            <input type="text" class="form-control px-2" name="g_year">
+                                            <input type="text" class="form-control px-2" name="g_year" value="{{ old('g_year') }}">
                                             <label class="px-2">Year</label>
                                             @error('g_year')
                                                 <span class="invalid-feedback" role="alert">
@@ -525,7 +539,7 @@
                                     </div>
                                     <div class="col-md-3">
                                         <div class="md-form mt-0 w-100 form-row">
-                                            <input type="text" class="form-control pl-3" name="g_board">
+                                            <input type="text" class="form-control pl-3" name="g_board" value="{{ old('g_board') }}">
                                             <label class="pl-3">Board / University</label>
                                             @error('g_board')
                                                 <span class="invalid-feedback" role="alert">
@@ -543,7 +557,7 @@
                                     </div>
                                     <div class="col-md-4 media-pt-4">
                                         <div class="md-form mt-0 w-100 form-row">
-                                            <input type="text" class="form-control pl-3" name="pg_school">
+                                            <input type="text" class="form-control pl-3" name="pg_school" value="{{ old('pg_school') }}">
                                             <label class="pl-3">Name of School / College</label>
                                             @error('pg_school')
                                                 <span class="invalid-feedback" role="alert">
@@ -554,7 +568,7 @@
                                     </div>
                                     <div class="col-md-2">
                                         <div class="md-form mt-0 w-100 form-row px-2">
-                                            <input type="text" class="form-control px-2" name="pg_year">
+                                            <input type="text" class="form-control px-2" name="pg_year" value="{{ old('pg_year') }}">
                                             <label class="px-2">Year</label>
                                             @error('pg_year')
                                                 <span class="invalid-feedback" role="alert">
@@ -565,7 +579,7 @@
                                     </div>
                                     <div class="col-md-3">
                                         <div class="md-form mt-0 w-100 form-row">
-                                            <input type="text" class="form-control pl-3" name="pg_board">
+                                            <input type="text" class="form-control pl-3" name="pg_board" value="{{ old('pg_board') }}">
                                             <label class="pl-3">Board / University</label>
                                             @error('pg_board')
                                                 <span class="invalid-feedback" role="alert">
@@ -580,7 +594,7 @@
                                 <h5 class="font-medium text-black font-14 pt-3">Education Stream</h5>
                                 <div class="mobile-d-grid">
                                     <span>
-                                        <input type="radio" id="stream1" name="stream" value="Science">
+                                        <input type="radio" id="stream1" name="stream" value="Science" required>
                                         <label class="pl-2" for="stream1">Science</label>
                                     </span>
                                     <span class="pl-3 media-pl-0">
@@ -602,7 +616,7 @@
                                     @enderror
                                 </div>
                                 <div class="md-form mt-0 w-100">
-                                    <input type="text" class="form-control" name="music_bg_info">
+                                    <input type="text" class="form-control" name="music_bg_info" value="{{ old('music_bg_info') }}">
                                     <label class="bold">Music/Audio Background Information:</label>
                                     @error('music_bg_info')
                                         <span class="invalid-feedback" role="alert">
@@ -611,7 +625,7 @@
                                     @enderror
                                 </div>
                                 <div class="md-form mt-0 w-100">
-                                    <input type="text" class="form-control media-pt-20px" name="plans">
+                                    <input type="text" class="form-control media-pt-20px" name="plans" value="{{ old('plans') }}">
                                     <label class="bold">What are your future plans related to Audio Industry?</label>
                                     @error('plans')
                                         <span class="invalid-feedback" role="alert">
@@ -620,7 +634,7 @@
                                     @enderror
                                 </div>
                                 <div class="md-form mt-0 w-100">
-                                    <input type="text" class="form-control" name="health_problem">
+                                    <input type="text" class="form-control" name="health_problem" value="{{ old('health_problem') }}">
                                     <label class="bold">Any Health Problem</label>
                                     @error('health_problem')
                                         <span class="invalid-feedback" role="alert">
@@ -628,10 +642,63 @@
                                         </span>
                                     @enderror
                                 </div>
+
+                                <!-- verification -->
+                                <h5 class="font-medium text-black font-14 pt-3">Identity Verification</h5>
+                                <div class="row">
+                                    <div class="col-md-6 col-12">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="md-form mt-0 w-100 form-row">
+                                                    <label class="pl-3">Identity Type.</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 media-pt-4">
+                                                <div class="md-form mt-2 w-100 form-row">
+                                                    <select class="form-control" name="id_type" required>
+                                                        <option value="">-- Select id type --</option>
+                                                        <option value="Passport">Passport</option>
+                                                        <option value="Pan Card">Pan Card</option>                      
+                                                        <option value="Aadhar Card">Aadhar Card</option>
+                                                    </select>
+                                                    @error('id_type')
+                                                        <span class="invalid-feedback" role="alert">
+                                                            <strong>{{ $message }}</strong>
+                                                        </span>
+                                                    @enderror
+                                                </div>
+                                            </div>
+                                            <!-- test -->
+                                            <div class="col-md-6">
+                                                <div class="md-form mt-0 w-100 form-row">
+                                                    <label class="pl-3">Identity no.</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 media-pt-4">
+                                                <div class="md-form mt-0 w-100 form-row">
+                                                    <input type="text" class="form-control pl-3" name="id_no" required value="{{ old('id_no') }}">
+                                                    <label class="pl-3">Identity Number</label>
+                                                    @error('id_no')
+                                                        <span class="invalid-feedback" role="alert">
+                                                            <strong>{{ $message }}</strong>
+                                                        </span>
+                                                    @enderror
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-12">
+                                        <label class="bold">Identity proof</label><br>
+                                        <div id="student_verify" class="border">
+                                            <student_verify class="pointer"></student_verify>
+                                        </div>
+                                    </div>
+                                </div>
+
                                 <div class="d-flex">
                                     <button type="reset" class="font-bold font-13 text-grey2 mt-2 btn-reset">
                                         <div class="font-bold pt-1 mt-1">
-                                            <img class="pr-2 pb-1" src="{{ asset('assets/frontend/img/reset.svg') }}"> Reset Form
+                                            <img class="pr-2 pb-1" alt="reset" src="{{ asset('assets/frontend/img/reset.svg') }}"> Reset Form
                                         </div>
                                     </button>
                                 </div>
@@ -692,10 +759,10 @@
                             </div>
                             <div class="py-3">
                                 <span>
-                                    <a href="tel:9910092983" class="font-bold text-dark font-22"><img class="pb-1" src="{{ asset('assets/frontend/img/call.svg') }}" width="22px"> Call US 9910092983</a>
+                                    <a href="tel:9910092983" class="font-bold text-dark font-22"><img class="pb-1" alt="call" src="{{ asset('assets/frontend/img/call.svg') }}" width="22px"> Call US 9910092983</a>
                                 </span>
                                 <span class="pl-4">
-                                    <a href="mailto:academy@cryptocipher.in" class="font-bold text-dark font-22"><img src="{{ asset('assets/frontend/img/mailGrey.svg') }}" width="26px"> academy@cryptocipher.in</a>
+                                    <a href="mailto:academy@cryptocipher.in" class="font-bold text-dark font-22"><img alt="mailGrey" src="{{ asset('assets/frontend/img/mailGrey.svg') }}" width="26px"> academy@cryptocipher.in</a>
                                 </span>
                             </div>
                                 
@@ -719,7 +786,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <span class="font-bold font-14 text-black pr-3">Registration Fee : ₹ 11,800</span>
+                            <!-- <span class="font-bold font-14 text-black pr-3">Registration Fee : ₹ 11,800</span> -->
                             <button id="myButton" type="submit" class="btn btn-mt-2 button" disabled>Register</button>
                             <button type="submit" class="print btn button1">download form</button>                            
                         </div>
@@ -779,7 +846,7 @@
 Vue.component('parent_sign', {
   template: `
   <span @click="openUpload">
-    <img ref="preview" :src="showImage" style="cursor:pointer;width:100%;">
+    <img ref="preview" :src="showImage" style="cursor:pointer;width:100%;" alt="upload">
     <input ref="input" @change="previewImage" type="file" id="file-field" name="signature1" style="display: none"/>
   </span>`,
   data: () => { return {
@@ -806,7 +873,7 @@ new Vue({
 Vue.component('student_sign', {
   template: `
   <span @click="openUpload">
-    <img ref="preview" :src="showImage" style="cursor:pointer;width:100%;">
+    <img ref="preview" :src="showImage" style="cursor:pointer;width:100%;" alt="upload">
     <input ref="input" @change="previewImage" type="file" id="file-field" name="signature2" style="display: none"/>
   </span>`,
   data: () => { return {
@@ -827,6 +894,33 @@ Vue.component('student_sign', {
 });
 new Vue({
   el: '#student_sign'
+})
+
+// verification
+Vue.component('student_verify', {
+  template: `
+  <span @click="openUpload">
+    <img ref="preview" :src="showImage" style="cursor:pointer;width:100%;" alt="upload">
+    <input ref="input" @change="previewImage" type="file" id="file-field" name="signature3" style="display: none"/>
+  </span>`,
+  data: () => { return {
+    showImage: "{{asset('assets/frontend/img/upload1.png')}}"
+  }},
+  methods: {
+    openUpload () {
+      this.$refs.input.click()      
+    },
+    previewImage () {
+      var reader = new FileReader()
+      reader.readAsDataURL(this.$refs.input.files[0])
+      reader.onload = e => {
+        this.showImage = e.target.result
+      } 
+    }
+  }
+});
+new Vue({
+  el: '#student_verify'
 })
 </script>
 

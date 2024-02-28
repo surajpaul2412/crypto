@@ -18,6 +18,7 @@ class CreateHomeNotificationsTable extends Migration
             $table->string('date')->nullable();
             $table->string('seat')->nullable();
             $table->string('batch')->nullable();
+            $table->text('notify_text')->nullable();
             $table->timestamps();
         });
     }

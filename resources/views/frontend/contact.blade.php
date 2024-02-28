@@ -1,6 +1,7 @@
 @extends('layouts.frontend.app')
-@section('title')
-<title>Crypto Cipher</title>
+@section('metas')
+<title>Music & Sound Engineering Institute - Contact Us | Crypto Cipher ®</title>
+<meta name="description" content="Call , WhatsApp & email support available during official hours from 10 A.M - 5 P.M. Studio address and route guidance for Crypto Cipher Academy Location.">
 @endsection
 
 @section('css')
@@ -12,7 +13,7 @@
     <section class="container slider-header">
         <!-- title -->
         <div class="px-3 pt-4 media-pt-0">
-            <h6 class="font-regular text-grey2 pl-2 pb-0 font-13 inner-title uppercase">contact US</h6>
+            <h1 class="font-regular text-grey2 pl-2 pb-0 font-13 inner-title uppercase">contact US</h1>
             <h4 class="font-black text-black font-35 marT-10">Get In Touch With Us</h4>
         </div>
         <!-- content -->
@@ -23,27 +24,55 @@
                         <h5 class="font-regular text-dark font-22">Admission Support</h5>
                         <h6 class="font-regular text-dark font-14 pt-3">Book your studio tour & free counselling session</h6>
                         <h6 class="font-medium text-dark font-16">Time- 10 AM - 5 PM ( Sunday Closed )</h6>
-                        <form class="text-center" method="POST" action="{{route('contact_us.store')}}">
+                        <form class="text-center" method="POST" action="{{route('contact-us.store')}}">
                             @csrf
                             <!-- name -->
                             <div class="md-form mt-5 w-100">
-                                <input type="text" class="form-control" name="name" required>
+                                <input type="text" class="form-control {{ ($errors->has('name')) ? 'is-invalid' : '' }}" name="name" value="{{ old('name') }}" required>
                                 <label>Name</label>
+                                <span class="invalid-feedback" role="alert">
+                                  @if ($errors->has('name'))
+                                      {{ $errors->first('name') }}
+                                  @else
+                                      Name is required
+                                  @endif
+                                </span>
                             </div>
                             <!-- phone number -->
                             <div class="md-form mt-0 w-100">
-                                <input type="number" class="form-control" name="phone" required>
+                                <input type="number" class="form-control {{ ($errors->has('phone')) ? 'is-invalid' : '' }}" name="phone" value="{{ old('phone') }}" required>
                                 <label>Phone number</label>
+                                <span class="invalid-feedback" role="alert">
+                                  @if ($errors->has('phone'))
+                                      {{ $errors->first('phone') }}
+                                  @else
+                                      Name is required
+                                  @endif
+                                </span>
                             </div>
                             <!-- E-mail -->
                             <div class="md-form mt-0 w-100">
-                                <input type="email" class="form-control" name="email" required>
+                                <input type="email" class="form-control {{ ($errors->has('email')) ? 'is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
                                 <label>Email ID</label>
+                                <span class="invalid-feedback" role="alert">
+                                  @if ($errors->has('email'))
+                                      {{ $errors->first('email') }}
+                                  @else
+                                      Name is required
+                                  @endif
+                                </span>
                             </div>
                             <!-- message -->
                             <div class="md-form mt-0 w-100">
-                                <textarea class="form-control md-textarea" name="message" rows="5"></textarea>
-                                <label>Message</label>
+                                <textarea class="form-control md-textarea {{ ($errors->has('message')) ? 'is-invalid' : '' }}" name="message" rows="5"></textarea>
+                                <label>Tell something about yourself !</label>
+                                <span class="invalid-feedback" role="alert">
+                                  @if ($errors->has('message'))
+                                      {{ $errors->first('message') }}
+                                  @else
+                                      Name is required
+                                  @endif
+                                </span>
                             </div>
                             <div class="mx-3 mb-2 mt-3">
                                 <button type="submit" class="page-6-btn font-bold w-100">
@@ -68,7 +97,7 @@
                         <div class="col-md-12 col-12">
                             <div class="row py-3">
                                 <div class="col-md-1 col-12">
-                                    <img src="{{ asset('assets/frontend/img/building.svg') }}" width="38px" class="px-2">
+                                    <img src="{{ asset('assets/frontend/img/building.svg') }}" alt="building" width="38px" class="px-2">
                                 </div>
                                 <div class="col-md-11 col-12 media-contact-px-2">
                                     <h5 class="font-bold text-grey2 font-14">ADDRESS</h5>
@@ -86,7 +115,7 @@
                         <div class="col-md-12 col-12">
                             <div class="row py-3">
                                 <div class="col-md-1 col-12">
-                                    <img src="{{ asset('assets/frontend/img/scooter.svg') }}" width="42px" class="px-2">
+                                    <img src="{{ asset('assets/frontend/img/scooter.svg') }}" alt="scooter" width="42px" class="px-2">
                                 </div>
                                 <div class="col-md-11 col-12 media-contact-px-2">
                                     <h5 class="font-bold text-grey2 font-14">PERSONAL VEHICLE FOLLOW GOOGLE MAP</h5>
@@ -105,12 +134,16 @@
                         <div class="col-md-12 col-12">
                             <div class="row py-3">
                                 <div class="col-md-1 col-12">
-                                    <img src="{{ asset('assets/frontend/img/subway.svg') }}" width="36px" class="px-2">
+                                    <img src="{{ asset('assets/frontend/img/subway.svg') }}" alt="subway" width="36px" class="px-2">
                                 </div>
                                 <div class="col-md-11 col-12 media-contact-px-2">
                                     <h5 class="font-bold text-grey2 font-14">METRO ROUTE</h5>
-                                    <div class="font-regular text-grey2 font-13">
-                                        Jahangir Puri Metro (Gate no.1 ) > Take E-Rikhshaw ( Haider Pur Dispensary ) > Look for Ramji Lal complex > Come to second floor.
+                                    <div class="font-regular text-grey2 font-13 pr-3">
+                                        Haider Pur Metro > Take E-Rikhshaw > DA Block Market > Look for Ramji Lal Complex > Come to Second Floor
+                                    </div>
+
+                                    <div class="font-regular text-grey2 font-13 mt-3 pr-3">
+                                        Jahangir Puri Metro (Gate no.1) > Take E-Rikhshaw ( Haider Pur Dispensary ) > Look for Ramji Lal complex > Come to second floor.
                                     </div>
                                 </div>
                             </div>
@@ -118,10 +151,10 @@
                     </div>
                 </div>
                 <div class="font-regular text-grey2 font-13 pl-1">
-                    We value and eagerly await your response to the products and services that you have received from us. Please provide us with your feedback below,
+                    We value and eagerly await your response to the products and services that you have received from us. Please provide us with your feedback below
                     <div class="row pt-3">
                         <div class="col-md-1 pl-2 col-1">
-                            <img src="{{ asset('assets/frontend/img/telephone-green.svg') }}" width="36px" class="px-2">
+                            <img src="{{ asset('assets/frontend/img/telephone-green.svg') }}" alt="telephone-green" width="36px" class="px-2">
                         </div>
                         <div class="col-md-11 col-11">
                             <h5 class="font-bold text-dark font-18">
@@ -129,9 +162,9 @@
                             </h5>
                         </div>
                     </div>
-                    <div class="row pt-2">
+                    <div class="row pt-0 mt-0">
                         <div class="col-md-1 pl-2 col-1">
-                            <img src="{{ asset('assets/frontend/img/mail.svg') }}" width="40px" class="px-2">
+                            <img src="{{ asset('assets/frontend/img/mail.svg') }}" alt="mail" width="40px" class="px-2">
                         </div>
                         <div class="col-md-11 col-11">
                             <h5 class="font-bold text-dark font-18">

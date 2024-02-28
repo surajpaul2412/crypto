@@ -1,6 +1,8 @@
 @extends('layouts.frontend.app')
-@section('title')
-<title>Crypto Cipher</title>
+@section('metas')
+<title>Sound Engineering & Music Production News & Articles | Crypto Cipher ®</title>
+<meta name="keywords" content="Logic ProX , Ableton Live, Synthesis, Mixing, Mastering, Arrangements and many tutorials helping Music Production & Sound engineering students">
+<meta name="description" content="Logic ProX , Ableton Live, Synthesis, Mixing, Mastering, Arrangements and many tutorials helping Music Production & Sound engineering students">
 @endsection
 
 @section('css')
@@ -50,11 +52,31 @@
         .media-center{
             text-align: center;
         }
+        .search-btn{
+            padding: 5% 2% !important;
+        }
+        .mx-width-65{
+           max-width: 100% !important;
+        }
     }
     .bg-green{
         background: #7EC051 !important;
         font-weight: 400;
         border-radius: 28px;
+    }
+    .search-btn{
+        padding: 2% 2%;border:none;background: transparent;
+    }
+    .mx-width-65{
+       max-width: 65%;
+    }
+    .flexcontainer {
+        min-height: 100%;
+        max-height: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        flex-wrap: wrap;
     }
 </style>
 @endsection
@@ -64,32 +86,40 @@
     <section class="container slider-header">
         <!-- title -->
         <div class="px-3 pt-4 media-pt-0">
-            <h6 class="font-regular text-grey2 pl-2 pb-0 font-13 inner-title uppercase">news & articles</h6>
+            <h1 class="font-regular text-grey2 pl-2 pb-0 font-13 inner-title uppercase">news & articles</h1>
             <h4 class="font-black text-black font-35 marT-10">Crypto Cipher Newsroom</h4>
         </div>
 
-        <div class="row px-4 pb-4">
-            <div class="col-md-12 col-12">
-                <div class="search" align="center">
-                    <input type="text" id="myFilter" class="form-control w-50 py-4" onkeyup="myFunction()" placeholder="Search Via Keyword..">
+        <div class="row">
+            <div class="col-md-12 col-12" align="center">
+                <form method="POST" action="{{route('newsroom.search')}}" class="d-flex mx-auto mx-width-65">
+                    @csrf
+                    <input type="text" class="form-control py-4 mt-1" name="search" placeholder="Search By Keyword..">
+                    <button type="submit" class="search-btn"><i class="fa fa-search fa-2x text-green"></i></button>
+                </form>
+            </div>
+
+            <div class="col-12 px-4">
+                <div class="flexcontainer">
+                    <strong class="bold font-regular mt-2 mr-2">Popular Searches :</strong>
+                    @foreach($newsTags as $tag)
+                        <a class="bg-green px-2 text-white mr-2 mt-2" style="line-height:3;font-size:10px;" href="{{route('newsroom.searchBy',$tag->tag)}}">{{$tag->tag}}</a>
+                    @endforeach
                 </div>
             </div>
-            <div class="col-md-12 col-12 mt-3">
-                <strong class="bold font-regular mt-2">Popular Searches :</strong>
-                @foreach($newsTags as $tag)
-                        <a class="bg-green px-3 text-white font-13 py-2 mr-2 mt-2">{{$tag->tag}}</a>
-                @endforeach
-            </div>
+        </div>
+
+        <div class="row px-4 pb-4">
             @foreach($news as $index => $row)
                 <div class="nav-item col-md-4 col-12 mobile-mb-3 mt-4">
                     <div class="slider-header nav-link {{$index == 0 ? 'active' : '' }}" href="#tab{{$index+1}}" data-toggle="tab">
                         <div class="row">
                             <div class="col-md-12">
-                                <img class="lazy" data-original="{{env('image_url')}}/news/{{$row->image}}" width="100%">
+                                <div class="" class="lazy" style="background: url('{{env('image_url')}}/news/{{$row->image}}');background-origin: center;background-size:cover;background-repeat: no-repeat;height: 250px;"></div>
                             </div>
                             <div class="col-md-12 bold title">
-                                <div class="px-2 pt-2">
-                                    {{ \Illuminate\Support\Str::limit($row->title, 35, $end='...') }}
+                                <div class="px-2 pt-2" style="height:58px;overflow-y: hidden;">
+                                    {{ \Illuminate\Support\Str::limit($row->title, 58, $end='...') }}
                                 </div>                                
                             </div>
                             <div class="col-md-12 py-2 px-4">
@@ -97,13 +127,15 @@
                                     <div class="col-md-4 col-6 media-center" align="left">
                                         <h6 class="mt-2">
                                             <button class="page-4-btn font-regular" onclick="document.location.href='{{route('newsroom.show',$row->slug)}}';">
-                                                View More <i class="fas fa-angle-right pl-1"></i>
+                                                View More
+                                                <!-- <i class="fas fa-angle-right pl-1"></i> -->
                                             </button>
                                         </h6>
                                     </div>
                                     <div class="col-md-8 col-6 media-pt-1 media-center" align="right">
                                         <button class="desktop-d-none page-4-btn font-regular" data-toggle="modal" data-target="#myModal{{$index+1}}">
-                                            Read More <i class="fas fa-angle-right pl-1"></i>
+                                            Read More
+                                            <!-- <i class="fas fa-angle-right pl-1"></i> -->
                                         </button>
                                         <span class="font-regular font-11 mobile-d-none text-dark">{{$row->created_at}}</span>
                                     </div>
@@ -112,7 +144,10 @@
                         </div>
                     </div>
                 </div>
-                @endforeach
+            @endforeach
+            <div class="col-md-12 col-12 mt-4" align="center">
+                {{$news->links()}}
+            </div>
         </div>
     </section>
 </div>
@@ -125,7 +160,7 @@
         <div class="modal-dialog modal-lg modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-body p-1">
-                    <img data-original="{{env('image_url')}}/news/{{$row->image}}" class="lazy d-block mx-auto" width="100%">
+                    <img alt="{{$row->title}}" data-original="{{env('image_url')}}/news/{{$row->image}}" class="lazy d-block mx-auto" width="100%">
                     <div class="font-bold text-black pt-3 px-2" style="text-align: justify;">{{$row->title}}</div>
                     <p class="font-regular text-grey2 px-2 pt-2">{!! $row->content !!}</p>
                 </div>
@@ -141,26 +176,6 @@
 @endsection
 
 @section('script')
-<!-- search filter -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script>
-function myFunction() {
-    var input, filter, cards, cardContainer, h5, title, i;
-    input = document.getElementById("myFilter");
-    filter = input.value.toUpperCase();
-    cardContainer = document.getElementById("myItems");
-    cards = cardContainer.getElementsByClassName("nav-item");
-    for (i = 0; i < cards.length; i++) {
-        title = cards[i].querySelector(".nav-link .row .title");
-        if (title.innerText.toUpperCase().indexOf(filter) > -1) {
-            cards[i].style.display = "";
-        } else {
-            cards[i].style.display = "none";
-        }
-    }
-}
-</script>
 <!-- lazyloader -->
 <script src="js/customLazy.js"></script>
 <script src="https://rawgit.com/intoro/Lazy_Load_JQuery/master/js/2_2_4_jquery.min.js"></script>

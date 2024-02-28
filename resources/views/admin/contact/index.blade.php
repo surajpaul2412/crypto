@@ -35,6 +35,7 @@
           <th>Phone</th>
           <th>Message</th>
           <th>Date</th>
+          <th>Delete</th>
         </tr>
     </thead>
     <tbody>
@@ -42,10 +43,18 @@
       <tr>
         <th>{{$index+1}}.</th>
         <td class="bold">{{$contact->name}}</td>
-        <td>{{$contact->email}}</td>
-        <td>{{$contact->phone}}</td>
-        <td>{{ \Illuminate\Support\Str::limit($contact->message, 80, $end='...') }}</td>
+        <td><a href="mailto:{{$contact->email}}" class="font-weight-bold text-info">{{$contact->email}}</a></td>
+        <td><a href="tel:{{$contact->phone}}" class="font-weight-bold text-info">{{$contact->phone}}</a></td>
+        <!-- <td>{{ \Illuminate\Support\Str::limit($contact->message, 880, $end='...') }}</td> -->
+        <td class="font-weight-normal">{{$contact->message}}</td>
         <td class="bold">{{$contact->created_at}}</td>
+        <td>
+          <form action="{{route('admin.contact.destroy',$contact->id)}}" method="post">
+            @method('delete')
+            @csrf
+            <button class="badge badge-danger" type="submit">Delete</button>
+          </form>
+        </td>
       </tr>
       @endforeach
     </tbody>

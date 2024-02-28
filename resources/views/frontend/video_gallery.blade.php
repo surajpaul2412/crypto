@@ -1,6 +1,7 @@
 @extends('layouts.frontend.app')
-@section('title')
-<title>Crypto Cipher | Video Gallery</title>
+@section('metas')
+<title>Crypto Cipher Video Gallery | Youtube Videos | Crypto Cipher ®</title>
+<meta name="description" content="About Crypto Cipher renowned products, reviews, feedback & students success">
 @endsection
 
 @section('css')
@@ -28,7 +29,7 @@
     <section class="container slider-header">
         <!-- title -->
         <div class="px-3 pt-4 media-pt-0 pb-4">
-            <h6 class="font-regular text-grey2 pl-2 pb-0 font-13 inner-title">STUDENT AND COMPANY WORK</h6>
+            <h1 class="font-regular text-grey2 pl-2 pb-0 font-13 inner-title">STUDENT AND COMPANY WORK</h1>
             <h4 class="font-black text-black font-35 marT-10">Video Gallery</h4>
         </div>
         <!-- content -->
@@ -42,7 +43,7 @@
                         @foreach($row->videoGalleryUrls as $key => $video)
                             <div class="col-md-4 col-12 py-3">
                                 <a type="button" class="video-btn" data-toggle="modal" data-src="https://www.youtube.com/embed/{{$video->url}}" data-target="#myModal{{$video->id}}" style="width: 100%;">
-                                    <img src="//img.youtube.com/vi/{{$video->url}}/0.jpg" width="100%">
+                                    <img alt="{{$video->url}}" src="//img.youtube.com/vi/{{$video->url}}/0.jpg" width="100%">
                                 </a>
                             </div>
                         @endforeach

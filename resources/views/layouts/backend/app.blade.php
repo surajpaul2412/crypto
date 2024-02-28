@@ -36,6 +36,8 @@
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
     <!-- custom css -->
     <link href="{{ asset('assets/backend/css/custom.css') }}" rel="stylesheet" />
+    <meta name="google-site-verification" content="0U-h6zOkdjXdokVXza1kzxJD9Q43mw9vje1bhV6fzDU" />
+    <link rel="canonical" href="https://www.cryptocipheracademy.com/" />
 </head>
 
 <body class="theme-red">

@@ -4,9 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Downloads;
+use App\DownloadForm;
 use App\HomeNotification;
 use App\Menu;
 use App\DesktopMenuSection;
+use Illuminate\Support\Facades\URL;
+use Illuminate\Support\Facades\Storage;
+use Mail;
 
 class DownloadController extends Controller
 {
@@ -42,7 +46,32 @@ class DownloadController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name'=> 'required|min:3',
+            'email'=> 'required|email',
+            'phone'=> 'nullable|min:10'
+        ]);
+
+        $data = $request->all();
+        $data['download_id'] = $request->id;
+        DownloadForm::create($data);
+
+
+        $download = Downloads::findOrFail($request->id);
+        $download_url = URL::to('/');
+        $data['download_path'] = $download_url.'/storage/downloads/'.$download->path;
+
+        // mail download link
+        Mail::send('emails.download', $data, function($message) use ($data) {
+         $message->to($data['email'], 'Crypto Cipher Academy | Download Link')->subject
+            ('Crypto Cipher Academy | Download Request');
+         $message->from('academy@cryptocipher.in','Crypto Cipher Academy | Download Link');
+        });
+
+        $menus = Menu::orderBy('sort_by', "asc")->get();
+        $homeNotification = HomeNotification::all();
+        $desktopMenu = DesktopMenuSection::orderBy('sort_by', "asc")->get();
+        return view('frontend.showDownload', compact('download','homeNotification','menus','desktopMenu'))->with('success','Download link sent successfully ! Please check your email');
     }
 
     /**
@@ -53,7 +82,11 @@ class DownloadController extends Controller
      */
     public function show($id)
     {
-        //
+        $download = Downloads::findOrFail($id);
+        $menus = Menu::orderBy('sort_by', "asc")->get();
+        $homeNotification = HomeNotification::all();
+        $desktopMenu = DesktopMenuSection::orderBy('sort_by', "asc")->get();
+        return view('frontend.showDownload', compact('download','homeNotification','menus','desktopMenu'));
     }
 
     /**

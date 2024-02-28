@@ -28,19 +28,23 @@
     @endif
       <form method="post" action="{{ route('admin.studentsWork.update', $studentsWork->id) }}" enctype="multipart/form-data">
         @method('PATCH')
-        @csrf
+        @csrf        
         <div class="form-group">
-		  <label class="text-dark" for="year">Year :</label>
-		  <input type="text" class="form-control" name="year" value="{{ $studentsWork->year }}"/>
-		</div>
-		<div class="form-group">
-		  <label class="text-dark" for="name">Name :</label>
-		  <input type="text" class="form-control" name="name" value="{{ $studentsWork->name }}"/>
-		</div>
-		<div class="form-group">
-		  <label class="text-dark" for="speciality">Speciality :</label>
-		  <input type="text" class="form-control" name="speciality" value="{{ $studentsWork->speciality }}"/>
-		</div>
+          <label class="text-dark" for="slug">Slug : <sup class="text-danger">(Don't leave any blank space between)</sup></label>
+          <input type="text" class="form-control" name="slug" value="{{ $studentsWork->slug }}"/>
+        </div>
+        <div class="form-group">
+          <label class="text-dark" for="year">Year :</label>
+          <input type="text" class="form-control" name="year" value="{{ $studentsWork->year }}"/>
+        </div>
+    		<div class="form-group">
+    		  <label class="text-dark" for="name">Name :</label>
+    		  <input type="text" class="form-control" name="name" value="{{ $studentsWork->name }}"/>
+    		</div>
+    		<div class="form-group">
+    		  <label class="text-dark" for="speciality">Speciality :</label>
+    		  <input type="text" class="form-control" name="speciality" value="{{ $studentsWork->speciality }}"/>
+    		</div>
 
     	<div class="form-group">
           <label class="text-dark" for="short_desc">Short Description :</label>
@@ -50,18 +54,6 @@
           <label class="text-dark" for="student_profile">Profile Description :</label>
           <textarea id="summernote1" class="form-control" name="student_profile">{{ $studentsWork->student_profile }}</textarea>
       	</div>
-      	<!-- <div class="form-group">
-          <label class="text-dark" for="education">Education Description :</label>
-          <textarea id="summernote2" class="form-control" name="education">{{ $studentsWork->education }}</textarea>
-      	</div>
-      	<div class="form-group">
-          <label class="text-dark" for="interest">Interest Description :</label>
-          <textarea id="summernote3" class="form-control" name="interest">{{ $studentsWork->interest }}</textarea>
-      	</div>
-      	<div class="form-group">
-          <label class="text-dark" for="work_prof">Work Professional Description :</label>
-          <textarea id="summernote4" class="form-control" name="work_prof">{{ $studentsWork->work_prof }}</textarea>
-      	</div> -->
       	<div class="form-group">
           <label class="text-dark" for="testimonial">Testimonial :</label>
           <textarea id="summernote5" class="form-control" name="testimonial">{{ $studentsWork->testimonial }}</textarea>
@@ -80,12 +72,40 @@
           <input type="hidden" name="hidden_image" value="{{ $studentsWork->image }}">
         </div>
 
+        <div class="form-group">
+            <label class="text-dark" for="meta_title">Meta Title :</label>
+            <input type="text" class="form-control" name="meta_title" value="{{$studentsWork->meta_title}}" />
+        </div>
+        <div class="form-group">
+          <label class="text-dark" for="meta_keyword">Meta Keyword :</label>
+          <textarea id="summernote1" class="form-control" name="meta_keyword" value="{{ $studentsWork->meta_keyword }}">{{ $studentsWork->meta_keyword }}</textarea>
+        </div>
+        <div class="form-group">
+          <label class="text-dark" for="meta_description">Meta Description :</label>
+          <textarea id="summernoteDesc" class="form-control" name="meta_description" value="{{ $studentsWork->meta_description }}">{{ $studentsWork->meta_description }}</textarea>
+        </div>
+
+        
         <button type="submit" class="btn btn-primary">Update Work</button>
       </form>
   </div>
 </div>
 
 <script>
+  $('#summernoteDesc').summernote({
+    placeholder: 'Add Meta Description',
+    tabsize: 2,
+    height: 150,
+    toolbar: [
+      ['style', ['style']],
+      ['font', ['bold', 'underline', 'clear']],
+      ['color', ['color']],
+      ['para', ['ul', 'ol', 'paragraph']],
+      ['table', ['table']],
+      ['insert', ['link', 'picture', 'video']],
+      ['view', ['fullscreen', 'codeview', 'help']]
+    ]
+  });
   $('#summernote').summernote({
     placeholder: 'Add Description',
     tabsize: 2,

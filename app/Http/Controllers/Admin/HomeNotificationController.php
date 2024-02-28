@@ -76,12 +76,20 @@ class HomeNotificationController extends Controller
             'seat'=> 'nullable',
             'date'=> 'nullable',
             'batch'=> 'nullable',
+            'notify_text'=> 'nullable',
+            'register_date1'=> 'nullable',
+            'register_date2'=> 'nullable',
+            'register_date3'=> 'nullable',
         ]);
 
         $form_data = array(
             'seat' => $request->seat,
             'date' => $request->date,
             'batch' => $request->batch,
+            'notify_text' => $request->notify_text,
+            'register_date1' => $request->register_date1,
+            'register_date2' => $request->register_date2,
+            'register_date3' => $request->register_date3,
         );
         HomeNotification::whereId($id)->update($form_data);
         return redirect('/admin/homeNotification')->with('success', 'Notifications has been updated.');

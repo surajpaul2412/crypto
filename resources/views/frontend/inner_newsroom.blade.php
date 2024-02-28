@@ -1,6 +1,8 @@
 @extends('layouts.frontend.app')
 @section('title')
-<title>Crypto Cipher | {{$news->id}}</title>
+<title>{{$news->meta_title}} | Crypto Cipher ®</title>
+<meta name="keywords" content="Logic ProX , Ableton Live, Synthesis, Mixing, Mastering, Arrangements and many tutorials helping Music Production & Sound engineering students">
+<meta name="description" content="{{$news->meta_description}}">
 @endsection
 
 @section('css')
@@ -30,6 +32,14 @@
         font-weight: 400;
         border-radius: 28px;
     }
+    .flexcontainer {
+        min-height: 100%;
+        max-height: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        flex-wrap: wrap;
+    }
 </style>
 @endsection
 
@@ -44,15 +54,17 @@
                 </div>
                 <div class="col-md-4 col-4" align="right" style="margin-top: -5px;">
                     <button class="page-4-btn font-regular pt-1" onclick="document.location.href='{{url('newsroom')}}';">
-                        <i class="fas fa-angle-left pr-1"></i> Back
+                        <!-- <i class="fas fa-angle-left pr-1"></i> -->
+                        Back
                     </button>
                 </div>
             </div>            
             <h4 class="font-black text-black font-35 marT-10 pt-2">{!! \Illuminate\Support\Str::limit($news->title, 120, $end='...') !!}</h4>
-            <div>
-                <strong class="bold font-regular mt-2">Tags :</strong> 
+            
+            <div class="flexcontainer">
+                <strong class="bold font-regular mt-2 mr-2">Tags :</strong>
                 @foreach($news->newstags as $tag)
-                    <span class="bg-green px-3 text-white font-13 py-2 mr-2 mt-2">{{$tag->tag}}</span>
+                    <a class="bg-green px-3 text-white mr-2 mt-2" style="line-height:3;font-size:9px;" href="{{route('newsroom.searchBy',$tag->tag)}}">{{$tag->tag}}</a>
                 @endforeach
             </div>
         </div>
@@ -60,7 +72,7 @@
         @if($news->count())
         <div class="row px-3">
             <div class="col-md-12 col-12">
-                <img class="lazy" data-original="{{env('image_url')}}/news/{{$news->image}}" width="100%">
+                <img class="lazy" alt="{{$news->title}}" data-original="{{env('image_url')}}/news/{{$news->image}}" width="100%">
                 <h4 class="font-bold text-black pt-3">{{$news->title}}</h4>
                 <p class="font-regular text-grey2 pt-2">{!! $news->content !!}</p>
             </div>

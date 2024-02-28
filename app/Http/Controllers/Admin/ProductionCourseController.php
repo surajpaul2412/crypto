@@ -74,10 +74,16 @@ class ProductionCourseController extends Controller
     {
         $request->validate([
             'content'=> 'required|min:3',
+            'meta_title'=> 'nullable|string|min:3',
+            'meta_keyword'=> 'nullable|string|min:3',
+            'meta_description'=> 'nullable|string|min:3',
         ]);
 
         $form_data = array(
-            'content' => $request->content
+            'content' => $request->content,
+            'meta_title' => $request->meta_title,
+            'meta_keyword' => $request->meta_keyword,
+            'meta_description' => $request->meta_description,
         );
         ProductionCourse::whereId($id)->update($form_data);
         return redirect('/admin/productionCourse')->with('success', 'Production Course has been updated.');

@@ -1,6 +1,7 @@
 @extends('layouts.frontend.app')
-@section('title')
-<title>Crypto Cipher | About Us</title>
+@section('metas')
+<title>Crypto Cipher Reviews by Pro Music Composers Worldwide | Crypto Cipher ®</title>
+<meta name="description" content="Crypto Cipher has been proudly endorsed and supported by famous multi award-winning (Oscar/Bafta/Grammy awards) and Nomination centric artistes">
 @endsection
 
 @section('css')
@@ -17,9 +18,9 @@
     .about-see-more span{
         font-size: 13px;
     }
-    .font-1vw{
+    /*.font-1vw{
         font-size: 1vw;
-    }
+    }*/
 </style>
 @endsection
 
@@ -28,7 +29,7 @@
     <section class="container slider-header">
         <!-- title -->
         <div class="px-3 pt-4 media-pt-0 pb-4">
-            <h6 class="font-regular text-grey2 pl-2 pb-0 font-13 inner-title">SUCCESS STORIES</h6>
+            <h1 class="font-regular text-grey2 pl-2 pb-0 font-13 inner-title">SUCCESS STORIES</h1>
             <h4 class="font-black text-black font-35 marT-10">Few Words From The Pros</h4>
         </div>
         <!-- content -->
@@ -37,15 +38,15 @@
             @foreach($pros as $index => $row)
             <div class="col-md-4 my-5">
                 <div class="slider-header bg-theme" align="center">
-                    <img data-original="{{env('image_url')}}/pros/{{$row->image}}" width="55%" class="lazy mx-auto d-block p-1 bg-theme shadow-round mar-T-26">
+                    <img data-original="{{env('image_url')}}/pros/{{$row->image}}" alt="{{$row->name}}" width="55%" class="lazy mx-auto d-block p-1 bg-theme shadow-round mar-T-26">
                     <h6 class="font-bold font-1vw text-dark pt-4">{{$row->name}}</h6>
-                    <div class="about-title px-1 pt-2 bold" style="min-height: 14vh;">{!! \Illuminate\Support\Str::limit($row->brief, 500, $end='...') !!}</div>
+                    <div class="about-title px-1 pt-2 bold" style="min-height: 20vh;">{!! \Illuminate\Support\Str::limit($row->brief, 500, $end='...') !!}</div>
                     <div class="py-2 bold about-symbol"><i>"</i></div>
                     <div class="about-desc px-4 pb-2" style="min-height: 5vh;"><i>{!! \Illuminate\Support\Str::limit($row->description, 110, $end='...') !!}</i></div>
                     <div class="my-2 px-3">
                         <a data-toggle="modal" data-target="#myModal{{$index+1}}">
                             <div class="about-see-more w-100 font-regular bold pt-2">
-                              <img data-original="{{ asset('assets/frontend/img/wallpaper.svg') }}" class="lazy" width="20px">
+                              <img data-original="{{ asset('assets/frontend/img/wallpaper.svg') }}" alt="wallpaper" class="lazy" width="20px">
                               <span class="pl-1"> See More</span>
                             </div>
                         </a>

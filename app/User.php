@@ -49,4 +49,12 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(Module::class);
     }
+
+    public function studentDetails(){
+        return $this->hasOne('App\StudentDetails','student_id');
+    }
+
+    public function studentInvoices(){
+        return $this->hasMany('App\StudentInvoice','user_id');
+    }
 }

@@ -12,6 +12,6 @@ class Menu extends Model
 
     public function submenu()
     {
-        return $this->hasMany('App\Submenu');
+        return $this->hasMany('App\Submenu')->orderBy('sort_by','asc');
     }
 }

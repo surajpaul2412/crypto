@@ -38,25 +38,56 @@ class NewsroomController extends Controller
      */
     public function store(Request $request)
     {
+        ini_set('max_execution_time', -1);
         $this->validate($request, [
             'image'=> 'required',
             'title'=> 'required|min:3|max:255',
             'content'=> 'required|min:3',
             'slug'=> 'required|min:3',
+            'meta_title'=> 'nullable|string|min:3',
+            'meta_description'=> 'nullable|string|min:3',
         ]);
 
-        $image_name = $request->image;
+        $main_image_name = $request->image;
         $image = $request->file('image');
         if($image != ''){
-            $image_name = rand() . '.' . $image->getClientOriginalExtension();
-            $image->move(public_path('images/news'), $image_name);
+            $main_image_name = rand() . '.' . $image->getClientOriginalExtension();
+            $image->move(public_path('images/news'), $main_image_name);
         }
+
+        $content = $request->content;
+        $dom = new \DomDocument();
+        @$dom->loadHtml($content, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
+        $imageFile = $dom->getElementsByTagName('img');
+
+        foreach($imageFile as $item => $image){
+           $data = $image->getAttribute('src');
+
+           if(strlen($data) > 30){
+               list($type, $data) = explode(';', $data);
+               list(, $data)      = explode(',', $data);
+
+               $imgeData = base64_decode($data);
+               $image_name= "/upload/" . time().$item.'.png';
+               $path = public_path() . $image_name;
+               file_put_contents($path, $imgeData);
+               
+               $image->removeAttribute('src');
+               $image->setAttribute('src', $image_name);
+           }else{
+               $image->removeAttribute('src');
+               $image->setAttribute('src', $data);
+           }
+        }
+        $content = $dom->saveHTML();
 
         $news = new News();
         $news->title = $request->title;
         $news->slug = $request->slug;
-        $news->content = $request->content;
-        $news->image = $image_name;
+        $news->content = $content;
+        $news->image = $main_image_name;
+        $news->meta_title = $request->meta_title;
+        $news->meta_description = $request->meta_description;
         $news->save();
 
         $tags = array_values(array_filter($request->tags));
@@ -102,30 +133,54 @@ class NewsroomController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $image_name = $request->hidden_image;
+        ini_set('max_execution_time', -1);
+        $request->validate([
+            'title'=> 'required|min:3|max:255',
+            'content'=> 'required|min:3',
+            'slug'=> 'required|min:3',
+            'image'=>'nullable|image',
+            'hidden_image'=>'nullable|string'
+        ]);
+        $main_image_name = $request->hidden_image;
         $image = $request->file('image');
         if($image != ''){
-            $request->validate([
-                'image'=> 'required',
-                'title'=> 'required|min:3|max:255',
-                'content'=> 'required|min:3',
-                'slug'=> 'required|min:3',
-            ]);
-            $image_name = rand() . '.' . $image->getClientOriginalExtension();
-            $image->move(public_path('images/news'), $image_name);
-        } else{
-            $request->validate([
-                'title'=> 'required|min:3|max:255',
-                'content'=> 'required|min:3',
-                'slug'=> 'required|min:3',
-            ]);
+            $main_image_name = rand() . '.' . $image->getClientOriginalExtension();
+            $image->move(public_path('images/news'), $main_image_name);
         }
+
+        $content = $request->content;
+        $dom = new \DomDocument();
+        @$dom->loadHtml($content, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
+        $imageFile = $dom->getElementsByTagName('img');
+
+        foreach($imageFile as $item => $image){
+           $data = $image->getAttribute('src');
+
+           if(strlen($data) > 30){
+               list($type, $data) = explode(';', $data);
+               list(, $data)      = explode(',', $data);
+
+               $imgeData = base64_decode($data);
+               $image_name= "/upload/" . time().$item.'.png';
+               $path = public_path() . $image_name;
+               file_put_contents($path, $imgeData);
+               
+               $image->removeAttribute('src');
+               $image->setAttribute('src', $image_name);
+           }else{
+               $image->removeAttribute('src');
+               $image->setAttribute('src', $data);
+           }
+        }
+        $content = $dom->saveHTML();
 
         $form_data = array(
             'title' => $request->title,
-            'content' => $request->content,
+            'content' => $content,
             'slug' => $request->slug,
-            'image' => $image_name
+            'image' => $main_image_name,
+            'meta_title' => $request->meta_title,
+            'meta_description' => $request->meta_description,
         );
         News::whereId($id)->update($form_data);
 
@@ -143,7 +198,7 @@ class NewsroomController extends Controller
                 ]);
             }
         }
-        NewsTag::where([['news_id',$id],['is_updated',0]])->delete();        
+        NewsTag::where([['news_id',$id],['is_updated',0]])->delete();
         return redirect('/admin/newsroom')->with('success', 'Newsroom has been updated.');
     }
 
@@ -155,6 +210,7 @@ class NewsroomController extends Controller
      */
     public function destroy($id)
     {
+        $tags = NewsTag::whereNewsId($id)->delete();
         $news = News::findOrFail($id);
         $news->delete();
         return redirect('/admin/newsroom')->with('success', 'Newsroom has been deleted successfully.');

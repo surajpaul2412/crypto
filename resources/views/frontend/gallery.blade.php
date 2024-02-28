@@ -1,7 +1,7 @@
 @extends('layouts.frontend.app')
-@section('title')
-<title>Crypto Cipher | Our Gallery</title>
-
+@section('metas')
+<title>Recording Studio Equipment list gallery | Crypto Cipher ®</title>
+<meta name="description" content="Music Studio Equipment List & Gallery at Crypto Cipher for Music Production Courses & Advanced Sound Engineering studio environment.">
 @endsection
 
 @section('css')
@@ -58,14 +58,14 @@
     <section class="container slider-header">
         <!-- title -->
         <div class="px-3 pt-4 media-pt-0">
-            <h6 class="font-regular text-grey2 pl-2 pb-0 font-13 inner-title uppercase">Studio Equipments & Gallery</h6>
+            <h1 class="font-regular text-grey2 pl-2 pb-0 font-13 inner-title uppercase">Studio Equipments & Gallery</h1>
             <h4 class="font-black text-black font-35 marT-10">Crypto Cipher Studio Equipments</h4>
         </div>
         <!-- content -->
         <div class="row px-3">
             <!-- hardware App-->
             <div class="col-md-12 my-2">
-                <h6 class="font-medium text-black bold font-20 pb-2"><span><img class="pr-3 mobile-hw-img" src="{{ asset('assets/frontend/img/Path215.svg') }}" width="6%"></span>Hardware Equipments</h6>
+                <h6 class="font-medium text-black bold font-20 pb-2"><span><img class="pr-3 mobile-hw-img" alt="Path215" src="{{ asset('assets/frontend/img/Path215.svg') }}" width="6%"></span>Hardware Equipments</h6>
                 @if($studioEquipmentHardware->count())
                 @foreach($studioEquipmentHardware as $row)
                 <div class="mt-1 media-mt-0">
@@ -99,7 +99,7 @@
                     @foreach($studioEquipmentHardwareImage as $row)
                     <div class="col-md-3 px-1">
                         <div class="box-shadow">
-                            <img class="lazy" data-original="{{env('image_url')}}/studioEquipment/{{$row->image}}" width="100%">
+                            <img class="lazy" alt="equipments" data-original="{{env('image_url')}}/studioEquipment/{{$row->image}}" width="100%">
                         </div>
                     </div>
                     @endforeach
@@ -108,7 +108,7 @@
             </div>
             <!-- software App -->
             <div class="col-md-12 my-3">
-                <h6 class="font-medium text-black bold font-20 pb-2"><span><img class="pr-3 mobile-hw-img" src="{{ asset('assets/frontend/img/computerGrey.svg') }}" width="6%"></span>Software Applications</h6>
+                <h6 class="font-medium text-black bold font-20 pb-2"><span><img class="pr-3 mobile-hw-img" alt="computerGrey" src="{{ asset('assets/frontend/img/computerGrey.svg') }}" width="6%"></span>Software Applications</h6>
                 @if($studioEquipmentSoftware->count())
                 @foreach($studioEquipmentSoftware as $row)
                 <div class="mt-1 media-mt-0">
@@ -142,7 +142,7 @@
                     @foreach($studioEquipmentSoftwareImage as $row)
                     <div class="col-md-3 px-1">
                         <div class="box-shadow">
-                            <img class="lazy" data-original="{{env('image_url')}}/studioEquipment/{{$row->image}}" width="100%">
+                            <img class="lazy" alt="equipments" data-original="{{env('image_url')}}/studioEquipment/{{$row->image}}" width="100%">
                         </div>
                     </div>
                     @endforeach

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Downloads;
+use App\DownloadForm;
 
 class DownloadController extends Controller
 {
@@ -17,6 +18,19 @@ class DownloadController extends Controller
     {
         $downloads = Downloads::orderBy('sort_by', 'asc')->get();
         return view('admin.download.index', compact('downloads'));
+    }
+
+    public function list()
+    {
+        $downloads = DownloadForm::orderBy('created_at', 'asc')->get();
+        return view('admin.downloaderList.index', compact('downloads'));
+    }
+
+    public function delete($id)
+    {
+        $download = DownloadForm::findOrFail($id);
+        $download->delete();
+        return redirect('/admin/downloaderList')->with('success', 'record has been deleted successfully.');
     }
 
     /**
@@ -42,6 +56,7 @@ class DownloadController extends Controller
             'sort_by'=> 'nullable|numeric|between:0,99.99',
             'content'=> 'nullable|min:3',
             'file'=> 'nullable|min:3',
+            'path'=> 'nullable|min:3',
         ]);
 
         $download = new Downloads();
@@ -49,6 +64,7 @@ class DownloadController extends Controller
         $download->sort_by = $request->sort_by;
         $download->content = $request->content;
         $download->file = $request->file;
+        $download->path = $request->path;
         $download->save();
         return redirect('/admin/download')->with('success', 'Downloas has been added.');
     }
@@ -90,12 +106,14 @@ class DownloadController extends Controller
             'sort_by'=> 'nullable|numeric|between:0,99.99',
             'content'=> 'nullable|min:3',
             'file'=> 'nullable|min:3',
+            'path'=> 'nullable|min:3',
         ]);
         
         $form_data = array(
             'name' => $request->name,
             'content' => $request->content,
             'file' => $request->file,
+            'path' => $request->path,
             'sort_by'=> $request->sort_by
         );
 

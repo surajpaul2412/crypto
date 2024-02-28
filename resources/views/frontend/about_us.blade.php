@@ -1,6 +1,10 @@
 @extends('layouts.frontend.app')
-@section('title')
-<title>Crypto Cipher</title>
+@section('metas')
+@foreach($aboutUs as $meta)
+<title>{{$meta->meta_title}}</title>
+<meta name="keywords" content="{{$meta->meta_keyword}}">
+<meta name="description" content="{{$meta->meta_description}}">
+@endforeach
 @endsection
 
 @section('css')
@@ -45,7 +49,7 @@
     <section class="container slider-header">
         <!-- title -->
         <div class="px-3 pt-4 media-pt-0">
-            <h6 class="font-regular text-grey2 pl-2 pb-0 font-13 inner-title uppercase">MISSION & VISION STATEMENT</h6>
+            <h1 class="font-regular text-grey2 pl-2 pb-0 font-13 inner-title uppercase">MISSION & VISION STATEMENT</h1>
             <h4 class="font-black text-black font-35 marT-10">Crypto Cipher Audio Lab</h4>
         </div>
         <!-- content -->
@@ -68,7 +72,7 @@
                 </div>
             </div>
             <div class="col-md-6 my-2">
-                <img src="{{env('image_url')}}/aboutUs/{{$row->image}}" width="100%">
+                <img src="{{env('image_url')}}/aboutUs/{{$row->image}}" alt="our studio" width="100%">
             </div>
             @endforeach
         </div>
@@ -84,7 +88,7 @@
                 {!!$row->content!!}
             </div>
             <div class="mt-3">
-                <img src="{{ asset('images/aboutUs/about.png') }}" width="100%">
+                <img src="{{ asset('images/aboutUs/about.png') }}" alt="equipments" width="100%">
             </div>
             <div class="mobile-center">
                 <a href="">

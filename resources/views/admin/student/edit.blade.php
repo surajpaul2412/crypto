@@ -31,15 +31,19 @@
         @csrf
         <div class="form-group">
           <label class="text-dark" for="name">Name:</label>
-          <input type="text" class="form-control" name="name" value="{{ $user->name }}" />
+          <input type="text" class="form-control" name="name" value="{{ $user->name }}" required/>
         </div>
         <div class="form-group">
           <label class="text-dark" for="email">Email:</label>
-          <input type="text" class="form-control" name="email" value="{{ $user->email }}" />
+          <input type="email" class="form-control" name="email" value="{{ $user->email }}" required/>
+        </div>
+        <div class="form-group">
+          <label class="text-dark" for="phone">Mobile:</label>
+          <input type="text" class="form-control" name="phone" value="{{ $user->phone }}" required/>
         </div>
         <div class="form-group">
           <label class="text-dark" for="password">Password:</label>
-          <input type="text" class="form-control" name="password" placeholder="Enter new password*" />
+          <input type="text" class="form-control" name="password" placeholder="Enter new password*" required/>
         </div>
         <button type="submit" class="btn btn-primary">Update</button>
       </form>

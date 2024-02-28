@@ -33,6 +33,8 @@
           <th>Seats</th>
           <th>Date</th>
           <th>Batch</th>
+          <th>Notify Text</th>
+          <th>Registration date</th>
         </tr>
     </thead>
     <tbody>
@@ -41,6 +43,8 @@
             <td class="bold">{!!$row->seat!!}</td>
             <td class="bold">{!!$row->date!!}</td>
             <td class="bold">{!!$row->batch!!}</td>
+            <td>{{ \Illuminate\Support\Str::limit($row->notify_text, 50, $end='...') }}</td>
+            <td class="bold">{!!$row->register_date1!!}, {!!$row->register_date2!!}, {!!$row->register_date3!!},</td>
         </tr>
       @endforeach
     </tbody>

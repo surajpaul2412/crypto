@@ -10,6 +10,8 @@ use App\Banner;
 use App\HomeContent;
 use App\HomeNotification;
 use App\DesktopMenuSection;
+use App\Mail\QueryMail;
+use Mail;
 
 class WelcomeController extends Controller
 {
@@ -24,7 +26,7 @@ class WelcomeController extends Controller
         $menus = Menu::orderBy('sort_by', "asc")->get();
         $banners = Banner::all();
         $homeContent = HomeContent::all();
-        $homeNotification = HomeNotification::all();
+        $homeNotification = HomeNotification::first();
         $desktopMenu = DesktopMenuSection::orderBy('sort_by', "asc")->get();
         return view('welcome', compact('pros','banners','homeContent','homeNotification','menus','desktopMenu'));
     }
@@ -49,20 +51,30 @@ class WelcomeController extends Controller
     {
         $this->validate($request, [
             'name'=> 'required|string|min:3|max:255',
-            'phone'=> 'required|integer',
-            'email'=> 'required',
+            'phone'=> 'required|digits_between:8,10',
+            'email'=> 'required|email',
             'message'=> 'nullable|string',
         ]);
 
-        $contact = new Contact();
-        $contact->name = $request->name;
-        $contact->phone = $request->phone;
-        $contact->email = $request->email;
-        $contact->message = $request->message;
-        $contact->save();
+        $details = $request->all();
+        Contact::create($details);
+
+        $data = $details;
+        $data['content'] = $details['message'];
+
+        Mail::send('emails.query', $data, function($message) {
+         $message->to('academy@cryptocipher.in', 'Crypto Cipher Academy | Query')->subject
+            ('A new query has been raised on your website');
+         $message->from('academy@cryptocipher.in','Crypto Cipher Academy | Query');
+        });
 
         $pros = Pros::all();
-        return view('welcome', compact('pros'));
+        $menus = Menu::orderBy('sort_by', "asc")->get();
+        $banners = Banner::all();
+        $homeContent = HomeContent::all();
+        $homeNotification = HomeNotification::first();
+        $desktopMenu = DesktopMenuSection::orderBy('sort_by', "asc")->get();
+        return view('welcome', compact('pros','banners','homeContent','homeNotification','menus','desktopMenu'));
     }
 
     /**

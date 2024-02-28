@@ -80,6 +80,9 @@ class AboutUsController extends Controller
                 'image'=> 'required|image',
                 'heading'=> 'required|string|min:3|max:255',
                 'content'=> 'required|string|min:3',
+                'meta_title'=> 'nullable|string|min:3',
+                'meta_keyword'=> 'nullable|string|min:3',
+                'meta_description'=> 'nullable|string|min:3',
             ]);
             $image_name = rand() . '.' . $image->getClientOriginalExtension();
             $image->move(public_path('images/aboutUs'), $image_name);
@@ -89,6 +92,9 @@ class AboutUsController extends Controller
             'heading' => $request->heading,
             'content' => $request->content,
             'image' => $image_name,
+            'meta_title' => $request->meta_title,
+            'meta_keyword' => $request->meta_keyword,
+            'meta_description' => $request->meta_description,
         );
 
         AboutUs::whereId($id)->update($form_data);

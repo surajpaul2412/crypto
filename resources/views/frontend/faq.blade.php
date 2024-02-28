@@ -1,6 +1,7 @@
 @extends('layouts.frontend.app')
-@section('title')
-<title>Crypto Cipher</title>
+@section('metas')
+<title>FAQs | Crypto Cipher ®</title>
+<meta name="description" content="Course queries and guidance| Crypto Cipher Academy Sound Engineering & music production course related queries, general queries, hostel and career related queries.">
 @endsection
 
 @section('css')
@@ -52,7 +53,7 @@
     <section class="container slider-header">
         <!-- title -->
         <div class="px-3 pt-4 media-pt-0">
-            <h6 class="font-regular text-grey2 pl-2 pb-0 font-13 inner-title uppercase">course related queries<span class="px-2"> | </span>general questions<span class="px-2"> | </span>hostel<span class="px-2"> | </span>career</h6>
+            <h1 class="font-regular text-grey2 pl-2 pb-0 font-13 inner-title uppercase">course related queries<span class="px-2"> | </span>general questions<span class="px-2"> | </span>hostel<span class="px-2"> | </span>career</h1>
             <h4 class="font-black text-black font-35 marT-10">Candidate General Inquiries</h4>
         </div>
         <!-- content -->
@@ -63,7 +64,7 @@
                 <div class="slider-header bg-theme px-2 pb-4">
                     <div class="row py-3">
                         <div class="col-md-2 pl-4 col-3">
-                            <img class="pr-3" src="{{env('image_url')}}/faq/{{$row->image}}" width="70px">
+                            <img class="pr-3" src="{{env('image_url')}}/faq/{{$row->image}}" alt="{{$row->heading}}" width="70px">
                         </div>
                         <div class="col-md-10 col-9">
                             <div class="font-medium text-black font-18">
@@ -91,7 +92,7 @@
                             <a class="nav-link active" href="#tab1" data-toggle="tab">
                                 <div class="row">
                                     <div class="col-md-2 col-2">
-                                        <img src="{{ asset('assets/frontend/img/voice-message.svg') }}" width="30px">
+                                        <img src="{{ asset('assets/frontend/img/voice-message.svg') }}" alt="voice-message" width="30px">
                                     </div>
                                     <div class="col-md-10 px-0 col-10">
                                         <h6 class="font-13 font-bold verticle-center">Course Related Queries</h6>
@@ -103,7 +104,7 @@
                             <a class="nav-link" href="#tab2" data-toggle="tab">
                                 <div class="row">
                                     <div class="col-md-2 col-2">
-                                        <img src="{{ asset('assets/frontend/img/food.svg') }}" width="31px">
+                                        <img src="{{ asset('assets/frontend/img/food.svg') }}" alt="food" width="31px">
                                     </div>
                                     <div class="col-md-10 px-0 col-10">
                                         <h6 class="font-13 font-bold verticle-center">General Question</h6>
@@ -115,7 +116,7 @@
                             <a class="nav-link" href="#tab3" data-toggle="tab">
                                 <div class="row">
                                     <div class="col-md-2 col-2">
-                                        <img src="{{ asset('assets/frontend/img/XMLID_21_.svg') }}" width="27px">
+                                        <img src="{{ asset('assets/frontend/img/XMLID_21_.svg') }}" alt="XMLID_21_" width="27px">
                                     </div>
                                     <div class="col-md-10 px-0 col-10">
                                         <h6 class="font-13 font-bold verticle-center">Hostel</h6>
@@ -127,7 +128,7 @@
                             <a class="nav-link" href="#tab4" data-toggle="tab">
                                 <div class="row">
                                     <div class="col-md-2 col-2">
-                                        <img src="{{ asset('assets/frontend/img/career.svg') }}" width="29px">
+                                        <img src="{{ asset('assets/frontend/img/career.svg') }}" alt="career" width="29px">
                                     </div>
                                     <div class="col-md-10 px-0 col-10">
                                         <h6 class="font-13 font-bold verticle-center">Career</h6>

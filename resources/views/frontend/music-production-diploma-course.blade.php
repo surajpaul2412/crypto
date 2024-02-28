@@ -1,6 +1,7 @@
 @extends('layouts.frontend.app')
-@section('title')
-<title>Crypto Cipher</title>
+@section('metas')
+<title>Crypto Cipher’s Music Production Courses in Delhi, India| Crypto Cipher ®</title>
+<meta name="description" content="Best Foundation Music Production Course & Advanced Sound Engineering in India | Logic Pro X | Ableton Live course in Delhi. Advance Sound Engineering & Complete Music production Course in India.">
 @endsection
 
 @section('css')
@@ -34,7 +35,7 @@
     <section class="container slider-header">
         <!-- title -->
         <div class="px-3 pt-4 media-pt-0">
-            <h6 class="font-regular text-grey2 pl-2 pb-0 font-13 inner-title">Music Production Diploma Course</h6>
+            <h1 class="font-regular text-grey2 pl-2 pb-0 font-13 inner-title">Music Production Diploma Course</h1>
             <h4 class="font-black text-black font-35 marT-10">Music Production Diploma Courses</h4>
         </div>
         <!-- content -->
