@@ -347,7 +347,7 @@
         "@type": "SiteNavigationElement",
         "name": [
             "Crypto Cipher Academy",
-    		"Courses",
+        "Courses",
             "Music Production Course",
             "Sound Engineering Diploma",
             "Faculty",
@@ -357,12 +357,12 @@
         ],
         "url": [
             "https://www.cryptocipheracademy.com/",
-    		"https://www.cryptocipheracademy.com/our-courses",
+        "https://www.cryptocipheracademy.com/our-courses",
             "https://www.cryptocipheracademy.com/music-production-course",
             "https://www.cryptocipheracademy.com/sound-engineering-course",
             "https://www.cryptocipheracademy.com/music-production-faculty",
             "https://www.cryptocipheracademy.com/register",
-    		"https://www.cryptocipheracademy.com/contact-us"
+        "https://www.cryptocipheracademy.com/contact-us"
 
         ]
       }
@@ -460,7 +460,7 @@
       "@context": "https://schema.org/",
       "@type": "Course",
       "name": "Music Production Course: Foundation of Music Technology",
-	  "url": "https://www.cryptocipheracademy.com/music-production-course",
+    "url": "https://www.cryptocipheracademy.com/music-production-course",
       "image": "https://www.cryptocipheracademy.com/images/academyCourse/course.svg",
       "description": "ADVANCED LOGIC PRO X, ABLETON LIVE, FOUNDATIONAL MIXING CONCEPTS.
     VARIOUS SPECIALISED FACULTY IS ASSIGNED TO THIS COURSE.
@@ -715,32 +715,15 @@
                               @if($homeNotification->count())
                                 <ul class="navbar-nav ml-auto">
                                     <li class="nav-item pr-2">
-                                        <div class="nav-link font-regular text-black bold d-flex" style="font-size: 0.75vw;">{{$homeNotification->date}} {{$homeNotification->batch}} , <span class="pl-2" id="timer" style="font-size: 0.75vw;"></span></div>
+                                        <div class="nav-link font-regular text-black bold d-flex" style="font-size: 0.75vw;">
+                                          {{$homeNotification->date}} {{$homeNotification->batch}} , 
+                                          <!-- <span class="pl-2" id="timer" style="font-size: 0.75vw;"></span> -->
+                                          <!-- <span class="pl-2" id="countdown" style="font-size: 0.75vw;"></span> -->
+                                          <span id="countdown" class="pl-2">
+                                              <span id="timer" style="font-size: 0.75vw;"></span>
+                                          </span>
+                                        </div>
                                     </li>
-                                    <!-- <script type="text/javascript">
-                                      function updateTimer() {
-                                          future = Date.parse("{{$homeNotification->batch}} {{$homeNotification->date}}, 2023 11:59:59");
-                                          now = new Date();
-                                          diff = future - now;
-
-                                          days = Math.floor(diff / (1000 * 60 * 60 * 24));
-                                          hours = Math.floor(diff / (1000 * 60 * 60));
-                                          mins = Math.floor(diff / (1000 * 60));
-                                          secs = Math.floor(diff / 1000);
-
-                                          d = days;
-                                          h = hours - days * 24;
-                                          m = mins - hours * 60;
-                                          s = secs - mins * 60;
-
-                                          document.getElementById("timer")
-                                              .innerHTML =
-                                              '<span style="font-size:11px !important;">' + d + '<span>d:</span></span>' +
-                                              '<span style="font-size:11px !important;">' + m + '<span>m:</span></span>' +
-                                              '<span style="font-size:11px !important;">' + s + '<span>s</span></span>';
-                                      }
-                                      setInterval('updateTimer()', 1000);
-                                    </script> -->
                                     <li class="nav-item">
                                         <div class="nav-link font-regular text-black font-400" style="font-size: 0.75vw;">New Batch Commencing {{$homeNotification->batch}}.</div>
                                     </li>
@@ -1315,28 +1298,69 @@ $(function(){
 </script>
 <!-- timer -->
 <script>
-    function updateTimer() {
-      future  = Date.parse("<?php echo $homeNotification->batch; ?> <?php echo $homeNotification->date; ?>, 2023 12:00:00");
-      now     = new Date();
-      diff    = future - now;
+    $(document).ready(function () {
+        // Dynamically set the target date using PHP variables
+        const batch = `<?php echo $homeNotification->batch; ?>`; // e.g., "Dec 24"
+        const date = `<?php echo $homeNotification->date; ?>`;   // e.g., "15"
+        const currentYear = new Date().getFullYear();            // Get the current year
 
-      days  = Math.floor( diff / (1000*60*60*24) );
-      hours = Math.floor( diff / (1000*60*60) );
-      mins  = Math.floor( diff / (1000*60) );
-      secs  = Math.floor( diff / 1000 );
+        // Build the target date string
+        const targetDateString = `${date} ${batch} 00:00:00`;
 
-      d = days;
-      h = hours - days  * 24;
-      m = mins  - hours * 60;
-      s = secs  - mins  * 60;
+        // Parse the target date
+        const targetDate = new Date(targetDateString).getTime();
 
-      document.getElementById("timer")
-        .innerHTML =
-          '<span style="font-size:11px !important;">' + d + '<span>d:</span></span>' +
-          '<span style="font-size:11px !important;">' + m + '<span>m:</span></span>' +
-          '<span style="font-size:11px !important;">' + s + '<span>s</span></span>';
-    }
-    setInterval('updateTimer()', 1000 );
+        // Update the countdown every second
+        const interval = setInterval(function () {
+            // Get today's date and time
+            const now = new Date().getTime();
+
+            // Find the time difference
+            const distance = targetDate - now;
+
+            // Time calculations for days, hours, minutes, and seconds
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Display the result in the timer element
+            $('#timer').text(`${days}d ${hours}h ${minutes}m ${seconds}s`);
+
+            // If the countdown is over, display a message
+            if (distance < 0) {
+                clearInterval(interval);
+                $('#timer').text("The countdown is over!");
+            }
+        }, 1000);
+    });
 </script>
+<!-- <script>
+  const targetDate = new Date(`<?php echo $homeNotification->batch; ?> <?php echo $homeNotification->date; ?>, 2024 12:00:00`);
+
+  function updateCountdown() {
+      const currentDate = new Date();
+      const timeDifference = targetDate - currentDate;
+
+      if (timeDifference > 0) {
+          const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+          const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+          const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+
+          document.getElementById('countdown').innerHTML = `
+              <span style="font-size:11px !important;"> ${days}<span>d:</span></span>
+              <span style="font-size:11px !important;"> ${minutes}<span>m:</span></span>
+              <span style="font-size:11px !important;"> ${seconds}<span>s</span></span>
+          `;
+
+          setTimeout(updateCountdown, 1000); // Update every second
+      } else {
+          document.getElementById('countdown').innerHTML = '<p>Countdown expired!</p>';
+      }
+  }
+
+  updateCountdown(); // Initial call
+</script> -->
 </body>
 </html>

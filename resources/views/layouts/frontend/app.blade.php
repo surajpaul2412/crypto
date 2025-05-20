@@ -606,7 +606,11 @@ $desktopMenu = DesktopMenuSection::orderBy('sort_by', "asc")->get();
                         <ul class="navbar-nav ml-auto">
                           @foreach($homeNotification as $row)
                             <li class="nav-item pr-2 d-flex">
-                                <div class="nav-link text-black bold" style="font-size: 0.85vw;">{{$row->date}} {{$row->batch}} , <span class="pl-2" id="timer" style="font-size: 0.85vw;"></span></div>
+                                <div class="nav-link text-black bold" style="font-size: 0.80vw;">{{$row->date}} {{$row->batch}} , 
+                                  <span id="countdown" class="pl-2">
+                                      <span id="timer" style="font-size: 0.80vw;"></span>
+                                  </span>
+                                </div>
                             </li>
 
                             @php
@@ -640,10 +644,10 @@ $desktopMenu = DesktopMenuSection::orderBy('sort_by', "asc")->get();
                             setInterval('updateTimer()', 1000);
                             </script> -->
                             <li class="nav-item">
-                                <div class="nav-link text-black font-400" style="font-size: 0.85vw;">New Batch Commencing {{$row->batch}}.</div>
+                                <div class="nav-link text-black font-400" style="font-size: 0.80vw;">New Batch Commencing {{$row->batch}}.</div>
                             </li>
                             <li class="nav-item">
-                                <div class="nav-link text-black bold" style="font-size: 0.85vw;">Remaining Seats: {{$row->seat}}</div>
+                                <div class="nav-link text-black bold" style="font-size: 0.80vw;">Remaining Seats: {{$row->seat}}</div>
                             </li>
                           @endforeach
                         </ul>
@@ -707,28 +711,42 @@ $desktopMenu = DesktopMenuSection::orderBy('sort_by', "asc")->get();
 </script>
 <!-- timer -->
 <script>
-  function updateTimer() {
-    future  = Date.parse("<?php echo $homeNotification1Batch; ?> <?php echo $homeNotification1Date; ?>, 2023 12:00:00");
-    now     = new Date();
-    diff    = future - now;
+    $(document).ready(function () {
+        // Dynamically set the target date using PHP variables
+        const batch = `<?php echo $homeNotification1Batch; ?>`; // e.g., "Dec 24"
+        const date = `<?php echo $homeNotification1Date; ?>`;   // e.g., "15"
+        const currentYear = new Date().getFullYear();            // Get the current year
 
-    days  = Math.floor( diff / (1000*60*60*24) );
-    hours = Math.floor( diff / (1000*60*60) );
-    mins  = Math.floor( diff / (1000*60) );
-    secs  = Math.floor( diff / 1000 );
+        // Build the target date string
+        const targetDateString = `${date} ${batch} 00:00:00`;
 
-    d = days;
-    h = hours - days  * 24;
-    m = mins  - hours * 60;
-    s = secs  - mins  * 60;
+        // Parse the target date
+        const targetDate = new Date(targetDateString).getTime();
 
-    document.getElementById("timer")
-      .innerHTML =
-        '<span style="font-size:11px !important;">' + d + '<span>d:</span></span>' +
-        '<span style="font-size:11px !important;">' + m + '<span>m:</span></span>' +
-        '<span style="font-size:11px !important;">' + s + '<span>s</span></span>';
-  }
-  setInterval('updateTimer()', 1000 );
+        // Update the countdown every second
+        const interval = setInterval(function () {
+            // Get today's date and time
+            const now = new Date().getTime();
+
+            // Find the time difference
+            const distance = targetDate - now;
+
+            // Time calculations for days, hours, minutes, and seconds
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Display the result in the timer element
+            $('#timer').text(`${days}d ${hours}h ${minutes}m ${seconds}s`);
+
+            // If the countdown is over, display a message
+            if (distance < 0) {
+                clearInterval(interval);
+                $('#timer').text("The countdown is over!");
+            }
+        }, 1000);
+    });
 </script>
 @yield('script')
 </body>
