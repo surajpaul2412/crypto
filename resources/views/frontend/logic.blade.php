@@ -132,6 +132,135 @@
         <div class="row">
             <!-- col 1 -->
             <div class="col-md-4 col-12">
+                <!-- card start -->
+                <div class="card p-4 mb-4" style="border-radius: 15px;">
+                  <div class="card-block">
+                    <div class="card-text good-review-score float-left">
+                      <img src="https://lh3.googleusercontent.com/a/ACg8ocLmlvfEVFmKJYLdAAvROXV6VM8499CAl1AthZ4wK8hvd-aG8A=w45-h45-p-rp-mo-br100">
+                    </div>
+                    <div class="card-title ml-4 pl-4">
+                      <div class="pl-2">Tali Mollier ( Nagaland )</div>
+                      <div class="pl-2" style="margin-top: -5px;">
+                        <img src="https://maps.gstatic.com/consumer/images/icons/2x/ic_star_rate_14.png" width="15px" repeat="5">
+                        <img src="https://maps.gstatic.com/consumer/images/icons/2x/ic_star_rate_14.png" width="15px" repeat="5">
+                        <img src="https://maps.gstatic.com/consumer/images/icons/2x/ic_star_rate_14.png" width="15px" repeat="5">
+                        <img src="https://maps.gstatic.com/consumer/images/icons/2x/ic_star_rate_14.png" width="15px" repeat="5">
+                        <img src="https://maps.gstatic.com/consumer/images/icons/2x/ic_star_rate_14.png" width="15px" repeat="5">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-block">
+                    <h6 class="card-text font-13">As I was going around looking for an academy to study sound engineering and production in and around Delhi, I came across Crypto Cipher and since I was coming over from a different state, I was quite nervous and a little reluctant to choose which institute will suit the best for me. And after I arrived in Delhi and I came over the academy to see how it actually is, then I finally made up my decision and started studying in this academy, which is now 4 months running. I can say without any hesitation that the decision I made to join Crypto Cipher was worth it. I've gained a lot of knowledge and learnt a lot of things in this 4 months and there's yet more to come. The knowledge they embark here is very much systematic and useful. The teachers in this academy are very helpful towards the students and they have a very positive impact on us. Thank you Crypto Cipher</h6>
+                    <div class="font-13" align="right">
+                      <a href="https://g.co/kgs/CX8WfZa" target="_blank">:Source</a>
+                    </div>
+                  </div>
+                </div>
+                <!-- card end -->
+
+                <!-- card start -->
+                <div class="card p-4 mb-4" style="border-radius: 15px;">
+                  <div class="card-block">
+                    <div class="card-text good-review-score float-left">
+                      <img src="https://lh3.googleusercontent.com/a/ACg8ocIdKzONBb7DpgkyN6UtuJBpXFktOkOQRfkRrsKmsOtVrqQubzEk=w45-h45-p-rp-mo-br100">
+                    </div>
+                    <div class="card-title ml-4 pl-4">
+                      <div class="pl-2">Himanshi Rai</div>
+                      <div class="pl-2" style="margin-top: -5px;">
+                        <img src="https://maps.gstatic.com/consumer/images/icons/2x/ic_star_rate_14.png" width="15px" repeat="5">
+                        <img src="https://maps.gstatic.com/consumer/images/icons/2x/ic_star_rate_14.png" width="15px" repeat="5">
+                        <img src="https://maps.gstatic.com/consumer/images/icons/2x/ic_star_rate_14.png" width="15px" repeat="5">
+                        <img src="https://maps.gstatic.com/consumer/images/icons/2x/ic_star_rate_14.png" width="15px" repeat="5">
+                        <img src="https://maps.gstatic.com/consumer/images/icons/2x/ic_star_rate_14.png" width="15px" repeat="5">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-block">
+                    <h6 class="card-text font-13">This Academy is the best place to learn, the teaching pattern is something you adore because as a student you need to get comfortable with the teacher and the teaching and way we get taught here is appreciative. The equipments provided to us is of such quality, that I and my batchmates had a great time learning with them, I'm really glad I am studying here, I found some great friends and mentors; I am looking forward to learning more and getting familiar with the technicalities.</h6>
+                    <div class="font-13" align="right">
+                      <a href="https://g.co/kgs/79SbA4Y" target="_blank">:Source</a>
+                    </div>
+                  </div>
+                </div>
+                <!-- card end -->
+                <!-- card start -->
+                <div class="card p-4 mb-4" style="border-radius: 15px;">
+                    <div class="card-block">
+                        <div class="card-text good-review-score float-left">
+                            <img src="https://lh3.googleusercontent.com/a-/ALV-UjUb8asIpt0hUGC0GYRYEev6iOxHbFW0JIMZEJDzoVBRlTnCwdFF=w45-h45-p-rp-mo-br100">
+                        </div>
+                        <div class="card-title ml-4 pl-4">
+                            <div class="pl-2">Aditya</div>
+                            <div class="pl-2" style="margin-top: -5px;">
+                                <img src="https://maps.gstatic.com/consumer/images/icons/2x/ic_star_rate_14.png" width="15px">
+                                <img src="https://maps.gstatic.com/consumer/images/icons/2x/ic_star_rate_14.png" width="15px">
+                                <img src="https://maps.gstatic.com/consumer/images/icons/2x/ic_star_rate_14.png" width="15px">
+                                <img src="https://maps.gstatic.com/consumer/images/icons/2x/ic_star_rate_14.png" width="15px">
+                                <img src="https://maps.gstatic.com/consumer/images/icons/2x/ic_star_rate_14.png" width="15px">
+                            </div>
+                        </div>                        
+                    </div>
+                    <div class="card-block">
+                        <h6 class="card-text font-13">One of the best places in India for learning about Music, sound and production. The course is well defined and structured, and the teachers put in a lot of effort to make sure each student learns well and is taken care of. Thanks to Sumit sir for founding the academy, and sharing his wisdom and insights with a lot of love and care! Thanks to Rio sir for his brilliance and clarity, and for showing us what matters! Thanks to Sahitya sir for his sincerty and warmth, making sure we learn each topic with enjoyment! Highly recommended</h6>
+                        <div class="font-13" align="right">
+                            <a href="https://g.co/kgs/HYqdiv9" target="_blank">:Source</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- card end -->
+
+                <!-- card start -->
+                <div class="card p-4 mb-4" style="border-radius: 15px;">
+                    <div class="card-block">
+                        <div class="card-text good-review-score float-left">
+                            <img src="https://lh3.googleusercontent.com/a/ACg8ocKVg3vvy5IiUVpVCesZK_mda0_24uvYSAHpi0Jx2fc4eDMTcg=w45-h45-p-rp-mo-br100">
+                        </div>
+                        <div class="card-title ml-4 pl-4">
+                            <div class="pl-2">HARSH SONARE</div>
+                            <div class="pl-2" style="margin-top: -5px;">
+                                <img src="https://maps.gstatic.com/consumer/images/icons/2x/ic_star_rate_14.png" width="15px">
+                                <img src="https://maps.gstatic.com/consumer/images/icons/2x/ic_star_rate_14.png" width="15px">
+                                <img src="https://maps.gstatic.com/consumer/images/icons/2x/ic_star_rate_14.png" width="15px">
+                                <img src="https://maps.gstatic.com/consumer/images/icons/2x/ic_star_rate_14.png" width="15px">
+                                <img src="https://maps.gstatic.com/consumer/images/icons/2x/ic_star_rate_14.png" width="15px">
+                            </div>
+                        </div>                        
+                    </div>
+                    <div class="card-block">
+                        <h6 class="card-text font-13">The teaching faculty are very nice, accommodating and all the teacher here are very knowledgeable. The curriculum of music production and sound engineering are well planned and teach everything that a student should know while making own music. Overall one of the best institute in Delhi.</h6>
+                        <div class="font-13" align="right">
+                            <a href="https://g.co/kgs/sDqTNau" target="_blank">:Source</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- card end -->
+
+                <!-- card start -->
+                <div class="card p-4 mb-4" style="border-radius: 15px;">
+                    <div class="card-block">
+                        <div class="card-text good-review-score float-left">
+                            <img src="https://lh3.googleusercontent.com/a-/ALV-UjWTsU1BwGKKLmA45_7Wlq2lw-Ns6hyu0L3plIaqstb5VNOmoKWy=w45-h45-p-rp-mo-br100">
+                        </div>
+                        <div class="card-title ml-4 pl-4">
+                            <div class="pl-2">Tony (Wacky Perme ) Arunachal Pradesh</div>
+                            <div class="pl-2" style="margin-top: -5px;">
+                                <img src="https://maps.gstatic.com/consumer/images/icons/2x/ic_star_rate_14.png" width="15px">
+                                <img src="https://maps.gstatic.com/consumer/images/icons/2x/ic_star_rate_14.png" width="15px">
+                                <img src="https://maps.gstatic.com/consumer/images/icons/2x/ic_star_rate_14.png" width="15px">
+                                <img src="https://maps.gstatic.com/consumer/images/icons/2x/ic_star_rate_14.png" width="15px">
+                                <img src="https://maps.gstatic.com/consumer/images/icons/2x/ic_star_rate_14.png" width="15px">
+                            </div>
+                        </div>                        
+                    </div>
+                    <div class="card-block">
+                        <h6 class="card-text font-13">Teachers are very co-operative... I went to another institute a year ago and I didn't get a nice experience... My time got wasted. I highly recommend this institute for musicians who want to learn more. Your search here is over. I was completely impressed with their professionalism. Teachers are consistently outstanding, exceeding my expectations every time.</h6>
+                        <div class="font-13" align="right">
+                            <a href="https://g.co/kgs/MVL9R7R" target="_blank">:Source</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- card end -->
+
                 <!-- card start | new section -->
                 <div class="card p-4 mb-4" style="border-radius: 15px;">
                     <div class="card-block">
@@ -157,6 +286,7 @@
                     </div>
                 </div>
                 <!-- card end -->
+                <!-- card start -->
                 <div class="card p-4 mb-4" style="border-radius: 15px;">
                     <div class="card-block">
                         <div class="card-text good-review-score float-left">
@@ -180,6 +310,7 @@
                         </div>
                     </div>
                 </div>
+                <!-- card end -->
                 <div class="card p-4 mb-4" style="border-radius: 15px;">
                     <div class="card-block">
                         <div class="card-text good-review-score float-left">
@@ -200,6 +331,159 @@
                         <h6 class="card-text font-13">Most innovative learning experience. Genuine teaching pattern. My personal experience was superb at crypto cipher academy. Teachers are really helpful. They cover each detailed topic of music production and sound engineering. My highly recommendation to all the upcoming music learner’s to just visit the academy once and check the enhance learning environment.<br><br>Thanks Team Crypto Cipher for turning out my inner music soul into a professional music producer.</h6>
                         <div class="font-13" align="right">
                             <a href="https://g.co/kgs/qjxaQS" target="_blank">:Source</a>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <!-- col 2 -->
+            <div class="col-md-4 col-12">
+                <!-- card start -->
+                <div class="card p-4 mb-4" style="border-radius: 15px;">
+                  <div class="card-block">
+                    <div class="card-text good-review-score float-left">
+                      <img src="https://lh3.googleusercontent.com/a-/ALV-UjWcjrl4vLNnPYrQ6anXvXUeBq6Ud9qzl0lkgDApZqARuBC4gXIY=w45-h45-p-rp-mo-br100">
+                    </div>
+                    <div class="card-title ml-4 pl-4">
+                      <div class="pl-2">Tenzin Younten ( Ladakh )</div>
+                      <div class="pl-2" style="margin-top: -5px;">
+                        <img src="https://maps.gstatic.com/consumer/images/icons/2x/ic_star_rate_14.png" width="15px" repeat="5">
+                        <img src="https://maps.gstatic.com/consumer/images/icons/2x/ic_star_rate_14.png" width="15px" repeat="5">
+                        <img src="https://maps.gstatic.com/consumer/images/icons/2x/ic_star_rate_14.png" width="15px" repeat="5">
+                        <img src="https://maps.gstatic.com/consumer/images/icons/2x/ic_star_rate_14.png" width="15px" repeat="5">
+                        <img src="https://maps.gstatic.com/consumer/images/icons/2x/ic_star_rate_14.png" width="15px" repeat="5">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-block">
+                    <h6 class="card-text font-13">I am extremely happy that I am able to get enrolled here and get to learn from the best, as we all say "to be the best learn from the best". The reason why this institute stands out from the rest is because of the systematic structure of the courses, Tutors are really helpful and knowledgeable. This is my fourth month here in this institute and I can proudly say that I have learned a lot, I cannot wait to learn more going forward. By the way, I am the first ever student from Ladakh to enroll here and I feel good about it. Cheers!</h6>
+                    <div class="font-13" align="right">
+                      <a href="https://g.co/kgs/RBoiR5L" target="_blank">:Source</a>
+                    </div>
+                  </div>
+                </div>
+                <!-- card end -->
+
+                <!-- card start -->
+                <div class="card p-4 mb-4" style="border-radius: 15px;">
+                  <div class="card-block">
+                    <div class="card-text good-review-score float-left">
+                      <img src="https://lh3.googleusercontent.com/a/ACg8ocIp3h1o4adV44fxvHf1NJu-HRZqM77io4FXQW4UX92kdD-sqg=w45-h45-p-rp-mo-br100">
+                    </div>
+                    <div class="card-title ml-4 pl-4">
+                      <div class="pl-2">Vidya Gaur</div>
+                      <div class="pl-2" style="margin-top: -5px;">
+                        <img src="https://maps.gstatic.com/consumer/images/icons/2x/ic_star_rate_14.png" width="15px" repeat="5">
+                        <img src="https://maps.gstatic.com/consumer/images/icons/2x/ic_star_rate_14.png" width="15px" repeat="5">
+                        <img src="https://maps.gstatic.com/consumer/images/icons/2x/ic_star_rate_14.png" width="15px" repeat="5">
+                        <img src="https://maps.gstatic.com/consumer/images/icons/2x/ic_star_rate_14.png" width="15px" repeat="5">
+                        <img src="https://maps.gstatic.com/consumer/images/icons/2x/ic_star_rate_14.png" width="15px" repeat="5">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-block">
+                    <h6 class="card-text font-13">Any music lover who wants to further their knowledge, I would definitely recommend this place. They are thorough with their teachings process which helps one plan out how to intake the knowledge given.</h6>
+                    <div class="font-13" align="right">
+                      <a href="https://g.co/kgs/vMLYDgF" target="_blank">:Source</a>
+                    </div>
+                  </div>
+                </div>
+                <!-- card end -->
+                <!-- card start -->
+                <div class="card p-4 mb-4" style="border-radius: 15px;">
+                    <div class="card-block">
+                        <div class="card-text good-review-score float-left">
+                            <img src="https://lh3.googleusercontent.com/a-/ALV-UjVeeN3ZIFH899ocQT6nlku_0SONzzEeVw0PPtj3D7tuBZ9NkGA=w45-h45-p-rp-mo-br100">
+                        </div>
+                        <div class="card-title ml-4 pl-4">
+                            <div class="pl-2">Aritra ( Calcutta )</div>
+                            <div class="pl-2" style="margin-top: -5px;">
+                                <img src="https://maps.gstatic.com/consumer/images/icons/2x/ic_star_rate_14.png" width="15px">
+                                <img src="https://maps.gstatic.com/consumer/images/icons/2x/ic_star_rate_14.png" width="15px">
+                                <img src="https://maps.gstatic.com/consumer/images/icons/2x/ic_star_rate_14.png" width="15px">
+                                <img src="https://maps.gstatic.com/consumer/images/icons/2x/ic_star_rate_14.png" width="15px">
+                                <img src="https://maps.gstatic.com/consumer/images/icons/2x/ic_star_rate_14.png" width="15px">
+                            </div>
+                        </div>                        
+                    </div>
+                    <div class="card-block">
+                        <h6 class="card-text font-13">Had an awesome experience with CCA. Faculties are pretty good, if required students get one on one classes. The curriculum is at par with all leading global music schools like Barklee, Trinity etc. I wish I would have come over here earlier:)</h6>
+                        <div class="font-13" align="right">
+                            <a href="https://g.co/kgs/TAHFVTn" target="_blank">:Source</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- card end -->
+
+                <!-- card start -->
+                <div class="card p-4 mb-4" style="border-radius: 15px;">
+                    <div class="card-block">
+                        <div class="card-text good-review-score float-left">
+                            <img src="https://lh3.googleusercontent.com/a-/ALV-UjVgQq9mU3iuKiDL0hQbhn713KzJq6GYYKcC8TTw9WHT3Q-Nr5VO=w45-h45-p-rp-mo-br100">
+                        </div>
+                        <div class="card-title ml-4 pl-4">
+                            <div class="pl-2">Krishna Singh</div>
+                            <div class="pl-2" style="margin-top: -5px;">
+                                <img src="https://maps.gstatic.com/consumer/images/icons/2x/ic_star_rate_14.png" width="15px">
+                                <img src="https://maps.gstatic.com/consumer/images/icons/2x/ic_star_rate_14.png" width="15px">
+                                <img src="https://maps.gstatic.com/consumer/images/icons/2x/ic_star_rate_14.png" width="15px">
+                                <img src="https://maps.gstatic.com/consumer/images/icons/2x/ic_star_rate_14.png" width="15px">
+                                <img src="https://maps.gstatic.com/consumer/images/icons/2x/ic_star_rate_14.png" width="15px">
+                            </div>
+                        </div>                        
+                    </div>
+                    <div class="card-block">
+                        <h6 class="card-text font-13">Hello everyone, I am learning music production and sound engineering here since July 2024 and would recommend you to join here because of the cooperative nature of the faculty, good music equipments availability, proper studio vibes, limited student batch (full attention received). And a few more things. I have seen advertisements on social media platforms which say learn music production within 3 months etc. but my personal opinion is you cannot learn and be a good producer in such short time. The faculty here teaches from step 1 and every minor thing is covered for knowledge, and I believe you have to give proper time in order to gain full knowledge. So my recommendation is CRYPTO CYPHER ACADEMY. 👍</h6>
+                        <div class="font-13" align="right">
+                            <a href="https://g.co/kgs/Acu3BN1" target="_blank">:Source</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- card end -->
+
+                <div class="card p-4 mb-4" style="border-radius: 15px;">
+                    <div class="card-block">
+                        <div class="card-text good-review-score float-left">
+                            <img src="https://lh3.googleusercontent.com/a-/ACNPEu9mqZpRKu3aohiVlWzSOWj5YAQ6BlViAbgIwwxb0A=w45-h45-p-rp-mo-br100">
+                        </div>
+                        <div class="card-title ml-4 pl-4">
+                            <div class="pl-2">YOGESH VERMA</div>
+                            <div class="pl-2" style="margin-top: -5px;">
+                                <img src="https://maps.gstatic.com/consumer/images/icons/2x/ic_star_rate_14.png" width="15px">
+                                <img src="https://maps.gstatic.com/consumer/images/icons/2x/ic_star_rate_14.png" width="15px">
+                                <img src="https://maps.gstatic.com/consumer/images/icons/2x/ic_star_rate_14.png" width="15px">
+                                <img src="https://maps.gstatic.com/consumer/images/icons/2x/ic_star_rate_14.png" width="15px">
+                                <img src="https://maps.gstatic.com/consumer/images/icons/2x/ic_star_rate_14.png" width="15px">
+                            </div>
+                        </div>                        
+                    </div>
+                    <div class="card-block">
+                        <h6 class="card-text font-13">This is the best academy that I have got in for music production. It doesn't limit us in just software but as well as help us to create our own music. It really opened my mind about music production as whole. It really helped me in understanding music production concepts. Sumit sir is very humble and helpful. Crypto cypher is the only academy who make Indian classical softwares. It is only one of its kind in India. I would highly recommend this academy to my friends who want to peruse their career in music production.</h6>
+                        <div class="font-13" align="right">
+                            <a href="https://g.co/kgs/BbjCB2" target="_blank">:Source</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card p-4 mb-4" style="border-radius: 15px;">
+                    <div class="card-block">
+                        <div class="card-text good-review-score float-left">
+                            <img src="https://lh3.googleusercontent.com/a-/ACNPEu-1ET09EGdOMRDWtlb40fD098npPf4WduJqbjmMpmM=w45-h45-p-rp-mo-br100">
+                        </div>
+                        <div class="card-title ml-4 pl-4">
+                            <div class="pl-2">Manya Narang</div>
+                            <div class="pl-2" style="margin-top: -5px;">
+                                <img src="https://maps.gstatic.com/consumer/images/icons/2x/ic_star_rate_14.png" width="15px">
+                                <img src="https://maps.gstatic.com/consumer/images/icons/2x/ic_star_rate_14.png" width="15px">
+                                <img src="https://maps.gstatic.com/consumer/images/icons/2x/ic_star_rate_14.png" width="15px">
+                                <img src="https://maps.gstatic.com/consumer/images/icons/2x/ic_star_rate_14.png" width="15px">
+                                <img src="https://maps.gstatic.com/consumer/images/icons/2x/ic_star_rate_14.png" width="15px">
+                            </div>
+                        </div>                        
+                    </div>
+                    <div class="card-block">
+                        <h6 class="card-text font-13">Extraordinary Faculty, Extraordinary Experience Of Learning.... Here, the teachers give you the freedom to do mistakes and learn on your own... THE BEST PLACE FOR LEARNING EVER.... What you'll get from here ?? - WINGS TO FLY..!!! 😇 Thank you Sumit Sir and Hemant Sir..!! Can Never Forget What You Taught Me... You Rock !! 🙏.</h6>
+                        <div class="font-13" align="right">
+                            <a href="https://g.co/kgs/USJSoq" target="_blank">:Source</a>
                         </div>
                     </div>
                 </div>
@@ -246,55 +530,6 @@
                         <h6 class="card-text font-13">Crypto cipher is the best platform for all music lovers. Here everyone can explore their creativity and achieve their goals. Here every teachers are well qualified for teaching students. I specially thanks to Sumit sir , Satparkesh sir, Sahitya sir And Rio sir for giving me best knowledge. I am very proud feel to be a part of Crypto cipher Academy 🙂</h6>
                         <div class="font-13" align="right">
                             <a href="https://g.co/kgs/nnRaRB" target="_blank">:Source</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- col 2 -->
-            <div class="col-md-4 col-12">
-                <div class="card p-4 mb-4" style="border-radius: 15px;">
-                    <div class="card-block">
-                        <div class="card-text good-review-score float-left">
-                            <img src="https://lh3.googleusercontent.com/a-/ACNPEu9mqZpRKu3aohiVlWzSOWj5YAQ6BlViAbgIwwxb0A=w45-h45-p-rp-mo-br100">
-                        </div>
-                        <div class="card-title ml-4 pl-4">
-                            <div class="pl-2">YOGESH VERMA</div>
-                            <div class="pl-2" style="margin-top: -5px;">
-                                <img src="https://maps.gstatic.com/consumer/images/icons/2x/ic_star_rate_14.png" width="15px">
-                                <img src="https://maps.gstatic.com/consumer/images/icons/2x/ic_star_rate_14.png" width="15px">
-                                <img src="https://maps.gstatic.com/consumer/images/icons/2x/ic_star_rate_14.png" width="15px">
-                                <img src="https://maps.gstatic.com/consumer/images/icons/2x/ic_star_rate_14.png" width="15px">
-                                <img src="https://maps.gstatic.com/consumer/images/icons/2x/ic_star_rate_14.png" width="15px">
-                            </div>
-                        </div>                        
-                    </div>
-                    <div class="card-block">
-                        <h6 class="card-text font-13">This is the best academy that I have got in for music production. It doesn't limit us in just software but as well as help us to create our own music. It really opened my mind about music production as whole. It really helped me in understanding music production concepts. Sumit sir is very humble and helpful. Crypto cypher is the only academy who make Indian classical softwares. It is only one of its kind in India. I would highly recommend this academy to my friends who want to peruse their career in music production.</h6>
-                        <div class="font-13" align="right">
-                            <a href="https://g.co/kgs/BbjCB2" target="_blank">:Source</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="card p-4 mb-4" style="border-radius: 15px;">
-                    <div class="card-block">
-                        <div class="card-text good-review-score float-left">
-                            <img src="https://lh3.googleusercontent.com/a-/ACNPEu-1ET09EGdOMRDWtlb40fD098npPf4WduJqbjmMpmM=w45-h45-p-rp-mo-br100">
-                        </div>
-                        <div class="card-title ml-4 pl-4">
-                            <div class="pl-2">Manya Narang</div>
-                            <div class="pl-2" style="margin-top: -5px;">
-                                <img src="https://maps.gstatic.com/consumer/images/icons/2x/ic_star_rate_14.png" width="15px">
-                                <img src="https://maps.gstatic.com/consumer/images/icons/2x/ic_star_rate_14.png" width="15px">
-                                <img src="https://maps.gstatic.com/consumer/images/icons/2x/ic_star_rate_14.png" width="15px">
-                                <img src="https://maps.gstatic.com/consumer/images/icons/2x/ic_star_rate_14.png" width="15px">
-                                <img src="https://maps.gstatic.com/consumer/images/icons/2x/ic_star_rate_14.png" width="15px">
-                            </div>
-                        </div>                        
-                    </div>
-                    <div class="card-block">
-                        <h6 class="card-text font-13">Extraordinary Faculty, Extraordinary Experience Of Learning.... Here, the teachers give you the freedom to do mistakes and learn on your own... THE BEST PLACE FOR LEARNING EVER.... What you'll get from here ?? - WINGS TO FLY..!!! 😇 Thank you Sumit Sir and Hemant Sir..!! Can Never Forget What You Taught Me... You Rock !! 🙏.</h6>
-                        <div class="font-13" align="right">
-                            <a href="https://g.co/kgs/USJSoq" target="_blank">:Source</a>
                         </div>
                     </div>
                 </div>
@@ -389,10 +624,164 @@
                             <a href="https://g.co/kgs/pcN5eQ" target="_blank">:Source</a>
                         </div>
                     </div>
-                </div>
+                </div> 
             </div>
             <!-- col 3 -->
             <div class="col-md-4 col-12">
+                <!-- card start -->
+                <div class="card p-4 mb-4" style="border-radius: 15px;">
+                  <div class="card-block">
+                    <div class="card-text good-review-score float-left">
+                      <img src="https://lh3.googleusercontent.com/a-/ALV-UjU2Tm1__IanLZirJo_v5my9TMD1uYDqQM5iwMSJVYgWqGSTBio2=w45-h45-p-rp-mo-br100">
+                    </div>
+                    <div class="card-title ml-4 pl-4">
+                      <div class="pl-2">Kanha Sharma</div>
+                      <div class="pl-2" style="margin-top: -5px;">
+                        <img src="https://maps.gstatic.com/consumer/images/icons/2x/ic_star_rate_14.png" width="15px" repeat="5">
+                        <img src="https://maps.gstatic.com/consumer/images/icons/2x/ic_star_rate_14.png" width="15px" repeat="5">
+                        <img src="https://maps.gstatic.com/consumer/images/icons/2x/ic_star_rate_14.png" width="15px" repeat="5">
+                        <img src="https://maps.gstatic.com/consumer/images/icons/2x/ic_star_rate_14.png" width="15px" repeat="5">
+                        <img src="https://maps.gstatic.com/consumer/images/icons/2x/ic_star_rate_14.png" width="15px" repeat="5">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-block">
+                    <h6 class="card-text font-13">Hands down the best institute for sound engineering. The flow of the syllabus and the methods of teaching is impeccable and unmatched. Happy to be a part of Crypto Cipher family.</h6>
+                    <div class="font-13" align="right">
+                      <a href="https://g.co/kgs/sXnZNL9" target="_blank">:Source</a>
+                    </div>
+                  </div>
+                </div>
+                <!-- card end -->
+
+                <!-- card start -->
+                <div class="card p-4 mb-4" style="border-radius: 15px;">
+                  <div class="card-block">
+                    <div class="card-text good-review-score float-left">
+                      <img src="https://lh3.googleusercontent.com/a-/ALV-UjW-bXpIexd-1dLgjrS443vN-1DsK4B_sWXkvvA_fLaPqgp2NHwp=w45-h45-p-rp-mo-br100">
+                    </div>
+                    <div class="card-title ml-4 pl-4">
+                      <div class="pl-2">Mausumi Kundu</div>
+                      <div class="pl-2" style="margin-top: -5px;">
+                        <img src="https://maps.gstatic.com/consumer/images/icons/2x/ic_star_rate_14.png" width="15px" repeat="5">
+                        <img src="https://maps.gstatic.com/consumer/images/icons/2x/ic_star_rate_14.png" width="15px" repeat="5">
+                        <img src="https://maps.gstatic.com/consumer/images/icons/2x/ic_star_rate_14.png" width="15px" repeat="5">
+                        <img src="https://maps.gstatic.com/consumer/images/icons/2x/ic_star_rate_14.png" width="15px" repeat="5">
+                        <img src="https://maps.gstatic.com/consumer/images/icons/2x/ic_star_rate_14.png" width="15px" repeat="5">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-block">
+                    <h6 class="card-text font-13">Crypto Cypher studio is all about creativity, passion and good music. As an Indian vocalist got chance to do some great experimental works.</h6>
+                    <div class="font-13" align="right">
+                      <a href="https://g.co/kgs/nyCB9Ad" target="_blank">:Source</a>
+                    </div>
+                  </div>
+                </div>
+                <!-- card end -->
+
+                <!-- card start -->
+                <div class="card p-4 mb-4" style="border-radius: 15px;">
+                  <div class="card-block">
+                    <div class="card-text good-review-score float-left">
+                      <img src="https://lh3.googleusercontent.com/a-/ALV-UjX0NFgB0GkZL0DQbW4BKCgorShwmLei-TFUiUclUZFLAnXMsQJd=w45-h45-p-rp-mo-br100">
+                    </div>
+                    <div class="card-title ml-4 pl-4">
+                      <div class="pl-2">Ahsan Ali</div>
+                      <div class="pl-2" style="margin-top: -5px;">
+                        <img src="https://maps.gstatic.com/consumer/images/icons/2x/ic_star_rate_14.png" width="15px" repeat="5">
+                        <img src="https://maps.gstatic.com/consumer/images/icons/2x/ic_star_rate_14.png" width="15px" repeat="5">
+                        <img src="https://maps.gstatic.com/consumer/images/icons/2x/ic_star_rate_14.png" width="15px" repeat="5">
+                        <img src="https://maps.gstatic.com/consumer/images/icons/2x/ic_star_rate_14.png" width="15px" repeat="5">
+                        <img src="https://maps.gstatic.com/consumer/images/icons/2x/ic_star_rate_14.png" width="15px" repeat="5">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-block">
+                    <h6 class="card-text font-13">I recently visited at Crypto Cipher Studio. It's a perfect music place to record the music in a very unique way. Keep it up Crypto Cipher.</h6>
+                    <div class="font-13" align="right">
+                      <a href="https://g.co/kgs/pwWEHjq" target="_blank">:Source</a>
+                    </div>
+                  </div>
+                </div>
+                <!-- card end -->
+                <!-- card start -->
+                <div class="card p-4 mb-4" style="border-radius: 15px;">
+                  <div class="card-block">
+                    <div class="card-text good-review-score float-left">
+                      <img src="https://lh3.googleusercontent.com/a/ACg8ocKe0Ae6a7sKmnLat26RYGzW-F8nazUWMAqsqiKUx9k_CdVyZg=w45-h45-p-rp-mo-br100">
+                    </div>
+                    <div class="card-title ml-4 pl-4">
+                      <div class="pl-2">Aman Narang ( Haryana )</div>
+                      <div class="pl-2" style="margin-top: -5px;">
+                        <img src="https://maps.gstatic.com/consumer/images/icons/2x/ic_star_rate_14.png" width="15px" repeat="5">
+                        <img src="https://maps.gstatic.com/consumer/images/icons/2x/ic_star_rate_14.png" width="15px" repeat="5">
+                        <img src="https://maps.gstatic.com/consumer/images/icons/2x/ic_star_rate_14.png" width="15px" repeat="5">
+                        <img src="https://maps.gstatic.com/consumer/images/icons/2x/ic_star_rate_14.png" width="15px" repeat="5">
+                        <img src="https://maps.gstatic.com/consumer/images/icons/2x/ic_star_rate_14.png" width="15px" repeat="5">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-block">
+                    <h6 class="card-text font-13">Academy is genuinely very good and the teachers are also very nice. They teach in a way which makes even the complicated things easy to understand. If the students are eager to know then the teachers are even more eager to tell. Making notes and regular revision of what is being taught in class is extremely important. Otherwise there is huge bulk of knowledge given in classes and there is high chance that without practice and revision of the same, we won’t be able to remember them all and utilize this opportunity to the maximum potential.</h6>
+                    <div class="font-13" align="right">
+                      <a href="https://g.co/kgs/guBkrk3" target="_blank">:Source</a>
+                    </div>
+                  </div>
+                </div>
+                <!-- card end -->
+
+                <!-- card start -->
+                <div class="card p-4 mb-4" style="border-radius: 15px;">
+                  <div class="card-block">
+                    <div class="card-text good-review-score float-left">
+                      <img src="https://lh3.googleusercontent.com/a-/ALV-UjUF_MBhlukyrqaZdJGKMHGdBNOFIqm7DxhEljG2gm06iq0NXbas=w45-h45-p-rp-mo-br100">
+                    </div>
+                    <div class="card-title ml-4 pl-4">
+                      <div class="pl-2">Yash Pahwa</div>
+                      <div class="pl-2" style="margin-top: -5px;">
+                        <img src="https://maps.gstatic.com/consumer/images/icons/2x/ic_star_rate_14.png" width="15px" repeat="5">
+                        <img src="https://maps.gstatic.com/consumer/images/icons/2x/ic_star_rate_14.png" width="15px" repeat="5">
+                        <img src="https://maps.gstatic.com/consumer/images/icons/2x/ic_star_rate_14.png" width="15px" repeat="5">
+                        <img src="https://maps.gstatic.com/consumer/images/icons/2x/ic_star_rate_14.png" width="15px" repeat="5">
+                        <img src="https://maps.gstatic.com/consumer/images/icons/2x/ic_star_rate_14.png" width="15px" repeat="5">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-block">
+                    <h6 class="card-text font-13">I’m just 3 months into the Sound engineering course at CrypoCypher Academy's I've been amazed at how much I'm learning new things every single day. With expert instructors, a comprehensive curriculum, and a collaborative environment, it's been a transformative journey of growth, creativity, and constant discovery.</h6>
+                    <div class="font-13" align="right">
+                      <a href="https://g.co/kgs/dXP4EsU" target="_blank">:Source</a>
+                    </div>
+                  </div>
+                </div>
+                <!-- card end -->
+
+                <!-- card start -->
+                <div class="card p-4 mb-4" style="border-radius: 15px;">
+                  <div class="card-block">
+                    <div class="card-text good-review-score float-left">
+                      <img src="https://lh3.googleusercontent.com/a-/ALV-UjWKIgoiz4udRpk65-5e90n7dXVt-nViyxJ-KAHMLGD54KFCfS7Y=w45-h45-p-rp-mo-ba2-br100">
+                    </div>
+                    <div class="card-title ml-4 pl-4">
+                      <div class="pl-2">Prarushi Verma ( Jaipur )</div>
+                      <div class="pl-2" style="margin-top: -5px;">
+                        <img src="https://maps.gstatic.com/consumer/images/icons/2x/ic_star_rate_14.png" width="15px" repeat="5">
+                        <img src="https://maps.gstatic.com/consumer/images/icons/2x/ic_star_rate_14.png" width="15px" repeat="5">
+                        <img src="https://maps.gstatic.com/consumer/images/icons/2x/ic_star_rate_14.png" width="15px" repeat="5">
+                        <img src="https://maps.gstatic.com/consumer/images/icons/2x/ic_star_rate_14.png" width="15px" repeat="5">
+                        <img src="https://maps.gstatic.com/consumer/images/icons/2x/ic_star_rate_14.png" width="15px" repeat="5">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-block">
+                    <h6 class="card-text font-13">I would not take any names of other institutes but students have left other academies and came to this one because there they didn't find any education taking place. There's a difference between an institution and a business organization and crypto cipher is purely intended to provide the best music production and sound engineering knowledge. All three teachers are highly professional with great amount of expertise, very kind enough to acknowledge all sorts of problems. I am an absolute beginner in this field but they have always been there to help me out and answer all my questions 10 times. HIGHLY RECOMMENDED!!</h6>
+                    <div class="font-13" align="right">
+                      <a href="https://g.co/kgs/mrUrju2" target="_blank">:Source</a>
+                    </div>
+                  </div>
+                </div>
+                <!-- card end -->
                 <div class="card p-4 mb-4" style="border-radius: 15px;">
                     <div class="card-block">
                         <div class="card-text good-review-score float-left">

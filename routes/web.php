@@ -28,6 +28,8 @@ Route::resource('/music-production-course', 'ProductionCourseController');
 Route::resource('/sound-engineering-diploma-course', 'EngineeringCourseController');//left
 Route::resource('/sound-engineering-course', 'EngineeringCourseController');//deleted
 Route::resource('/music-production-diploma-course', 'MusicProductionDiplomaController');
+Route::resource('/live-sound-engineering-diploma', 'LiveSoundEngineeringController');
+
 Route::resource('/music-production-online', 'MusicProductionOnlineController');
 Route::resource('/contact-us', 'ContactController');
 Route::resource('/studio-equipment', 'GalleryController');
@@ -64,9 +66,45 @@ Route::group(['as'=>'admin.','prefix'=>'admin','namespace'=>'Admin','middleware'
     Route::resource('engineeringCourseModule','EngineeringCourseModuleController');
     Route::resource('engineeringCourseOverview','EngineeringCourseOverviewController');
     Route::resource('engineeringCourseLogicAbleton','EngineeringCourseLogicAlbetonController');
+
     Route::resource('musicProductionDiploma','MusicProductionDiplomaController');
     Route::resource('musicProductionDiplomaQuick','MusicProductionDiplomaQuicksController');
     Route::resource('musicProductionDiplomaLogic','MusicProductionDiplomaLogicController');
+
+    Route::resource('musicProductionDiplomaSound','MusicProductionDiplomaSoundController');
+    Route::resource('musicProductionDiplomaModule','MusicProductionDiplomaModuleController');
+    Route::resource('musicProductionDiplomaOverview','MusicProductionDiplomaOverviewController');
+    Route::resource('musicProductionDiplomaLogicAbleton', MusicProductionDiplomaLogicAlbetonController::class)
+    ->parameters([
+        'musicProductionDiplomaLogicAbleton' => 'logicAbleton'
+    ]);
+
+    Route::resource('liveSoundEngineeringDiploma','LiveSoundEngineeringController', [
+        'parameters' => ['liveSoundEngineeringDiploma' => 'diploma']
+    ]);
+
+    Route::resource('liveSoundEngineeringDiplomaQuick','LiveSoundEngineeringQuicksController', [
+        'parameters' => ['liveSoundEngineeringDiplomaQuick' => 'quick']
+    ]);
+
+    Route::resource('liveSoundEngineeringDiplomaLogic','LiveSoundEngineeringLogicController', [
+        'parameters' => ['liveSoundEngineeringDiplomaLogic' => 'logic']
+    ]);
+
+    Route::resource('liveSoundEngineeringDiplomaSound','LiveSoundEngineeringSoundController', [
+        'parameters' => ['liveSoundEngineeringDiplomaSound' => 'sound']
+    ]);
+
+    Route::resource('liveSoundEngineeringDiplomaModule', 'LiveSoundEngineeringModuleController', [
+        'parameters' => ['liveSoundEngineeringDiplomaModule' => 'module']
+    ]);
+
+    Route::resource('liveSoundEngineeringDiplomaOverview','LiveSoundEngineeringOverviewController', [
+        'parameters' => ['liveSoundEngineeringDiplomaOverview' => 'overview']
+    ]);
+
+
+
     Route::resource('contact','ContactController');
     Route::resource('productionCourse','ProductionCourseController');
     Route::resource('productionCourseQuick','ProductionCourseQuicksController');

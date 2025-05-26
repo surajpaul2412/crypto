@@ -181,20 +181,26 @@
                         </li>
                     </ul>
                 </li>
-                <!-- <li class="{{ Request::is('admin/musicProductionDiploma*') ? 'active' : '' }}">
+                <li class="{{ Request::is('admin/musicProductionDiploma*') ? 'active' : '' }}">
                     <a href="{{ route('admin.musicProductionDiploma.index') }}" class="menu-toggle">
                         <i class="material-icons">star</i>
-                        <span>Music Production Diploma Course</span>
+                        <span>Music Production Diploma Module</span>
                     </a>
                     <ul class="ml-menu">
                         <li>
-                            <a href="{{ route('admin.musicProductionDiplomaQuick.index') }}">Quick Course ?</a>
+                            <a href="{{ route('admin.musicProductionDiplomaSound.index') }}">Enroll Course ?</a>
                         </li>
                         <li>
-                            <a href="{{ route('admin.musicProductionDiplomaLogic.index') }}">Logic Pro X</a>
+                            <a href="{{ route('admin.musicProductionDiplomaLogicAbleton.index') }}">Main Module Description</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('admin.musicProductionDiplomaOverview.index') }}">Engineering module Overview</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('admin.musicProductionDiplomaModule.index') }}">Engineering Modules</a>
                         </li>
                     </ul>
-                </li> -->
+                </li>
                 <li class="{{ Request::is('admin/engineeringCourse*') ? 'active' : '' }}">
                     <a href="{{ route('admin.engineeringCourse.index') }}" class="menu-toggle">
                         <i class="material-icons">star</i>
@@ -218,6 +224,23 @@
                         </li>
                         <li>
                             <a href="{{ route('admin.engineeringCourseModule.index') }}">Engineering Modules</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="{{ Request::is('admin/liveSoundEngineeringDiploma*') ? 'active' : '' }}">
+                    <a href="{{ route('admin.liveSoundEngineeringDiploma.index') }}" class="menu-toggle">
+                        <i class="material-icons">star</i>
+                        <span>Live Sound Engineering Diploma</span>
+                    </a>
+                    <ul class="ml-menu">
+                        <li>
+                            <a href="{{ route('admin.liveSoundEngineeringDiplomaSound.index') }}">Enroll Course ?</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('admin.liveSoundEngineeringDiplomaOverview.index') }}">Engineering module Overview</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('admin.liveSoundEngineeringDiplomaModule.index') }}">Engineering Modules</a>
                         </li>
                     </ul>
                 </li>
