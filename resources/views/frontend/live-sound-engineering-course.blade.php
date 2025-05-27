@@ -77,7 +77,7 @@
             </div>
             <div class="col-md-6 my-2 pt-3">
                 <div class="slider-header bg-theme p-4" align="left">
-                    <h4 class="font-black text-black font-18">Who Can Enroll Sound Engineering Course?</h4>
+                    <h4 class="font-black text-black font-18">Who Can Enroll Live Sound Engineering Course?</h4>
                     <ul class="font-regular text-black font-13 pl-0 pr-3 pt-2 quick-info">
                         @if($sound->count())
                         @foreach($sound as $row)
@@ -90,7 +90,7 @@
         </div>
     </section>
     <!--  Logic Pro X & Ableton Live  -->
-    <section class="container slider-header mt-4 px-3" id="logicAbleton">
+    {{--<section class="container slider-header mt-4 px-3" id="logicAbleton">
         <!-- title -->
         <!-- <div class="px-2 pt-4 pl-0">
             <h4 class="font-black text-black font-18">Logic Pro X & Ableton Live </h4>
@@ -117,7 +117,7 @@
                 @endif
             </div>
         </div>
-    </section>
+    </section>--}}
     <!-- studio recording -->
     @if($modules->count())
     @foreach($modules as $row)

@@ -181,12 +181,20 @@
                                         <span class="font-regular font-12 text-grey2">Select Course</span>
                                         <div class="mobile-d-grid">
                                             <span>
-                                                <input type="radio" id="music" name="course" value="Music Production" required>
-                                                <label class="pl-2" for="music">Music Production</label>
+                                                <input type="radio" id="music" name="course" value="Music Production Course" required>
+                                                <label class="pl-2" for="music">Music Production Course</label>
                                             </span>
                                             <span class="pl-3 media-pl-0">
-                                                <input type="radio" id="sound" name="course" value="Sound Engineering">
-                                                <label class="pl-2" for="sound">Sound Engineering</label>
+                                                <input type="radio" id="sound" name="course" value="Music Production Diploma">
+                                                <label class="pl-2" for="sound">Music Production Diploma</label>
+                                            </span>
+                                            <span class="pl-3 media-pl-0">
+                                                <input type="radio" id="sound" name="course" value="Sound Engineering Diploma">
+                                                <label class="pl-2" for="sound">Sound Engineering Diploma</label>
+                                            </span>
+                                            <span class="pl-3 media-pl-0">
+                                                <input type="radio" id="sound" name="course" value="Live Sound Engineering">
+                                                <label class="pl-2" for="sound">Live Sound Engineering</label>
                                             </span>
                                             @error('course')
                                                 <span class="invalid-feedback" role="alert">

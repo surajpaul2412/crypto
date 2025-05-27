@@ -30,7 +30,7 @@
       </div><br/>
     @endif
 
-    <form method="post" action="{{ route('liveSoundEngineeringDiploma.update', $liveSoundEngineering->id) }}" enctype="multipart/form-data">
+    <form method="post" action="{{ route('admin.liveSoundEngineeringDiploma.update', $liveSoundEngineering->id) }}" enctype="multipart/form-data">
       @method('PATCH')
       @csrf
 

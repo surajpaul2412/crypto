@@ -23,7 +23,7 @@ class LiveSoundEngineeringController extends Controller
      */
     public function index()
     {
-        $liveSoundEngineering = LiveSoundEngineering::all();
+        $musicProductionDiploma = LiveSoundEngineering::all();
         $modules = LiveSoundEngineeringModule::all();
         $overview = LiveSoundEngineeringOverview::all();
         $sound = LiveSoundEngineeringSound::all();
@@ -33,7 +33,7 @@ class LiveSoundEngineeringController extends Controller
         $desktopMenu = DesktopMenuSection::orderBy('sort_by', "asc")->get();
 
         return view('frontend.live-sound-engineering-course', compact(
-            'liveSoundEngineering',
+            'musicProductionDiploma',
             'modules',
             'overview',
             'sound',

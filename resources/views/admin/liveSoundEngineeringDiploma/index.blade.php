@@ -45,7 +45,7 @@
 </div>
 
 <div align="right" style="position: fixed;bottom: 30px;right: 30px;">
-  <a href="{{ route('liveSoundEngineeringDiploma.edit', $row->id) }}">
+  <a href="{{ route('admin.liveSoundEngineeringDiploma.edit', $row->id) }}">
     <button class="btn px-5 pt-3" style="background: #1d1b27; color:#fff;">
       Edit Live Sound Engineering Diploma
       <img class="pl-3" src="{{ asset('assets/backend/images/right-arrow.png') }}">

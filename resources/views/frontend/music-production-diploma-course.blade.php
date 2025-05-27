@@ -77,7 +77,7 @@
             </div>
             <div class="col-md-6 my-2 pt-3">
                 <div class="slider-header bg-theme p-4" align="left">
-                    <h4 class="font-black text-black font-18">Who Can Enroll Sound Engineering Course?</h4>
+                    <h4 class="font-black text-black font-18">Who Can Enroll Music Production Diploma Course?</h4>
                     <ul class="font-regular text-black font-13 pl-0 pr-3 pt-2 quick-info">
                         @if($sound->count())
                         @foreach($sound as $row)

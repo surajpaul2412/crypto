@@ -33,7 +33,7 @@
       </div><br/>
     @endif
 
-    <form method="POST" action="{{ route('admin.liveSoundEngineeringOverview.store') }}" enctype="multipart/form-data">
+    <form method="POST" action="{{ route('admin.liveSoundEngineeringDiplomaOverview.store') }}" enctype="multipart/form-data">
       @csrf
       <div class="form-group">
         <label class="text-dark" for="content">Content :</label>

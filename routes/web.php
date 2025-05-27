@@ -28,7 +28,7 @@ Route::resource('/music-production-course', 'ProductionCourseController');
 Route::resource('/sound-engineering-diploma-course', 'EngineeringCourseController');//left
 Route::resource('/sound-engineering-course', 'EngineeringCourseController');//deleted
 Route::resource('/music-production-diploma-course', 'MusicProductionDiplomaController');
-Route::resource('/live-sound-engineering-diploma', 'LiveSoundEngineeringController');
+Route::resource('/live-sound-engineering-course', 'LiveSoundEngineeringController');
 
 Route::resource('/music-production-online', 'MusicProductionOnlineController');
 Route::resource('/contact-us', 'ContactController');
