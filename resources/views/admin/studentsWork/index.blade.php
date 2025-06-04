@@ -36,6 +36,7 @@
           <th>Short Description</th>
           <th>Status</th>
           <th>Image</th>
+          <th>Order By</th>
           <th>Edit</th>
           <th>Delete</th>
         </tr>
@@ -68,6 +69,7 @@
           </td>
         @endif        
         <td><img src="{{env('image_url')}}/work/{{$row->image}}" width="80px"></td>        
+        <td>{{$row->sort_by}}</td>        
         <td>
           <a href="{{ route('admin.studentsWork.edit',$row->id)}}">
             <i class="material-icons">edit</i>

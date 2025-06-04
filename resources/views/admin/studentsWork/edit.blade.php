@@ -34,6 +34,10 @@
           <input type="text" class="form-control" name="slug" value="{{ $studentsWork->slug }}"/>
         </div>
         <div class="form-group">
+          <label class="text-dark" for="year">Order by :</label>
+          <input type="text" class="form-control" name="sort_by" value="{{ $studentsWork->sort_by }}"/>
+        </div>
+        <div class="form-group">
           <label class="text-dark" for="year">Year :</label>
           <input type="text" class="form-control" name="year" value="{{ $studentsWork->year }}"/>
         </div>

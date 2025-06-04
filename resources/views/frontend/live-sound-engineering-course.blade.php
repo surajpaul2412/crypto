@@ -1,8 +1,8 @@
 @extends('layouts.frontend.app')
 
 @section('metas')
-<title>Top Music Production & Sound Engineering Course in Delhi, India | Crypto Cipher®</title>
-<meta name="description" content="Join the top Music Production & Sound Engineering Course in Delhi, India at Crypto Cipher®. Learn professional skills in sound design, mixing, mastering, and music theory. Hands-on training for producers, engineers, and composers aiming for studio and live success.Enroll now!">
+<title>{{$musicProductionDiploma->first()->meta_title}}</title>
+<meta name="description" content="{{$musicProductionDiploma->first()->meta_description}}">
 @endsection
 
 @section('css')
@@ -54,8 +54,8 @@
     <section class="container slider-header">
         <!-- title -->
         <div class="px-3 pt-4 media-pt-0">
-            <h1 class="font-regular text-grey2 pl-2 pb-0 font-13 inner-title uppercase">Advanced Music Production Course</h1>
-            <h4 class="font-black text-black font-35 marT-10">Music Production Diploma Course</h4>
+            <h1 class="font-regular text-grey2 pl-2 pb-0 font-13 inner-title uppercase">Live sound engineering certificate course</h1>
+            <h4 class="font-black text-black font-35 marT-10">Live Sound Engineering Certificate Course</h4>
         </div>
         <!-- content -->
         <div class="row px-3 media-px-2">
@@ -124,7 +124,7 @@
     <section class="container slider-header mt-4" id="{{ str_replace(' ', '', $row->heading) }}">
         <!-- content -->
         <div class="row mx-2 media-mx-0">
-            <div class="col-md-12 col-12 py-2">
+            <div class="col-md-7 col-12 py-2">
                 <div class="pb-3">
                     <h6 class="font-black bold font-20"><span><img alt="{{$row->heading}}" class="pr-3 media-studio-img" src="{{env('image_url')}}/module/{{$row->icon}}" width="6%"></span>{{$row->heading}}</h6>
                     <div class="font-regular pb-3 font-13 text-grey2">
@@ -132,11 +132,11 @@
                     </div>
                 </div>
             </div>
-            <!-- <div class="col-md-5 col-12 py-3" align="right">
+            <div class="col-md-5 col-12 py-3" align="right">
                 <div class="box-shadow">
                     <img src="{{env('image_url')}}/module/{{$row->image}}" alt="{{$row->heading}}" class="media-w-100" width="100%">
                 </div>
-            </div> -->
+            </div>
         </div>
     </section>
     @endforeach

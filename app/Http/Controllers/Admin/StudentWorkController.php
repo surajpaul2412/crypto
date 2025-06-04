@@ -15,7 +15,7 @@ class StudentWorkController extends Controller
      */
     public function index()
     {
-        $studentsWork = StudentsWork::paginate(10);
+        $studentsWork = StudentsWork::orderBy('sort_by', 'asc')->paginate(10);
         return view('admin.studentsWork.index', compact('studentsWork'));
     }
 
@@ -53,6 +53,7 @@ class StudentWorkController extends Controller
             'meta_title'=> 'nullable|string|min:3',
             'meta_keyword'=> 'nullable|string|min:3',
             'meta_description'=> 'nullable|string|min:3',
+            'sort_by' => 'nullable'
         ]);
 
         $image_name = $request->image;
@@ -78,6 +79,7 @@ class StudentWorkController extends Controller
         $studentsWork->meta_description = $request->meta_description;
         $studentsWork->status = null;
         $studentsWork->image = $image_name;
+        $studentsWork->sort_by = $sort_by;
         $studentsWork->save();
         return redirect('/admin/studentsWork')->with('success', 'Work has been added.');
     }
@@ -132,6 +134,7 @@ class StudentWorkController extends Controller
                 'meta_title'=> 'nullable|string|min:3',
                 'meta_keyword'=> 'nullable|string|min:3',
                 'meta_description'=> 'nullable|string|min:3',
+                'sort_by' => 'nullable'
             ]);
             $image_name = rand() . '.' . $image->getClientOriginalExtension();
             $image->move(public_path('images/work'), $image_name);
@@ -151,6 +154,7 @@ class StudentWorkController extends Controller
             'meta_title' => $request->meta_title,
             'meta_keyword' => $request->meta_keyword,
             'meta_description' => $request->meta_description,
+            'sort_by' => $request->sort_by,
             'image' => $image_name
         );
 

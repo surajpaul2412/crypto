@@ -42,10 +42,16 @@ class LiveSoundEngineeringController extends Controller
     {
         $request->validate([
             'content' => 'required|min:3',
+            'meta_title' => 'nullable',
+            'meta_keyword' => 'nullable',
+            'meta_description' => 'nullable'
         ]);
 
         $form_data = [
-            'content' => $request->content
+            'content' => $request->content,
+            'meta_title' => $request->meta_title,
+            'meta_keyword' => $request->meta_keyword,
+            'meta_description' => $request->meta_description
         ];
 
         LiveSoundEngineering::whereId($id)->update($form_data);
