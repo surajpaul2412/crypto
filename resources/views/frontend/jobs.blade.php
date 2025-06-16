@@ -1,6 +1,6 @@
 @extends('layouts.frontend.app')
 @section('metas')
-<title>Sound Engineering & Music Production Jobs | Crypto Cipher ®</title>
+<title>Sound Engineering & Music Production Jobs | Crypto Cipher® ( Academy,India)</title>
 <meta name="description" content="Apply for sound engineering and music production internships program. Jobs,Salary and work ethics details. Sound Engineers,Music Producers,Live Sound Engineers,Faculty and Managers with musical background.">
 @endsection
 

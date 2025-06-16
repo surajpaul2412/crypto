@@ -1,7 +1,7 @@
 @extends('layouts.frontend.app')
 @section('metas')
 @foreach($aboutUs as $meta)
-<title>{{$meta->meta_title}}</title>
+<title>{{$meta->meta_title}} | Crypto Cipher® ( Academy,India)</title>
 <meta name="keywords" content="{{$meta->meta_keyword}}">
 <meta name="description" content="{{$meta->meta_description}}">
 @endforeach

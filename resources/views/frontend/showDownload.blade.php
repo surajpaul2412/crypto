@@ -1,6 +1,6 @@
 @extends('layouts.frontend.app')
 @section('metas')
-<title>{{$download->name}} | Crypto Cipher ®</title>
+<title>{{$download->name}} | Crypto Cipher® ( Academy,India)</title>
 <meta name="description" content="Logic Pro X & Ableton Live free projects, Sample packs, Free Kontakt Instruments, Loops and Synth Massive & Serum Presets.">
 @endsection
 

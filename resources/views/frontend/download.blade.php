@@ -1,6 +1,6 @@
 @extends('layouts.frontend.app')
 @section('metas')
-<title>Downloads | Crypto Cipher ®</title>
+<title>Downloads | Crypto Cipher® ( Academy,India)</title>
 <meta name="description" content="Logic Pro X & Ableton Live free projects, Sample packs, Free Kontakt Instruments, Loops and Synth Massive & Serum Presets.">
 @endsection
 

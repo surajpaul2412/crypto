@@ -1,6 +1,6 @@
 @extends('layouts.frontend.app')
 @section('metas')
-<title>Admissions are open now | Crypto Cipher ®</title>
+<title>Admissions are open now | Crypto Cipher® ( Academy,India)</title>
 <meta name="description" content="Sound Engineering & Music Production Course Admissions Crypto Cipher Admission form, fee details, batch commencement dates & registration.">
 <meta property="og:title" content="Admissions are open now | Crypto Cipher" />
 <meta property="og:image:url" content="{{asset('assets/backend/images/fav.png')}}" />

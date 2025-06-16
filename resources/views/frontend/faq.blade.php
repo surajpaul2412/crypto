@@ -1,6 +1,6 @@
 @extends('layouts.frontend.app')
 @section('metas')
-<title>FAQs | Crypto Cipher ®</title>
+<title>FAQs | Crypto Cipher® ( Academy,India)</title>
 <meta name="description" content="Course queries and guidance| Crypto Cipher Academy Sound Engineering & music production course related queries, general queries, hostel and career related queries.">
 @endsection
 
@@ -60,7 +60,7 @@
         @if($faqs->count())
         <div class="row px-3 pt-2" style="margin-bottom: -8px;">
             @foreach($faqs as $row)
-            <div class="col-md-6 col-12 mb-4">
+            <div class="col-md-12 col-12 mb-4">
                 <div class="slider-header bg-theme px-2 pb-4">
                     <div class="row py-3">
                         <div class="col-md-2 pl-4 col-3">

@@ -1,6 +1,6 @@
 @extends('layouts.frontend.app')
 @section('metas')
-<title>Recording Studio Equipment list gallery | Crypto Cipher ®</title>
+<title>Recording Studio Equipment list gallery | Crypto Cipher® ( Academy,India)</title>
 <meta name="description" content="Music Studio Equipment List & Gallery at Crypto Cipher for Music Production Courses & Advanced Sound Engineering studio environment.">
 @endsection
 

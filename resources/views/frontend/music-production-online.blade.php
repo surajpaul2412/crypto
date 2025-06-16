@@ -1,6 +1,6 @@
 @extends('layouts.frontend.app')
 @section('title')
-<title>Crypto Cipher ®</title>
+<title>Crypto Cipher® ( Academy,India)</title>
 @endsection
 
 @section('css')

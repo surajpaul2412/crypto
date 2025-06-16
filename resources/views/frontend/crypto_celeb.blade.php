@@ -1,6 +1,6 @@
 @extends('layouts.frontend.app')
 @section('metas')
-<title>Crypto Cipher Reviews by Pro Music Composers Worldwide | Crypto Cipher ®</title>
+<title>Crypto Cipher Reviews by Pro Music Composers Worldwide | Crypto Cipher® ( Academy,India)</title>
 <meta name="description" content="Crypto Cipher has been proudly endorsed and supported by famous multi award-winning (Oscar/Bafta/Grammy awards) and Nomination centric artistes">
 @endsection
 

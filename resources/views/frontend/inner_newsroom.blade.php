@@ -1,6 +1,6 @@
 @extends('layouts.frontend.app')
 @section('title')
-<title>{{$news->meta_title}} | Crypto Cipher ®</title>
+<title>{{$news->meta_title}} | Crypto Cipher® ( Academy,India)</title>
 <meta name="keywords" content="Logic ProX , Ableton Live, Synthesis, Mixing, Mastering, Arrangements and many tutorials helping Music Production & Sound engineering students">
 <meta name="description" content="{{$news->meta_description}}">
 @endsection

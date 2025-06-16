@@ -11,7 +11,7 @@ $desktopMenu = DesktopMenuSection::orderBy('sort_by', "asc")->get();
 <html>
 <head>  
   @yield('title')
-  @yield('metas')  
+  @yield('metas')
   <meta name="google-site-verification" content="ENm9SYMHs4jj6Z3WL_u1o8pQRmv3m7EQvHZOMJJjg_o" />
   <link rel="icon" href="{{asset('assets/backend/images/fav.png')}}" type="image" sizes="16x16">
   <meta charset="utf-8">
@@ -512,46 +512,12 @@ $desktopMenu = DesktopMenuSection::orderBy('sort_by', "asc")->get();
               </div>
               @foreach($desktopMenu as $key => $try1)              
               <div class="col-md-12 pl-13p section{{$key+1}} scroll-hide overflow-y-scroll">
-                @if($try1->desktopMainMenu->count() <= 2)
+                @if($try1->desktopMainMenu->count() <= 1)
                   <div style="position: relative;top: 50%;transform: translateY(-50%);">
                 @else
                   <div style="position: relative;">
-                    <div style="position: absolute;top: 0;right: 0;">
-                      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" version="1.1" width="15" height="15" x="0" y="0" viewBox="0 0 292.362 292.362" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g>
-                      <g xmlns="http://www.w3.org/2000/svg">
-                        <path d="M286.935,69.377c-3.614-3.617-7.898-5.424-12.848-5.424H18.274c-4.952,0-9.233,1.807-12.85,5.424   C1.807,72.998,0,77.279,0,82.228c0,4.948,1.807,9.229,5.424,12.847l127.907,127.907c3.621,3.617,7.902,5.428,12.85,5.428   s9.233-1.811,12.847-5.428L286.935,95.074c3.613-3.617,5.427-7.898,5.427-12.847C292.362,77.279,290.548,72.998,286.935,69.377z" fill="#79bd50" data-original="#000000" style="" class=""/>
-                      </g>
-                      <g xmlns="http://www.w3.org/2000/svg">
-                      </g>
-                      <g xmlns="http://www.w3.org/2000/svg">
-                      </g>
-                      <g xmlns="http://www.w3.org/2000/svg">
-                      </g>
-                      <g xmlns="http://www.w3.org/2000/svg">
-                      </g>
-                      <g xmlns="http://www.w3.org/2000/svg">
-                      </g>
-                      <g xmlns="http://www.w3.org/2000/svg">
-                      </g>
-                      <g xmlns="http://www.w3.org/2000/svg">
-                      </g>
-                      <g xmlns="http://www.w3.org/2000/svg">
-                      </g>
-                      <g xmlns="http://www.w3.org/2000/svg">
-                      </g>
-                      <g xmlns="http://www.w3.org/2000/svg">
-                      </g>
-                      <g xmlns="http://www.w3.org/2000/svg">
-                      </g>
-                      <g xmlns="http://www.w3.org/2000/svg">
-                      </g>
-                      <g xmlns="http://www.w3.org/2000/svg">
-                      </g>
-                      <g xmlns="http://www.w3.org/2000/svg">
-                      </g>
-                      <g xmlns="http://www.w3.org/2000/svg">
-                      </g>
-                      </g></svg>
+                    <div style="position: absolute;top: -20%;right: -28%;">
+                      <div id="lottie-scroll-nudge" style="width:195px; height:280px;"></div>
                     </div>
                 @endif
                     @foreach($try1->desktopMainMenu as $try2)
@@ -692,6 +658,19 @@ $desktopMenu = DesktopMenuSection::orderBy('sort_by', "asc")->get();
         </div>
       </a>
     </div>
+
+
+<script src="https://unpkg.com/lottie-web@5.12.0/build/player/lottie.min.js"></script>
+<script>
+  lottie.loadAnimation({
+    container: document.getElementById('lottie-scroll-nudge'),
+    renderer: 'svg',
+    loop: true,
+    autoplay: true,
+    path: 'images/scroll-nudge.json' // Make sure this path is correct
+  });
+</script>
+
 
 <!-- JQuery -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

@@ -1,6 +1,6 @@
 @extends('layouts.frontend.app')
 @section('metas')
-<title>Music Production & Sound Engineering Certification | Crypto Cipher ®</title>
+<title>Music Production & Sound Engineering Certification | Crypto Cipher® ( Academy,India)</title>
 <meta name="description" content="Audio Engineering Diploma & Music Production course syllabus, passing credits for diploma certificate.">
 @endsection
 

@@ -1,6 +1,6 @@
 @extends('layouts.frontend.app')
 @section('metas')
-<title>{{$work->meta_title}} | Crypto Cipher ®</title>
+<title>{{$work->meta_title}} | Crypto Cipher® ( Academy,India)</title>
 <meta name="description" content="{!!$work->meta_description!!}">
 @endsection
 

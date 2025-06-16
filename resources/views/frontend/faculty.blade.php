@@ -1,6 +1,6 @@
 @extends('layouts.frontend.app')
 @section('metas')
-<title>Audio Faculty Department | Music Production Course | Crypto Cipher ®</title>
+<title>Audio Faculty Department | Music Production Course | Crypto Cipher® ( Academy,India)</title>
 <meta name="description" content="Crypto Cipher experienced Music Production Faculty & Sound Engineering Faculty in Delhi, India.">
 @endsection
 

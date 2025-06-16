@@ -1,6 +1,6 @@
 @extends('layouts.frontend.app')
 @section('metas')
-<title>Crypto Cipher Video Gallery | Youtube Videos | Crypto Cipher ®</title>
+<title>Crypto Cipher Video Gallery | Youtube Videos | Crypto Cipher® ( Academy,India)</title>
 <meta name="description" content="About Crypto Cipher renowned products, reviews, feedback & students success">
 @endsection
 

@@ -1,6 +1,6 @@
 @extends('layouts.frontend.app')
 @section('metas')
-<title>Crypto Cipher Student Work | Course Reviews & Profiles | Crypto Cipher ®</title>
+<title>Crypto Cipher Student Work | Course Reviews & Profiles | Crypto Cipher® ( Academy,India)</title>
 <meta name="description" content="Sound Engineering & Music Production Course pass out student profiles and course reviews.">
 @endsection
 

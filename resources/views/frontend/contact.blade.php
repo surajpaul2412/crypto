@@ -1,6 +1,6 @@
 @extends('layouts.frontend.app')
 @section('metas')
-<title>Music & Sound Engineering Institute - Contact Us | Crypto Cipher ®</title>
+<title>Music & Sound Engineering Institute - Contact Us | Crypto Cipher® ( Academy,India)</title>
 <meta name="description" content="Call , WhatsApp & email support available during official hours from 10 A.M - 5 P.M. Studio address and route guidance for Crypto Cipher Academy Location.">
 @endsection
 

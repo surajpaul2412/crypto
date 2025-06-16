@@ -1,7 +1,7 @@
 @extends('layouts.frontend.app')
 @section('title')
 @foreach($productionCourse as $meta)
-<title>{{$meta->meta_title}} | Crypto Cipher ®</title>
+<title>{{$meta->meta_title}} | Crypto Cipher® ( Academy,India)</title>
 <meta name="keywords" content="{{$meta->meta_keyword}}">
 <meta name="description" content="{{$meta->meta_description}}">
 @endforeach

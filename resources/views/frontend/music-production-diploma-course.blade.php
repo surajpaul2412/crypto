@@ -1,7 +1,7 @@
 @extends('layouts.frontend.app')
 
 @section('metas')
-<title>Top Music Production & Sound Engineering Course in Delhi, India | Crypto Cipher®</title>
+<title>Top Music Production & Sound Engineering Course in Delhi, India | Crypto Cipher® ( Academy,India)</title>
 <meta name="description" content="Join the top Music Production & Sound Engineering Course in Delhi, India at Crypto Cipher®. Learn professional skills in sound design, mixing, mastering, and music theory. Hands-on training for producers, engineers, and composers aiming for studio and live success.Enroll now!">
 @endsection
 

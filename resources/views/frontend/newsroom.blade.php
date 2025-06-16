@@ -1,6 +1,6 @@
 @extends('layouts.frontend.app')
 @section('metas')
-<title>Sound Engineering & Music Production News & Articles | Crypto Cipher ®</title>
+<title>Sound Engineering & Music Production News & Articles | Crypto Cipher® ( Academy,India)</title>
 <meta name="keywords" content="Logic ProX , Ableton Live, Synthesis, Mixing, Mastering, Arrangements and many tutorials helping Music Production & Sound engineering students">
 <meta name="description" content="Logic ProX , Ableton Live, Synthesis, Mixing, Mastering, Arrangements and many tutorials helping Music Production & Sound engineering students">
 @endsection

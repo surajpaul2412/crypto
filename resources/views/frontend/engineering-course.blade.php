@@ -1,7 +1,7 @@
 @extends('layouts.frontend.app')
 
 @section('metas')
-<title>Advanced Sound Engineering Course in Delhi, India | Crypto Cipher ®</title>
+<title>Advanced Sound Engineering Course in Delhi, India | Crypto Cipher® ( Academy,India)</title>
 <meta name="description" content="Diploma Audio Engineering Course & Electronic Music Production Courses in Delhi, India. 
 Details of Fees, Duration, Syllabus, Faculty. Advanced Mixing | Mastering | Sound Design | Recordings | Music Theory & Track Arrangements | EDM Production Courses">
 @endsection

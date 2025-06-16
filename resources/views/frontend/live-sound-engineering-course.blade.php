@@ -1,7 +1,7 @@
 @extends('layouts.frontend.app')
 
 @section('metas')
-<title>{{$musicProductionDiploma->first()->meta_title}}</title>
+<title>{{$musicProductionDiploma->first()->meta_title}} | Crypto Cipher® ( Academy,India)</title>
 <meta name="description" content="{{$musicProductionDiploma->first()->meta_description}}">
 @endsection
 

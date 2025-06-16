@@ -1,6 +1,6 @@
 @extends('layouts.frontend.app')
 @section('metas')
-<title>Sound Eng. and Music production Course difference | Crypto Cipher</title>
+<title>Sound Eng. and Music production Course difference | Crypto Cipher® ( Academy,India)</title>
 <meta name="description" content="Crypto Cipher Foundation Music production course in Delhi & Diploma Sound Engineering Course Fees, Syllabus, Faculty, Duration & Admission Procedure.">
 @endsection
 
